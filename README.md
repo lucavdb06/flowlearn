@@ -3,6 +3,9 @@
 ## 📋 Introduction du Pitch
 *Ce discours est structuré pour présenter le problème (la friction de l'apprentissage), la solution (l'usage des mécaniques addictives) et la technologie (architecture modulaire et LLM local).*
 
+
+## liens : 
+[notion]([url](https://www.notion.so/Esp-FlowLearn-2e66aaec6a1c806eb6a6dc1e4966cc93?source=copy_link))
 ---
 
 ## 🎙️ Le Discours
