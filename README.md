@@ -5,7 +5,9 @@
 
 
 ## liens : 
-[notion]([url](https://www.notion.so/Esp-FlowLearn-2e66aaec6a1c806eb6a6dc1e4966cc93?source=copy_link))
+[Esp-FlowLearn](https://www.notion.so/Esp-FlowLearn-2e66aaec6a1c806eb6a6dc1e4966cc93?source=copy_link)
+
+
 ---
 
 ## 🎙️ Le Discours
