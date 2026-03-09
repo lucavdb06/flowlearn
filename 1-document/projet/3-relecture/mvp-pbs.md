@@ -17,8 +17,6 @@
 
 #### A. SDK Jeux (Moteur Godot)
 
-- **2.1 Algorithme de Rétention (Côté Client)**  
-  Collecte des KPIs, boucle d'engagement, difficulté dynamique (unifie le format de sortie pour le backend).
 - **2.2 Pont de Communication(api) & Intégration IoT**  
   GDScript/C# et lien optionnel ESP32 (unifie le format de sortie pour communiquer avec l'IoT).
 - **2.3 Standardisation JSON**  
