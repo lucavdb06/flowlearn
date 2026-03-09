@@ -29,21 +29,20 @@
   - mécanique intégrable dans les jeux
   - quiz comme mécanique principale (les questions servent de mécaniques de gameplay et de récompenses).
 
+  | N°  | Fonctionalités                             | Validation                                                                             |
+  | --- | ------------------------------------------ | -------------------------------------------------------------------------------------- |
+  | 1   | Lancement du jeu                           | Nouvelle session avec le score réinitialisé à 0.                                       |
+  | 2   | Chargement d'une questions et des réponses | Charge une question et des réponses valide.                                            |
+  | 3   | Affichage de la question et des réponses   | La question et les réponses s'affiche correctement.                                    |
+  | 4   | Sélection de la réponse                    | Le joueur ne peut selectionner qu'une seule réponse.                                   |
+  | 5   | Validation de la réponse                   | Vérifie si la réponse est correcte. Incrémente le score si elle est bonne.             |
+  | 6   | Passage à la prochaine question            | Efface la question et les réponses. Charge une nouvelle question → Fonctionalité N°`2` |
+  | 7   | Fin de jeu                                 | Affiche le score total.                                                                |
+
 #### C. jeux :
 
 - **3.3 type de jeux :"Archero" ou "vampire survivor"**
   - jeux de survie casual
-
-  | N° | Fonctionalités | Validation
-  | - | - | -
-  | 1 | Lancement du jeu | Nouvelle session avec le score réinitialisé à 0. |
-  | 2 | Chargement d'une questions et des réponses | Charge une question et des réponses valide.
-  | 3 | Affichage de la question et des réponses | La question et les réponses s'affiche correctement.
-  | 4 | Sélection de la réponse | Le joueur ne peut selectionner qu'une seule réponse.
-  | 5 | Validation de la réponse | Vérifie si la réponse est correcte. Incrémente le score si elle est bonne.
-  | 6 | Passage à la prochaine question | Efface la question et les réponses. Charge une nouvelle question → Fonctionalité N°`2`
-  | 7 | Fin de jeu | Affiche le score total.
-
 
 ---
 
@@ -62,6 +61,8 @@
 
 ---
 
+<<<<<<< HEAD
+
 ### 4. Algorithmes de Personnalisation
 
 **4.1 Algorithme de Sélection des Questions**  
@@ -70,6 +71,10 @@
 - **4.2 algorithme de rétention**  
    Système de scoring basé sur les KPIs récoltés. Le but de l'algorithme est de cibler le profil utilisateur pour maximiser son taux de rétention sur l'application.
   wbs :
+
+=======
+
+> > > > > > > c671a84 (pbs api rag jeux et jeux -> externe)
 
 ---
 
