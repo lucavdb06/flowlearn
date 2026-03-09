@@ -62,6 +62,11 @@
 ---
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
+
+> > > > > > > 064aad7 (création dod)
 
 ### 4. Algorithmes de Personnalisation
 
@@ -72,9 +77,13 @@
    Système de scoring basé sur les KPIs récoltés. Le but de l'algorithme est de cibler le profil utilisateur pour maximiser son taux de rétention sur l'application.
   wbs :
 
-=======
+# <<<<<<< HEAD
 
 > > > > > > > c671a84 (pbs api rag jeux et jeux -> externe)
+
+=======
+
+> > > > > > > 064aad7 (création dod)
 
 ---
 
