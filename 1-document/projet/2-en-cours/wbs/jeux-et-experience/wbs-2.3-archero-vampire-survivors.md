@@ -1,6 +1,6 @@
 # WBS – 2.3 Type de jeu : style « Archero » / « Vampire Survivors »
 
-**PBS :** Top-down, déplacement libre, vagues d’ennemis, récompenses (quiz → IoT possible).
+**PBS :** jeux de survie casual
 
 ---
 

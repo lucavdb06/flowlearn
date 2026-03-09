@@ -18,7 +18,7 @@
 #### A. SDK Jeux (Moteur Godot)
 
 - **2.1 api Rag/ia -> jeux**
-  - recuper des information venant de mon cours pour alimenter ma mécanique de gameplay pour le quizz ces un mvp
+  - Récupérer des informations venant du cours pour alimenter la mécanique de gameplay du quiz (MVP).
 
 - **2.2 api jeux -> externe**
   - permettre si une bonne ou mauvaise d'avoir des conséquence même en dehors du jeux (exemple avec une esp32)
@@ -31,7 +31,8 @@
 
 #### C. jeux :
 
-- type de jeux :"Archero" ou "vampire survivor"
+- **3.3 type de jeux :"Archero" ou "vampire survivor"**
+  - jeux de survie casual
 
 ---
 
@@ -49,6 +50,15 @@
   _LiteLLM : Générateur de quiz QCM_
 
 ---
+
+### 4. Algorithmes de Personnalisation
+
+**4.1 Algorithme de Sélection des Questions**  
+ Méthode de répétition espacée type Anki (globale) ou sélection manuelle d'un thème choisi par l'utilisateur.
+
+- **4.2 algorithme de rétention**  
+   Système de scoring basé sur les KPIs récoltés. Le but de l'algorithme est de cibler le profil utilisateur pour maximiser son taux de rétention sur l'application.
+  wbs :
 
 ---
 
