@@ -22,10 +22,10 @@ flowchart TB
     PBS_ROOT --> WBS_22
     PBS_ROOT --> WBS_23
 
-    click PBS_ROOT "./1-document/projet/3-relecture/mvp-pbs.md" _self
-    click WBS_21 "./1-document/projet/2-en-cours/wbs/jeux-et-experience/wbs-2.1-api-rag-ia-jeux.md" _self
-    click WBS_22 "./1-document/projet/2-en-cours/wbs/jeux-et-experience/wbs-2.2-api-jeux-externe.md" _self
-    click WBS_23 "./1-document/projet/2-en-cours/wbs/jeux-et-experience/wbs-2.3-archero-vampire-survivors.md" _self
+    click PBS_ROOT href "1-document/projet/3-relecture/mvp-pbs.md" _self
+    click WBS_21 href "1-document/projet/2-en-cours/wbs/jeux-et-experience/wbs-2.1-api-rag-ia-jeux.md" _self
+    click WBS_22 href "1-document/projet/2-en-cours/wbs/jeux-et-experience/wbs-2.2-api-jeux-externe.md" _self
+    click WBS_23 href "1-document/projet/2-en-cours/wbs/jeux-et-experience/wbs-2.3-archero-vampire-survivors.md" _self
 ```
 
 > **Note :** Dans les environnements qui supportent `click` (ex. GitHub, certains viewers), les boîtes sont cliquables. Sinon, utilisez les liens relatifs ci‑dessous.
