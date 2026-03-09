@@ -17,17 +17,21 @@
 
 #### A. SDK Jeux (Moteur Godot)
 
-- **2.2 Pont de Communication(api) & Intégration IoT**  
-  GDScript/C# et lien optionnel ESP32 (unifie le format de sortie pour communiquer avec l'IoT).
-- **2.3 Standardisation JSON**  
-  Garantit que le format JSON sera strictement le même en entrée des programmes/jeux.
-- **2.4 Protocole de communication ESP32**  
-  Permet d'ancrer des mécaniques de récompense dans le réel (ex : boîte à bonbons, ampoules connectées, etc.).
+- **2.1 api Rag/ia -> jeux**
+  - recuper des information venant de mon cours pour alimenter ma mécanique de gameplay pour le quizz ces un mvp
 
-#### B. Jeux Casual
+- **2.2 api jeux -> externe**
+  - permettre si une bonne ou mauvaise d'avoir des conséquence même en dehors du jeux (exemple avec une esp32)
 
-- **2.5 Expérience de Jeu 1 (Minimum viable)**  
-  Jeu utilisant le quiz comme mécanique principale (les questions servent de mécaniques de gameplay et de récompenses).
+#### B. mecanique de gameplay
+
+- **1.0 mécanique : quizz simple (Minimum viable)**
+  - mécanique intégrable dans les jeux
+  - quiz comme mécanique principale (les questions servent de mécaniques de gameplay et de récompenses).
+
+#### C. jeux :
+
+- type de jeux :"Archero" ou "vampire survivor"
 
 ---
 
@@ -45,13 +49,6 @@
   _LiteLLM : Générateur de quiz QCM_
 
 ---
-
-### 4. Algorithmes de Personnalisation
-
-- **4.1 Algorithme de Sélection des Questions**  
-  Méthode de répétition espacée type Anki (globale) ou sélection manuelle d'un thème choisi par l'utilisateur.
-- **4.2 Moteur de Ciblage & Éthique du Hook**  
-  Système de scoring basé sur les KPIs récoltés. Le but de l'algorithme est de cibler le profil utilisateur pour maximiser son taux de rétention sur l'application.
 
 ---
 
@@ -76,7 +73,7 @@ La conception et la réalisation du MVP s'articulent autour de **3 rôles clés*
 
 | Réf | Nom du livrable           | Description / Périmètre                                                                                     | Critères d'acceptation (DOD)                                                      | Responsable                                 |
 | --- | ------------------------- | ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------- |
-| 1.1 | multiplatoforme   | Outils adaptant l'application React web en logiciel bureau (Electron) et mobile (Capacitor).                | Déploiement fonctionnel sur Mac, Windows, iOS et Android à partir du même code.   | Équipe de Développement                     |
+| 1.1 | multiplatoforme           | Outils adaptant l'application React web en logiciel bureau (Electron) et mobile (Capacitor).                | Déploiement fonctionnel sur Mac, Windows, iOS et Android à partir du même code.   | Équipe de Développement                     |
 | 2.1 | Algorithme de Rétention   | Logique de "Hook" éthique alternant questions simples/défis. Collecte des KPIs en jeu.                      | Les KPIs d'engagement sont trackés et formatés de manière unifiée pour le backend | Porteur de Projet (règles) & Éq. Dév (code) |
 | 2.2 | Pont de Communication IoT | Connecteur Godot <> Hardware. Prépare le terrain pour de futurs périphériques physiques.                    | Format de sortie unifié et communication établie (ESP32, etc.)                    | Équipe de Développement                     |
 | 2.3 | Standardisation JSON      | Contrat de données strict entre Backend IA (3.x) et Moteur Godot (2.x).                                     | Tous les flux QCM/Bonus respectent un schéma JSON unique sans exception.          | Équipe de Développement                     |
