@@ -12,6 +12,8 @@
 
 * **générateur d'histoire** : crée des histoires cohérente avec choix purement scénaristique et d'aute qui inclue des notions de cours mais qui s'intégre bien a l'histoires
 
+## indexation :
+- recupere les info dans la dbb
 ---
 
 ### **2. Gameplay & Expériences**
