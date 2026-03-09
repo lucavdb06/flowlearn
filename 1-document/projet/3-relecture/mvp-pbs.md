@@ -34,6 +34,17 @@
 - **3.3 type de jeux :"Archero" ou "vampire survivor"**
   - jeux de survie casual
 
+  | N° | Fonctionalités | Validation
+  | - | - | -
+  | 1 | Lancement du jeu | Nouvelle session avec le score réinitialisé à 0. |
+  | 2 | Chargement d'une questions et des réponses | Charge une question et des réponses valide.
+  | 3 | Affichage de la question et des réponses | La question et les réponses s'affiche correctement.
+  | 4 | Sélection de la réponse | Le joueur ne peut selectionner qu'une seule réponse.
+  | 5 | Validation de la réponse | Vérifie si la réponse est correcte. Incrémente le score si elle est bonne.
+  | 6 | Passage à la prochaine question | Efface la question et les réponses. Charge une nouvelle question → Fonctionalité N°`2`
+  | 7 | Fin de jeu | Affiche le score total.
+
+
 ---
 
 ### 3. Intelligence Centrale & Module RAG (Backend & IA)
