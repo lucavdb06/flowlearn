@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charte graphique — FlowLearn</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --magenta: #FF007A;
+      --blue: #2D7FF9;
+      --black: #05070A;
+      --dark: #0A0F1E;
+      --slate: #64748B;
+      --slate-light: #F1F5F9;
+    }
+    body { font-family: 'Inter', sans-serif; color: #0F172A; background: #FAFBFC; }
+    .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .gradient-text { background: linear-gradient(90deg, var(--blue), var(--magenta)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full z-50 border-b border-slate-200 bg-white/90 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="accueil.html" class="flex items-center gap-3">
+        <img src="../assets/logo-flowlearn.svg" alt="FlowLearn" class="w-10 h-10" />
+        <span class="font-display font-extrabold text-xl tracking-tight text-slate-900">FlowLearn</span>
+      </a>
+      <div class="flex items-center gap-2">
+        <a href="accueil.html" class="text-sm font-medium px-4 py-2 rounded-full text-slate-500 hover:bg-slate-100">Site</a>
+        <a href="cards.html" class="text-sm font-medium px-4 py-2 rounded-full text-slate-500 hover:bg-slate-100">Cards</a>
+        <span class="text-sm font-semibold px-4 py-2 rounded-full bg-slate-900 text-white">Charte</span>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-24 pb-24 max-w-5xl mx-auto px-6">
+
+    <!-- En-tête -->
+    <header class="mb-20">
+      <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[var(--magenta)]">Identité visuelle</p>
+      <h1 class="text-4xl md:text-5xl font-display font-extrabold mt-2 text-slate-900">Charte graphique <span class="text-slate-400 font-normal">FlowLearn</span></h1>
+      <p class="text-slate-500 mt-4 text-lg max-w-2xl">Document de référence pour l’identité de marque, le logo Courant synaptique, la palette et les composants UI.</p>
+    </header>
+
+    <!-- 01. Logo -->
+    <section class="mb-24">
+      <h2 class="text-2xl font-display font-bold mb-2 flex items-center gap-3">
+        <span class="w-10 h-1 rounded-full bg-[var(--blue)]"></span>
+        01. Logo — Courant synaptique
+      </h2>
+      <p class="text-slate-500 text-sm mb-10 max-w-2xl">Une ligne continue : l’ondulation de la rivière (flux) s’élève pour former les deux hémisphères du cerveau (apprentissage).</p>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-10">
+        <div class="bg-[var(--black)] p-14 rounded-3xl flex items-center justify-center min-h-[320px]">
+          <img src="../assets/logo-flowlearn.svg" alt="Logo FlowLearn" class="w-48 h-48" />
+        </div>
+        <div class="bg-white border border-slate-200 p-8 rounded-3xl">
+          <h3 class="text-lg font-bold text-slate-900 mb-4">Anatomie</h3>
+          <ul class="space-y-3 text-sm text-slate-600">
+            <li><strong class="text-slate-800">Base :</strong> ondulation horizontale = rivière, flux d’information.</li>
+            <li><strong class="text-slate-800">Montée :</strong> la ligne remonte = passage à l’état de flow.</li>
+            <li><strong class="text-slate-800">Sommet :</strong> deux lobes = hémisphères cérébraux, plasticité.</li>
+            <li><strong class="text-slate-800">Couleur :</strong> dégradé bleu (base) → magenta (sommet).</li>
+          </ul>
+          <div class="mt-8 pt-6 border-t border-slate-100">
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Fichiers</p>
+            <p class="font-mono text-sm text-slate-600">logo-flowlearn.svg (vectoriel, scalable)</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-lg font-bold text-slate-900 mb-4">Déclinaisons</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-8 bg-[var(--black)] rounded-2xl flex flex-col items-center justify-center min-h-[180px]">
+          <img src="../assets/logo-flowlearn.svg" alt="" class="w-20 h-20 mb-4" />
+          <span class="text-[10px] font-bold uppercase tracking-wider text-white/50">Fond noir</span>
+        </div>
+        <div class="p-8 bg-white border border-slate-200 rounded-2xl flex flex-col items-center justify-center min-h-[180px]">
+          <img src="../assets/logo-flowlearn.svg" alt="" class="w-20 h-20 mb-4" />
+          <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Fond clair</span>
+        </div>
+        <div class="p-8 rounded-2xl flex flex-col items-center justify-center min-h-[180px]" style="background: var(--magenta);">
+          <img src="../assets/logo-flowlearn.svg" alt="" class="w-20 h-20 mb-4 opacity-90" style="filter: brightness(0) invert(1);" />
+          <span class="text-[10px] font-bold uppercase tracking-wider text-white/70">Monochrome blanc (sur magenta)</span>
+        </div>
+      </div>
+
+      <div class="mt-10 p-6 bg-amber-50 border border-amber-100 rounded-2xl">
+        <h4 class="text-sm font-bold text-amber-900 mb-2">Règles d’utilisation</h4>
+        <ul class="text-sm text-amber-800 space-y-1">
+          <li>• Ne pas déformer, pivoter ou redessiner le logo.</li>
+          <li>• Zone d’exclusion : hauteur minimale du « F » de FlowLearn autour du logo.</li>
+          <li>• Tailles minimales : 80px (digital), 25mm (print), 32×32px (favicon).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 02. Couleurs -->
+    <section class="mb-24">
+      <h2 class="text-2xl font-display font-bold mb-2 flex items-center gap-3">
+        <span class="w-10 h-1 rounded-full bg-[var(--magenta)]"></span>
+        02. Palette chromatique
+      </h2>
+      <p class="text-slate-500 text-sm mb-10 max-w-2xl">Couleurs principales et secondaires avec codes hex et usages.</p>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="space-y-4">
+          <div class="p-6 rounded-2xl text-white shadow-lg" style="background: var(--magenta); box-shadow: 0 10px 40px -10px rgba(255,0,122,0.4);">
+            <div class="flex justify-between items-center">
+              <span class="font-bold">Magenta Dopamine</span>
+              <span class="font-mono text-sm opacity-90">#FF007A</span>
+            </div>
+            <p class="text-sm opacity-85 mt-2">Récompense, stimulation, gamification, CTA principal.</p>
+          </div>
+          <div class="p-6 rounded-2xl text-white shadow-lg" style="background: var(--blue); box-shadow: 0 10px 40px -10px rgba(45,127,249,0.4);">
+            <div class="flex justify-between items-center">
+              <span class="font-bold">Bleu Électrique</span>
+              <span class="font-mono text-sm opacity-90">#2D7FF9</span>
+            </div>
+            <p class="text-sm opacity-85 mt-2">Flow, confiance, IA, liens, calme cognitif.</p>
+          </div>
+          <div class="p-6 rounded-2xl text-white border border-slate-700" style="background: var(--black);">
+            <div class="flex justify-between items-center">
+              <span class="font-bold">Midnight Black</span>
+              <span class="font-mono text-sm text-slate-400">#05070A</span>
+            </div>
+            <p class="text-sm text-slate-400 mt-2">Fonds dark, texte sur clair, précision.</p>
+          </div>
+          <div class="p-6 rounded-2xl border border-slate-200 bg-white">
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-slate-800">Fond clair</span>
+              <span class="font-mono text-sm text-slate-500">#F8FAFC / #FFFFFF</span>
+            </div>
+            <p class="text-sm text-slate-500 mt-2">Arrière-plans, cards, surfaces.</p>
+          </div>
+        </div>
+        <div class="bg-white border border-slate-200 p-8 rounded-3xl">
+          <h4 class="font-bold text-slate-900 mb-4">Psychologie & usage</h4>
+          <ul class="space-y-4 text-sm text-slate-600">
+            <li class="flex gap-3"><span class="text-[var(--magenta)] font-bold">●</span> <strong class="text-slate-800">Magenta :</strong> pic de concentration, récompense, actions principales.</li>
+            <li class="flex gap-3"><span class="text-[var(--blue)] font-bold">●</span> <strong class="text-slate-800">Bleu :</strong> immersion, confiance, technologie, secondaire.</li>
+            <li class="flex gap-3"><span class="text-slate-800 font-bold">●</span> <strong class="text-slate-800">Noir :</strong> lisibilité, réduction de la fatigue visuelle en mode sombre.</li>
+          </ul>
+          <div class="mt-8 pt-6 border-t border-slate-100">
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Dégradé signature</p>
+            <div class="h-12 rounded-xl w-full" style="background: linear-gradient(90deg, var(--blue), var(--magenta));"></div>
+            <p class="font-mono text-xs text-slate-500 mt-2">linear-gradient(90deg, #2D7FF9, #FF007A)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. Typographie -->
+    <section class="mb-24">
+      <h2 class="text-2xl font-display font-bold mb-2 flex items-center gap-3">
+        <span class="w-10 h-1 rounded-full bg-[var(--blue)]"></span>
+        03. Typographie
+      </h2>
+      <p class="text-slate-500 text-sm mb-10 max-w-2xl">Hiérarchie et polices pour l’interface et la communication.</p>
+
+      <div class="space-y-6">
+        <div class="p-6 bg-white border border-slate-200 rounded-2xl">
+          <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Display — Titres</p>
+          <p class="font-display font-extrabold text-4xl text-slate-900">Plus Jakarta Sans</p>
+          <p class="text-sm text-slate-500 mt-1">Poids 700–800 • Titres de page, hero, en-têtes de section.</p>
+        </div>
+        <div class="p-6 bg-white border border-slate-200 rounded-2xl">
+          <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Corps — UI & texte</p>
+          <p class="font-sans font-semibold text-2xl text-slate-900">Inter</p>
+          <p class="text-sm text-slate-500 mt-1">Poids 400–700 • Corps de texte, labels, boutons, navigation.</p>
+        </div>
+        <div class="p-6 bg-white border border-slate-200 rounded-2xl">
+          <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Code & technique</p>
+          <p class="font-mono text-xl text-slate-800">JetBrains Mono</p>
+          <p class="text-sm text-slate-500 mt-1">Poids 400–500 • Codes hex, tokens, snippets.</p>
+        </div>
+      </div>
+
+      <div class="mt-10 p-6 bg-slate-50 border border-slate-100 rounded-2xl">
+        <h4 class="text-sm font-bold text-slate-800 mb-4">Échelle type</h4>
+        <div class="space-y-4">
+          <div class="flex items-baseline gap-6"><span class="text-slate-400 font-mono w-16">48px</span><span class="font-display font-extrabold text-4xl text-slate-900">H1 — Titre page</span></div>
+          <div class="flex items-baseline gap-6"><span class="text-slate-400 font-mono w-16">32px</span><span class="font-display font-bold text-3xl text-slate-800">H2 — Section</span></div>
+          <div class="flex items-baseline gap-6"><span class="text-slate-400 font-mono w-16">20px</span><span class="font-semibold text-xl text-slate-800">H3 — Sous-section</span></div>
+          <div class="flex items-baseline gap-6"><span class="text-slate-400 font-mono w-16">16px</span><span class="text-slate-700">Body — Texte courant</span></div>
+          <div class="flex items-baseline gap-6"><span class="text-slate-400 font-mono w-16">12px</span><span class="text-sm text-slate-500">Caption — Labels, hints</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. Composants UI -->
+    <section class="mb-24">
+      <h2 class="text-2xl font-display font-bold mb-2 flex items-center gap-3">
+        <span class="w-10 h-1 rounded-full bg-[var(--magenta)]"></span>
+        04. Composants UI
+      </h2>
+      <p class="text-slate-500 text-sm mb-10 max-w-2xl">Boutons, cards et espacements pour garder une cohérence.</p>
+
+      <div class="space-y-10">
+        <div>
+          <h4 class="text-sm font-bold text-slate-800 mb-4">Boutons</h4>
+          <div class="flex flex-wrap gap-4">
+            <button class="px-6 py-3 rounded-xl font-semibold text-white text-sm" style="background: var(--magenta);">Primaire (Magenta)</button>
+            <button class="px-6 py-3 rounded-xl font-semibold text-sm border-2 text-[var(--blue)] border-[var(--blue)] bg-transparent">Secondaire (Bleu)</button>
+            <button class="px-6 py-3 rounded-xl font-semibold text-white text-sm" style="background: linear-gradient(90deg, var(--blue), var(--magenta));">Dégradé</button>
+            <button class="px-6 py-3 rounded-xl font-semibold text-slate-600 text-sm bg-slate-100 hover:bg-slate-200">Neutre</button>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-slate-800 mb-4">Cards</h4>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="p-6 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+              <div class="w-10 h-10 rounded-xl bg-[var(--blue)]/10 flex items-center justify-center text-[var(--blue)] font-bold mb-4">1</div>
+              <h5 class="font-bold text-slate-900 mb-2">Titre card</h5>
+              <p class="text-sm text-slate-600">Contenu court. Border-radius 16–20px, padding 24px, ombre légère.</p>
+            </div>
+            <div class="p-6 rounded-2xl text-white shadow-lg" style="background: linear-gradient(135deg, var(--blue), var(--magenta));">
+              <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center font-bold mb-4">2</div>
+              <h5 class="font-bold mb-2">Card accent</h5>
+              <p class="text-sm opacity-90">Pour mettre en avant une feature ou un CTA.</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-6 bg-slate-50 rounded-2xl">
+          <h4 class="text-sm font-bold text-slate-800 mb-4">Espacements (base 4px)</h4>
+          <div class="flex flex-wrap gap-4 text-sm">
+            <span class="font-mono text-slate-500">xs 4px</span>
+            <span class="font-mono text-slate-500">sm 8px</span>
+            <span class="font-mono text-slate-500">md 16px</span>
+            <span class="font-mono text-slate-500">lg 24px</span>
+            <span class="font-mono text-slate-500">xl 32px</span>
+            <span class="font-mono text-slate-500">2xl 48px</span>
+            <span class="font-mono text-slate-500">3xl 64px</span>
+          </div>
+          <p class="text-slate-500 text-xs mt-2">Border-radius : boutons 12px, cards 16–20px, inputs 8px, badges pill (9999px).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. Iconographie & Figma -->
+    <section class="mb-24">
+      <h2 class="text-2xl font-display font-bold mb-2 flex items-center gap-3">
+        <span class="w-10 h-1 rounded-full bg-[var(--blue)]"></span>
+        05. Iconographie & Figma
+      </h2>
+      <p class="text-slate-500 text-sm mb-10 max-w-2xl">Style des icônes et organisation du design system.</p>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white border border-slate-200 p-8 rounded-3xl">
+          <h4 class="font-bold text-slate-900 mb-4">Icônes</h4>
+          <ul class="text-sm text-slate-600 space-y-2">
+            <li>• Style outline (trait), coins arrondis.</li>
+            <li>• Épaisseur 1.5–2px, taille de référence 24×24px.</li>
+            <li>• Bibliothèques : Lucide Icons, Phosphor Icons.</li>
+          </ul>
+        </div>
+        <div class="bg-white border border-slate-200 p-8 rounded-3xl">
+          <h4 class="font-bold text-slate-900 mb-4">Figma</h4>
+          <p class="text-sm text-slate-600 mb-2">Structure recommandée : Foundations (couleurs, typo, espacements) → Components (boutons, inputs, cards) → Screens (landing, dashboard, quiz, profil).</p>
+          <p class="text-xs text-slate-400">Lien du fichier à compléter une fois le projet créé.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06. Accessibilité -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-display font-bold mb-2 flex items-center gap-3">
+        <span class="w-10 h-1 rounded-full bg-slate-400"></span>
+        06. Accessibilité
+      </h2>
+      <p class="text-slate-500 text-sm mb-6 max-w-2xl">Contraste et lisibilité pour tous les utilisateurs.</p>
+      <div class="p-6 bg-white border border-slate-200 rounded-2xl">
+        <ul class="text-sm text-slate-700 space-y-2">
+          <li>• Contraste texte/fond minimum <strong>4.5:1</strong> (WCAG AA), 3:1 pour les grands textes et UI.</li>
+          <li>• État <code class="font-mono bg-slate-100 px-1 rounded">:focus</code> visible sur tous les éléments interactifs.</li>
+          <li>• La couleur ne doit jamais être le seul moyen de transmettre une information.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="pt-12 border-t border-slate-200 text-center text-sm text-slate-400">
+      <p>FlowLearn — Charte graphique v1.1 • Projet Epitech MSc Pro 2027 — Lyon</p>
+    </footer>
+  </main>
+
+</body>
+</html>
