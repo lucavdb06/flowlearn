@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlowLearn — Visuels & Concepts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --flow-blue: #3B82F6;
+      --brain-pink: #EC4899;
+      --deep-ocean: #1E3A5F;
+      --soft-lavender: #8B5CF6;
+      --success-green: #10B981;
+      --warning-amber: #F59E0B;
+      --slate-900: #0F172A;
+      --slate-800: #1E293B;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-400: #94A3B8;
+      --slate-200: #E2E8F0;
+      --slate-100: #F1F5F9;
+      --white: #FFFFFF;
+      --gradient-main: linear-gradient(135deg, #3B82F6 0%, #EC4899 100%);
+      --gradient-ia: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+      --gradient-brain: linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%);
+      --radius-card: 16px;
+      --shadow-card: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+      --shadow-hover: 0 20px 25px -5px rgba(0,0,0,.1), 0 8px 10px -6px rgba(0,0,0,.1);
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--slate-100); color: var(--deep-ocean);
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ── */
+    .page-header {
+      background: var(--slate-900); color: white;
+      padding: 80px 48px 64px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .page-header::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 25% 50%, rgba(59,130,246,.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 75% 50%, rgba(236,72,153,.2) 0%, transparent 50%);
+    }
+    .page-header > * { position: relative; z-index: 1; }
+    .page-header h1 { font-size: 40px; font-weight: 700; margin-bottom: 12px; }
+    .page-header h1 span { background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .page-header p { font-size: 18px; color: var(--slate-400); max-width: 600px; margin: 0 auto; }
+
+    /* ── SECTIONS ── */
+    .section { padding: 64px 48px; max-width: 1300px; margin: 0 auto; }
+    .section-title {
+      font-size: 28px; font-weight: 700; margin-bottom: 12px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .section-title .dot {
+      width: 12px; height: 12px; border-radius: 50%;
+    }
+    .section-subtitle { font-size: 16px; color: var(--slate-600); margin-bottom: 40px; }
+
+    /* ── CARDS GRID ── */
+    .cards-grid {
+      display: grid; gap: 24px;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    }
+
+    .card {
+      background: var(--white); border-radius: var(--radius-card);
+      overflow: hidden; box-shadow: var(--shadow-card);
+      transition: all .3s ease; cursor: default;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+
+    .card-visual {
+      height: 200px; display: flex; align-items: center; justify-content: center;
+      font-size: 56px; position: relative; overflow: hidden;
+    }
+    .card-visual .bg-pattern {
+      position: absolute; inset: 0; opacity: .15;
+      background-image:
+        radial-gradient(circle at 20% 30%, currentColor 1px, transparent 1px),
+        radial-gradient(circle at 80% 70%, currentColor 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, currentColor 1.5px, transparent 1.5px);
+      background-size: 40px 40px, 60px 60px, 80px 80px;
+    }
+
+    .card-body { padding: 24px; }
+    .card-body h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+    .card-body p { font-size: 14px; color: var(--slate-600); line-height: 1.7; }
+
+    .card-tags { padding: 0 24px 20px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      padding: 4px 14px; border-radius: 9999px;
+      font-size: 12px; font-weight: 600;
+    }
+    .tag-blue { background: rgba(59,130,246,.1); color: var(--flow-blue); }
+    .tag-pink { background: rgba(236,72,153,.1); color: var(--brain-pink); }
+    .tag-purple { background: rgba(139,92,246,.1); color: var(--soft-lavender); }
+    .tag-green { background: rgba(16,185,129,.1); color: var(--success-green); }
+    .tag-amber { background: rgba(245,158,11,.1); color: var(--warning-amber); }
+
+    /* ── PALETTE SECTION ── */
+    .palette-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+    .color-swatch {
+      flex: 1; min-width: 140px; border-radius: var(--radius-card);
+      overflow: hidden; box-shadow: var(--shadow-card);
+      transition: all .3s ease;
+    }
+    .color-swatch:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .swatch-color { height: 100px; }
+    .swatch-info { padding: 16px; background: white; }
+    .swatch-info .name { font-size: 14px; font-weight: 600; }
+    .swatch-info .hex { font-size: 13px; color: var(--slate-400); font-family: 'JetBrains Mono', monospace; }
+
+    /* ── TYPO SECTION ── */
+    .typo-samples { display: flex; flex-direction: column; gap: 24px; }
+    .typo-row {
+      display: flex; align-items: baseline; gap: 24px;
+      padding: 20px 28px; background: white;
+      border-radius: var(--radius-card); box-shadow: var(--shadow-card);
+    }
+    .typo-label {
+      min-width: 100px; font-size: 12px; font-weight: 600;
+      color: var(--slate-400); text-transform: uppercase; letter-spacing: .05em;
+    }
+
+    /* ── GRADIENT CARDS ── */
+    .gradient-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+    .gradient-card {
+      height: 160px; border-radius: var(--radius-card);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 24px; color: white; position: relative; overflow: hidden;
+      box-shadow: var(--shadow-card); transition: all .3s ease;
+    }
+    .gradient-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .gradient-card h4 { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+    .gradient-card p { font-size: 13px; opacity: .85; }
+
+    /* ── MOCKUP CARDS ── */
+    .mockup-card {
+      background: var(--white); border-radius: var(--radius-card);
+      overflow: hidden; box-shadow: var(--shadow-card);
+      transition: all .3s ease;
+    }
+    .mockup-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    .mockup-header {
+      padding: 12px 16px; display: flex; gap: 6px;
+      background: var(--slate-200);
+    }
+    .mockup-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .mockup-dot:nth-child(1) { background: #EF4444; }
+    .mockup-dot:nth-child(2) { background: #F59E0B; }
+    .mockup-dot:nth-child(3) { background: #10B981; }
+    .mockup-body { padding: 24px; min-height: 200px; }
+    .mockup-body h3 { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
+
+    .mini-nav {
+      display: flex; gap: 8px; margin-bottom: 20px;
+    }
+    .mini-nav span {
+      padding: 6px 16px; border-radius: 9999px; font-size: 12px; font-weight: 600;
+      background: var(--slate-100); color: var(--slate-600);
+    }
+    .mini-nav span.active { background: var(--flow-blue); color: white; }
+
+    .mini-card {
+      padding: 16px; border-radius: 12px;
+      border: 1px solid var(--slate-200); margin-bottom: 12px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .mini-card .icon-circle {
+      width: 40px; height: 40px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .mini-card .text .title { font-size: 14px; font-weight: 600; }
+    .mini-card .text .sub { font-size: 12px; color: var(--slate-400); }
+
+    .progress-bar {
+      height: 8px; border-radius: 9999px; background: var(--slate-200);
+      overflow: hidden; margin-top: 8px;
+    }
+    .progress-bar .fill { height: 100%; border-radius: 9999px; }
+
+    .btn-mini {
+      padding: 8px 20px; border-radius: 9999px; border: none;
+      font-size: 13px; font-weight: 600; color: white; cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .page-header { padding: 60px 24px 48px; }
+      .section { padding: 48px 24px; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .gradient-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="page-header">
+    <h1><span>FlowLearn</span> — Visuels & Concepts</h1>
+    <p>Aperçu des écrans, composants et direction artistique du projet.</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- PALETTE DE COULEURS                     -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot" style="background: var(--gradient-main);"></div>
+      Palette de couleurs
+    </div>
+    <p class="section-subtitle">Les couleurs principales et secondaires de FlowLearn.</p>
+
+    <div class="palette-row">
+      <div class="color-swatch">
+        <div class="swatch-color" style="background: #3B82F6;"></div>
+        <div class="swatch-info"><div class="name">Flow Blue</div><div class="hex">#3B82F6</div></div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-color" style="background: #EC4899;"></div>
+        <div class="swatch-info"><div class="name">Brain Pink</div><div class="hex">#EC4899</div></div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-color" style="background: #1E3A5F;"></div>
+        <div class="swatch-info"><div class="name">Deep Ocean</div><div class="hex">#1E3A5F</div></div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-color" style="background: #8B5CF6;"></div>
+        <div class="swatch-info"><div class="name">Soft Lavender</div><div class="hex">#8B5CF6</div></div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-color" style="background: #10B981;"></div>
+        <div class="swatch-info"><div class="name">Success Green</div><div class="hex">#10B981</div></div>
+      </div>
+      <div class="color-swatch">
+        <div class="swatch-color" style="background: #F59E0B;"></div>
+        <div class="swatch-info"><div class="name">Warning Amber</div><div class="hex">#F59E0B</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- DÉGRADÉS                                -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="section" style="padding-top: 0;">
+    <div class="section-title">
+      <div class="dot" style="background: var(--flow-blue);"></div>
+      Dégradés signature
+    </div>
+    <p class="section-subtitle">Les trois dégradés clés utilisés dans l'interface FlowLearn.</p>
+
+    <div class="gradient-cards">
+      <div class="gradient-card" style="background: var(--gradient-main);">
+        <h4>Principal — Blue → Pink</h4>
+        <p>Hero, boutons premium, éléments phares</p>
+      </div>
+      <div class="gradient-card" style="background: var(--gradient-ia);">
+        <h4>IA — Blue → Lavender</h4>
+        <p>Éléments liés à l'intelligence artificielle</p>
+      </div>
+      <div class="gradient-card" style="background: var(--gradient-brain);">
+        <h4>Brain — Pink → Lavender</h4>
+        <p>Gamification, récompenses, dopamine</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TYPOGRAPHIE                             -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot" style="background: var(--deep-ocean);"></div>
+      Typographie
+    </div>
+    <p class="section-subtitle">Hiérarchie typographique avec Inter.</p>
+
+    <div class="typo-samples">
+      <div class="typo-row">
+        <span class="typo-label">H1 — 48px</span>
+        <span style="font-size: 48px; font-weight: 700; color: var(--deep-ocean);">Apprenez dans le Flow</span>
+      </div>
+      <div class="typo-row">
+        <span class="typo-label">H2 — 36px</span>
+        <span style="font-size: 36px; font-weight: 700; color: var(--deep-ocean);">Fonctionnalités</span>
+      </div>
+      <div class="typo-row">
+        <span class="typo-label">H3 — 24px</span>
+        <span style="font-size: 24px; font-weight: 600; color: var(--slate-700);">IA Personnalisée</span>
+      </div>
+      <div class="typo-row">
+        <span class="typo-label">Body — 16px</span>
+        <span style="font-size: 16px; color: var(--slate-600);">FlowLearn combine neurosciences, gamification et IA pour un apprentissage unique.</span>
+      </div>
+      <div class="typo-row">
+        <span class="typo-label">Small — 14px</span>
+        <span style="font-size: 14px; color: var(--slate-400);">Dernière connexion : il y a 2 heures</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- CARDS — ÉCRANS PRINCIPAUX               -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot" style="background: var(--brain-pink);"></div>
+      Écrans principaux — Aperçus
+    </div>
+    <p class="section-subtitle">Maquettes simplifiées des écrans clés de l'application.</p>
+
+    <div class="cards-grid">
+
+      <!-- Card : Dashboard -->
+      <div class="mockup-card">
+        <div class="mockup-header">
+          <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+        </div>
+        <div class="mockup-body">
+          <h3>Dashboard — Tableau de bord</h3>
+          <div class="mini-nav">
+            <span class="active">Vue d'ensemble</span>
+            <span>Statistiques</span>
+            <span>Parcours</span>
+          </div>
+          <div class="mini-card">
+            <div class="icon-circle" style="background: rgba(59,130,246,.1);">🎯</div>
+            <div class="text">
+              <div class="title">Objectif du jour</div>
+              <div class="sub">3 sessions sur 5 complétées</div>
+              <div class="progress-bar"><div class="fill" style="width: 60%; background: var(--flow-blue);"></div></div>
+            </div>
+          </div>
+          <div class="mini-card">
+            <div class="icon-circle" style="background: rgba(236,72,153,.1);">🔥</div>
+            <div class="text">
+              <div class="title">Série en cours</div>
+              <div class="sub">12 jours consécutifs !</div>
+              <div class="progress-bar"><div class="fill" style="width: 85%; background: var(--brain-pink);"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card : Quiz / Jeu -->
+      <div class="mockup-card">
+        <div class="mockup-header">
+          <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+        </div>
+        <div class="mockup-body">
+          <h3>Quiz — Mode Jeu</h3>
+          <div style="text-align: center; padding: 16px 0;">
+            <div style="font-size: 14px; color: var(--slate-400); margin-bottom: 8px;">Question 7 / 15</div>
+            <div class="progress-bar" style="margin-bottom: 20px;"><div class="fill" style="width: 47%; background: var(--gradient-main);"></div></div>
+            <div style="font-size: 18px; font-weight: 600; margin-bottom: 24px;">Quel neurotransmetteur est lié au circuit de la récompense ?</div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <div style="padding: 12px; border: 2px solid var(--slate-200); border-radius: 12px; font-size: 14px; font-weight: 500; cursor: pointer;">A. Sérotonine</div>
+              <div style="padding: 12px; border: 2px solid var(--flow-blue); border-radius: 12px; font-size: 14px; font-weight: 500; background: rgba(59,130,246,.05); color: var(--flow-blue); cursor: pointer;">B. Dopamine</div>
+              <div style="padding: 12px; border: 2px solid var(--slate-200); border-radius: 12px; font-size: 14px; font-weight: 500; cursor: pointer;">C. Adrénaline</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card : Profil -->
+      <div class="mockup-card">
+        <div class="mockup-header">
+          <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+        </div>
+        <div class="mockup-body">
+          <h3>Profil utilisateur</h3>
+          <div style="text-align: center; padding: 12px 0;">
+            <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--gradient-main); margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white;">A</div>
+            <div style="font-size: 18px; font-weight: 600;">Alex Martin</div>
+            <div style="font-size: 13px; color: var(--slate-400); margin-bottom: 16px;">Niveau 24 — Explorateur</div>
+            <div style="display: flex; justify-content: center; gap: 24px;">
+              <div style="text-align: center;">
+                <div style="font-size: 22px; font-weight: 700; color: var(--flow-blue);">156</div>
+                <div style="font-size: 11px; color: var(--slate-400);">Sessions</div>
+              </div>
+              <div style="text-align: center;">
+                <div style="font-size: 22px; font-weight: 700; color: var(--brain-pink);">42h</div>
+                <div style="font-size: 11px; color: var(--slate-400);">Temps total</div>
+              </div>
+              <div style="text-align: center;">
+                <div style="font-size: 22px; font-weight: 700; color: var(--success-green);">89%</div>
+                <div style="font-size: 11px; color: var(--slate-400);">Rétention</div>
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 8px; justify-content: center; margin-top: 16px;">
+            <span class="tag tag-blue">Neurosciences</span>
+            <span class="tag tag-pink">Maths</span>
+            <span class="tag tag-purple">Physique</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card : Parcours IA -->
+      <div class="mockup-card">
+        <div class="mockup-header">
+          <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+        </div>
+        <div class="mockup-body">
+          <h3>Parcours IA personnalisé</h3>
+          <div class="mini-card">
+            <div class="icon-circle" style="background: rgba(16,185,129,.1);">✅</div>
+            <div class="text">
+              <div class="title" style="color: var(--success-green);">Introduction aux neurones</div>
+              <div class="sub">Complété — 95% de réussite</div>
+            </div>
+          </div>
+          <div class="mini-card" style="border-color: var(--flow-blue); background: rgba(59,130,246,.02);">
+            <div class="icon-circle" style="background: rgba(59,130,246,.1);">▶</div>
+            <div class="text">
+              <div class="title" style="color: var(--flow-blue);">Synapses et neurotransmetteurs</div>
+              <div class="sub">En cours — Module 3/5</div>
+              <div class="progress-bar"><div class="fill" style="width: 60%; background: var(--gradient-ia);"></div></div>
+            </div>
+          </div>
+          <div class="mini-card" style="opacity: .6;">
+            <div class="icon-circle" style="background: var(--slate-100);">🔒</div>
+            <div class="text">
+              <div class="title">Plasticité cérébrale</div>
+              <div class="sub">Verrouillé — Terminez le module précédent</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card : Récompenses -->
+      <div class="mockup-card">
+        <div class="mockup-header">
+          <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+        </div>
+        <div class="mockup-body">
+          <h3>Récompenses & Badges</h3>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; text-align: center; padding: 12px 0;">
+            <div>
+              <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--gradient-main); margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 24px;">🧠</div>
+              <div style="font-size: 12px; font-weight: 600;">Neurone d'or</div>
+            </div>
+            <div>
+              <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--gradient-brain); margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 24px;">🔥</div>
+              <div style="font-size: 12px; font-weight: 600;">Série de 7j</div>
+            </div>
+            <div>
+              <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--gradient-ia); margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 24px;">⚡</div>
+              <div style="font-size: 12px; font-weight: 600;">Speed Master</div>
+            </div>
+            <div>
+              <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(16,185,129,.15); margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 24px;">📚</div>
+              <div style="font-size: 12px; font-weight: 600;">100 sessions</div>
+            </div>
+            <div>
+              <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(245,158,11,.15); margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 24px;">🎯</div>
+              <div style="font-size: 12px; font-weight: 600;">Perfectionniste</div>
+            </div>
+            <div style="opacity: .35;">
+              <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--slate-200); margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 24px;">🔒</div>
+              <div style="font-size: 12px; font-weight: 600;">???</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card : Admin / Analytics -->
+      <div class="mockup-card">
+        <div class="mockup-header">
+          <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+        </div>
+        <div class="mockup-body">
+          <h3>Admin — Analytics</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+            <div style="padding: 16px; background: rgba(59,130,246,.05); border-radius: 12px; text-align: center;">
+              <div style="font-size: 24px; font-weight: 700; color: var(--flow-blue);">2,847</div>
+              <div style="font-size: 11px; color: var(--slate-400);">Utilisateurs actifs</div>
+            </div>
+            <div style="padding: 16px; background: rgba(236,72,153,.05); border-radius: 12px; text-align: center;">
+              <div style="font-size: 24px; font-weight: 700; color: var(--brain-pink);">12,430</div>
+              <div style="font-size: 11px; color: var(--slate-400);">Sessions / semaine</div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 4px; align-items: flex-end; height: 80px; padding: 0 8px;">
+            <div style="flex: 1; background: rgba(59,130,246,.2); border-radius: 4px 4px 0 0; height: 40%;"></div>
+            <div style="flex: 1; background: rgba(59,130,246,.3); border-radius: 4px 4px 0 0; height: 55%;"></div>
+            <div style="flex: 1; background: rgba(59,130,246,.4); border-radius: 4px 4px 0 0; height: 45%;"></div>
+            <div style="flex: 1; background: rgba(59,130,246,.5); border-radius: 4px 4px 0 0; height: 70%;"></div>
+            <div style="flex: 1; background: rgba(59,130,246,.6); border-radius: 4px 4px 0 0; height: 60%;"></div>
+            <div style="flex: 1; background: rgba(59,130,246,.7); border-radius: 4px 4px 0 0; height: 85%;"></div>
+            <div style="flex: 1; background: var(--flow-blue); border-radius: 4px 4px 0 0; height: 100%;"></div>
+          </div>
+          <div style="font-size: 11px; color: var(--slate-400); text-align: center; margin-top: 8px;">Lun — Dim</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- CARDS — CONCEPTS DU PROJET              -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">
+      <div class="dot" style="background: var(--soft-lavender);"></div>
+      Concepts du projet
+    </div>
+    <p class="section-subtitle">Les piliers technologiques et pédagogiques de FlowLearn.</p>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-visual" style="background: linear-gradient(135deg, rgba(59,130,246,.1), rgba(139,92,246,.1)); color: var(--flow-blue);">
+          <div class="bg-pattern"></div>
+          🤖
+        </div>
+        <div class="card-body">
+          <h3>Intelligence Artificielle RAG</h3>
+          <p>Un pipeline RAG (Retrieval-Augmented Generation) avec base vectorielle, orchestrateur d'agents et générateurs LLM pour adapter chaque contenu à l'apprenant.</p>
+        </div>
+        <div class="card-tags">
+          <span class="tag tag-blue">FastAPI</span>
+          <span class="tag tag-purple">LLM</span>
+          <span class="tag tag-blue">Vectorielle</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-visual" style="background: linear-gradient(135deg, rgba(236,72,153,.1), rgba(245,158,11,.1)); color: var(--brain-pink);">
+          <div class="bg-pattern"></div>
+          🎮
+        </div>
+        <div class="card-body">
+          <h3>Gamification & Jeux</h3>
+          <p>Des mini-jeux inspirés de jeux vidéo populaires (Archero, Vampire Survivors) pour maintenir l'engagement et la motivation via la dopamine.</p>
+        </div>
+        <div class="card-tags">
+          <span class="tag tag-pink">Dopamine</span>
+          <span class="tag tag-amber">Engagement</span>
+          <span class="tag tag-pink">Archero</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-visual" style="background: linear-gradient(135deg, rgba(16,185,129,.1), rgba(59,130,246,.1)); color: var(--success-green);">
+          <div class="bg-pattern"></div>
+          🧠
+        </div>
+        <div class="card-body">
+          <h3>Algorithme de rétention</h3>
+          <p>Basé sur la courbe de l'oubli d'Ebbinghaus et la répétition espacée pour programmer les révisions au moment optimal de chaque apprenant.</p>
+        </div>
+        <div class="card-tags">
+          <span class="tag tag-green">Ebbinghaus</span>
+          <span class="tag tag-blue">Spaced Repetition</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-visual" style="background: linear-gradient(135deg, rgba(139,92,246,.1), rgba(236,72,153,.1)); color: var(--soft-lavender);">
+          <div class="bg-pattern"></div>
+          📱
+        </div>
+        <div class="card-body">
+          <h3>Multi-plateforme</h3>
+          <p>Architecture conteneurisée permettant le déploiement sur web, mobile (iOS/Android) et desktop à partir d'une base de code unifiée.</p>
+        </div>
+        <div class="card-tags">
+          <span class="tag tag-purple">Docker</span>
+          <span class="tag tag-blue">Cross-platform</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-visual" style="background: linear-gradient(135deg, rgba(59,130,246,.1), rgba(16,185,129,.1)); color: var(--flow-blue);">
+          <div class="bg-pattern"></div>
+          🔒
+        </div>
+        <div class="card-body">
+          <h3>Sécurité & RGPD</h3>
+          <p>Chiffrement des données, coffre-fort numérique et conformité totale RGPD pour garantir la protection des données des apprenants.</p>
+        </div>
+        <div class="card-tags">
+          <span class="tag tag-blue">Chiffrement</span>
+          <span class="tag tag-green">RGPD</span>
+          <span class="tag tag-purple">Coffre-fort</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-visual" style="background: linear-gradient(135deg, rgba(245,158,11,.1), rgba(236,72,153,.1)); color: var(--warning-amber);">
+          <div class="bg-pattern"></div>
+          📊
+        </div>
+        <div class="card-body">
+          <h3>Analytics & Suivi</h3>
+          <p>Tableau de bord pour les apprenants et les administrateurs avec métriques de rétention, temps d'apprentissage et progression par matière.</p>
+        </div>
+        <div class="card-tags">
+          <span class="tag tag-amber">Metrics</span>
+          <span class="tag tag-pink">Dashboard</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer style="padding: 48px; text-align: center; font-size: 14px; color: var(--slate-400); border-top: 1px solid rgba(0,0,0,.06);">
+    <p><strong style="color: var(--deep-ocean);">FlowLearn</strong> — Charte graphique & Direction artistique</p>
+    <p style="margin-top: 8px;">Projet Epitech MSc Pro 2027 — Lyon</p>
+  </footer>
+
+</body>
+</html>

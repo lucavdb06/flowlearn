@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlowLearn — Apprendre en jouant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --flow-blue: #3B82F6;
+      --brain-pink: #EC4899;
+      --deep-ocean: #1E3A5F;
+      --soft-lavender: #8B5CF6;
+      --success-green: #10B981;
+      --slate-900: #0F172A;
+      --slate-800: #1E293B;
+      --slate-600: #475569;
+      --slate-400: #94A3B8;
+      --slate-100: #F1F5F9;
+      --white: #FFFFFF;
+      --gradient-main: linear-gradient(135deg, #3B82F6 0%, #EC4899 100%);
+      --gradient-ia: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+      --radius-btn: 12px;
+      --radius-card: 16px;
+      --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --shadow-card-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--deep-ocean);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 48px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    .logo { font-size: 24px; font-weight: 700; text-decoration: none; }
+    .logo span:first-child { color: var(--flow-blue); }
+    .logo span:last-child { color: var(--brain-pink); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--slate-600);
+      font-weight: 500; font-size: 15px; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--flow-blue); }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px; border-radius: var(--radius-btn);
+      font-weight: 600; font-size: 15px; text-decoration: none;
+      transition: all 0.25s ease; cursor: pointer; border: none;
+    }
+    .btn-primary {
+      background: var(--gradient-main); color: white;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.45);
+    }
+    .btn-outline {
+      background: transparent; color: var(--flow-blue);
+      border: 2px solid var(--flow-blue);
+    }
+    .btn-outline:hover { background: var(--flow-blue); color: white; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      padding: 120px 48px 80px;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
+        var(--white);
+    }
+    .hero-content { max-width: 1200px; text-align: center; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 20px; border-radius: 9999px;
+      background: rgba(59, 130, 246, 0.1); color: var(--flow-blue);
+      font-size: 14px; font-weight: 600; margin-bottom: 24px;
+    }
+    .hero-badge::before { content: ""; display: block; width: 8px; height: 8px; border-radius: 50%; background: var(--flow-blue); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .hero h1 {
+      font-size: clamp(40px, 6vw, 72px); font-weight: 700;
+      line-height: 1.1; margin-bottom: 24px;
+    }
+    .hero h1 .gradient-text {
+      background: var(--gradient-main);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: 20px; color: var(--slate-600);
+      max-width: 640px; margin: 0 auto 40px; line-height: 1.7;
+    }
+    .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    .hero-visual {
+      margin-top: 64px; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+    }
+    .stat-card {
+      background: white; border-radius: var(--radius-card);
+      padding: 24px 32px; box-shadow: var(--shadow-card);
+      text-align: center; min-width: 160px;
+      transition: all 0.3s ease;
+    }
+    .stat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card-hover); }
+    .stat-card .number { font-size: 36px; font-weight: 700; }
+    .stat-card:nth-child(1) .number { color: var(--flow-blue); }
+    .stat-card:nth-child(2) .number { color: var(--brain-pink); }
+    .stat-card:nth-child(3) .number { color: var(--soft-lavender); }
+    .stat-card:nth-child(4) .number { color: var(--success-green); }
+    .stat-card .label { font-size: 14px; color: var(--slate-400); margin-top: 4px; }
+
+    /* ── SECTION ── */
+    section { padding: 96px 48px; }
+    .section-header { text-align: center; margin-bottom: 64px; }
+    .section-header h2 { font-size: 36px; font-weight: 700; margin-bottom: 16px; }
+    .section-header p { font-size: 18px; color: var(--slate-600); max-width: 560px; margin: 0 auto; }
+
+    /* ── FEATURES ── */
+    .features { background: var(--slate-100); }
+    .features-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px; max-width: 1200px; margin: 0 auto;
+    }
+    .feature-card {
+      background: white; border-radius: var(--radius-card);
+      padding: 32px; box-shadow: var(--shadow-card);
+      transition: all 0.3s ease; position: relative; overflow: hidden;
+    }
+    .feature-card::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    }
+    .feature-card:nth-child(1)::before { background: var(--flow-blue); }
+    .feature-card:nth-child(2)::before { background: var(--brain-pink); }
+    .feature-card:nth-child(3)::before { background: var(--soft-lavender); }
+    .feature-card:nth-child(4)::before { background: var(--success-green); }
+    .feature-card:nth-child(5)::before { background: var(--gradient-main); }
+    .feature-card:nth-child(6)::before { background: var(--gradient-ia); }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card-hover); }
+    .feature-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; margin-bottom: 20px;
+    }
+    .feature-card:nth-child(1) .feature-icon { background: rgba(59, 130, 246, 0.1); }
+    .feature-card:nth-child(2) .feature-icon { background: rgba(236, 72, 153, 0.1); }
+    .feature-card:nth-child(3) .feature-icon { background: rgba(139, 92, 246, 0.1); }
+    .feature-card:nth-child(4) .feature-icon { background: rgba(16, 185, 129, 0.1); }
+    .feature-card:nth-child(5) .feature-icon { background: rgba(59, 130, 246, 0.1); }
+    .feature-card:nth-child(6) .feature-icon { background: rgba(139, 92, 246, 0.1); }
+    .feature-card h3 { font-size: 20px; font-weight: 600; margin-bottom: 12px; }
+    .feature-card p { font-size: 15px; color: var(--slate-600); line-height: 1.7; }
+
+    /* ── HOW IT WORKS ── */
+    .how-it-works { background: var(--white); }
+    .steps {
+      display: flex; gap: 48px; max-width: 1000px; margin: 0 auto;
+      justify-content: center; flex-wrap: wrap;
+    }
+    .step {
+      text-align: center; flex: 1; min-width: 200px; max-width: 280px;
+      position: relative;
+    }
+    .step-number {
+      width: 64px; height: 64px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; font-weight: 700; color: white;
+      margin: 0 auto 20px;
+    }
+    .step:nth-child(1) .step-number { background: var(--flow-blue); }
+    .step:nth-child(2) .step-number { background: var(--brain-pink); }
+    .step:nth-child(3) .step-number { background: var(--soft-lavender); }
+    .step:nth-child(4) .step-number { background: var(--success-green); }
+    .step h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+    .step p { font-size: 14px; color: var(--slate-600); }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--slate-900); color: white; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: ""; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 50%, rgba(236, 72, 153, 0.15) 0%, transparent 50%);
+    }
+    .cta-section > * { position: relative; z-index: 1; }
+    .cta-section h2 { font-size: 40px; font-weight: 700; margin-bottom: 16px; }
+    .cta-section p { font-size: 18px; color: var(--slate-400); margin-bottom: 40px; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 48px; text-align: center;
+      font-size: 14px; color: var(--slate-400);
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    footer a { color: var(--flow-blue); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      section { padding: 64px 24px; }
+      .hero { padding: 100px 24px 60px; }
+      .steps { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="logo" href="#"><span>Flow</span><span>Learn</span></a>
+    <ul class="nav-links">
+      <li><a href="#features">Fonctionnalités</a></li>
+      <li><a href="#how">Comment ça marche</a></li>
+      <li><a href="#cta">Commencer</a></li>
+    </ul>
+    <a href="#cta" class="btn btn-primary">Essayer gratuitement</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Nouveau — IA Personnalisée</div>
+      <h1>
+        Apprenez dans le<br />
+        <span class="gradient-text">Flow, retenez tout.</span>
+      </h1>
+      <p>
+        FlowLearn combine neurosciences, gamification et intelligence artificielle
+        pour créer une expérience d'apprentissage unique, personnalisée et engageante.
+      </p>
+      <div class="hero-actions">
+        <a href="#cta" class="btn btn-primary">Commencer maintenant</a>
+        <a href="#how" class="btn btn-outline">Découvrir le concept</a>
+      </div>
+      <div class="hero-visual">
+        <div class="stat-card">
+          <div class="number">94%</div>
+          <div class="label">Taux de rétention</div>
+        </div>
+        <div class="stat-card">
+          <div class="number">3x</div>
+          <div class="label">Plus rapide</div>
+        </div>
+        <div class="stat-card">
+          <div class="number">IA</div>
+          <div class="label">Parcours adaptatif</div>
+        </div>
+        <div class="stat-card">
+          <div class="number">+50</div>
+          <div class="label">Mini-jeux éducatifs</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="section-header">
+      <h2>Tout ce qu'il faut pour apprendre efficacement</h2>
+      <p>Une plateforme pensée autour des neurosciences et de l'engagement utilisateur.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🧠</div>
+        <h3>IA Personnalisée (RAG)</h3>
+        <p>Un moteur d'intelligence artificielle qui adapte les contenus et la difficulté en temps réel selon votre profil d'apprentissage.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎮</div>
+        <h3>Gamification immersive</h3>
+        <p>Des mini-jeux inspirés d'Archero et Vampire Survivors pour transformer chaque leçon en aventure captivante.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Algorithme de rétention</h3>
+        <p>Basé sur la courbe de l'oubli d'Ebbinghaus, notre algorithme optimise le moment idéal pour chaque révision.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>Sécurité & RGPD</h3>
+        <p>Vos données sont chiffrées et protégées. Conformité totale avec le RGPD et les standards de sécurité européens.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h3>Multi-plateforme</h3>
+        <p>Disponible sur web, mobile et desktop grâce à notre architecture conteneurisée cross-platform.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>Agents IA orchestrés</h3>
+        <p>Un système multi-agents qui génère des quiz, des résumés et des parcours d'apprentissage sur mesure.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works" id="how">
+    <div class="section-header">
+      <h2>Comment ça marche ?</h2>
+      <p>4 étapes pour entrer dans le Flow de l'apprentissage.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Importez vos cours</h3>
+        <p>PDF, notes, slides — notre moteur RAG ingère et comprend vos contenus.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>L'IA analyse</h3>
+        <p>Les agents IA extraient les concepts clés et créent un parcours personnalisé.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Apprenez en jouant</h3>
+        <p>Des mini-jeux adaptés à votre niveau pour ancrer les connaissances.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Retenez durablement</h3>
+        <p>L'algorithme de rétention programme les révisions au moment optimal.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="cta">
+    <h2>Prêt à entrer dans le Flow ?</h2>
+    <p>Rejoignez FlowLearn et transformez votre façon d'apprendre.</p>
+    <a href="#" class="btn btn-primary" style="font-size: 18px; padding: 16px 40px;">
+      Créer mon compte gratuitement
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><a href="#" class="logo" style="font-size: 18px;"><span>Flow</span><span>Learn</span></a></p>
+    <p style="margin-top: 12px;">Projet Epitech MSc Pro 2027 — Lyon</p>
+    <p style="margin-top: 8px;">&copy; 2026 FlowLearn. Tous droits réservés.</p>
+  </footer>
+
+</body>
+</html>
