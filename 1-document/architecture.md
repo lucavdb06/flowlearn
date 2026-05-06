@@ -4,72 +4,61 @@
 
 ### Flux documentaire
 
-`projet` : contient une arborescence de dossiers qui représente le flux de création d'un document. Les dossiers `2-en-cours` et `3-relecture` forment une boucle tant que la relecture n'est pas validée.
+`projet` regroupe les livrables rédigés pour FlowLearn. Le travail actif est sous **`2-en-cours`** : les thèmes proches partagent un même sous-dossier (budget, planning, risques, MVP / PBS / DoD / WBS, etc.). Le dossier **`3-a-revoir`** sert uniquement de **mémo** (quoi relire en priorité vs rien à classer en « terminé » pour le moment).
 
 ```txt
 ├── 1-document
 │   ├── architecture.md
 │   └── projet/
-│       ├── 1-a-faire/            // structure du document pas encore définie
-│       ├── 2-en-cours/           // travail en cours (todo défini dans le document)
-│       │   ├── budget-previsionnel.md
-│       │   ├── plan-de-communication.md
-│       │   ├── livret-accueil.md
-│       │   ├── schema-obs.md
-│       │   ├── gestion-des-risques.md
-│       │   ├── technos.md
-│       │   ├── dod/
-│       │   │   ├── 1-conteneur-multiplateforme/
-│       │   │   │   └── dod-1.1-encapsulateurs.md
-│       │   │   ├── 2-jeux-et-experiences/
-│       │   │   │   ├── dod-2.1-api-rag-ia-jeux.md
-│       │   │   │   ├── dod-2.2-api-jeux-externe.md
-│       │   │   │   └── dod-2.3-archero-vampire-survivors.md
-│       │   │   ├── 3-intelligence-centrale-module-rag/
-│       │   │   │   ├── dod-3.1-serveur-fastapi.md
-│       │   │   │   ├── dod-3.2-base-vectorielle.md
-│       │   │   │   ├── dod-3.3-ingestion-rag.md
-│       │   │   │   ├── dod-3.4-orchestrateur-agents.md
-│       │   │   │   └── dod-3.5-generateurs-llm.md
-│       │   │   ├── 4-algorithmes-personnalisation/
-│       │   │   │   ├── dod-4.1-selection-questions.md
-│       │   │   │   └── dod-4.2-algorithme-retention.md
-│       │   │   └── 5-securite-gouvernance-donnees/
-│       │   │       └── Coffre-fort-&-Protection-rgpd.md
-│       │   └── wbs/
-│       │       ├── 1-conteneur-multiplateforme/
-│       │       │   └── wbs-1.1-encapsulateurs.md
-│       │       ├── 2-jeux-et-experiences/
-│       │       │   ├── wbs-2.1-api-rag-ia-jeux.md
-│       │       │   ├── wbs-2.2-api-jeux-externe.md
-│       │       │   └── wbs-2.3-archero-vampire-survivors.md
-│       │       ├── 3-intelligence-centrale-module-rag/
-│       │       │   ├── wbs-3.1-serveur-fastapi.md
-│       │       │   ├── wbs-3.2-base-vectorielle.md
-│       │       │   ├── wbs-3.3-ingestion-rag.md
-│       │       │   ├── wbs-3.4-orchestrateur-agents.md
-│       │       │   └── wbs-3.5-generateurs-llm.md
-│       │       ├── 4-algorithmes-personnalisation/
-│       │       │   ├── mvp-wbs-algorithme-programmation.md
-│       │       │   ├── wbs-4.1-selection-questions.md
-│       │       │   └── wbs-4.2-algorithme-retention.md
-│       │       └── 5-securite-gouvernance-donnees/
-│       │           ├── Coffre-fort & Protection-rgpd.md
-│       │           └── schema-wbs-global.md
-│       ├── 3-relecture/           // réunion pour faire relire au groupe
-│       └── 4-terminer/            // document à ne plus toucher
+│       ├── 2-en-cours/
+│           ├── budgetaire/
+│           │   └── budget-previsionnel.md
+│           ├── cadrage-projet/
+│           │   └── geneses-projet-objectifs.md
+│           ├── charte-graphique/
+│           │   ├── TODO.md
+│           │   └── pages/          // charte HTML
+│           ├── mvp-pbs/
+│           │   ├── dod-globale.md
+│           │   ├── mvp-definition.md
+│           │   ├── mvp-pbs.md
+│           │   ├── pbs-globale.md
+│           │   ├── dod/            // Definition of Done par lot PBS
+│           │   └── wbs/            // WBS + schema-wbs-global.md
+│           ├── plan-de-communication/
+│           │   ├── plan-de-communication.md
+│           │   └── *.html          // versions exportées
+│           ├── planning/
+│           │   └── planning-detaille.md
+│           ├── risques/
+│           │   └── gestion-des-risques.md
+│           ├── stack-technique/
+│           │   ├── technos.md
+│           │   └── mvp-techno.md
+│           └── structure-organisation/
+│               ├── organisation-general.md
+│               └── schema-obs.md
+│       └── 3-a-revoir/             // suivi : priorité de relecture (voir README)
+│           └── README.md
 └── README.md
 ```
 
 ### Légende des dossiers `2-en-cours`
 
-| Élément | Contenu |
+| Dossier | Contenu |
 | --- | --- |
-| `budget-previsionnel.md` | Budget prévisionnel du projet |
-| `plan-de-communication.md` | Plan de communication (B2C, B2B, gouvernance) |
-| `livret-accueil.md` | Livret d'intégration pour les nouveaux membres |
-| `schema-obs.md` | Schéma OBS (structure organisationnelle) |
-| `gestion-des-risques.md` | Gestion des risques (registre, matrice, mitigation) |
-| `technos.md` | Stack technologique (Backend, Frontend, IA, IoT) |
-| `dod/` | Definition of Done par feature (organisé par catégorie PBS, via sous-dossiers numérotés 1→5) |
-| `wbs/` | Work Breakdown Structure par feature (organisé par catégorie PBS, contient aussi `schema-wbs-global.md`) |
+| `budgetaire/` | Budget prévisionnel, enveloppes, contingence |
+| `cadrage-projet/` | Genèse du projet, objectifs, périmètre |
+| `charte-graphique/` | Identité visuelle, pages HTML de la charte |
+| `mvp-pbs/` | MVP, PBS, DoD globale, arborescence PBS, dossiers `dod/` et `wbs/` |
+| `plan-de-communication/` | Plan com (markdown + exports HTML) |
+| `planning/` | Gantt, dépendances, gates, KPI |
+| `risques/` | Registre des risques, matrices, plans de réponse |
+| `stack-technique/` | Choix technos, variantes MVP techno |
+| `structure-organisation/` | Organisation générale, schéma OBS |
+
+### Dossier `3-a-revoir`
+
+| Fichier | Contenu |
+| --- | --- |
+| `README.md` | Rappel du périmètre **PBS / WBS / DoD** à revoir ; section **Terminer** vide pour l’instant |

@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FlowLearn — Charte graphique</title>
+  <!-- Export PDF : Ctrl/Cmd+P → « Enregistrer au format PDF ». Dans Chrome : activer « Graphiques d’arrière-plan » pour conserver dégradés et couleurs des pastilles. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --flow-blue: #3b82f6;
+      --brain-pink: #ec4899;
+      --deep-ocean: #1e3a5f;
+      --lavender: #8b5cf6;
+      --paper: #fbfaf7;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --white: #ffffff;
+      --grad-main: linear-gradient(135deg, var(--flow-blue) 0%, var(--brain-pink) 100%);
+      --grad-ia: linear-gradient(135deg, var(--flow-blue) 0%, var(--lavender) 100%);
+      --grad-game: linear-gradient(135deg, var(--brain-pink) 0%, var(--lavender) 100%);
+      --radius-btn: 12px;
+      --radius-card: 16px;
+      --shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.1);
+      --font: "Inter", system-ui, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, monospace;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--slate-600);
+      background: var(--paper);
+      line-height: 1.55;
+      font-size: 16px;
+    }
+
+    a { color: var(--flow-blue); font-weight: 500; }
+    code, .mono { font-family: var(--mono); font-size: 0.88em; }
+
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 28px 20px 64px; }
+
+    .hero {
+      background: var(--grad-main);
+      color: var(--white);
+      border-radius: var(--radius-card);
+      padding: 32px 28px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow);
+    }
+    .hero h1 {
+      margin: 0 0 14px;
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+    .hero blockquote {
+      margin: 0;
+      padding: 14px 0 0;
+      border-top: 1px solid rgba(255,255,255,0.35);
+      font-style: italic;
+      opacity: 0.98;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--deep-ocean);
+      letter-spacing: -0.02em;
+    }
+    .doc-section h3 {
+      margin: 22px 0 10px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--slate-700);
+    }
+    .doc-section h4 {
+      margin: 16px 0 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--slate-600);
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius-card);
+      padding: 22px 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--slate-200);
+      margin-bottom: 20px;
+    }
+    .muted { font-size: 14px; color: var(--slate-500); }
+    .caption { font-size: 12px; font-weight: 500; color: var(--slate-400); }
+
+    .table-wrap { overflow-x: auto; margin: 12px 0; }
+    table.doc {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    table.doc th, table.doc td {
+      border: 1px solid var(--slate-200);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    table.doc th {
+      background: var(--slate-100);
+      color: var(--slate-700);
+      font-weight: 600;
+    }
+
+    pre.code {
+      margin: 12px 0;
+      padding: 16px;
+      background: var(--slate-900);
+      color: #e2e8f0;
+      border-radius: 10px;
+      font-family: var(--mono);
+      font-size: 12px;
+      line-height: 1.45;
+      overflow-x: auto;
+    }
+
+    ul.check { margin: 8px 0; padding-left: 1.2rem; }
+    ul.check li { margin: 6px 0; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .swatch {
+      border-radius: var(--radius-btn);
+      overflow: hidden;
+      border: 1px solid var(--slate-200);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+    .swatch-color { height: 64px; }
+    .swatch-meta { padding: 8px 10px; font-size: 12px; }
+    .swatch-meta strong { display: block; color: var(--slate-900); }
+    .swatch-meta span { color: var(--slate-500); font-family: var(--mono); font-size: 11px; }
+
+    .grad-strip {
+      height: 44px;
+      border-radius: 10px;
+      margin-top: 8px;
+    }
+
+    .row-btns { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 10px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: var(--radius-btn);
+      font-family: var(--font);
+      font-weight: 600;
+      font-size: 14px;
+      border: none;
+      cursor: default;
+    }
+    .btn-primary { background: var(--flow-blue); color: var(--white); }
+    .btn-secondary { background: transparent; color: var(--flow-blue); border: 2px solid var(--flow-blue); }
+    .btn-accent { background: var(--grad-main); color: var(--white); }
+    .btn-danger { background: var(--danger); color: var(--white); }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .pill-pink { background: rgba(236, 72, 153, 0.12); color: var(--brain-pink); }
+    .pill-blue { background: rgba(59, 130, 246, 0.12); color: var(--flow-blue); }
+    .pill-ok { background: rgba(16, 185, 129, 0.12); color: #047857; }
+    .pill-warn { background: rgba(245, 158, 11, 0.15); color: #b45309; }
+
+    .template-shell {
+      border: 2px dashed var(--slate-400);
+      border-radius: var(--radius-card);
+      background: var(--white);
+      padding: 16px;
+      min-height: 300px;
+    }
+    .shell-bar { height: 12px; width: 40%; background: var(--slate-200); border-radius: 6px; margin-bottom: 14px; }
+    .shell-line { height: 10px; background: var(--slate-200); border-radius: 5px; margin-bottom: 8px; }
+    .shell-line.w-90 { width: 90%; }
+    .shell-line.w-75 { width: 75%; }
+    .shell-line.w-60 { width: 60%; }
+    .shell-box {
+      height: 90px;
+      background: linear-gradient(135deg, var(--slate-100), var(--slate-200));
+      border-radius: var(--radius-btn);
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--slate-500);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .shell-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+    @media (max-width: 520px) { .shell-grid { grid-template-columns: 1fr; } }
+    .shell-tile {
+      height: 72px;
+      border-radius: var(--radius-btn);
+      border: 1px dashed #cbd5e1;
+      background: #f8fafc;
+    }
+
+    .fake-dash {
+      border-radius: var(--radius-card);
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .fake-dash-head {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--slate-200);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .fake-dash-head h4 { margin: 0 0 4px; font-size: 1.05rem; color: var(--deep-ocean); }
+    .progress {
+      height: 8px;
+      background: var(--slate-200);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 8px;
+      max-width: 200px;
+    }
+    .progress > i { display: block; height: 100%; width: 68%; background: var(--grad-ia); border-radius: 999px; }
+    .fake-body { padding: 16px; display: grid; gap: 12px; }
+    .quiz-card {
+      border-radius: var(--radius-btn);
+      border: 1px solid var(--slate-200);
+      padding: 12px;
+      background: linear-gradient(180deg, var(--white), #fafbfd);
+    }
+    .quiz-card .q { font-weight: 600; color: var(--slate-700); margin-bottom: 8px; }
+    .choices { display: flex; flex-direction: column; gap: 6px; }
+    .choice {
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid var(--slate-200);
+      font-size: 14px;
+      background: var(--white);
+    }
+    .choice.ok { border-color: rgba(16, 185, 129, 0.5); background: rgba(16, 185, 129, 0.06); }
+    .tagline-ia {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--grad-ia);
+      color: var(--white);
+    }
+
+    footer.page-foot {
+      margin-top: 40px;
+      padding-top: 18px;
+      border-top: 1px solid var(--slate-200);
+      font-size: 13px;
+      color: var(--slate-500);
+    }
+
+    /* --- PDF / impression A4 --- */
+    .print-only { display: none; }
+    .pdf-export-hint {
+      background: var(--white);
+      border: 1px dashed var(--slate-400);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: var(--slate-600);
+    }
+    .pdf-export-hint strong { color: var(--deep-ocean); }
+    kbd {
+      font-family: var(--mono);
+      font-size: 0.88em;
+      padding: 2px 6px;
+      border: 1px solid var(--slate-300);
+      border-radius: 4px;
+      background: var(--slate-100);
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 12mm 14mm 14mm 14mm;
+    }
+
+    @media print {
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      html { font-size: 10.5pt; }
+
+      body {
+        background: #fff !important;
+        color: var(--slate-700);
+        line-height: 1.45;
+      }
+
+      .pdf-export-hint,
+      .screen-only {
+        display: none !important;
+      }
+
+      .print-only {
+        display: block !important;
+      }
+
+      .print-doc-header {
+        margin: 0 0 6mm;
+        padding: 0 0 4mm;
+        border-bottom: 0.35pt solid #cbd5e1;
+      }
+      .print-doc-header h1 {
+        margin: 0 0 2mm;
+        font-size: 17pt;
+        font-weight: 700;
+        color: var(--deep-ocean);
+        letter-spacing: -0.02em;
+      }
+      .print-doc-header .meta {
+        margin: 0;
+        font-size: 8.5pt;
+        color: var(--slate-500);
+      }
+
+      .wrap {
+        max-width: none !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .hero {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        margin-bottom: 5mm;
+        padding: 5mm 6mm;
+        border-radius: 3mm;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .card {
+        margin-bottom: 4mm;
+        padding: 4mm 5mm;
+        border-radius: 2.5mm;
+        box-shadow: none !important;
+        border: 0.35pt solid #e2e8f0;
+        break-inside: auto;
+        orphans: 3;
+        widows: 3;
+      }
+
+      .doc-section h2 {
+        font-size: 13.5pt;
+        margin-bottom: 3mm;
+        page-break-after: avoid;
+        break-after: avoid-page;
+      }
+      .doc-section h3 {
+        font-size: 10.5pt;
+        page-break-after: avoid;
+        break-after: avoid;
+      }
+      .doc-section h4 { font-size: 10pt; }
+
+      .table-wrap,
+      pre.code,
+      .palette,
+      .demo-typo {
+        break-inside: avoid-page;
+        page-break-inside: avoid;
+      }
+
+      #exemples .grid-2 {
+        break-inside: auto;
+        page-break-inside: auto;
+      }
+      #exemples .grid-2 > div {
+        break-inside: avoid-page;
+        page-break-inside: avoid;
+      }
+
+      .template-shell {
+        min-height: 0;
+        break-inside: avoid-page;
+      }
+      .fake-dash { break-inside: avoid-page; }
+      .shell-box { height: 18mm; }
+
+      table.doc { font-size: 8.5pt; }
+      table.doc th,
+      table.doc td {
+        padding: 3pt 4pt;
+        border-color: #cbd5e1 !important;
+      }
+      table.doc th { background: #f1f5f9 !important; }
+
+      pre.code {
+        font-size: 7.5pt;
+        padding: 2.5mm;
+        border: 0.35pt solid #475569;
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+
+      .swatch { break-inside: avoid; page-break-inside: avoid; }
+      .swatch-color { height: 8mm; }
+
+      .grad-strip {
+        break-inside: avoid;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .btn,
+      .pill,
+      .tagline-ia {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      a:link, a:visited {
+        color: #1d4ed8;
+        text-decoration: underline;
+      }
+
+      footer.page-foot {
+        margin-top: 5mm;
+        padding-top: 2mm;
+        font-size: 8pt;
+        color: #64748b !important;
+        border-top: 0.35pt solid #e2e8f0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main id="top" class="wrap">
+    <header class="print-only print-doc-header">
+      <h1>FlowLearn — Charte graphique</h1>
+      <p class="meta">Format A4 · impression ou export PDF</p>
+    </header>
+    <div class="pdf-export-hint screen-only">
+      <strong>Export PDF :</strong> <kbd>Ctrl</kbd>+<kbd>P</kbd> (Windows) ou <kbd>⌘</kbd>+<kbd>P</kbd> (macOS), puis « Enregistrer au format PDF ».
+      Sous Chrome / Edge : activer l’option <strong>Graphiques d’arrière-plan</strong> pour conserver les dégradés et les pastilles couleur.
+    </div>
+    <header class="hero">
+      <h1>Charte graphique — FlowLearn</h1>
+      <p class="intro" style="margin:0 0 12px;max-width:65ch;opacity:.96;">
+        Ce document décrit <strong>pourquoi</strong> et <strong>comment</strong> s’affiche la marque : couleurs, typographie, logo, pictos et règles d’interface.
+        Objectif : identité <strong>lisible</strong> (*flow* limpide), <strong>animée</strong> (cerveau, jeu, communauté), <strong>reproductible</strong> par toute l’équipe.
+      </p>
+      <blockquote>
+        <strong>FlowLearn</strong> : <em>Apprendre en jouant, retenir en s’amusant.</em><br />
+        EdTech : gamification et IA au service d’un parcours d’apprentissage personnalisé.
+      </blockquote>
+    </header>
+
+    <!-- 1. Identité -->
+    <section id="s1" class="card doc-section">
+      <h2>1. Identité : ce que raconte la marque</h2>
+      <h3>Le nom en deux mots</h3>
+      <ul class="check">
+        <li><strong>Learn</strong> — Le <strong>cerveau</strong> au centre : attention, mémoire, motivation. Le <strong>rose / magenta</strong> porte cette partie « vivante » : curiosité, récompense, chaleur, <strong>imaginaire partagé</strong> (parcours, défis, communauté), sans tomber dans le gadget.</li>
+        <li><strong>Flow</strong> — L’apprentissage comme <strong>déroulement</strong>, comme un <strong>courant</strong> : étapes qui s’enchaînent, clarté du chemin. Le <strong>bleu</strong> évoque <strong>l’eau</strong> et la <strong>limpidité</strong> : interface structurée, hiérarchie nette, actions visibles — proche de l’<strong>état de flow</strong> (concentration, bon niveau de difficulté, retours immédiats).</li>
+      </ul>
+      <p><strong>Phrase visuelle</strong> : <em>l’esprit s’active (rose) dans un parcours qu’on comprend et qui avance (bleu)</em>. Logo et palette ne sont pas décoratifs : ils matérialisent la promesse produit.</p>
+      <p><strong>Équilibre</strong> : assez <strong>frais</strong> pour des apprenants ; assez <strong>sobre</strong> pour enseignants, parents ou partenaires. Ni « corporate froid », ni « jouet désordonné ».</p>
+      <div class="table-wrap">
+        <table class="doc">
+          <thead>
+            <tr><th>Pôle</th><th>Idée</th><th>Couleur</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Learn</strong></td><td>Cerveau, jeu, communauté</td><td>Rose / magenta</td></tr>
+            <tr><td><strong>Flow</strong></td><td>Eau, continuité, clarté</td><td>Bleu / cyan</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Les <strong>dégradés bleu → rose</strong> fusionnent les deux : parcours fluide + énergie cognitive.</p>
+      <div class="row-btns">
+        <span class="pill pill-pink">Pôle Learn</span>
+        <span class="pill pill-blue">Pôle Flow</span>
+      </div>
+    </section>
+
+    <!-- 2. Couleurs -->
+    <section id="s2" class="card doc-section">
+      <h2>2. Couleurs</h2>
+      <p><strong>Rôle des couleurs principales</strong> — Le <strong>bleu</strong> structure l’écran (navigation, actions, liens) et dit « on sait où on va ». Le <strong>rose</strong> accroche l’œil sur le ludique et l’émotion (succès, jeu, points forts), sans envahir tout le layout.</p>
+
+      <h3>Aperçu chromatique (même codes que les tableaux)</h3>
+      <div class="palette">
+        <div class="swatch"><div class="swatch-color" style="background:#3B82F6"></div><div class="swatch-meta"><strong>Flow Blue</strong><span>#3B82F6</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#EC4899"></div><div class="swatch-meta"><strong>Brain Pink</strong><span>#EC4899</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#1E3A5F"></div><div class="swatch-meta"><strong>Deep Ocean</strong><span>#1E3A5F</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#8B5CF6"></div><div class="swatch-meta"><strong>Soft Lavender</strong><span>#8B5CF6</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#10B981"></div><div class="swatch-meta"><strong>Success</strong><span>#10B981</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#F59E0B"></div><div class="swatch-meta"><strong>Warning</strong><span>#F59E0B</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#0F172A"></div><div class="swatch-meta"><strong>Slate 900</strong><span>#0F172A</span></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#F1F5F9"></div><div class="swatch-meta"><strong>Slate 100</strong><span>#F1F5F9</span></div></div>
+      </div>
+
+      <h3>Principales</h3>
+      <div class="table-wrap">
+        <table class="doc">
+          <thead>
+            <tr><th>Nom</th><th>Hex</th><th>RGB</th><th>Usage</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Flow Blue</strong></td><td><code>#3B82F6</code></td><td>59, 130, 246</td><td>Primaire : CTA, liens, focus interaction — clarté, continuité</td></tr>
+            <tr><td><strong>Brain Pink</strong></td><td><code>#EC4899</code></td><td>236, 72, 153</td><td>Secondaire : accents, gamification, récompenses — chaleur, activation</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Complémentaires</h3>
+      <div class="table-wrap">
+        <table class="doc">
+          <thead>
+            <tr><th>Nom</th><th>Hex</th><th>RGB</th><th>Usage</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Deep Ocean</strong></td><td><code>#1E3A5F</code></td><td>30, 58, 95</td><td>Titres et texte important sur fond clair</td></tr>
+            <tr><td><strong>Soft Lavender</strong></td><td><code>#8B5CF6</code></td><td>139, 92, 246</td><td>Dégradés, touches « IA / intelligence »</td></tr>
+            <tr><td><strong>Success Green</strong></td><td><code>#10B981</code></td><td>16, 185, 129</td><td>Validation, progression, bonne réponse</td></tr>
+            <tr><td><strong>Warning Amber</strong></td><td><code>#F59E0B</code></td><td>245, 158, 11</td><td>Alertes, badges, attention sans panique</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Neutres</h3>
+      <div class="table-wrap">
+        <table class="doc">
+          <thead>
+            <tr><th>Nom</th><th>Hex</th><th>Usage</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Slate 900</strong></td><td><code>#0F172A</code></td><td>Fond dark mode</td></tr>
+            <tr><td><strong>Slate 800</strong></td><td><code>#1E293B</code></td><td>Cartes dark mode</td></tr>
+            <tr><td><strong>Slate 100</strong></td><td><code>#F1F5F9</code></td><td>Fond light mode</td></tr>
+            <tr><td><strong>White</strong></td><td><code>#FFFFFF</code></td><td>Cartes, surfaces</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Dégradés signature</h3>
+      <p class="muted" style="margin-top:0;">À utiliser avec parcimonie (hero, CTA premium, blocs mis en avant).</p>
+      <pre class="code">/* Principal : flow + énergie */
+background: linear-gradient(135deg, #3B82F6 0%, #EC4899 100%);
+
+/* IA : bleu vers lavande */
+background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+
+/* Gamification / cerveau : rose vers lavande */
+background: linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%);</pre>
+      <div class="grid-2">
+        <div>
+          <div class="caption">Principal</div>
+          <div class="grad-strip" style="background:var(--grad-main)"></div>
+        </div>
+        <div>
+          <div class="caption">IA</div>
+          <div class="grad-strip" style="background:var(--grad-ia)"></div>
+        </div>
+        <div style="grid-column:1/-1;">
+          <div class="caption">Gamification</div>
+          <div class="grad-strip" style="background:var(--grad-game)"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Typographie -->
+    <section id="s3" class="card doc-section">
+      <h2>3. Typographie</h2>
+      <p><strong>Pourquoi ces polices</strong> — On lit beaucoup : consignes, feedback, scores, articles. Il faut une sans-serif <strong>neutre, ouverte, très lisible</strong> sur mobile et bureau. <strong>Inter</strong> (Google Fonts) : bonne distinction 0/O, 1/l ; confort sur longs textes ; aspect <strong>propre</strong> — aligné avec un <em>flow</em> limpide.</p>
+      <p><strong>Hiérarchie</strong> — Tailles et graisses indiquent <em>où regarder en premier</em>, puis la section, puis le détail.</p>
+      <p><strong>Code et données</strong> — <strong>JetBrains Mono</strong> pour extraits techniques, IDs, snippets.</p>
+
+      <h3>Rôles et réglages de base</h3>
+      <div class="table-wrap">
+        <table class="doc">
+          <thead>
+            <tr><th>Rôle</th><th>Police</th><th>Poids</th><th>Taille</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Titres H1–H2</td><td><strong>Inter</strong> (ou Poppins)</td><td>Bold (700)</td><td>32–48px</td></tr>
+            <tr><td>Sous-titres H3–H4</td><td><strong>Inter</strong></td><td>Semi-Bold (600)</td><td>20–24px</td></tr>
+            <tr><td>Corps</td><td><strong>Inter</strong></td><td>Regular (400)</td><td>16px</td></tr>
+            <tr><td>Labels, aides</td><td><strong>Inter</strong></td><td>Medium (500)</td><td>12–14px</td></tr>
+            <tr><td>Code / technique</td><td><strong>JetBrains Mono</strong></td><td>Regular (400)</td><td>14px</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Échelle de référence (couleurs de texte)</h3>
+      <pre class="code">H1      — 48px  Bold       Deep Ocean     → titre de page
+H2      — 32px  Bold       Deep Ocean     → section majeure
+H3      — 24px  Semi-Bold Slate 700      → sous-partie
+H4      — 20px  Semi-Bold Slate 600      → titre de carte
+Body    — 16px  Regular    Slate 600      → texte courant
+Small   — 14px  Regular    Slate 500      → métadonnées, labels
+Caption — 12px  Medium     Slate 400      → notes, hints</pre>
+      <p><strong>Règle d’usage</strong> : ne pas multiplier des tailles « inventées » entre ces repères.</p>
+
+      <h3>Démonstration visuelle</h3>
+      <div class="demo-typo" style="border:1px solid var(--slate-200);border-radius:12px;padding:20px;background:var(--white);">
+        <h1 style="font-size:40px;line-height:1.1;color:var(--deep-ocean);margin:0 0 8px;">H1 — Titre de page</h1>
+        <h2 style="font-size:28px;margin:0 0 8px;color:var(--deep-ocean);">H2 — Section majeure</h2>
+        <h3 style="font-size:22px;margin:0 0 6px;color:var(--slate-700);">H3 — Sous-partie</h3>
+        <h4 style="font-size:18px;margin:0 0 6px;color:var(--slate-600);">H4 — Titre de carte</h4>
+        <p style="margin:8px 0;color:var(--slate-600);">Corps — 16px. Exemple de paragraphe pour vérifier lisibilité et rythme.</p>
+        <p class="muted" style="margin:6px 0;">Small — métadonnée · <span class="caption">Caption — hint</span></p>
+        <p class="mono" style="margin:10px 0;padding:10px;background:var(--slate-100);border-radius:8px;color:var(--slate-700);font-size:14px;">const module = "flw_vocab_12";</p>
+      </div>
+    </section>
+
+    <!-- 4. Logo -->
+    <section id="s4" class="card doc-section">
+      <h2>4. Logo</h2>
+      <p><strong>Forme</strong> — <strong>Cerveau</strong> stylisé (apprentissage, mémoire) + <strong>mouvement fluide / vague</strong> (eau, déroulement, limpidité du parcours). Cognition <strong>et</strong> chemin.</p>
+      <h3>Déclinaisons</h3>
+      <div class="table-wrap">
+        <table class="doc">
+          <thead>
+            <tr><th>Version</th><th>Quand</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Icône + mot FlowLearn</td><td>Header, landing, documents officiels</td></tr>
+            <tr><td>Icône seule</td><td>Favicon, app, avatar</td></tr>
+            <tr><td>Monochrome clair</td><td>Fonds sombres</td></tr>
+            <tr><td>Monochrome foncé</td><td>Fonds clairs, impression</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Respect du logo</strong> — Marge libre minimale = hauteur du <strong>F</strong> de FlowLearn. Pas de déformation ni rotation.</p>
+      <p><strong>Tailles mini</strong> — Impression : <strong>25 mm</strong> de large ; digital : <strong>80 px</strong> ; favicon <strong>32×32</strong> (version simplifiée).</p>
+    </section>
+
+    <!-- 5. Icônes -->
+    <section id="s5" class="card doc-section">
+      <h2>5. Icônes et illustrations</h2>
+      <p><strong>Icônes</strong> — Style <strong>contour</strong>, traits <strong>1,5–2 px</strong>, angles doux, base <strong>24×24 px</strong>. Bibliothèques possibles : <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a>, <a href="https://phosphoricons.com" target="_blank" rel="noopener">Phosphor</a>. Le contour garde une interface « aérée » et lisible.</p>
+      <p><strong>Illustrations</strong> — Flat ou semi-flat, dégradés légers, personnages simples et inclusifs, <strong>palette limitée</strong> aux couleurs de la charte.</p>
+    </section>
+
+    <!-- 6. Composants -->
+    <section id="s6" class="card doc-section">
+      <h2>6. Composants d’interface</h2>
+      <p><strong>Principe</strong> — Mêmes rayons et espacements d’une page à l’autre : mise en page <strong>prévisible</strong> (efficacité, confiance).</p>
+
+      <h3>Boutons</h3>
+      <div class="table-wrap">
+        <table class="doc">
+          <thead>
+            <tr><th>Type</th><th>Style</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Primaire</td><td>Fond Flow Blue <code>#3B82F6</code>, texte blanc, coins <strong>12px</strong></td></tr>
+            <tr><td>Secondaire</td><td>Fond transparent, bordure et texte Flow Blue</td></tr>
+            <tr><td>Accent</td><td>Dégradé bleu → rose, texte blanc</td></tr>
+            <tr><td>Danger</td><td>Fond <code>#EF4444</code>, texte blanc</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row-btns">
+        <button type="button" class="btn btn-primary">Primaire</button>
+        <button type="button" class="btn btn-secondary">Secondaire</button>
+        <button type="button" class="btn btn-accent">Accent</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+      </div>
+
+      <h3>Cartes</h3>
+      <p class="muted" style="margin-top:0;">Coins <strong>16px</strong>, ombre <code>0 4px 6px -1px rgba(0,0,0,0.1)</code>, padding <strong>24px</strong>. Survol : <code>translateY(-2px)</code> + ombre renforcée.</p>
+
+      <h3>Espacements (grille 4px)</h3>
+      <div class="table-wrap">
+        <table class="doc">
+          <thead>
+            <tr><th>Token</th><th>Valeur</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>xs</code></td><td>4px</td></tr>
+            <tr><td><code>sm</code></td><td>8px</td></tr>
+            <tr><td><code>md</code></td><td>16px</td></tr>
+            <tr><td><code>lg</code></td><td>24px</td></tr>
+            <tr><td><code>xl</code></td><td>32px</td></tr>
+            <tr><td><code>2xl</code></td><td>48px</td></tr>
+            <tr><td><code>3xl</code></td><td>64px</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Rayons de coins</h3>
+      <div class="table-wrap">
+        <table class="doc">
+          <thead>
+            <tr><th>Élément</th><th>Valeur</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Boutons</td><td>12px</td></tr>
+            <tr><td>Cartes</td><td>16px</td></tr>
+            <tr><td>Champs</td><td>8px</td></tr>
+            <tr><td>Avatars</td><td>50% (rond)</td></tr>
+            <tr><td>Tags / badges</td><td>pill (<code>9999px</code>)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 7. Pratiques -->
+    <section id="s7" class="card doc-section">
+      <h2>7. Bonnes pratiques</h2>
+      <h3>À faire</h3>
+      <ul class="check">
+        <li>Couleurs <strong>exactes</strong> du tableau (tokens).</li>
+        <li><strong>Hiérarchie typo</strong> respectée (§3).</li>
+        <li><strong>Contraste</strong> suffisant (§8).</li>
+        <li>Dégradés <strong>seulement</strong> sur hero, premium, gamification.</li>
+      </ul>
+      <h3>À éviter</h3>
+      <ul class="check">
+        <li>Logo <strong>étiré</strong>, <strong>tourné</strong> ou altéré.</li>
+        <li>Couleurs <strong>hors palette</strong> sans validation.</li>
+        <li>Plus de <strong>trois couleurs d’accent</strong> sur un même écran.</li>
+        <li>Ombres <strong>trop marquées</strong>.</li>
+      </ul>
+    </section>
+
+    <!-- 8. A11y -->
+    <section id="s8" class="card doc-section">
+      <h2>8. Accessibilité</h2>
+      <ul class="check">
+        <li>Contraste texte courant : <strong>≥ 4,5:1</strong> (WCAG AA).</li>
+        <li>Grands titres / UI : <strong>≥ 3:1</strong> minimum.</li>
+        <li>Contrôles interactifs : état <strong>focus visible</strong> au clavier.</li>
+        <li>Ne <strong>jamais</strong> transmettre une info <strong>uniquement</strong> par la couleur (icône, texte ou motif en plus).</li>
+      </ul>
+    </section>
+
+    <!-- Exemples gabarits -->
+    <section id="exemples" class="card doc-section">
+      <h2>9. Exemples de gabarits (aperçu charte)</h2>
+      <p class="muted" style="margin-top:0;">Squelette vide à gauche, même structure remplie à titre d’exemple à droite.</p>
+      <div class="grid-2">
+        <div>
+          <h3>Gabarit vide</h3>
+          <div class="template-shell" aria-label="Gabarit vide">
+            <div class="shell-bar"></div>
+            <div class="shell-line w-90"></div>
+            <div class="shell-line w-75"></div>
+            <div class="shell-line w-60"></div>
+            <div class="shell-box">Zone hero / illustration</div>
+            <div class="shell-grid">
+              <div class="shell-tile" aria-hidden="true"></div>
+              <div class="shell-tile" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>Exemple avec contenu fictif</h3>
+          <div class="fake-dash" aria-label="Exemple tableau de bord">
+            <div class="fake-dash-head">
+              <div>
+                <h4>Parcours · Module démo</h4>
+                <p class="muted" style="margin:0;">Étape 3 / 12</p>
+                <div class="progress"><i></i></div>
+              </div>
+              <span class="tagline-ia">IA</span>
+            </div>
+            <div class="fake-body">
+              <div class="row-btns" style="margin:0;">
+                <span class="pill pill-blue">Streak</span>
+                <span class="pill pill-pink">+XP</span>
+              </div>
+              <div class="quiz-card">
+                <div class="q">Question exemple ?</div>
+                <div class="choices">
+                  <div class="choice ok">Réponse mise en avant</div>
+                  <div class="choice">Autre choix</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-foot">
+      <span class="screen-only">Document maintenu par l’équipe FlowLearn — source : <span class="mono">charte-graphique/pages/charte-graphique.html</span></span>
+      <span class="print-only">FlowLearn — Charte graphique · équipe projet</span>
+    </footer>
+  </main>
+</body>
+</html>

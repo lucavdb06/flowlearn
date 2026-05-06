@@ -153,7 +153,7 @@ pie showData
 ## 3. ARTICULATION AVEC LE BUDGET GLOBAL
 
 > ⚠️ **Important pour comprendre les chiffres :**
-> - Le **budget global FlowLearn** = **656 k€** (cf. `budget-previsionnel.md`)
+> - Le **budget global FlowLearn** = **656 k€** (cf. [`budget-previsionnel.md`](../budgetaire/budget-previsionnel.md))
 > - Dont le **Pôle Croissance** = **125 k€** (toute la machine de croissance : pubs, contenu, influenceurs, RP, community)
 > - Dont le **budget Communication pure** présenté ici = **60 k€** (Inbound + Outbound + IR + Outils)
 > - Les **65 k€** restants du Pôle Croissance couvrent les **publicités payantes pures** (51 k€) + **production contenu vidéo/SEO** (14 k€) qui sont budgétées à part.

@@ -4,9 +4,9 @@
 **Document de pilotage des risques - VERSION FRANÇAISE**
 
 > Ce document est aligné avec :
-> - `budget-previsionnel.md` (654k€ / contingence 98k€)
-> - `planning-detaille.md` (24 mois, 8 gates Go/No-Go)
-> - `plan-de-communication.md` (60k€ / 4 phases marketing)
+> - [`budget-previsionnel.md`](../budgetaire/budget-previsionnel.md) (654k€ / contingence 98k€)
+> - [`planning-detaille.md`](../planning/planning-detaille.md) (24 mois, 8 gates Go/No-Go)
+> - [`plan-de-communication.md`](../plan-de-communication/plan-de-communication.md) (60k€ / 4 phases marketing)
 
 ---
 
@@ -839,12 +839,12 @@ CUMUL CONTINGENCE UTILISÉE : ____ / 98k€  (___%)
 │         INTÉGRATION RISQUES ↔ AUTRES DOCUMENTS               │
 ├──────────────────────────────────────────────────────────────┤
 │                                                                │
-│ 📅 PLANNING (planning-detaille.md)                            │
+│ 📅 PLANNING ([planning-detaille.md](../planning/planning-detaille.md))                            │
 │ ├─ 8 gates Go/No-Go = checkpoints risques                    │
 │ ├─ Buffers 2 sem / phase = absorption retards                │
 │ └─ Chemin critique PBS3 = risque T01                         │
 │                                                                │
-│ 💰 BUDGET (budget-previsionnel.md)                            │
+│ 💰 BUDGET ([budget-previsionnel.md](../budgetaire/budget-previsionnel.md))                            │
 │ ├─ Contingence 98k€ = réserve risques                        │
 │ ├─ Postes alloués par risque type                            │
 │ │  ├─ Cyber 15k€ → T03, E01                                  │
@@ -853,7 +853,7 @@ CUMUL CONTINGENCE UTILISÉE : ____ / 98k€  (___%)
 │ │  └─ Pivot produit 10k€ → P01, P03                          │
 │ └─ Règles d'or pilotage = discipline anti-risque             │
 │                                                                │
-│ 📢 COMMUNICATION (plan-de-communication.md)                   │
+│ 📢 COMMUNICATION ([plan-de-communication.md](../plan-de-communication/plan-de-communication.md))                   │
 │ ├─ Plans de secours canaux = risque B02                      │
 │ ├─ Messages PR de crise = risques T03, E01                   │
 │ └─ Investor relations P4 = risque F02                        │

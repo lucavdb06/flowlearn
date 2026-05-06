@@ -640,7 +640,7 @@ xychart-beta
 
 ## 7. RISQUES & MITIGATIONS — VUE PLANNING
 
-> **Document détaillé :** `gestion-des-risques.md` (registre complet de 18 risques).
+> **Document détaillé :** [`gestion-des-risques.md`](../risques/gestion-des-risques.md) (registre complet de 18 risques).
 > Ici on liste les **8 risques planning principaux**.
 
 ```
@@ -776,7 +776,7 @@ Budget : 302 k€ total 24 mois.
 
 CONTINGENCE :
 
-Plans détaillés pour 8 risques majeurs (cf. gestion-des-risques.md).
+Plans détaillés pour 8 risques majeurs (cf. [gestion-des-risques.md](../risques/gestion-des-risques.md)).
 Chemins d'escalade clairs.
 Décideurs assignés.
 ```
