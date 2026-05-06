@@ -1,47 +1,57 @@
-# 🧠 DopaLearn : Tourner l'addiction à notre avantage
+# FlowLearn
 
-## 📋 Introduction du Pitch
-*Ce discours est structuré pour présenter le problème (la friction de l'apprentissage), la solution (l'usage des mécaniques addictives) et la technologie (architecture modulaire et LLM local).*
+Projet **FlowLearn** : apprentissage par de courtes sessions ludiques, architecture modulaire (plugins / expériences) et socle IA (RAG, MCP).  
+Ce dépôt concentre les **documents de projet**, la **charte graphique** (HTML) et quelques **démos** (`media/`).
 
+**Dépôt équipe :** [github.com/lucavdb06/flowlearn](https://github.com/lucavdb06/flowlearn)
 
-## liens : 
-[notion](https://www.notion.so/Esp-FlowLearn-2e66aaec6a1c806eb6a6dc1e4966cc93?source=copy_link)
+## Documentation projet
 
+| Ressource | Rôle |
+| --- | --- |
+| [`1-document/architecture.md`](1-document/architecture.md) | Arborescence des livrables et légende des dossiers |
+| [`1-document/projet/3-a-revoir/README.md`](1-document/projet/3-a-revoir/README.md) | Flux : **relecture** → **charte graphique** → **`4-termine/`** |
+| [`1-document/projet/3-a-revoir/pbs-wbs-dod-a-revoir.md`](1-document/projet/3-a-revoir/pbs-wbs-dod-a-revoir.md) | Liste des fichiers PBS / WBS / DoD (sous `3-a-revoir/mvp-pbs/`) |
+
+Résumé du flux documentaire :
+
+1. **`2-en-cours/`** — travail courant : budget, planning, risques, charte, stack, cadrage, communication, organisation (OBS), livret, etc.
+2. **`3-a-revoir/`** — fond **PBS / WBS / DoD** (`mvp-pbs/`) + processus de relecture décrit dans le README du dossier.
+3. **`2-en-cours/charte-graphique/`** — mise en forme selon la charte (pages HTML).
+4. **`4-termine/`** — copies **validées** après charte et accord équipe.
+
+## Liens
+
+[Notion — Esp FlowLearn](https://www.notion.so/Esp-FlowLearn-2e66aaec6a1c806eb6a6dc1e4966cc93?source=copy_link)
 
 ---
 
-## 🎙️ Le Discours
+## Pitch produit (synthèse)
 
-### 1. Le Constat : La friction de l'apprentissage
-"Nous avons tous ce moment dans la journée : ces 5 minutes d'attente, ou ce moment de fatigue mentale le soir. Le réflexe n'est plus de réfléchir, mais de sortir son téléphone et d'ouvrir TikTok ou Instagram. Pourquoi ? Parce qu'on veut juste 'scroller'.
+### 1. Constat : la friction de l’apprentissage
 
-Le problème, ce n'est pas le sujet que l'on veut apprendre, c'est la manière dont il est amené. Nos mains sont prises, notre cerveau est fatigué, et les méthodes de révision classiques demandent trop d'effort.
+Nous avons tous ces moments dans la journée : quelques minutes d’attente, ou la fatigue le soir. Le réflexe, c’est souvent le téléphone et le scroll passif. Le problème n’est pas le sujet à apprendre, mais la **charge cognitive** et la **manière** dont le contenu est présenté.
 
-C'est là qu'intervient **DopaLearn**."
+**FlowLearn** part de ce constat.
 
-### 2. La Solution : Détourner l'addiction
-"DopamineLearn, c'est une application qui tourne notre addiction à notre avantage. L'idée est simple : remplacer le scroll passif par de la micro-révision active, sans la friction habituelle.
+### 2. Solution : détourner l’attention vers la révision
 
-Au cœur du système, nous avons une **Base de Connaissance personnelle** connectée à un **Serveur MCP** (Model Context Protocol). Ce serveur agit comme un chef d'orchestre qui injecte vos cours et vos connaissances directement dans des expériences ludiques via une API."
+FlowLearn vise à remplacer une partie de ce scroll par de la **micro-révision active**, avec moins de friction qu’un cours classique.
 
-### 3. Les Applications Concrètes (Les "Plugins")
-"Grâce à notre architecture modulaire basée sur une 'brique commune', nous ne proposons pas juste des QCM, mais de véritables expériences de jeu. Voici quelques exemples de ce que notre système permet :"
+Au centre : une **base de connaissances personnelle** et un **serveur MCP** (Model Context Protocol) qui orchestre l’injection des cours dans des **expériences ludiques** via une API.
 
-* 📱 **Le Mode 'Doomscrolling' Éducatif :**
-    "Au lieu de vidéos de chats, vous scrollez des questions et des QCM. L'interface est celle que votre cerveau adore déjà : rapide, visuelle, addictive. Une réponse fausse ? L'algorithme reformule la question pour éviter l'overfitting."
+### 3. Applications (« plugins »)
 
-* 🎮 **Le Gaming à Enjeux (Risque & Récompense) :**
-    "Nous intégrons la connaissance dans des jeux vidéo addictifs. Imaginez un **jeu d'horreur** où votre survie dépend de votre bonne réponse. Ou un jeu simple où perdre signifie devoir répondre à une question pour continuer. Le stress du jeu ancre la mémoire."
+Grâce à une **brique commune** modulaire, le système ne se limite pas aux QCM. Exemples :
 
-* 🎧 **L'Apprentissage Passif et Créatif :**
-    "Vous avez les mains prises ou une fatigue visuelle ?
-    * **Génération de musique :** L'IA crée des rythmes basés sur vos cours pour l'apprentissage.
-    * **Histoires Interactives :** Une aventure dont vous êtes le héros, propulsée par votre base de savoir."
+- **Scroll éducatif** : questions courtes, interface rapide ; en cas d’erreur, reformulation pour limiter l’overfitting.
+- **Jeux à enjeux** : intégration de la révision dans des mécaniques de jeu (stress / récompense pour l’ancrage mémoriel).
+- **Formats plus passifs** : génération de rythmes à partir des cours, histoires interactives branchées sur la base de savoir.
 
-### 4. La Technologie : Locale et Modulaire
-"Tout cela est propulsé par un **modèle LLM local**. Cela signifie que vous pouvez l'utiliser **hors-ligne**, sans latence, et en toute confidentialité.
+### 4. Technologie : local et modulaire
 
-Notre force, c'est l'aspect communautaire : n'importe qui peut créer un 'plugin' et le brancher sur la brique commune. Que ce soit sur mobile, desktop ou via une interface vocale, DopamineLearn s'adapte à votre contexte."
+Un **LLM local** permet usage **hors-ligne**, faible latence et meilleure maîtrise des données. La communauté peut brancher de **nouveaux plugins** sur la brique commune (mobile, desktop, vocal, etc.).
 
 ### 5. Conclusion
-"Avec DopamineLearn, nous ne vous demandons pas d'arrêter de jouer. Nous faisons en sorte que jouer vous rende plus intelligent."
+
+FlowLearn ne demande pas d’« arrêter de jouer » : il cherche à faire en sorte qu’**une partie du temps d’attention** serve à **progresser**.
