@@ -1,11 +1,12 @@
-# Suivi livrables — à revoir / terminé
+# À revoir — ordre de travail
 
-## À revoir (priorité)
+1. **Relire tous les docs proprement**  
+   Corriger le fond, la cohérence et la forme des textes (dont le périmètre PBS / WBS / DoD dans [`mvp-pbs/`](mvp-pbs/) — liste détaillée dans [`pbs-wbs-dod-a-revoir.md`](pbs-wbs-dod-a-revoir.md) si besoin).
 
-En pratique, c’est **tout le bloc PBS + WBS + DoD** : synthèses, arborescence PBS, DoD globale, et l’ensemble des fichiers dans `mvp-pbs/dod/` et `mvp-pbs/wbs/`.
+2. **Passage charte graphique**  
+   Quand le contenu est validé par l’équipe, le transposer **sous la charte graphique** : pages et règles visuelles dans [`../2-en-cours/charte-graphique/`](../2-en-cours/charte-graphique/).
 
-Emplacement : `1-document/projet/2-en-cours/mvp-pbs/`.
+3. **Terminé**  
+   Quand la version « charte » est figée, **archiver** la copie finale dans [`../4-termine/`](../4-termine/).
 
-## Terminer
-
-_Rien pour l’instant._ Aucun livrable n’est rangé comme définitivement clos ; le travail actif reste sous `2-en-cours/`.
+Ce dossier reste le lieu du **travail de fond** (textes bruts et structure PBS/WBS/DoD) tant que les étapes 2 et 3 ne sont pas faites.
