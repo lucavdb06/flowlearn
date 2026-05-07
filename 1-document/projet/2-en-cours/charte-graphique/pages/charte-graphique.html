@@ -1,835 +1,1244 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FlowLearn — Charte graphique</title>
-  <!-- Export PDF : Ctrl/Cmd+P → « Enregistrer au format PDF ». Dans Chrome : activer « Graphiques d’arrière-plan » pour conserver dégradés et couleurs des pastilles. -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --flow-blue: #3b82f6;
-      --brain-pink: #ec4899;
-      --deep-ocean: #1e3a5f;
-      --lavender: #8b5cf6;
-      --paper: #fbfaf7;
-      --success: #10b981;
-      --warning: #f59e0b;
-      --danger: #ef4444;
-      --slate-900: #0f172a;
-      --slate-800: #1e293b;
-      --slate-700: #334155;
-      --slate-600: #475569;
-      --slate-500: #64748b;
-      --slate-400: #94a3b8;
-      --slate-200: #e2e8f0;
-      --slate-100: #f1f5f9;
-      --white: #ffffff;
-      --grad-main: linear-gradient(135deg, var(--flow-blue) 0%, var(--brain-pink) 100%);
-      --grad-ia: linear-gradient(135deg, var(--flow-blue) 0%, var(--lavender) 100%);
-      --grad-game: linear-gradient(135deg, var(--brain-pink) 0%, var(--lavender) 100%);
-      --radius-btn: 12px;
-      --radius-card: 16px;
-      --shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.1);
-      --font: "Inter", system-ui, sans-serif;
-      --mono: "JetBrains Mono", ui-monospace, monospace;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowLearn — Charte graphique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --flow-blue: #3B82F6;
+    --brain-pink: #EC4899;
+    --deep-ocean: #1E3A5F;
+    --soft-lavender: #8B5CF6;
+    --success-green: #10B981;
+    --warning-amber: #F59E0B;
+    --danger: #EF4444;
+    --slate-900: #0F172A;
+    --slate-800: #1E293B;
+    --slate-700: #334155;
+    --slate-600: #475569;
+    --slate-500: #64748B;
+    --slate-400: #94A3B8;
+    --slate-300: #CBD5E1;
+    --slate-200: #E2E8F0;
+    --slate-100: #F1F5F9;
+    --slate-50:  #F8FAFC;
+    --paper:     #FBFAF7;
+    --ink:       #0F172A;
+    --grad-main:  linear-gradient(135deg, #3B82F6 0%, #EC4899 100%);
+    --grad-ia:    linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+    --grad-game:  linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%);
+  }
 
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: var(--font);
-      color: var(--slate-600);
-      background: var(--paper);
-      line-height: 1.55;
-      font-size: 16px;
-    }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    a { color: var(--flow-blue); font-weight: 500; }
-    code, .mono { font-family: var(--mono); font-size: 0.88em; }
+  @page { size: A4; margin: 0; }
 
-    .wrap { max-width: 1100px; margin: 0 auto; padding: 28px 20px 64px; }
+  html, body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 11pt;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 
-    .hero {
-      background: var(--grad-main);
-      color: var(--white);
-      border-radius: var(--radius-card);
-      padding: 32px 28px;
-      margin-bottom: 28px;
-      box-shadow: var(--shadow);
-    }
-    .hero h1 {
-      margin: 0 0 14px;
-      font-size: clamp(1.6rem, 4vw, 2.1rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.2;
-    }
-    .hero blockquote {
-      margin: 0;
-      padding: 14px 0 0;
-      border-top: 1px solid rgba(255,255,255,0.35);
-      font-style: italic;
-      opacity: 0.98;
-    }
+  /* ─── PAGE LAYOUT ─── */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 22mm 20mm 20mm 20mm;
+    margin: 0 auto;
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    break-after: page;
+  }
+  .page:last-child { page-break-after: auto; }
 
-    h2 {
-      margin: 0 0 14px;
-      font-size: 1.65rem;
-      font-weight: 700;
-      color: var(--deep-ocean);
-      letter-spacing: -0.02em;
-    }
-    .doc-section h3 {
-      margin: 22px 0 10px;
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--slate-700);
-    }
-    .doc-section h4 {
-      margin: 16px 0 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--slate-600);
-    }
+  .page::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(236,72,153,0.025) 0%, transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(59,130,246,0.025) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .page > * { position: relative; z-index: 1; }
 
-    .card {
-      background: var(--white);
-      border-radius: var(--radius-card);
-      padding: 22px 24px;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--slate-200);
-      margin-bottom: 20px;
-    }
-    .muted { font-size: 14px; color: var(--slate-500); }
-    .caption { font-size: 12px; font-weight: 500; color: var(--slate-400); }
+  /* ─── COVER ─── */
+  .cover {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background:
+      radial-gradient(ellipse at top right, rgba(236,72,153,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at bottom left, rgba(59,130,246,0.15) 0%, transparent 55%),
+      var(--paper);
+  }
+  .cover::before { display: none; }
+  .cover-inner {
+    padding: 28mm 22mm;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .cover-top { display: flex; align-items: flex-start; justify-content: space-between; }
+  .cover-logo .wordmark {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 24pt;
+    color: var(--deep-ocean);
+    letter-spacing: -0.01em;
+  }
+  .cover-logo .wordmark em {
+    background: var(--grad-main);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent; font-style: normal;
+  }
+  .cover-meta {
+    text-align: right;
+    font-size: 9pt;
+    color: var(--slate-500);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+  .cover-meta strong { color: var(--deep-ocean); font-weight: 600; }
+  .cover-middle { margin-top: 30mm; }
+  .cover-eyebrow {
+    font-size: 9pt;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--brain-pink);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  .cover-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 60pt;
+    line-height: 0.96;
+    color: var(--deep-ocean);
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+  .cover-title .accent {
+    font-style: italic;
+    background: var(--grad-main);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent;
+  }
+  .cover-deck {
+    font-family: 'Fraunces', serif;
+    font-size: 14pt;
+    font-weight: 300;
+    color: var(--slate-600);
+    line-height: 1.45;
+    max-width: 130mm;
+  }
+  .cover-quote {
+    margin-top: 22px;
+    padding: 14px 18px;
+    border-left: 3px solid var(--brain-pink);
+    background: rgba(236,72,153,0.05);
+    border-radius: 0 10px 10px 0;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 12pt;
+    color: var(--deep-ocean);
+    line-height: 1.5;
+  }
+  .cover-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid var(--slate-200);
+    padding-top: 18px;
+  }
+  .cover-stat .label {
+    font-size: 8pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--slate-500);
+    margin-bottom: 6px;
+  }
+  .cover-stat .value {
+    font-family: 'Fraunces', serif;
+    font-size: 20pt;
+    font-weight: 500;
+    color: var(--deep-ocean);
+    line-height: 1;
+  }
 
-    .table-wrap { overflow-x: auto; margin: 12px 0; }
-    table.doc {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-    }
-    table.doc th, table.doc td {
-      border: 1px solid var(--slate-200);
-      padding: 10px 12px;
-      text-align: left;
-      vertical-align: top;
-    }
-    table.doc th {
-      background: var(--slate-100);
-      color: var(--slate-700);
-      font-weight: 600;
-    }
+  /* ─── RUNNING HEADER ─── */
+  .running-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--slate-200);
+    margin-bottom: 28px;
+    font-size: 9pt;
+    color: var(--slate-500);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .running-header .brand { display: flex; align-items: center; gap: 9px; }
+  .running-header .brand-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 11pt;
+    color: var(--deep-ocean);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .running-header .brand-name em {
+    background: var(--grad-main);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent; font-style: normal;
+  }
 
-    pre.code {
-      margin: 12px 0;
-      padding: 16px;
-      background: var(--slate-900);
-      color: #e2e8f0;
-      border-radius: 10px;
-      font-family: var(--mono);
-      font-size: 12px;
-      line-height: 1.45;
-      overflow-x: auto;
-    }
+  /* ─── TYPOGRAPHY ─── */
+  h1.section-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 34pt;
+    line-height: 1.05;
+    color: var(--deep-ocean);
+    letter-spacing: -0.015em;
+    margin-bottom: 8px;
+  }
+  h1.section-title .accent {
+    font-style: italic;
+    background: var(--grad-main);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent;
+  }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    color: var(--brain-pink);
+    letter-spacing: 0.2em;
+    margin-bottom: 14px;
+    display: block;
+    font-weight: 500;
+  }
+  .section-deck {
+    font-family: 'Fraunces', serif;
+    font-size: 12.5pt;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--slate-600);
+    margin-bottom: 22px;
+    max-width: 155mm;
+    font-style: italic;
+  }
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 16pt;
+    color: var(--deep-ocean);
+    margin-top: 22px;
+    margin-bottom: 9px;
+    letter-spacing: -0.01em;
+  }
+  h3.subsec {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 9.5pt;
+    color: var(--deep-ocean);
+    margin-top: 14px;
+    margin-bottom: 6px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+  p { margin-bottom: 9pt; color: var(--slate-700); font-size: 10pt; line-height: 1.65; }
+  p strong { color: var(--deep-ocean); font-weight: 600; }
 
-    ul.check { margin: 8px 0; padding-left: 1.2rem; }
-    ul.check li { margin: 6px 0; }
+  /* ─── TABLES ─── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 14px 0;
+    font-size: 9.5pt;
+  }
+  table th {
+    text-align: left;
+    font-size: 8pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--slate-500);
+    font-weight: 600;
+    padding: 8px 11px;
+    border-bottom: 2px solid var(--deep-ocean);
+  }
+  table td {
+    padding: 9px 11px;
+    border-bottom: 1px solid var(--slate-200);
+    color: var(--slate-700);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td strong { color: var(--deep-ocean); font-weight: 600; }
+  .mono-cell { font-family: 'JetBrains Mono', monospace; font-size: 8.5pt; }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-    }
+  /* ─── PALETTE ─── */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 12px 0;
+  }
+  .swatch {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--slate-200);
+    background: white;
+  }
+  .swatch-color { height: 52px; }
+  .swatch-meta { padding: 7px 9px; font-size: 8.5pt; }
+  .swatch-meta strong { display: block; color: var(--deep-ocean); font-weight: 600; font-size: 8.5pt; }
+  .swatch-meta span { color: var(--slate-500); font-family: 'JetBrains Mono', monospace; font-size: 7.5pt; }
 
-    .palette {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .swatch {
-      border-radius: var(--radius-btn);
-      overflow: hidden;
-      border: 1px solid var(--slate-200);
-      background: var(--white);
-      box-shadow: var(--shadow);
-    }
-    .swatch-color { height: 64px; }
-    .swatch-meta { padding: 8px 10px; font-size: 12px; }
-    .swatch-meta strong { display: block; color: var(--slate-900); }
-    .swatch-meta span { color: var(--slate-500); font-family: var(--mono); font-size: 11px; }
+  /* ─── GRAD STRIPS ─── */
+  .grad-strip {
+    height: 36px;
+    border-radius: 8px;
+    margin-top: 8px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 
-    .grad-strip {
-      height: 44px;
-      border-radius: 10px;
-      margin-top: 8px;
-    }
+  /* ─── BUTTONS DEMO ─── */
+  .btn-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; align-items: center; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 10pt;
+    border: none;
+    cursor: default;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .btn-primary { background: var(--flow-blue); color: white; }
+  .btn-secondary { background: transparent; color: var(--flow-blue); border: 2px solid var(--flow-blue); }
+  .btn-accent { background: var(--grad-main); color: white; }
+  .btn-danger { background: var(--danger); color: white; }
 
-    .row-btns { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 10px; }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 18px;
-      border-radius: var(--radius-btn);
-      font-family: var(--font);
-      font-weight: 600;
-      font-size: 14px;
-      border: none;
-      cursor: default;
-    }
-    .btn-primary { background: var(--flow-blue); color: var(--white); }
-    .btn-secondary { background: transparent; color: var(--flow-blue); border: 2px solid var(--flow-blue); }
-    .btn-accent { background: var(--grad-main); color: var(--white); }
-    .btn-danger { background: var(--danger); color: var(--white); }
+  /* ─── PILLS ─── */
+  .pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 8.5pt;
+    font-weight: 600;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .pill-pink { background: rgba(236,72,153,0.12); color: var(--brain-pink); }
+  .pill-blue { background: rgba(59,130,246,0.12); color: var(--flow-blue); }
+  .pill-ok   { background: rgba(16,185,129,0.12); color: #047857; }
+  .pill-warn { background: rgba(245,158,11,0.15); color: #b45309; }
 
-    .pill {
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 600;
-    }
-    .pill-pink { background: rgba(236, 72, 153, 0.12); color: var(--brain-pink); }
-    .pill-blue { background: rgba(59, 130, 246, 0.12); color: var(--flow-blue); }
-    .pill-ok { background: rgba(16, 185, 129, 0.12); color: #047857; }
-    .pill-warn { background: rgba(245, 158, 11, 0.15); color: #b45309; }
+  /* ─── CALLOUT ─── */
+  .callout {
+    background: linear-gradient(135deg, rgba(59,130,246,0.06) 0%, rgba(236,72,153,0.06) 100%);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    border: 1px solid rgba(59,130,246,0.12);
+  }
+  .callout .callout-label {
+    font-size: 7.5pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--brain-pink);
+    margin-bottom: 4px;
+    display: block;
+  }
+  .callout p { margin-bottom: 0; font-size: 9.5pt; }
 
-    .template-shell {
-      border: 2px dashed var(--slate-400);
-      border-radius: var(--radius-card);
-      background: var(--white);
-      padding: 16px;
-      min-height: 300px;
-    }
-    .shell-bar { height: 12px; width: 40%; background: var(--slate-200); border-radius: 6px; margin-bottom: 14px; }
-    .shell-line { height: 10px; background: var(--slate-200); border-radius: 5px; margin-bottom: 8px; }
-    .shell-line.w-90 { width: 90%; }
-    .shell-line.w-75 { width: 75%; }
-    .shell-line.w-60 { width: 60%; }
-    .shell-box {
-      height: 90px;
-      background: linear-gradient(135deg, var(--slate-100), var(--slate-200));
-      border-radius: var(--radius-btn);
-      margin-top: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--slate-500);
-      font-size: 13px;
-      font-weight: 600;
-    }
-    .shell-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
-    @media (max-width: 520px) { .shell-grid { grid-template-columns: 1fr; } }
-    .shell-tile {
-      height: 72px;
-      border-radius: var(--radius-btn);
-      border: 1px dashed #cbd5e1;
-      background: #f8fafc;
-    }
+  /* ─── PULL QUOTE ─── */
+  .pull-quote {
+    border-left: 3px solid var(--brain-pink);
+    padding: 4px 0 4px 16px;
+    margin: 14px 0;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 11.5pt;
+    line-height: 1.5;
+    color: var(--deep-ocean);
+  }
 
-    .fake-dash {
-      border-radius: var(--radius-card);
-      background: var(--white);
-      border: 1px solid var(--slate-200);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-    .fake-dash-head {
-      padding: 14px 16px;
-      border-bottom: 1px solid var(--slate-200);
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .fake-dash-head h4 { margin: 0 0 4px; font-size: 1.05rem; color: var(--deep-ocean); }
-    .progress {
-      height: 8px;
-      background: var(--slate-200);
-      border-radius: 999px;
-      overflow: hidden;
-      margin-top: 8px;
-      max-width: 200px;
-    }
-    .progress > i { display: block; height: 100%; width: 68%; background: var(--grad-ia); border-radius: 999px; }
-    .fake-body { padding: 16px; display: grid; gap: 12px; }
-    .quiz-card {
-      border-radius: var(--radius-btn);
-      border: 1px solid var(--slate-200);
-      padding: 12px;
-      background: linear-gradient(180deg, var(--white), #fafbfd);
-    }
-    .quiz-card .q { font-weight: 600; color: var(--slate-700); margin-bottom: 8px; }
-    .choices { display: flex; flex-direction: column; gap: 6px; }
-    .choice {
-      padding: 8px 10px;
-      border-radius: 10px;
-      border: 1px solid var(--slate-200);
-      font-size: 14px;
-      background: var(--white);
-    }
-    .choice.ok { border-color: rgba(16, 185, 129, 0.5); background: rgba(16, 185, 129, 0.06); }
-    .tagline-ia {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: var(--grad-ia);
-      color: var(--white);
-    }
+  /* ─── CODE BLOCK ─── */
+  pre.code {
+    background: var(--slate-900);
+    color: #e2e8f0;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    line-height: 1.55;
+    margin: 10px 0;
+    overflow-x: auto;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  pre.code .c  { color: #94a3b8; }
+  pre.code .k  { color: #93c5fd; }
+  pre.code .s  { color: #6ee7b7; }
+  pre.code .v  { color: #fca5a5; }
 
-    footer.page-foot {
-      margin-top: 40px;
-      padding-top: 18px;
-      border-top: 1px solid var(--slate-200);
-      font-size: 13px;
-      color: var(--slate-500);
-    }
+  /* ─── TYPO DEMO ─── */
+  .typo-demo {
+    border: 1px solid var(--slate-200);
+    border-radius: 12px;
+    padding: 18px 20px;
+    background: white;
+    margin: 12px 0;
+  }
+  .td-h1 { font-family: 'Fraunces', serif; font-size: 28pt; font-weight: 700; color: var(--deep-ocean); line-height: 1.1; margin-bottom: 6px; }
+  .td-h2 { font-family: 'Fraunces', serif; font-size: 20pt; font-weight: 600; color: var(--deep-ocean); margin-bottom: 5px; }
+  .td-h3 { font-family: 'Inter', sans-serif; font-size: 14pt; font-weight: 600; color: var(--slate-700); margin-bottom: 4px; }
+  .td-h4 { font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 600; color: var(--slate-600); margin-bottom: 4px; }
+  .td-body { font-family: 'Inter', sans-serif; font-size: 10pt; color: var(--slate-600); margin-bottom: 4px; line-height: 1.6; }
+  .td-small { font-family: 'Inter', sans-serif; font-size: 8.5pt; color: var(--slate-500); margin-bottom: 4px; }
+  .td-mono { font-family: 'JetBrains Mono', monospace; font-size: 9pt; background: var(--slate-100); padding: 6px 10px; border-radius: 6px; color: var(--slate-700); display: inline-block; margin-top: 4px; }
 
-    /* --- PDF / impression A4 --- */
-    .print-only { display: none; }
-    .pdf-export-hint {
-      background: var(--white);
-      border: 1px dashed var(--slate-400);
-      border-radius: 10px;
-      padding: 12px 14px;
-      margin-bottom: 20px;
-      font-size: 13px;
-      color: var(--slate-600);
-    }
-    .pdf-export-hint strong { color: var(--deep-ocean); }
-    kbd {
-      font-family: var(--mono);
-      font-size: 0.88em;
-      padding: 2px 6px;
-      border: 1px solid var(--slate-300);
-      border-radius: 4px;
-      background: var(--slate-100);
-    }
+  /* ─── FAKE DASHBOARD ─── */
+  .fake-dash {
+    border-radius: 14px;
+    background: white;
+    border: 1px solid var(--slate-200);
+    overflow: hidden;
+  }
+  .fake-dash-head {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--slate-200);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .fake-dash-head .dh-title { font-family: 'Fraunces', serif; font-size: 11pt; font-weight: 500; color: var(--deep-ocean); margin-bottom: 3px; }
+  .fake-dash-head .dh-sub { font-size: 8.5pt; color: var(--slate-500); }
+  .progress { height: 6px; background: var(--slate-200); border-radius: 999px; overflow: hidden; margin-top: 6px; max-width: 160px; }
+  .progress i { display: block; height: 100%; width: 68%; background: var(--grad-ia); border-radius: 999px; }
+  .tagline-ia {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 8pt;
+    font-weight: 600;
+    padding: 4px 9px;
+    border-radius: 999px;
+    background: var(--grad-ia);
+    color: white;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .fake-body { padding: 12px 14px; display: grid; gap: 10px; }
+  .quiz-card {
+    border-radius: 10px;
+    border: 1px solid var(--slate-200);
+    padding: 10px;
+    background: linear-gradient(180deg, white, #fafbfd);
+  }
+  .quiz-q { font-weight: 600; font-size: 9.5pt; color: var(--slate-700); margin-bottom: 6px; }
+  .choices { display: flex; flex-direction: column; gap: 4px; }
+  .choice { padding: 6px 8px; border-radius: 8px; border: 1px solid var(--slate-200); font-size: 9pt; background: white; color: var(--slate-700); }
+  .choice.ok { border-color: rgba(16,185,129,0.5); background: rgba(16,185,129,0.06); color: #047857; }
 
-    @page {
-      size: A4 portrait;
-      margin: 12mm 14mm 14mm 14mm;
-    }
+  /* ─── SHELL ─── */
+  .template-shell {
+    border: 2px dashed var(--slate-300);
+    border-radius: 14px;
+    background: white;
+    padding: 14px;
+  }
+  .shell-bar { height: 10px; width: 40%; background: var(--slate-200); border-radius: 5px; margin-bottom: 12px; }
+  .shell-line { height: 8px; background: var(--slate-200); border-radius: 4px; margin-bottom: 7px; }
+  .shell-line.w90 { width: 90%; }
+  .shell-line.w75 { width: 75%; }
+  .shell-line.w60 { width: 60%; }
+  .shell-box {
+    height: 60px;
+    background: linear-gradient(135deg, var(--slate-100), var(--slate-200));
+    border-radius: 10px;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--slate-500);
+    font-size: 9pt;
+    font-weight: 600;
+  }
+  .shell-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+  .shell-tile { height: 50px; border-radius: 8px; border: 1px dashed var(--slate-300); background: var(--slate-50); }
 
-    @media print {
-      * {
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-      }
+  /* ─── 2 COL ─── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 10px 0; }
+  .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 10px 0; }
 
-      html { font-size: 10.5pt; }
+  /* ─── SPACING TABLE ─── */
+  .spacing-vis {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 10px 0;
+  }
+  .sp-row { display: flex; align-items: center; gap: 12px; }
+  .sp-label { font-family: 'JetBrains Mono', monospace; font-size: 8pt; color: var(--brain-pink); width: 32px; flex-shrink: 0; }
+  .sp-bar { background: var(--flow-blue); border-radius: 3px; height: 10px; opacity: 0.7; }
+  .sp-val { font-size: 8.5pt; color: var(--slate-500); }
 
-      body {
-        background: #fff !important;
-        color: var(--slate-700);
-        line-height: 1.45;
-      }
+  /* ─── RADIUS VIS ─── */
+  .radius-vis { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0; align-items: center; }
+  .r-box { background: white; border: 1px solid var(--slate-200); display: flex; align-items: center; justify-content: center; font-size: 8pt; color: var(--slate-500); font-weight: 600; width: 60px; height: 40px; }
+  .r-lbl { font-size: 8pt; color: var(--slate-500); text-align: center; margin-top: 2px; }
 
-      .pdf-export-hint,
-      .screen-only {
-        display: none !important;
-      }
+  /* ─── A11Y ─── */
+  .contrast-row { display: flex; gap: 10px; margin: 8px 0; flex-wrap: wrap; }
+  .cr-box { padding: 8px 12px; border-radius: 8px; font-size: 9pt; font-weight: 600; flex: 1; min-width: 100px; }
 
-      .print-only {
-        display: block !important;
-      }
+  /* ─── FLOURISH ─── */
+  .flourish { width: 60px; height: 2px; background: var(--grad-main); margin: 14px 0; border-radius: 2px; }
 
-      .print-doc-header {
-        margin: 0 0 6mm;
-        padding: 0 0 4mm;
-        border-bottom: 0.35pt solid #cbd5e1;
-      }
-      .print-doc-header h1 {
-        margin: 0 0 2mm;
-        font-size: 17pt;
-        font-weight: 700;
-        color: var(--deep-ocean);
-        letter-spacing: -0.02em;
-      }
-      .print-doc-header .meta {
-        margin: 0;
-        font-size: 8.5pt;
-        color: var(--slate-500);
-      }
+  /* ─── FOOTER ─── */
+  .page-footer {
+    position: absolute;
+    bottom: 12mm; left: 20mm; right: 20mm;
+    display: flex;
+    justify-content: space-between;
+    font-size: 8pt;
+    color: var(--slate-400);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-top: 8px;
+    border-top: 1px solid var(--slate-100);
+  }
+  .page-footer .pf-brand {
+    font-family: 'Fraunces', serif;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--slate-500);
+  }
 
-      .wrap {
-        max-width: none !important;
-        width: 100% !important;
-        padding: 0 !important;
-        margin: 0 !important;
-      }
+  /* ─── ANNEX ─── */
+  .annex-divider {
+    text-align: center;
+    padding: 50mm 20mm;
+  }
+  .annex-divider .label {
+    font-size: 9pt;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--brain-pink);
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .annex-divider .title {
+    font-family: 'Fraunces', serif;
+    font-size: 58pt;
+    color: var(--deep-ocean);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .annex-divider .title .accent {
+    font-style: italic;
+    background: var(--grad-main);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent;
+  }
+  .annex-divider .deck {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 13pt;
+    color: var(--slate-600);
+    margin-top: 22px;
+    line-height: 1.5;
+    font-weight: 300;
+  }
+  .annex-marker {
+    display: inline-block;
+    background: var(--soft-lavender);
+    color: white;
+    font-size: 8pt;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+  }
 
-      .hero {
-        break-inside: avoid;
-        page-break-inside: avoid;
-        margin-bottom: 5mm;
-        padding: 5mm 6mm;
-        border-radius: 3mm;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
+  ul, ol { padding-left: 18px; margin-bottom: 9pt; }
+  li { margin-bottom: 4px; font-size: 9.5pt; color: var(--slate-700); }
+  li strong { color: var(--deep-ocean); }
 
-      .card {
-        margin-bottom: 4mm;
-        padding: 4mm 5mm;
-        border-radius: 2.5mm;
-        box-shadow: none !important;
-        border: 0.35pt solid #e2e8f0;
-        break-inside: auto;
-        orphans: 3;
-        widows: 3;
-      }
+  .no-break { page-break-inside: avoid; break-inside: avoid; }
 
-      .doc-section h2 {
-        font-size: 13.5pt;
-        margin-bottom: 3mm;
-        page-break-after: avoid;
-        break-after: avoid-page;
-      }
-      .doc-section h3 {
-        font-size: 10.5pt;
-        page-break-after: avoid;
-        break-after: avoid;
-      }
-      .doc-section h4 { font-size: 10pt; }
-
-      .table-wrap,
-      pre.code,
-      .palette,
-      .demo-typo {
-        break-inside: avoid-page;
-        page-break-inside: avoid;
-      }
-
-      #exemples .grid-2 {
-        break-inside: auto;
-        page-break-inside: auto;
-      }
-      #exemples .grid-2 > div {
-        break-inside: avoid-page;
-        page-break-inside: avoid;
-      }
-
-      .template-shell {
-        min-height: 0;
-        break-inside: avoid-page;
-      }
-      .fake-dash { break-inside: avoid-page; }
-      .shell-box { height: 18mm; }
-
-      table.doc { font-size: 8.5pt; }
-      table.doc th,
-      table.doc td {
-        padding: 3pt 4pt;
-        border-color: #cbd5e1 !important;
-      }
-      table.doc th { background: #f1f5f9 !important; }
-
-      pre.code {
-        font-size: 7.5pt;
-        padding: 2.5mm;
-        border: 0.35pt solid #475569;
-        white-space: pre-wrap;
-        word-break: break-word;
-      }
-
-      .swatch { break-inside: avoid; page-break-inside: avoid; }
-      .swatch-color { height: 8mm; }
-
-      .grad-strip {
-        break-inside: avoid;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-
-      .btn,
-      .pill,
-      .tagline-ia {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-
-      a:link, a:visited {
-        color: #1d4ed8;
-        text-decoration: underline;
-      }
-
-      footer.page-foot {
-        margin-top: 5mm;
-        padding-top: 2mm;
-        font-size: 8pt;
-        color: #64748b !important;
-        border-top: 0.35pt solid #e2e8f0;
-      }
-    }
-  </style>
+  @media print {
+    body { background: white; }
+    .page { margin: 0; }
+  }
+</style>
 </head>
 <body>
-  <main id="top" class="wrap">
-    <header class="print-only print-doc-header">
-      <h1>FlowLearn — Charte graphique</h1>
-      <p class="meta">Format A4 · impression ou export PDF</p>
-    </header>
-    <div class="pdf-export-hint screen-only">
-      <strong>Export PDF :</strong> <kbd>Ctrl</kbd>+<kbd>P</kbd> (Windows) ou <kbd>⌘</kbd>+<kbd>P</kbd> (macOS), puis « Enregistrer au format PDF ».
-      Sous Chrome / Edge : activer l’option <strong>Graphiques d’arrière-plan</strong> pour conserver les dégradés et les pastilles couleur.
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 1 — COVER
+     ═══════════════════════════════════════════════ -->
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="cover-top">
+      <div class="cover-logo">
+        <div class="wordmark">Flow<em>Learn</em></div>
+      </div>
+      <div class="cover-meta">
+        <div>Document interne</div>
+        <div><strong>Version 1.0</strong></div>
+        <div>Mai 2026</div>
+      </div>
     </div>
-    <header class="hero">
-      <h1>Charte graphique — FlowLearn</h1>
-      <p class="intro" style="margin:0 0 12px;max-width:65ch;opacity:.96;">
-        Ce document décrit <strong>pourquoi</strong> et <strong>comment</strong> s’affiche la marque : couleurs, typographie, logo, pictos et règles d’interface.
-        Objectif : identité <strong>lisible</strong> (*flow* limpide), <strong>animée</strong> (cerveau, jeu, communauté), <strong>reproductible</strong> par toute l’équipe.
+
+    <div class="cover-middle">
+      <div class="cover-eyebrow">Charte graphique · Identité visuelle</div>
+      <h1 class="cover-title">
+        Pourquoi ça<br>
+        ressemble à <span class="accent">ça.</span>
+      </h1>
+      <p class="cover-deck">
+        Couleurs, typographie, logo, composants et règles d'interface.
+        Un guide que toute l'équipe peut ouvrir un lundi matin et comprendre en vingt minutes.
       </p>
-      <blockquote>
-        <strong>FlowLearn</strong> : <em>Apprendre en jouant, retenir en s’amusant.</em><br />
-        EdTech : gamification et IA au service d’un parcours d’apprentissage personnalisé.
-      </blockquote>
-    </header>
+      <div class="cover-quote">
+        <strong>FlowLearn</strong> : <em>Apprendre en jouant, retenir en s'amusant.</em><br>
+        EdTech · Gamification &amp; IA au service d'un parcours d'apprentissage personnalisé.
+      </div>
+    </div>
 
-    <!-- 1. Identité -->
-    <section id="s1" class="card doc-section">
-      <h2>1. Identité : ce que raconte la marque</h2>
-      <h3>Le nom en deux mots</h3>
-      <ul class="check">
-        <li><strong>Learn</strong> — Le <strong>cerveau</strong> au centre : attention, mémoire, motivation. Le <strong>rose / magenta</strong> porte cette partie « vivante » : curiosité, récompense, chaleur, <strong>imaginaire partagé</strong> (parcours, défis, communauté), sans tomber dans le gadget.</li>
-        <li><strong>Flow</strong> — L’apprentissage comme <strong>déroulement</strong>, comme un <strong>courant</strong> : étapes qui s’enchaînent, clarté du chemin. Le <strong>bleu</strong> évoque <strong>l’eau</strong> et la <strong>limpidité</strong> : interface structurée, hiérarchie nette, actions visibles — proche de l’<strong>état de flow</strong> (concentration, bon niveau de difficulté, retours immédiats).</li>
+    <div class="cover-bottom">
+      <div class="cover-stat">
+        <div class="label">Sections</div>
+        <div class="value">9</div>
+      </div>
+      <div class="cover-stat">
+        <div class="label">Couleurs principales</div>
+        <div class="value">2</div>
+      </div>
+      <div class="cover-stat">
+        <div class="label">Police principale</div>
+        <div class="value" style="font-family:'Fraunces',serif; font-size:14pt;">Fraunces</div>
+      </div>
+      <div class="cover-stat">
+        <div class="label">Dégradés signature</div>
+        <div class="value">3</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 2 — SOMMAIRE + IDENTITÉ
+     ═══════════════════════════════════════════════ -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand"><div class="brand-name">Flow<em>Learn</em></div></div>
+    <div class="doc-tag">Charte graphique · 2026</div>
+  </div>
+
+  <span class="section-num">§ 01 — Ce que raconte la marque</span>
+  <h1 class="section-title">Le nom en <span class="accent">deux mots.</span></h1>
+  <p class="section-deck">Chaque couleur, chaque police, chaque arrondissement de coin vient d'une décision. Voici pourquoi.</p>
+
+  <div class="two-col">
+    <div>
+      <h2>Flow</h2>
+      <p>L'apprentissage comme <strong>déroulement</strong>, comme un courant : étapes qui s'enchaînent, clarté du chemin. Le <strong>bleu</strong> évoque l'eau et la limpidité — interface structurée, hiérarchie nette, actions visibles. Proche de l'<em>état de flow</em> (concentration, bon niveau de difficulté, retours immédiats).</p>
+      <div class="btn-row"><span class="pill pill-blue">Pôle Flow · Bleu</span></div>
+    </div>
+    <div>
+      <h2>Learn</h2>
+      <p>Le <strong>cerveau</strong> au centre : attention, mémoire, motivation. Le <strong>rose / magenta</strong> porte cette partie "vivante" — curiosité, récompense, chaleur, imaginaire partagé (parcours, défis, communauté). Vivant, sans tomber dans le gadget.</p>
+      <div class="btn-row"><span class="pill pill-pink">Pôle Learn · Rose</span></div>
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    L'esprit s'active (rose) dans un parcours qu'on comprend et qui avance (bleu). Logo et palette ne sont pas décoratifs : ils matérialisent la promesse produit.
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Pôle</th><th>Idée</th><th>Couleur</th><th>Usage typique</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Flow</strong></td><td>Eau, continuité, clarté</td><td>Bleu <code class="mono-cell">#3B82F6</code></td><td>Navigation, CTA, liens, focus</td></tr>
+      <tr><td><strong>Learn</strong></td><td>Cerveau, jeu, communauté</td><td>Rose <code class="mono-cell">#EC4899</code></td><td>Gamification, récompenses, accents</td></tr>
+      <tr><td><strong>Fusion</strong></td><td>Parcours fluide + énergie</td><td>Dégradé bleu → rose</td><td>Hero, CTA premium, blocs mis en avant</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="callout-label">Équilibre visé</span>
+    <p>Assez <strong>frais</strong> pour des apprenants ; assez <strong>sobre</strong> pour enseignants, parents ou partenaires. Ni "corporate froid", ni "jouet désordonné".</p>
+  </div>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Charte graphique</span>
+    <span>01</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 3 — COULEURS
+     ═══════════════════════════════════════════════ -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand"><div class="brand-name">Flow<em>Learn</em></div></div>
+    <div class="doc-tag">§02 · Couleurs</div>
+  </div>
+
+  <span class="section-num">§ 02 — Couleurs</span>
+  <h1 class="section-title">La <span class="accent">palette</span>.</h1>
+  <p class="section-deck">Le bleu structure l'écran. Le rose accroche l'œil sur le ludique et l'émotion. Les deux ensemble, c'est FlowLearn.</p>
+
+  <h2>Couleurs principales</h2>
+  <div class="palette-grid">
+    <div class="swatch"><div class="swatch-color" style="background:#3B82F6;"></div><div class="swatch-meta"><strong>Flow Blue</strong><span>#3B82F6 · rgb(59,130,246)</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#EC4899;"></div><div class="swatch-meta"><strong>Brain Pink</strong><span>#EC4899 · rgb(236,72,153)</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#1E3A5F;"></div><div class="swatch-meta"><strong>Deep Ocean</strong><span>#1E3A5F · rgb(30,58,95)</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#8B5CF6;"></div><div class="swatch-meta"><strong>Soft Lavender</strong><span>#8B5CF6 · rgb(139,92,246)</span></div></div>
+  </div>
+
+  <table>
+    <thead><tr><th>Nom</th><th>Hex</th><th>Usage</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Flow Blue</strong></td><td class="mono-cell">#3B82F6</td><td>Primaire : CTA, liens, focus — clarté, continuité</td></tr>
+      <tr><td><strong>Brain Pink</strong></td><td class="mono-cell">#EC4899</td><td>Secondaire : accents, gamification, récompenses</td></tr>
+      <tr><td><strong>Deep Ocean</strong></td><td class="mono-cell">#1E3A5F</td><td>Titres et texte important sur fond clair</td></tr>
+      <tr><td><strong>Soft Lavender</strong></td><td class="mono-cell">#8B5CF6</td><td>Dégradés, touches "IA / intelligence"</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Couleurs fonctionnelles &amp; neutres</h2>
+  <div class="palette-grid">
+    <div class="swatch"><div class="swatch-color" style="background:#10B981;"></div><div class="swatch-meta"><strong>Success Green</strong><span>#10B981</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#F59E0B;"></div><div class="swatch-meta"><strong>Warning Amber</strong><span>#F59E0B</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#0F172A;"></div><div class="swatch-meta"><strong>Slate 900</strong><span>#0F172A</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#F1F5F9; border-top: 1px solid #e2e8f0;"></div><div class="swatch-meta"><strong>Slate 100</strong><span>#F1F5F9</span></div></div>
+  </div>
+
+  <table>
+    <thead><tr><th>Nom</th><th>Hex</th><th>Usage</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Success Green</strong></td><td class="mono-cell">#10B981</td><td>Validation, progression, bonne réponse</td></tr>
+      <tr><td><strong>Warning Amber</strong></td><td class="mono-cell">#F59E0B</td><td>Alertes, badges, attention sans panique</td></tr>
+      <tr><td><strong>Slate 900</strong></td><td class="mono-cell">#0F172A</td><td>Fond dark mode</td></tr>
+      <tr><td><strong>Slate 100</strong></td><td class="mono-cell">#F1F5F9</td><td>Fond light mode</td></tr>
+      <tr><td><strong>White</strong></td><td class="mono-cell">#FFFFFF</td><td>Cartes, surfaces</td></tr>
+    </tbody>
+  </table>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Charte graphique</span>
+    <span>02</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 4 — DÉGRADÉS
+     ═══════════════════════════════════════════════ -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand"><div class="brand-name">Flow<em>Learn</em></div></div>
+    <div class="doc-tag">§02 · Dégradés signature</div>
+  </div>
+
+  <span class="section-num">§ 02 (suite) — Dégradés signature</span>
+  <h1 class="section-title">Trois <span class="accent">dégradés</span>, trois usages.</h1>
+  <p class="section-deck">À utiliser avec parcimonie — hero, CTA premium, blocs mis en avant. Jamais sur fond blanc comme texture de remplissage.</p>
+
+  <h2>Principal · Flow + énergie</h2>
+  <div class="grad-strip" style="background: linear-gradient(135deg, #3B82F6 0%, #EC4899 100%);"></div>
+  <pre class="code"><span class="c">/* Principal : flow + énergie */</span>
+background: <span class="k">linear-gradient</span>(<span class="v">135deg</span>, <span class="s">#3B82F6</span> 0%, <span class="s">#EC4899</span> 100%);</pre>
+  <p>Le dégradé le plus utilisé. Header, logo wordmark, stat cards premium, bouton accent principal.</p>
+
+  <h2>IA · Bleu vers lavande</h2>
+  <div class="grad-strip" style="background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);"></div>
+  <pre class="code"><span class="c">/* IA : intelligence, technologie */</span>
+background: <span class="k">linear-gradient</span>(<span class="v">135deg</span>, <span class="s">#3B82F6</span> 0%, <span class="s">#8B5CF6</span> 100%);</pre>
+  <p>Réservé aux fonctionnalités IA — barre de progression IA, badge "Recommandé par l'IA", blocs IA dans le parcours.</p>
+
+  <h2>Gamification · Rose vers lavande</h2>
+  <div class="grad-strip" style="background: linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%);"></div>
+  <pre class="code"><span class="c">/* Gamification / cerveau : émotion, jeu */</span>
+background: <span class="k">linear-gradient</span>(<span class="v">135deg</span>, <span class="s">#EC4899</span> 0%, <span class="s">#8B5CF6</span> 100%);</pre>
+  <p>Badges de récompense, célébrations de niveau, achievements, streak actif.</p>
+
+  <h2>Règles d'usage des dégradés</h2>
+  <table>
+    <thead><tr><th>✓ À faire</th><th>✗ À éviter</th></tr></thead>
+    <tbody>
+      <tr><td>Hero banner, bouton CTA accent, stat cards mises en avant</td><td>Dégradé partout — ça noie la hiérarchie visuelle</td></tr>
+      <tr><td>Texte en dégradé sur les titres display (font grande)</td><td>Texte en dégradé sur le corps (illisible en petit)</td></tr>
+      <tr><td>Un seul dégradé par écran maximum</td><td>Mélanger deux dégradés sur le même bloc</td></tr>
+      <tr><td>Fond blanc ou paper sous les dégradés en superposition légère</td><td>Dégradé sur fond coloré (double saturation agressive)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="callout-label">Impression &amp; export PDF</span>
+    <p>Activer <strong>"Graphiques d'arrière-plan"</strong> dans les options d'impression Chrome / Edge pour conserver les dégradés dans l'export PDF.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Charte graphique</span>
+    <span>03</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 5 — TYPOGRAPHIE
+     ═══════════════════════════════════════════════ -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand"><div class="brand-name">Flow<em>Learn</em></div></div>
+    <div class="doc-tag">§03 · Typographie</div>
+  </div>
+
+  <span class="section-num">§ 03 — Typographie</span>
+  <h1 class="section-title">Deux polices, <span class="accent">une hiérarchie.</span></h1>
+  <p class="section-deck">On lit beaucoup dans FlowLearn : consignes, feedback, scores, articles. Il faut une sans-serif neutre et lisible — et une serif expressive pour les titres et documents.</p>
+
+  <div class="two-col">
+    <div>
+      <h2>Fraunces</h2>
+      <p><em>Variable serif optique</em> — Titres, documents, pages éditoriales. Personnalité forte, lisibilité en grand corps, italiques expressives. Utilisée pour les H1–H2 des documents internes et la communication de marque.</p>
+    </div>
+    <div>
+      <h2>Inter</h2>
+      <p><em>Sans-serif neutre</em> — Corps de texte, interface, labels, métadonnées. Bonne distinction 0/O, 1/l ; confort sur longs textes ; aspect propre — aligné avec un flow limpide.</p>
+      <p>+ <strong>JetBrains Mono</strong> pour extraits techniques, IDs, codes.</p>
+    </div>
+  </div>
+
+  <h2>Démonstration visuelle</h2>
+  <div class="typo-demo no-break">
+    <div class="td-h1">H1 — Titre de page (Fraunces Bold 48px)</div>
+    <div class="td-h2">H2 — Section majeure (Fraunces Semi-Bold 32px)</div>
+    <div class="td-h3">H3 — Sous-partie (Inter Semi-Bold 24px)</div>
+    <div class="td-h4">H4 — Titre de carte (Inter Semi-Bold 20px)</div>
+    <div class="td-body">Corps — 16px Inter Regular. Exemple de paragraphe pour vérifier lisibilité et rythme de lecture sur une ligne plus longue.</div>
+    <div class="td-small">Small — 14px · métadonnée, label &nbsp;&nbsp;|&nbsp;&nbsp; Caption — 12px · note, hint</div>
+    <div class="td-mono">const module = "flw_vocab_12"; // JetBrains Mono 14px</div>
+  </div>
+
+  <h2>Hiérarchie recommandée</h2>
+  <table>
+    <thead><tr><th>Rôle</th><th>Police</th><th>Poids</th><th>Taille</th><th>Couleur</th></tr></thead>
+    <tbody>
+      <tr><td>H1 — Titre page</td><td>Fraunces</td><td>Bold 700</td><td>48px</td><td>Deep Ocean</td></tr>
+      <tr><td>H2 — Section</td><td>Fraunces</td><td>Semi-Bold 600</td><td>32px</td><td>Deep Ocean</td></tr>
+      <tr><td>H3 — Sous-partie</td><td>Inter</td><td>Semi-Bold 600</td><td>24px</td><td>Slate 700</td></tr>
+      <tr><td>H4 — Titre carte</td><td>Inter</td><td>Semi-Bold 600</td><td>20px</td><td>Slate 600</td></tr>
+      <tr><td>Corps</td><td>Inter</td><td>Regular 400</td><td>16px</td><td>Slate 600</td></tr>
+      <tr><td>Small / label</td><td>Inter</td><td>Medium 500</td><td>12–14px</td><td>Slate 500</td></tr>
+      <tr><td>Code / technique</td><td>JetBrains Mono</td><td>Regular 400</td><td>14px</td><td>Slate 700</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="callout-label">Règle clé</span>
+    <p>Ne pas multiplier des tailles "inventées" entre ces repères. Si besoin d'une taille intermédiaire, utiliser la taille inférieure avec un poids plus fort.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Charte graphique</span>
+    <span>04</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 6 — LOGO + ICÔNES
+     ═══════════════════════════════════════════════ -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand"><div class="brand-name">Flow<em>Learn</em></div></div>
+    <div class="doc-tag">§04–05 · Logo &amp; icônes</div>
+  </div>
+
+  <span class="section-num">§ 04 — Logo</span>
+  <h1 class="section-title">Cerveau + <span class="accent">mouvement.</span></h1>
+  <p class="section-deck">Forme : cerveau stylisé (apprentissage, mémoire) + mouvement fluide / vague (eau, déroulement, limpidité du parcours). Cognition et chemin.</p>
+
+  <h2>Déclinaisons</h2>
+  <table>
+    <thead><tr><th>Version</th><th>Quand l'utiliser</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Icône + mot FlowLearn</strong></td><td>Header, landing, documents officiels</td></tr>
+      <tr><td><strong>Icône seule</strong></td><td>Favicon, app mobile, avatar de profil</td></tr>
+      <tr><td><strong>Monochrome clair</strong></td><td>Fonds sombres (dark mode, overlay)</td></tr>
+      <tr><td><strong>Monochrome foncé</strong></td><td>Fonds clairs, impression noir &amp; blanc</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Règles de respect</h2>
+  <div class="two-col">
+    <div>
+      <h3 class="subsec">Marge libre minimale</h3>
+      <p>Hauteur du <strong>F</strong> de "FlowLearn" tout autour du logo. Aucun autre élément ne doit entrer dans cette zone.</p>
+      <h3 class="subsec">Tailles minimales</h3>
+      <p>Impression : <strong>25 mm</strong> de large. Digital : <strong>80 px</strong>. Favicon : <strong>32×32 px</strong> (version simplifiée).</p>
+    </div>
+    <div>
+      <h3 class="subsec">Interdits absolus</h3>
+      <ul>
+        <li>Déformation ou étirement</li>
+        <li>Rotation</li>
+        <li>Couleurs hors charte sur le logo</li>
+        <li>Ombre portée ajoutée au logo</li>
+        <li>Utilisation sur fond dont le contraste est insuffisant</li>
       </ul>
-      <p><strong>Phrase visuelle</strong> : <em>l’esprit s’active (rose) dans un parcours qu’on comprend et qui avance (bleu)</em>. Logo et palette ne sont pas décoratifs : ils matérialisent la promesse produit.</p>
-      <p><strong>Équilibre</strong> : assez <strong>frais</strong> pour des apprenants ; assez <strong>sobre</strong> pour enseignants, parents ou partenaires. Ni « corporate froid », ni « jouet désordonné ».</p>
-      <div class="table-wrap">
-        <table class="doc">
-          <thead>
-            <tr><th>Pôle</th><th>Idée</th><th>Couleur</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>Learn</strong></td><td>Cerveau, jeu, communauté</td><td>Rose / magenta</td></tr>
-            <tr><td><strong>Flow</strong></td><td>Eau, continuité, clarté</td><td>Bleu / cyan</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p>Les <strong>dégradés bleu → rose</strong> fusionnent les deux : parcours fluide + énergie cognitive.</p>
-      <div class="row-btns">
-        <span class="pill pill-pink">Pôle Learn</span>
-        <span class="pill pill-blue">Pôle Flow</span>
-      </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- 2. Couleurs -->
-    <section id="s2" class="card doc-section">
-      <h2>2. Couleurs</h2>
-      <p><strong>Rôle des couleurs principales</strong> — Le <strong>bleu</strong> structure l’écran (navigation, actions, liens) et dit « on sait où on va ». Le <strong>rose</strong> accroche l’œil sur le ludique et l’émotion (succès, jeu, points forts), sans envahir tout le layout.</p>
+  <div class="flourish"></div>
 
-      <h3>Aperçu chromatique (même codes que les tableaux)</h3>
-      <div class="palette">
-        <div class="swatch"><div class="swatch-color" style="background:#3B82F6"></div><div class="swatch-meta"><strong>Flow Blue</strong><span>#3B82F6</span></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#EC4899"></div><div class="swatch-meta"><strong>Brain Pink</strong><span>#EC4899</span></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#1E3A5F"></div><div class="swatch-meta"><strong>Deep Ocean</strong><span>#1E3A5F</span></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#8B5CF6"></div><div class="swatch-meta"><strong>Soft Lavender</strong><span>#8B5CF6</span></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#10B981"></div><div class="swatch-meta"><strong>Success</strong><span>#10B981</span></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#F59E0B"></div><div class="swatch-meta"><strong>Warning</strong><span>#F59E0B</span></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#0F172A"></div><div class="swatch-meta"><strong>Slate 900</strong><span>#0F172A</span></div></div>
-        <div class="swatch"><div class="swatch-color" style="background:#F1F5F9"></div><div class="swatch-meta"><strong>Slate 100</strong><span>#F1F5F9</span></div></div>
-      </div>
+  <span class="section-num">§ 05 — Icônes et illustrations</span>
+  <h1 class="section-title">Contour et <span class="accent">cohérence.</span></h1>
 
-      <h3>Principales</h3>
-      <div class="table-wrap">
-        <table class="doc">
-          <thead>
-            <tr><th>Nom</th><th>Hex</th><th>RGB</th><th>Usage</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>Flow Blue</strong></td><td><code>#3B82F6</code></td><td>59, 130, 246</td><td>Primaire : CTA, liens, focus interaction — clarté, continuité</td></tr>
-            <tr><td><strong>Brain Pink</strong></td><td><code>#EC4899</code></td><td>236, 72, 153</td><td>Secondaire : accents, gamification, récompenses — chaleur, activation</td></tr>
-          </tbody>
-        </table>
-      </div>
+  <div class="two-col">
+    <div>
+      <h2>Icônes</h2>
+      <p>Style <strong>contour</strong>, traits 1,5–2 px, angles doux, base <strong>24×24 px</strong>. Le contour garde une interface "aérée" et lisible.</p>
+      <p>Bibliothèques recommandées&nbsp;: <strong>Lucide</strong>, <strong>Phosphor</strong>. Cohérence de style prioritaire sur la variété.</p>
+      <p>Couleur par défaut&nbsp;: Slate 600. En contexte actif ou accentué : Flow Blue ou Brain Pink.</p>
+    </div>
+    <div>
+      <h2>Illustrations</h2>
+      <p>Flat ou semi-flat, dégradés légers, personnages simples et <strong>inclusifs</strong>, palette limitée aux couleurs de la charte.</p>
+      <p>Éviter les stocks d'illustration génériques. Préférer des créations custom ou des illustrations cohérentes de style.</p>
+    </div>
+  </div>
 
-      <h3>Complémentaires</h3>
-      <div class="table-wrap">
-        <table class="doc">
-          <thead>
-            <tr><th>Nom</th><th>Hex</th><th>RGB</th><th>Usage</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>Deep Ocean</strong></td><td><code>#1E3A5F</code></td><td>30, 58, 95</td><td>Titres et texte important sur fond clair</td></tr>
-            <tr><td><strong>Soft Lavender</strong></td><td><code>#8B5CF6</code></td><td>139, 92, 246</td><td>Dégradés, touches « IA / intelligence »</td></tr>
-            <tr><td><strong>Success Green</strong></td><td><code>#10B981</code></td><td>16, 185, 129</td><td>Validation, progression, bonne réponse</td></tr>
-            <tr><td><strong>Warning Amber</strong></td><td><code>#F59E0B</code></td><td>245, 158, 11</td><td>Alertes, badges, attention sans panique</td></tr>
-          </tbody>
-        </table>
-      </div>
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Charte graphique</span>
+    <span>05</span>
+  </div>
+</section>
 
-      <h3>Neutres</h3>
-      <div class="table-wrap">
-        <table class="doc">
-          <thead>
-            <tr><th>Nom</th><th>Hex</th><th>Usage</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><strong>Slate 900</strong></td><td><code>#0F172A</code></td><td>Fond dark mode</td></tr>
-            <tr><td><strong>Slate 800</strong></td><td><code>#1E293B</code></td><td>Cartes dark mode</td></tr>
-            <tr><td><strong>Slate 100</strong></td><td><code>#F1F5F9</code></td><td>Fond light mode</td></tr>
-            <tr><td><strong>White</strong></td><td><code>#FFFFFF</code></td><td>Cartes, surfaces</td></tr>
-          </tbody>
-        </table>
-      </div>
 
-      <h3>Dégradés signature</h3>
-      <p class="muted" style="margin-top:0;">À utiliser avec parcimonie (hero, CTA premium, blocs mis en avant).</p>
-      <pre class="code">/* Principal : flow + énergie */
-background: linear-gradient(135deg, #3B82F6 0%, #EC4899 100%);
+<!-- ═══════════════════════════════════════════════
+     PAGE 7 — COMPOSANTS
+     ═══════════════════════════════════════════════ -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand"><div class="brand-name">Flow<em>Learn</em></div></div>
+    <div class="doc-tag">§06 · Composants d'interface</div>
+  </div>
 
-/* IA : bleu vers lavande */
-background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+  <span class="section-num">§ 06 — Composants d'interface</span>
+  <h1 class="section-title">Mêmes rayons, <span class="accent">partout.</span></h1>
+  <p class="section-deck">Principe : mêmes rayons et espacements d'une page à l'autre. Mise en page prévisible — efficacité, confiance.</p>
 
-/* Gamification / cerveau : rose vers lavande */
-background: linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%);</pre>
-      <div class="grid-2">
-        <div>
-          <div class="caption">Principal</div>
-          <div class="grad-strip" style="background:var(--grad-main)"></div>
+  <h2>Boutons</h2>
+  <table>
+    <thead><tr><th>Type</th><th>Style</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Primaire</strong></td><td>Fond Flow Blue <code class="mono-cell">#3B82F6</code>, texte blanc, coins 12px</td></tr>
+      <tr><td><strong>Secondaire</strong></td><td>Fond transparent, bordure + texte Flow Blue</td></tr>
+      <tr><td><strong>Accent</strong></td><td>Dégradé bleu → rose, texte blanc</td></tr>
+      <tr><td><strong>Danger</strong></td><td>Fond <code class="mono-cell">#EF4444</code>, texte blanc</td></tr>
+    </tbody>
+  </table>
+  <div class="btn-row">
+    <button class="btn btn-primary">Primaire</button>
+    <button class="btn btn-secondary">Secondaire</button>
+    <button class="btn btn-accent">Accent</button>
+    <button class="btn btn-danger">Danger</button>
+  </div>
+
+  <h2>Espacements — grille 4 px</h2>
+  <div class="spacing-vis">
+    <div class="sp-row"><span class="sp-label">xs</span><div class="sp-bar" style="width:4px;"></div><span class="sp-val">4px</span></div>
+    <div class="sp-row"><span class="sp-label">sm</span><div class="sp-bar" style="width:8px;"></div><span class="sp-val">8px</span></div>
+    <div class="sp-row"><span class="sp-label">md</span><div class="sp-bar" style="width:16px;"></div><span class="sp-val">16px</span></div>
+    <div class="sp-row"><span class="sp-label">lg</span><div class="sp-bar" style="width:24px;"></div><span class="sp-val">24px</span></div>
+    <div class="sp-row"><span class="sp-label">xl</span><div class="sp-bar" style="width:32px;"></div><span class="sp-val">32px</span></div>
+    <div class="sp-row"><span class="sp-label">2xl</span><div class="sp-bar" style="width:48px;"></div><span class="sp-val">48px</span></div>
+    <div class="sp-row"><span class="sp-label">3xl</span><div class="sp-bar" style="width:64px;"></div><span class="sp-val">64px</span></div>
+  </div>
+
+  <h2>Rayons de coins</h2>
+  <table>
+    <thead><tr><th>Élément</th><th>Valeur</th><th>Exemple</th></tr></thead>
+    <tbody>
+      <tr><td>Champs de saisie</td><td>8px</td><td>Input, textarea</td></tr>
+      <tr><td>Boutons</td><td>12px</td><td>CTA, navigation</td></tr>
+      <tr><td>Cartes / modales</td><td>16px</td><td>Cartes quiz, modales</td></tr>
+      <tr><td>Avatars</td><td>50% (rond)</td><td>Photo de profil</td></tr>
+      <tr><td>Tags / badges / pills</td><td>9999px</td><td>Streak, XP, labels</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Cartes</h2>
+  <p>Coins <strong>16px</strong>, ombre <code class="mono-cell">0 4px 6px -1px rgba(0,0,0,0.1)</code>, padding <strong>24px</strong>. Survol : <code class="mono-cell">translateY(-2px)</code> + ombre renforcée.</p>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Charte graphique</span>
+    <span>06</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 8 — BONNES PRATIQUES + A11Y
+     ═══════════════════════════════════════════════ -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand"><div class="brand-name">Flow<em>Learn</em></div></div>
+    <div class="doc-tag">§07–08 · Pratiques &amp; accessibilité</div>
+  </div>
+
+  <span class="section-num">§ 07 — Bonnes pratiques</span>
+  <h1 class="section-title">Ce qu'on <span class="accent">fait</span> et ce qu'on ne fait pas.</h1>
+
+  <div class="two-col">
+    <div>
+      <h2>À faire</h2>
+      <ul>
+        <li>Utiliser les <strong>couleurs exactes</strong> de la palette (tokens CSS)</li>
+        <li>Respecter la <strong>hiérarchie typographique</strong> (§03)</li>
+        <li>Vérifier le <strong>contraste</strong> avant de valider un écran</li>
+        <li>Réserver les dégradés au <strong>hero, premium, gamification</strong></li>
+        <li>Tester sur <strong>mobile</strong> avant desktop</li>
+        <li>Garder un seul <strong>CTA principal</strong> par écran</li>
+        <li>Utiliser des <strong>icônes de même style</strong> (Lucide ou Phosphor, pas les deux)</li>
+      </ul>
+    </div>
+    <div>
+      <h2>À éviter</h2>
+      <ul>
+        <li>Logo <strong>étiré, tourné</strong> ou altéré</li>
+        <li>Couleurs <strong>hors palette</strong> sans validation</li>
+        <li>Plus de <strong>trois couleurs d'accent</strong> sur un même écran</li>
+        <li>Ombres <strong>trop marquées</strong> (au-delà de la référence)</li>
+        <li>Dégradés <strong>partout</strong> — ça noie la hiérarchie</li>
+        <li>Texte en dégradé en <strong>petit corps</strong> (illisible)</li>
+        <li>Poids de police <strong>intermédiaires non prévus</strong> (300 uniquement pour Fraunces display)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="flourish"></div>
+
+  <span class="section-num">§ 08 — Accessibilité</span>
+  <h1 class="section-title" style="font-size: 28pt;">Contraste et <span class="accent">lisibilité.</span></h1>
+
+  <table>
+    <thead><tr><th>Contexte</th><th>Ratio minimum</th><th>Norme</th></tr></thead>
+    <tbody>
+      <tr><td>Texte courant (corps)</td><td><strong>≥ 4,5:1</strong></td><td>WCAG AA</td></tr>
+      <tr><td>Grands titres (24px+ bold)</td><td><strong>≥ 3:1</strong></td><td>WCAG AA large</td></tr>
+      <tr><td>Composants UI interactifs</td><td><strong>≥ 3:1</strong></td><td>WCAG AA</td></tr>
+      <tr><td>Focus clavier visible</td><td>Obligatoire</td><td>WCAG 2.4.7</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Exemples de contrastes validés</h2>
+  <div class="contrast-row">
+    <div class="cr-box" style="background:#1E3A5F;color:white;">Deep Ocean / Blanc · 14:1 ✓</div>
+    <div class="cr-box" style="background:#3B82F6;color:white;">Flow Blue / Blanc · 3,9:1 ✓</div>
+  </div>
+  <div class="contrast-row">
+    <div class="cr-box" style="background:#F1F5F9;color:#334155;">Slate 100 / Slate 700 · 6,8:1 ✓</div>
+    <div class="cr-box" style="background:#EC4899;color:white;">Brain Pink / Blanc · 3,3:1 (grand texte ✓)</div>
+  </div>
+
+  <div class="callout">
+    <span class="callout-label">Règle d'or accessibilité</span>
+    <p>Ne <strong>jamais</strong> transmettre une information uniquement par la couleur. Toujours ajouter une icône, un texte ou un motif en complément. Exemple : une réponse correcte = fond vert + icône check + texte "Correct !".</p>
+  </div>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Charte graphique</span>
+    <span>07</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 9 — EXEMPLES GABARITS
+     ═══════════════════════════════════════════════ -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand"><div class="brand-name">Flow<em>Learn</em></div></div>
+    <div class="doc-tag">§09 · Gabarits</div>
+  </div>
+
+  <span class="section-num">§ 09 — Exemples de gabarits</span>
+  <h1 class="section-title">La charte <span class="accent">en action.</span></h1>
+  <p class="section-deck">Squelette vide à gauche, même structure remplie à droite. Ces gabarits illustrent comment les règles se traduisent concrètement.</p>
+
+  <div class="two-col no-break">
+    <div>
+      <h3 class="subsec">Gabarit vide</h3>
+      <div class="template-shell">
+        <div class="shell-bar"></div>
+        <div class="shell-line w90"></div>
+        <div class="shell-line w75"></div>
+        <div class="shell-line w60"></div>
+        <div class="shell-box">Zone hero / illustration</div>
+        <div class="shell-grid">
+          <div class="shell-tile"></div>
+          <div class="shell-tile"></div>
         </div>
-        <div>
-          <div class="caption">IA</div>
-          <div class="grad-strip" style="background:var(--grad-ia)"></div>
+      </div>
+    </div>
+    <div>
+      <h3 class="subsec">Exemple avec contenu fictif</h3>
+      <div class="fake-dash">
+        <div class="fake-dash-head">
+          <div>
+            <div class="dh-title">Parcours · Module démo</div>
+            <div class="dh-sub">Étape 3 / 12</div>
+            <div class="progress"><i></i></div>
+          </div>
+          <span class="tagline-ia">IA</span>
         </div>
-        <div style="grid-column:1/-1;">
-          <div class="caption">Gamification</div>
-          <div class="grad-strip" style="background:var(--grad-game)"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. Typographie -->
-    <section id="s3" class="card doc-section">
-      <h2>3. Typographie</h2>
-      <p><strong>Pourquoi ces polices</strong> — On lit beaucoup : consignes, feedback, scores, articles. Il faut une sans-serif <strong>neutre, ouverte, très lisible</strong> sur mobile et bureau. <strong>Inter</strong> (Google Fonts) : bonne distinction 0/O, 1/l ; confort sur longs textes ; aspect <strong>propre</strong> — aligné avec un <em>flow</em> limpide.</p>
-      <p><strong>Hiérarchie</strong> — Tailles et graisses indiquent <em>où regarder en premier</em>, puis la section, puis le détail.</p>
-      <p><strong>Code et données</strong> — <strong>JetBrains Mono</strong> pour extraits techniques, IDs, snippets.</p>
-
-      <h3>Rôles et réglages de base</h3>
-      <div class="table-wrap">
-        <table class="doc">
-          <thead>
-            <tr><th>Rôle</th><th>Police</th><th>Poids</th><th>Taille</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Titres H1–H2</td><td><strong>Inter</strong> (ou Poppins)</td><td>Bold (700)</td><td>32–48px</td></tr>
-            <tr><td>Sous-titres H3–H4</td><td><strong>Inter</strong></td><td>Semi-Bold (600)</td><td>20–24px</td></tr>
-            <tr><td>Corps</td><td><strong>Inter</strong></td><td>Regular (400)</td><td>16px</td></tr>
-            <tr><td>Labels, aides</td><td><strong>Inter</strong></td><td>Medium (500)</td><td>12–14px</td></tr>
-            <tr><td>Code / technique</td><td><strong>JetBrains Mono</strong></td><td>Regular (400)</td><td>14px</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>Échelle de référence (couleurs de texte)</h3>
-      <pre class="code">H1      — 48px  Bold       Deep Ocean     → titre de page
-H2      — 32px  Bold       Deep Ocean     → section majeure
-H3      — 24px  Semi-Bold Slate 700      → sous-partie
-H4      — 20px  Semi-Bold Slate 600      → titre de carte
-Body    — 16px  Regular    Slate 600      → texte courant
-Small   — 14px  Regular    Slate 500      → métadonnées, labels
-Caption — 12px  Medium     Slate 400      → notes, hints</pre>
-      <p><strong>Règle d’usage</strong> : ne pas multiplier des tailles « inventées » entre ces repères.</p>
-
-      <h3>Démonstration visuelle</h3>
-      <div class="demo-typo" style="border:1px solid var(--slate-200);border-radius:12px;padding:20px;background:var(--white);">
-        <h1 style="font-size:40px;line-height:1.1;color:var(--deep-ocean);margin:0 0 8px;">H1 — Titre de page</h1>
-        <h2 style="font-size:28px;margin:0 0 8px;color:var(--deep-ocean);">H2 — Section majeure</h2>
-        <h3 style="font-size:22px;margin:0 0 6px;color:var(--slate-700);">H3 — Sous-partie</h3>
-        <h4 style="font-size:18px;margin:0 0 6px;color:var(--slate-600);">H4 — Titre de carte</h4>
-        <p style="margin:8px 0;color:var(--slate-600);">Corps — 16px. Exemple de paragraphe pour vérifier lisibilité et rythme.</p>
-        <p class="muted" style="margin:6px 0;">Small — métadonnée · <span class="caption">Caption — hint</span></p>
-        <p class="mono" style="margin:10px 0;padding:10px;background:var(--slate-100);border-radius:8px;color:var(--slate-700);font-size:14px;">const module = "flw_vocab_12";</p>
-      </div>
-    </section>
-
-    <!-- 4. Logo -->
-    <section id="s4" class="card doc-section">
-      <h2>4. Logo</h2>
-      <p><strong>Forme</strong> — <strong>Cerveau</strong> stylisé (apprentissage, mémoire) + <strong>mouvement fluide / vague</strong> (eau, déroulement, limpidité du parcours). Cognition <strong>et</strong> chemin.</p>
-      <h3>Déclinaisons</h3>
-      <div class="table-wrap">
-        <table class="doc">
-          <thead>
-            <tr><th>Version</th><th>Quand</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Icône + mot FlowLearn</td><td>Header, landing, documents officiels</td></tr>
-            <tr><td>Icône seule</td><td>Favicon, app, avatar</td></tr>
-            <tr><td>Monochrome clair</td><td>Fonds sombres</td></tr>
-            <tr><td>Monochrome foncé</td><td>Fonds clairs, impression</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p><strong>Respect du logo</strong> — Marge libre minimale = hauteur du <strong>F</strong> de FlowLearn. Pas de déformation ni rotation.</p>
-      <p><strong>Tailles mini</strong> — Impression : <strong>25 mm</strong> de large ; digital : <strong>80 px</strong> ; favicon <strong>32×32</strong> (version simplifiée).</p>
-    </section>
-
-    <!-- 5. Icônes -->
-    <section id="s5" class="card doc-section">
-      <h2>5. Icônes et illustrations</h2>
-      <p><strong>Icônes</strong> — Style <strong>contour</strong>, traits <strong>1,5–2 px</strong>, angles doux, base <strong>24×24 px</strong>. Bibliothèques possibles : <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a>, <a href="https://phosphoricons.com" target="_blank" rel="noopener">Phosphor</a>. Le contour garde une interface « aérée » et lisible.</p>
-      <p><strong>Illustrations</strong> — Flat ou semi-flat, dégradés légers, personnages simples et inclusifs, <strong>palette limitée</strong> aux couleurs de la charte.</p>
-    </section>
-
-    <!-- 6. Composants -->
-    <section id="s6" class="card doc-section">
-      <h2>6. Composants d’interface</h2>
-      <p><strong>Principe</strong> — Mêmes rayons et espacements d’une page à l’autre : mise en page <strong>prévisible</strong> (efficacité, confiance).</p>
-
-      <h3>Boutons</h3>
-      <div class="table-wrap">
-        <table class="doc">
-          <thead>
-            <tr><th>Type</th><th>Style</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Primaire</td><td>Fond Flow Blue <code>#3B82F6</code>, texte blanc, coins <strong>12px</strong></td></tr>
-            <tr><td>Secondaire</td><td>Fond transparent, bordure et texte Flow Blue</td></tr>
-            <tr><td>Accent</td><td>Dégradé bleu → rose, texte blanc</td></tr>
-            <tr><td>Danger</td><td>Fond <code>#EF4444</code>, texte blanc</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="row-btns">
-        <button type="button" class="btn btn-primary">Primaire</button>
-        <button type="button" class="btn btn-secondary">Secondaire</button>
-        <button type="button" class="btn btn-accent">Accent</button>
-        <button type="button" class="btn btn-danger">Danger</button>
-      </div>
-
-      <h3>Cartes</h3>
-      <p class="muted" style="margin-top:0;">Coins <strong>16px</strong>, ombre <code>0 4px 6px -1px rgba(0,0,0,0.1)</code>, padding <strong>24px</strong>. Survol : <code>translateY(-2px)</code> + ombre renforcée.</p>
-
-      <h3>Espacements (grille 4px)</h3>
-      <div class="table-wrap">
-        <table class="doc">
-          <thead>
-            <tr><th>Token</th><th>Valeur</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><code>xs</code></td><td>4px</td></tr>
-            <tr><td><code>sm</code></td><td>8px</td></tr>
-            <tr><td><code>md</code></td><td>16px</td></tr>
-            <tr><td><code>lg</code></td><td>24px</td></tr>
-            <tr><td><code>xl</code></td><td>32px</td></tr>
-            <tr><td><code>2xl</code></td><td>48px</td></tr>
-            <tr><td><code>3xl</code></td><td>64px</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>Rayons de coins</h3>
-      <div class="table-wrap">
-        <table class="doc">
-          <thead>
-            <tr><th>Élément</th><th>Valeur</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Boutons</td><td>12px</td></tr>
-            <tr><td>Cartes</td><td>16px</td></tr>
-            <tr><td>Champs</td><td>8px</td></tr>
-            <tr><td>Avatars</td><td>50% (rond)</td></tr>
-            <tr><td>Tags / badges</td><td>pill (<code>9999px</code>)</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- 7. Pratiques -->
-    <section id="s7" class="card doc-section">
-      <h2>7. Bonnes pratiques</h2>
-      <h3>À faire</h3>
-      <ul class="check">
-        <li>Couleurs <strong>exactes</strong> du tableau (tokens).</li>
-        <li><strong>Hiérarchie typo</strong> respectée (§3).</li>
-        <li><strong>Contraste</strong> suffisant (§8).</li>
-        <li>Dégradés <strong>seulement</strong> sur hero, premium, gamification.</li>
-      </ul>
-      <h3>À éviter</h3>
-      <ul class="check">
-        <li>Logo <strong>étiré</strong>, <strong>tourné</strong> ou altéré.</li>
-        <li>Couleurs <strong>hors palette</strong> sans validation.</li>
-        <li>Plus de <strong>trois couleurs d’accent</strong> sur un même écran.</li>
-        <li>Ombres <strong>trop marquées</strong>.</li>
-      </ul>
-    </section>
-
-    <!-- 8. A11y -->
-    <section id="s8" class="card doc-section">
-      <h2>8. Accessibilité</h2>
-      <ul class="check">
-        <li>Contraste texte courant : <strong>≥ 4,5:1</strong> (WCAG AA).</li>
-        <li>Grands titres / UI : <strong>≥ 3:1</strong> minimum.</li>
-        <li>Contrôles interactifs : état <strong>focus visible</strong> au clavier.</li>
-        <li>Ne <strong>jamais</strong> transmettre une info <strong>uniquement</strong> par la couleur (icône, texte ou motif en plus).</li>
-      </ul>
-    </section>
-
-    <!-- Exemples gabarits -->
-    <section id="exemples" class="card doc-section">
-      <h2>9. Exemples de gabarits (aperçu charte)</h2>
-      <p class="muted" style="margin-top:0;">Squelette vide à gauche, même structure remplie à titre d’exemple à droite.</p>
-      <div class="grid-2">
-        <div>
-          <h3>Gabarit vide</h3>
-          <div class="template-shell" aria-label="Gabarit vide">
-            <div class="shell-bar"></div>
-            <div class="shell-line w-90"></div>
-            <div class="shell-line w-75"></div>
-            <div class="shell-line w-60"></div>
-            <div class="shell-box">Zone hero / illustration</div>
-            <div class="shell-grid">
-              <div class="shell-tile" aria-hidden="true"></div>
-              <div class="shell-tile" aria-hidden="true"></div>
+        <div class="fake-body">
+          <div class="btn-row" style="margin:0;">
+            <span class="pill pill-blue">Streak</span>
+            <span class="pill pill-pink">+50 XP</span>
+            <span class="pill pill-ok">Niveau 3</span>
+          </div>
+          <div class="quiz-card">
+            <div class="quiz-q">Question exemple ?</div>
+            <div class="choices">
+              <div class="choice ok">✓ Réponse correcte</div>
+              <div class="choice">Autre choix A</div>
+              <div class="choice">Autre choix B</div>
             </div>
           </div>
-        </div>
-        <div>
-          <h3>Exemple avec contenu fictif</h3>
-          <div class="fake-dash" aria-label="Exemple tableau de bord">
-            <div class="fake-dash-head">
-              <div>
-                <h4>Parcours · Module démo</h4>
-                <p class="muted" style="margin:0;">Étape 3 / 12</p>
-                <div class="progress"><i></i></div>
-              </div>
-              <span class="tagline-ia">IA</span>
-            </div>
-            <div class="fake-body">
-              <div class="row-btns" style="margin:0;">
-                <span class="pill pill-blue">Streak</span>
-                <span class="pill pill-pink">+XP</span>
-              </div>
-              <div class="quiz-card">
-                <div class="q">Question exemple ?</div>
-                <div class="choices">
-                  <div class="choice ok">Réponse mise en avant</div>
-                  <div class="choice">Autre choix</div>
-                </div>
-              </div>
-            </div>
+          <div class="btn-row" style="margin:0;">
+            <button class="btn btn-accent" style="font-size:9pt;padding:6px 14px;">Continuer</button>
+            <button class="btn btn-secondary" style="font-size:9pt;padding:6px 14px;">Revoir</button>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <footer class="page-foot">
-      <span class="screen-only">Document maintenu par l’équipe FlowLearn — source : <span class="mono">charte-graphique/pages/charte-graphique.html</span></span>
-      <span class="print-only">FlowLearn — Charte graphique · équipe projet</span>
-    </footer>
-  </main>
+  <h2 style="margin-top: 20px;">Tokens CSS — démarrage rapide</h2>
+  <pre class="code"><span class="c">/* Copier-coller en début de fichier CSS */</span>
+<span class="k">:root</span> {
+  <span class="c">/* Couleurs principales */</span>
+  --flow-blue:    <span class="s">#3B82F6</span>;
+  --brain-pink:   <span class="s">#EC4899</span>;
+  --deep-ocean:   <span class="s">#1E3A5F</span>;
+  --soft-lavender:<span class="s">#8B5CF6</span>;
+  --success:      <span class="s">#10B981</span>;
+  --warning:      <span class="s">#F59E0B</span>;
+
+  <span class="c">/* Dégradés signature */</span>
+  --grad-main:  <span class="k">linear-gradient</span>(<span class="v">135deg</span>, <span class="s">#3B82F6</span> 0%, <span class="s">#EC4899</span> 100%);
+  --grad-ia:    <span class="k">linear-gradient</span>(<span class="v">135deg</span>, <span class="s">#3B82F6</span> 0%, <span class="s">#8B5CF6</span> 100%);
+  --grad-game:  <span class="k">linear-gradient</span>(<span class="v">135deg</span>, <span class="s">#EC4899</span> 0%, <span class="s">#8B5CF6</span> 100%);
+
+  <span class="c">/* Rayons */</span>
+  --radius-btn:  <span class="v">12px</span>;
+  --radius-card: <span class="v">16px</span>;
+  --radius-field:<span class="v">8px</span>;
+}</pre>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Charte graphique</span>
+    <span>08</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 10 — FIN
+     ═══════════════════════════════════════════════ -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand"><div class="brand-name">Flow<em>Learn</em></div></div>
+    <div class="doc-tag">Charte graphique · 2026</div>
+  </div>
+
+  <span class="section-num">— En résumé</span>
+  <h1 class="section-title">L'essentiel en <span class="accent">deux minutes.</span></h1>
+
+  <table>
+    <thead><tr><th>Quoi</th><th>La réponse</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Couleur principale</strong></td><td>Flow Blue <code class="mono-cell">#3B82F6</code> — navigation, CTA, liens</td></tr>
+      <tr><td><strong>Couleur secondaire</strong></td><td>Brain Pink <code class="mono-cell">#EC4899</code> — gamification, accents, émotion</td></tr>
+      <tr><td><strong>Couleur texte titres</strong></td><td>Deep Ocean <code class="mono-cell">#1E3A5F</code></td></tr>
+      <tr><td><strong>Police titres / docs</strong></td><td>Fraunces (Google Fonts) — Bold 700 pour H1–H2</td></tr>
+      <tr><td><strong>Police interface</strong></td><td>Inter (Google Fonts) — Regular 400 / Semi-Bold 600</td></tr>
+      <tr><td><strong>Police technique</strong></td><td>JetBrains Mono — code, IDs, données</td></tr>
+      <tr><td><strong>Dégradé signature</strong></td><td><code class="mono-cell">linear-gradient(135deg, #3B82F6, #EC4899)</code></td></tr>
+      <tr><td><strong>Rayon bouton</strong></td><td>12px</td></tr>
+      <tr><td><strong>Rayon carte</strong></td><td>16px</td></tr>
+      <tr><td><strong>Contraste minimum</strong></td><td>4,5:1 pour texte courant (WCAG AA)</td></tr>
+      <tr><td><strong>Icônes</strong></td><td>Style contour, 24×24px, Lucide ou Phosphor</td></tr>
+      <tr><td><strong>Logo — marge libre</strong></td><td>Hauteur du "F" de FlowLearn tout autour</td></tr>
+    </tbody>
+  </table>
+
+  <div class="pull-quote">
+    Quand on doute d'un choix graphique, la bonne question est : est-ce que ça sert le flow (clarté, structure) ou le learn (émotion, engagement) — ou les deux ? Si la réponse est "ni l'un ni l'autre", c'est probablement hors charte.
+  </div>
+
+  <div class="callout">
+    <span class="callout-label">Liens utiles</span>
+    <p><strong>Lucide Icons</strong> — lucide.dev · <strong>Phosphor Icons</strong> — phosphoricons.com · <strong>Google Fonts</strong> — fonts.google.com (Fraunces, Inter, JetBrains Mono) · <strong>Vérificateur de contraste</strong> — webaim.org/resources/contrastchecker</p>
+  </div>
+
+  <div style="margin-top: 18mm; text-align: center; font-family: 'Fraunces', serif; color: var(--slate-500); font-size: 10pt; font-style: italic;">
+    Document maintenu par l'équipe FlowLearn · Version 1.0 · Mai 2026
+  </div>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Charte graphique</span>
+    <span>09</span>
+  </div>
+</section>
+
 </body>
 </html>

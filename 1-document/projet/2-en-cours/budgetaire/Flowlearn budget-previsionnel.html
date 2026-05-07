@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>FlowLearn — Budget Prévisionnel 2026-2028</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --flow-blue: #3B82F6;
+    --brain-pink: #EC4899;
+    --deep-ocean: #1E3A5F;
+    --soft-lavender: #8B5CF6;
+    --success-green: #10B981;
+    --warning-amber: #F59E0B;
+    --slate-900: #0F172A;
+    --slate-800: #1E293B;
+    --slate-700: #334155;
+    --slate-600: #475569;
+    --slate-500: #64748B;
+    --slate-400: #94A3B8;
+    --slate-300: #CBD5E1;
+    --slate-200: #E2E8F0;
+    --slate-100: #F1F5F9;
+    --slate-50:  #F8FAFC;
+    --paper:     #FBFAF7;
+    --ink:       #0F172A;
+    --grad-signature: linear-gradient(135deg, #3B82F6 0%, #EC4899 100%);
+    --grad-ai:        linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+    --grad-brain:     linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  @page { size: A4; margin: 0; }
+
+  html, body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 11pt;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 22mm 20mm 20mm 20mm;
+    margin: 0 auto;
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+    break-after: page;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  .page::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(236, 72, 153, 0.025) 0%, transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(59, 130, 246, 0.025) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .page > * { position: relative; z-index: 1; }
+
+  /* Cover */
+  .cover {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background:
+      radial-gradient(ellipse at top right, rgba(236, 72, 153, 0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at bottom left, rgba(59, 130, 246, 0.15) 0%, transparent 55%),
+      var(--paper);
+  }
+  .cover::before { display: none; }
+  .cover-inner {
+    padding: 28mm 22mm;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .cover-top { display: flex; align-items: flex-start; justify-content: space-between; }
+  .cover-logo { display: flex; align-items: center; gap: 14px; }
+  .cover-logo .wordmark {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 24pt;
+    color: var(--deep-ocean);
+    letter-spacing: -0.01em;
+  }
+  .cover-logo .wordmark em {
+    background: var(--grad-signature);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent; font-style: normal;
+  }
+  .cover-meta {
+    text-align: right;
+    font-size: 9pt;
+    color: var(--slate-500);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+  .cover-meta strong { color: var(--deep-ocean); font-weight: 600; }
+
+  .cover-middle { margin-top: 30mm; }
+  .cover-eyebrow {
+    font-size: 9pt;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--brain-pink);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  .cover-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 58pt;
+    line-height: 0.96;
+    color: var(--deep-ocean);
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+  .cover-title .accent {
+    font-style: italic; font-weight: 400;
+    background: var(--grad-signature);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent;
+  }
+  .cover-deck {
+    font-family: 'Fraunces', serif;
+    font-size: 14pt;
+    font-weight: 300;
+    color: var(--slate-600);
+    line-height: 1.45;
+    max-width: 130mm;
+  }
+
+  .cover-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid var(--slate-200);
+    padding-top: 18px;
+  }
+  .cover-stat .label {
+    font-size: 8pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--slate-500);
+    margin-bottom: 6px;
+  }
+  .cover-stat .value {
+    font-family: 'Fraunces', serif;
+    font-size: 26pt;
+    font-weight: 500;
+    color: var(--deep-ocean);
+    line-height: 1;
+  }
+  .cover-stat .value .unit {
+    font-size: 14pt;
+    color: var(--slate-500);
+    font-weight: 400;
+  }
+
+  /* Running header */
+  .running-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--slate-200);
+    margin-bottom: 28px;
+    font-size: 9pt;
+    color: var(--slate-500);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .running-header .brand { display: flex; align-items: center; gap: 9px; }
+  .running-header .brand-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 11pt;
+    color: var(--deep-ocean);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .running-header .brand-name em {
+    background: var(--grad-signature);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent;
+    font-style: normal;
+  }
+  .running-header .doc-tag { font-weight: 500; }
+
+  /* Typography */
+  h1.section-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 34pt;
+    line-height: 1.05;
+    color: var(--deep-ocean);
+    letter-spacing: -0.015em;
+    margin-bottom: 8px;
+  }
+  h1.section-title .accent {
+    font-style: italic;
+    background: var(--grad-signature);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent;
+  }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    color: var(--brain-pink);
+    letter-spacing: 0.2em;
+    margin-bottom: 14px;
+    display: block;
+    font-weight: 500;
+  }
+  .section-deck {
+    font-family: 'Fraunces', serif;
+    font-size: 13pt;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--slate-600);
+    margin-bottom: 24px;
+    max-width: 155mm;
+    font-style: italic;
+  }
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 16pt;
+    color: var(--deep-ocean);
+    margin-top: 24px;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 10pt;
+    color: var(--deep-ocean);
+    margin-top: 16px;
+    margin-bottom: 6px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  p { margin-bottom: 10pt; color: var(--slate-700); font-size: 10pt; }
+  p strong { color: var(--deep-ocean); font-weight: 600; }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 16px 0;
+    font-size: 9.5pt;
+  }
+  table th {
+    text-align: left;
+    font-size: 8pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--slate-500);
+    font-weight: 600;
+    padding: 9px 11px;
+    border-bottom: 2px solid var(--deep-ocean);
+  }
+  table td {
+    padding: 10px 11px;
+    border-bottom: 1px solid var(--slate-200);
+    color: var(--slate-700);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td strong { color: var(--deep-ocean); font-weight: 600; }
+  table tr.total td {
+    border-top: 2px solid var(--deep-ocean);
+    border-bottom: none;
+    background: rgba(30,58,95,0.04);
+    font-weight: 600;
+    color: var(--deep-ocean);
+  }
+  table tr.subtotal td {
+    border-top: 1px solid var(--slate-400);
+    border-bottom: none;
+    background: rgba(30,58,95,0.02);
+    font-weight: 600;
+    color: var(--deep-ocean);
+    font-size: 9pt;
+  }
+  table tr.section-header td {
+    background: rgba(59,130,246,0.06);
+    font-weight: 600;
+    color: var(--deep-ocean);
+    font-family: 'Fraunces', serif;
+    font-size: 10pt;
+    padding: 8px 11px;
+    border-bottom: 1px solid var(--slate-300);
+  }
+  .text-right { text-align: right; }
+  .mono { font-family: 'JetBrains Mono', monospace; font-size: 9pt; }
+
+  /* Stat cards */
+  .stat {
+    background: white;
+    border-radius: 14px;
+    padding: 16px;
+    border: 1px solid var(--slate-200);
+    position: relative;
+    overflow: hidden;
+  }
+  .stat::before {
+    content: "";
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--grad-signature);
+  }
+  .stat .stat-value {
+    font-family: 'Fraunces', serif;
+    font-size: 24pt;
+    font-weight: 500;
+    color: var(--deep-ocean);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .stat .stat-value .unit {
+    font-size: 12pt;
+    color: var(--slate-500);
+    font-weight: 400;
+  }
+  .stat .stat-label {
+    font-size: 8pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--slate-500);
+    margin-top: 5px;
+    font-weight: 500;
+  }
+  .stat .stat-note {
+    font-size: 8.5pt;
+    color: var(--slate-600);
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+  .stat.pink::before { background: var(--brain-pink); }
+  .stat.blue::before { background: var(--flow-blue); }
+  .stat.lavender::before { background: var(--soft-lavender); }
+  .stat.green::before { background: var(--success-green); }
+  .stat.amber::before { background: var(--warning-amber); }
+
+  /* Grids */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 14px 0; }
+  .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 14px 0; }
+  .four-col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 14px 0; }
+
+  /* Callout */
+  .callout {
+    background: linear-gradient(135deg, rgba(59,130,246,0.06) 0%, rgba(236,72,153,0.06) 100%);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 14px 0;
+    border: 1px solid rgba(59,130,246,0.12);
+  }
+  .callout .callout-label {
+    font-size: 8pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--brain-pink);
+    margin-bottom: 5px;
+    display: block;
+  }
+  .callout p { margin-bottom: 0; color: var(--slate-700); font-size: 9.5pt; }
+
+  /* Pull quote */
+  .pull-quote {
+    border-left: 3px solid var(--brain-pink);
+    padding: 4px 0 4px 18px;
+    margin: 16px 0;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: var(--deep-ocean);
+  }
+
+  /* Alloc bars */
+  .alloc-row {
+    display: grid;
+    grid-template-columns: 170px 1fr 80px 60px;
+    gap: 12px;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--slate-100);
+    font-size: 9.5pt;
+  }
+  .alloc-row:last-child { border-bottom: none; }
+  .alloc-label { color: var(--deep-ocean); font-weight: 500; }
+  .alloc-track { height: 8px; background: var(--slate-100); border-radius: 4px; overflow: hidden; }
+  .alloc-fill { height: 100%; border-radius: 4px; }
+  .alloc-fill.blue { background: var(--flow-blue); }
+  .alloc-fill.pink { background: var(--brain-pink); }
+  .alloc-fill.lav { background: var(--soft-lavender); }
+  .alloc-fill.amber { background: var(--warning-amber); }
+  .alloc-fill.green { background: var(--success-green); }
+  .alloc-amount { text-align: right; color: var(--slate-700); font-family: 'JetBrains Mono', monospace; font-size: 9pt; }
+  .alloc-pct { text-align: right; color: var(--slate-500); font-family: 'JetBrains Mono', monospace; font-size: 9pt; }
+
+  /* Annex marker */
+  .annex-marker {
+    display: inline-block;
+    background: var(--soft-lavender);
+    color: white;
+    font-size: 8pt;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+  }
+
+  /* Flourish */
+  .flourish {
+    width: 60px;
+    height: 2px;
+    background: var(--grad-signature);
+    margin: 16px 0;
+    border-radius: 2px;
+  }
+
+  /* KPI grid */
+  .kpi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 12px 0; }
+  .kpi {
+    background: white;
+    border: 1px solid var(--slate-200);
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .kpi-label { font-size: 9pt; color: var(--slate-600); }
+  .kpi-value {
+    font-family: 'Fraunces', serif;
+    font-size: 13pt;
+    color: var(--deep-ocean);
+    font-weight: 600;
+  }
+
+  /* Annex divider */
+  .annex-divider {
+    text-align: center;
+    margin: 0;
+    padding: 50mm 20mm;
+  }
+  .annex-divider .label {
+    font-size: 10pt;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--brain-pink);
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+  .annex-divider .title {
+    font-family: 'Fraunces', serif;
+    font-size: 58pt;
+    color: var(--deep-ocean);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .annex-divider .title .accent {
+    font-style: italic;
+    background: var(--grad-signature);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent;
+  }
+  .annex-divider .deck {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 13pt;
+    color: var(--slate-600);
+    margin-top: 24px;
+    line-height: 1.5;
+    max-width: 130mm;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 300;
+  }
+
+  /* Page footer */
+  .page-footer {
+    position: absolute;
+    bottom: 12mm; left: 20mm; right: 20mm;
+    display: flex;
+    justify-content: space-between;
+    font-size: 8pt;
+    color: var(--slate-400);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-top: 8px;
+    border-top: 1px solid var(--slate-100);
+  }
+  .page-footer .pf-brand {
+    font-family: 'Fraunces', serif;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--slate-500);
+  }
+
+  ul, ol { padding-left: 18px; margin-bottom: 10pt; }
+  li { margin-bottom: 4px; font-size: 9.5pt; color: var(--slate-700); }
+  li strong { color: var(--deep-ocean); }
+
+  .no-break { page-break-inside: avoid; break-inside: avoid; }
+
+  .lede::first-letter {
+    font-family: 'Fraunces', serif;
+    font-size: 48pt;
+    font-weight: 500;
+    float: left;
+    line-height: 0.85;
+    margin: 6px 8px 0 0;
+    background: var(--grad-signature);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent;
+  }
+
+  /* TOC */
+  .toc-list { list-style: none; padding: 0; }
+  .toc-list li {
+    display: flex;
+    align-items: baseline;
+    padding: 9px 0;
+    border-bottom: 1px dotted var(--slate-200);
+    font-size: 10.5pt;
+  }
+  .toc-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    color: var(--brain-pink);
+    width: 36px;
+    flex-shrink: 0;
+    font-weight: 500;
+  }
+  .toc-title {
+    font-family: 'Fraunces', serif;
+    color: var(--deep-ocean);
+    flex: 1;
+    font-weight: 400;
+  }
+  .toc-page {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    color: var(--slate-500);
+  }
+  .toc-section {
+    font-size: 8pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--slate-400);
+    font-weight: 600;
+    margin: 16px 0 5px 0;
+    font-family: 'Inter', sans-serif;
+  }
+
+  @media print {
+    body { background: white; }
+    .page { margin: 0; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — COVER -->
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="cover-top">
+      <div class="cover-logo">
+        <div class="wordmark">Flow<em>Learn</em></div>
+      </div>
+      <div class="cover-meta">
+        <div>Document interne</div>
+        <div><strong>Version 2.3</strong></div>
+        <div>Mai 2026</div>
+      </div>
+    </div>
+
+    <div class="cover-middle">
+      <div class="cover-eyebrow">Budget prévisionnel · 24 mois</div>
+      <h1 class="cover-title">
+        344&nbsp;159&nbsp;€<br>
+        pour <span class="accent">faire exister</span><br>
+        FlowLearn.
+      </h1>
+      <p class="cover-deck">
+        Avril 2026 → Mars 2028. Sept personnes au SMIC.
+        Un cadrage réaliste — pas un budget de levée de fonds.
+      </p>
+    </div>
+
+    <div class="cover-bottom">
+      <div class="cover-stat">
+        <div class="label">Total 24 mois</div>
+        <div class="value">344<span class="unit"> k€</span></div>
+      </div>
+      <div class="cover-stat">
+        <div class="label">Équipe</div>
+        <div class="value">7<span class="unit"> pers.</span></div>
+      </div>
+      <div class="cover-stat">
+        <div class="label">Salaires</div>
+        <div class="value">85<span class="unit"> %</span></div>
+      </div>
+      <div class="cover-stat">
+        <div class="label">Pôle Com</div>
+        <div class="value">18<span class="unit"> k€</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 2 — INTRO + SOMMAIRE -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand"><div class="brand-name">Flow<em>Learn</em></div></div>
+    <div class="doc-tag">Budget prévisionnel · 2026—2028</div>
+  </div>
+
+  <span class="section-num">— Avant-propos</span>
+  <h1 class="section-title">Un budget <span class="accent">honnête</span>.</h1>
+
+  <p class="lede">Ce document propose un cadrage budgétaire pour FlowLearn sur 24 mois. Il couvre la masse salariale, les abonnements outils, les déplacements, et un pôle communication structuré — pour faire connaître le projet au-delà du seul bouche-à-oreille.</p>
+
+  <p>L'idée n'est pas de produire un budget ambitieux de levée de fonds, mais <strong>un cadrage réaliste que l'équipe peut tenir avec ses moyens actuels</strong>. À 85 % de masse salariale, la clarté est là : la valeur produite dans ce projet, c'est avant tout du temps humain.</p>
+
+  <div class="callout">
+    <span class="callout-label">Hypothèses clés</span>
+    <p><strong>Équipe stable à 7 personnes</strong> sur 24 mois, rémunérées au SMIC brut + charges (~1 750 €/mois employeur). Pas de bureau privé (remote ou locaux Epitech). Infrastructure : 1 VPS mutualisé + stack gratuite. Communication : salons + visibilité budgétés explicitement (~18 k€ sur 24 mois).</p>
+  </div>
+
+  <h2>Sommaire</h2>
+  <div class="toc-section">Corps principal</div>
+  <ol class="toc-list">
+    <li><span class="toc-num">01</span><span class="toc-title">Synthèse globale</span><span class="toc-page">03</span></li>
+    <li><span class="toc-num">02</span><span class="toc-title">Salaires — 294 000 €</span><span class="toc-page">04</span></li>
+    <li><span class="toc-num">03</span><span class="toc-title">Abonnements outils &amp; hébergement — 11 390 €</span><span class="toc-page">05</span></li>
+    <li><span class="toc-num">04</span><span class="toc-title">Déplacements — 4 380 €</span><span class="toc-page">06</span></li>
+    <li><span class="toc-num">05</span><span class="toc-title">Communication, salons &amp; visibilité — 18 000 €</span><span class="toc-page">07</span></li>
+    <li><span class="toc-num">06</span><span class="toc-title">Récapitulatif &amp; provision de sécurité</span><span class="toc-page">09</span></li>
+    <li><span class="toc-num">07</span><span class="toc-title">Gouvernance et suivi</span><span class="toc-page">10</span></li>
+  </ol>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Budget prévisionnel</span>
+    <span>02</span>
+  </div>
+</section>
+
+<!-- PAGE 3 — SYNTHÈSE GLOBALE -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand"><div class="brand-name">Flow<em>Learn</em></div></div>
+    <div class="doc-tag">§01 · Synthèse</div>
+  </div>
+
+  <span class="section-num">§ 01 — Synthèse globale</span>
+  <h1 class="section-title">Quatre pôles, <span class="accent">une logique</span>.</h1>
+  <p class="section-deck">Le budget FlowLearn se lit comme un projet logiciel devrait se lire : la quasi-totalité du coût, c'est du temps humain. Tout le reste est à la marge — ce qui ne veut pas dire négligeable.</p>
+
+  <div class="four-col">
+    <div class="stat blue">
+      <div class="stat-value">294<span class="unit"> k€</span></div>
+      <div class="stat-label">Salaires</div>
+      <div class="stat-note">7 personnes × SMIC + charges × 24 mois</div>
+    </div>
+    <div class="stat lavender">
+      <div class="stat-value">11,4<span class="unit"> k€</span></div>
+      <div class="stat-label">Outils &amp; hébergement</div>
+      <div class="stat-note">Cursor, Claude, Notion, VPS…</div>
+    </div>
+    <div class="stat green">
+      <div class="stat-value">4,4<span class="unit"> k€</span></div>
+      <div class="stat-label">Déplacements</div>
+      <div class="stat-note">Paris, Londres, Europe (hors frais salon)</div>
+    </div>
+    <div class="stat amber">
+      <div class="stat-value">18<span class="unit"> k€</span></div>
+      <div class="stat-label">Communication</div>
+      <div class="stat-note">Salons, kit, pub, presse, partenariats</div>
+    </div>
+  </div>
+
+  <h2>Tableau de synthèse complet</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Pôle</th>
+        <th class="text-right">Total 24 mois</th>
+        <th class="text-right">Part</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Salaires</strong> (7 personnes au SMIC, charges incluses)</td><td class="text-right mono">294 000 €</td><td class="text-right mono">85,4 %</td></tr>
+      <tr><td><strong>Abonnements outils &amp; hébergement</strong></td><td class="text-right mono">11 390 €</td><td class="text-right mono">3,3 %</td></tr>
+      <tr><td><strong>Déplacements</strong> (transport + hébergement, hors frais salon)</td><td class="text-right mono">4 380 €</td><td class="text-right mono">1,3 %</td></tr>
+      <tr><td><strong>Communication, salons &amp; visibilité</strong></td><td class="text-right mono">18 000 €</td><td class="text-right mono">5,2 %</td></tr>
+      <tr class="subtotal"><td>Sous-total</td><td class="text-right mono">327 770 €</td><td class="text-right mono">95,2 %</td></tr>
+      <tr><td>Provision de sécurité (~5 %)</td><td class="text-right mono">16 389 €</td><td class="text-right mono">4,8 %</td></tr>
+      <tr class="total"><td>Total prévisionnel recommandé</td><td class="text-right mono">344 159 €</td><td class="text-right mono">100 %</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Répartition visuelle</h2>
+  <div class="alloc-row"><div class="alloc-label">Salaires</div><div class="alloc-track"><div class="alloc-fill blue" style="width: 100%;"></div></div><div class="alloc-amount">294 000 €</div><div class="alloc-pct">85,4%</div></div>
+  <div class="alloc-row"><div class="alloc-label">Communication &amp; salons</div><div class="alloc-track"><div class="alloc-fill amber" style="width: 6%;"></div></div><div class="alloc-amount">18 000 €</div><div class="alloc-pct">5,2%</div></div>
+  <div class="alloc-row"><div class="alloc-label">Provision sécurité</div><div class="alloc-track"><div class="alloc-fill pink" style="width: 5,6%;"></div></div><div class="alloc-amount">16 389 €</div><div class="alloc-pct">4,8%</div></div>
+  <div class="alloc-row"><div class="alloc-label">Outils &amp; hébergement</div><div class="alloc-track"><div class="alloc-fill lav" style="width: 3,9%;"></div></div><div class="alloc-amount">11 390 €</div><div class="alloc-pct">3,3%</div></div>
+  <div class="alloc-row"><div class="alloc-label">Déplacements</div><div class="alloc-track"><div class="alloc-fill green" style="width: 1,5%;"></div></div><div class="alloc-amount">4 380 €</div><div class="alloc-pct">1,3%</div></div>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Budget prévisionnel</span>
+    <span>03</span>
+  </div>
+</section>
+
+<!-- PAGE 4 — SALAIRES -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand"><div class="brand-name">Flow<em>Learn</em></div></div>
+    <div class="doc-tag">§02 · Salaires</div>
+  </div>
+
+  <span class="section-num">§ 02 — Salaires</span>
+  <h1 class="section-title">294 000 € — <span class="accent">le vrai coût</span> d'une équipe.</h1>
+  <p class="section-deck">C'est de très loin le plus gros poste (~90 % du budget hors provision). Ce qui est attendu sur un projet logiciel : la valeur produite, c'est avant tout du temps humain.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Poste</th>
+        <th class="text-right">Mensuel/pers.</th>
+        <th class="text-right">Mensuel équipe</th>
+        <th class="text-right">Annuel équipe</th>
+        <th class="text-right">Total 24 mois</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>7 × SMIC brut + charges patronales (~22 %)</td>
+        <td class="text-right mono">~1 750 €</td>
+        <td class="text-right mono">12 250 €</td>
+        <td class="text-right mono">147 000 €</td>
+        <td class="text-right mono"><strong>294 000 €</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="callout-label">Pourquoi le SMIC</span>
+    <p>Le SMIC est le seul niveau de rémunération soutenable à notre échelle (équipe étudiante, pas de financement extérieur). Sur le marché de l'IA, un dev expérimenté coûterait 4–5× plus cher. L'équipe reste stable à 7 sur 24 mois — pas de recrutement supplémentaire, pas de prime, pas d'intéressement. Si la situation évolue (levée, première vente significative), le sujet sera rouvert.</p>
+  </div>
+
+  <h2>Ce que ça représente concrètement</h2>
+  <div class="three-col">
+    <div class="stat blue">
+      <div class="stat-value">12 250<span class="unit"> €</span></div>
+      <div class="stat-label">Mensuel équipe</div>
+      <div class="stat-note">Soit 1 750 € par personne et par mois, charges incluses</div>
+    </div>
+    <div class="stat blue">
+      <div class="stat-value">147 000<span class="unit"> €</span></div>
+      <div class="stat-label">Annuel équipe</div>
+      <div class="stat-note">Coût total employeur pour une année complète</div>
+    </div>
+    <div class="stat blue">
+      <div class="stat-value">85,4<span class="unit"> %</span></div>
+      <div class="stat-label">Du budget total</div>
+      <div class="stat-note">La valeur produite, c'est avant tout du temps humain</div>
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    Un dev IA expérimenté sur le marché coûte 4–5× le SMIC. Ce choix assumé est la condition de viabilité du projet.
+  </div>
+
+  <h2>Rappel : ce qui n'est PAS budgété ici</h2>
+  <ul>
+    <li><strong>Bureau privé</strong> : l'équipe travaille en remote ou dans les locaux Epitech (~50 k€/an d'économie)</li>
+    <li><strong>Primes et intéressement</strong> : zéro variable, volontairement</li>
+    <li><strong>Recrutement supplémentaire</strong> : équipe stable à 7 personnes</li>
+    <li><strong>Formation externe</strong> : apprentissage en interne et sur le tas</li>
+  </ul>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Budget prévisionnel</span>
+    <span>04</span>
+  </div>
+</section>
+
+<!-- PAGE 5 — OUTILS -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand"><div class="brand-name">Flow<em>Learn</em></div></div>
+    <div class="doc-tag">§03 · Outils &amp; hébergement</div>
+  </div>
+
+  <span class="section-num">§ 03 — Abonnements outils &amp; hébergement</span>
+  <h1 class="section-title">11 390 € pour <span class="accent">travailler ensemble</span>.</h1>
+  <p class="section-deck">Règle d'équipe : sur chaque outil en abonnement, les 7 personnes ont un siège payant. Pas seulement les profils "tech". Tout le monde doit pouvoir pairer, relire, documenter et intervenir au même niveau.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Outil</th>
+        <th>Usage</th>
+        <th class="text-right">Tarif/user</th>
+        <th class="text-right">Sièges</th>
+        <th class="text-right">Mensuel</th>
+        <th class="text-right">Total 24 mois</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Cursor Pro</strong></td><td>IDE assisté par IA</td><td class="text-right mono">20 €</td><td class="text-right mono">7</td><td class="text-right mono">140 €</td><td class="text-right mono"><strong>3 360 €</strong></td></tr>
+      <tr><td><strong>Claude Pro</strong></td><td>Assistant IA (rédaction, analyse, veille)</td><td class="text-right mono">20 €</td><td class="text-right mono">7</td><td class="text-right mono">140 €</td><td class="text-right mono"><strong>3 360 €</strong></td></tr>
+      <tr><td><strong>Notion Plus</strong></td><td>Documentation &amp; wiki équipe</td><td class="text-right mono">10 €</td><td class="text-right mono">7</td><td class="text-right mono">70 €</td><td class="text-right mono"><strong>1 680 €</strong></td></tr>
+      <tr><td><strong>Discord Nitro</strong></td><td>Serveur équipe + communauté</td><td class="text-right mono">~10 €</td><td class="text-right mono">7</td><td class="text-right mono">70 €</td><td class="text-right mono"><strong>1 680 €</strong></td></tr>
+      <tr><td><strong>Obsidian Sync</strong></td><td>Vault partagé / notes (PRD, rétro, veille)</td><td class="text-right mono">5 €</td><td class="text-right mono">7</td><td class="text-right mono">35 €</td><td class="text-right mono"><strong>840 €</strong></td></tr>
+      <tr><td><strong>Figma</strong></td><td>Maquettes &amp; prototypage</td><td class="text-right mono">Gratuit</td><td class="text-right mono">7</td><td class="text-right mono">0 €</td><td class="text-right mono"><strong>0 €</strong></td></tr>
+      <tr><td><strong>VPS Shifteck</strong></td><td>Backend + base (machine partagée)</td><td class="text-right mono">~20 €</td><td class="text-right mono">1 serveur</td><td class="text-right mono">~20 €</td><td class="text-right mono"><strong>470 €</strong></td></tr>
+      <tr><td><strong>GitHub</strong></td><td>Repo + CI/CD + Actions</td><td class="text-right mono">Gratuit</td><td class="text-right mono">7</td><td class="text-right mono">0 €</td><td class="text-right mono"><strong>0 €</strong></td></tr>
+      <tr><td><strong>Firebase Analytics</strong></td><td>Analytics produit</td><td class="text-right mono">Free tier</td><td class="text-right mono">–</td><td class="text-right mono">0 €</td><td class="text-right mono"><strong>0 €</strong></td></tr>
+      <tr class="total"><td colspan="4">Total mensuel / Total 24 mois</td><td class="text-right mono">475 €</td><td class="text-right mono">11 390 €</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Justifications clés</h2>
+  <div class="two-col">
+    <div>
+      <h3>7 × Cursor &amp; 7 × Claude</h3>
+      <p>Tout le monde peut faire du pair programming, relire du code et extraire du contexte du repo — sans "emprunter" la machine d'un dev. Ça coûte plus cher qu'un découpage 4 devs / 3 autres, mais c'est plus simple en organisation.</p>
+      <h3>Figma gratuit</h3>
+      <p>Les 7 comptes restent sur le plan Starter. En cas de blocage (handoff lourd, bibliothèques partagées à grande échelle), on arbitrera une montée en Professional ou un plan Education si l'école le permet.</p>
+    </div>
+    <div>
+      <h3>Un seul VPS</h3>
+      <p>Le coût n'est pas multiplié par 7 — c'est une infrastructure commune. Backend + base sur une seule machine mutualisée.</p>
+      <h3>GitHub &amp; Firebase : gratuits</h3>
+      <p>Les 7 contributeurs restent sur le plan gratuit GitHub (équipe à taille de repo modérée) et Firebase Spark tant que le volume d'événements reste faible.</p>
+      <h3>Note école</h3>
+      <p>Si Epitech fournit des licences Education, certains postes peuvent être réduits ou évités — le tableau représente le cas "on paie nous-mêmes".</p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Budget prévisionnel</span>
+    <span>05</span>
+  </div>
+</section>
+
+<!-- PAGE 6 — DÉPLACEMENTS -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand"><div class="brand-name">Flow<em>Learn</em></div></div>
+    <div class="doc-tag">§04 · Déplacements</div>
+  </div>
+
+  <span class="section-num">§ 04 — Déplacements (transport &amp; hébergement)</span>
+  <h1 class="section-title">4 380 € pour <span class="accent">aller sur le terrain</span>.</h1>
+  <p class="section-deck">Hors frais de stand et salon — ceux-ci sont dans le pôle Communication. Ce poste couvre uniquement les transports et hébergements liés aux missions, partenariats et conférences.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Activité</th>
+        <th>Fréquence</th>
+        <th class="text-right">Coût unitaire</th>
+        <th class="text-right">Total 24 mois</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Missions Paris</strong><br><span style="font-size:9pt;color:var(--slate-500);">TGV + 1 nuit Airbnb + repas</span></td>
+        <td>3 par an → 6 missions</td>
+        <td class="text-right mono">~280 €</td>
+        <td class="text-right mono"><strong>1 680 €</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Missions Londres</strong><br><span style="font-size:9pt;color:var(--slate-500);">Eurostar/avion + 2 nuits + repas</span></td>
+        <td>2 par an → 4 missions</td>
+        <td class="text-right mono">~500 €</td>
+        <td class="text-right mono"><strong>2 000 €</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Conférences &amp; meetups Europe</strong><br><span style="font-size:9pt;color:var(--slate-500);">Bruxelles, Amsterdam, Berlin, FR</span></td>
+        <td>2 par an → 4 événements</td>
+        <td class="text-right mono">~175 €</td>
+        <td class="text-right mono"><strong>700 €</strong></td>
+      </tr>
+      <tr class="total"><td colspan="3">Total déplacements 24 mois</td><td class="text-right mono">4 380 €</td></tr>
+    </tbody>
+  </table>
+
+  <div class="three-col">
+    <div class="stat green">
+      <div class="stat-value">1 680<span class="unit"> €</span></div>
+      <div class="stat-label">Missions Paris</div>
+      <div class="stat-note">6 missions sur 24 mois — partenaires écoles, préparation salons</div>
+    </div>
+    <div class="stat green">
+      <div class="stat-value">2 000<span class="unit"> €</span></div>
+      <div class="stat-label">Missions Londres</div>
+      <div class="stat-note">4 missions sur 24 mois — hub EdTech UK, dont Bett Show</div>
+    </div>
+    <div class="stat green">
+      <div class="stat-value">700<span class="unit"> €</span></div>
+      <div class="stat-label">Europe</div>
+      <div class="stat-note">4 événements sur 24 mois — conférences et meetups ponctuels</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="callout-label">Important — séparation des postes</span>
+    <p>Les frais de <strong>stand, inscription salon et kit de présence</strong> (roll-up, flyers, goodies) sont budgétés dans le pôle Communication (§05 — 18 000 €). Ce poste déplacements couvre exclusivement <strong>le transport et l'hébergement</strong> des membres de l'équipe qui se rendent à ces événements.</p>
+  </div>
+
+  <h2>Choix expliqués</h2>
+  <ul>
+    <li><strong>Paris en mission régulière (3/an)</strong> : partenaires écoles, préparation salons. Budget optimisé — TGV réservé tôt + Airbnb.</li>
+    <li><strong>Londres (2/an)</strong> : hub EdTech UK (dont Bett Show en janvier). Le voyage et l'hébergement sont ici ; le coût de participation/stand/kit est en §05.</li>
+    <li><strong>Conférences européennes ponctuelles</strong> : vol low-cost + 1 nuit si événement pertinent.</li>
+    <li><strong>Pas de séminaire d'équipe budgété</strong> : l'équipe est déjà réunie au quotidien dans les locaux Epitech.</li>
+  </ul>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Budget prévisionnel</span>
+    <span>06</span>
+  </div>
+</section>
+
+<!-- PAGE 7 — COMMUNICATION PART 1 -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand"><div class="brand-name">Flow<em>Learn</em></div></div>
+    <div class="doc-tag">§05 · Communication &amp; salons</div>
+  </div>
+
+  <span class="section-num">§ 05 — Communication, salons &amp; visibilité</span>
+  <h1 class="section-title">18 000 € pour <span class="accent">se rendre visible</span>.</h1>
+  <p class="section-deck">Enveloppe dédiée à être vus : foires et salons, présence partenaire, supports physiques, actions terrain et push digital. Chiffres volontairement supérieurs au seul "quelques pubs", pour ne pas sous-estimer le coût réel d'une présence crédible sur un salon.</p>
+
+  <div class="three-col">
+    <div class="stat amber">
+      <div class="stat-value">10,3<span class="unit"> k€</span></div>
+      <div class="stat-label">Terrain · 57 %</div>
+      <div class="stat-note">Salons (×3), kit présence, événements concours</div>
+    </div>
+    <div class="stat blue">
+      <div class="stat-value">3,4<span class="unit"> k€</span></div>
+      <div class="stat-label">Digital · 19 %</div>
+      <div class="stat-note">Pub en ligne, SEA pilote, micro-influence, outils com</div>
+    </div>
+    <div class="stat pink">
+      <div class="stat-value">4,3<span class="unit"> k€</span></div>
+      <div class="stat-label">Partenariats · 24 %</div>
+      <div class="stat-note">Relations presse, partenariats, terrain &amp; animation</div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Poste</th>
+        <th>Détail</th>
+        <th class="text-right">Total 24 mois</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="section-header"><td colspan="3">Terrain — 57 %</td></tr>
+      <tr>
+        <td><strong>Salons &amp; foires EdTech</strong></td>
+        <td>3 participations sur 24 mois (Bett UK, salon FR ou EU régional, événement campus) — stand partagé, corner partenaire ou table projet étudiant</td>
+        <td class="text-right mono"><strong>8 700 €</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Kit présence salon</strong></td>
+        <td>Roll-up, flyers A5, QR code, goodies légers, impressions badges</td>
+        <td class="text-right mono"><strong>1 600 €</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Événements &amp; concours</strong></td>
+        <td>Frais inscription pitch / hackathon / startup contest, déplacement complémentaire si sélection</td>
+        <td class="text-right mono"><strong>1 500 €</strong></td>
+      </tr>
+      <tr class="section-header"><td colspan="3">Partenariats &amp; visibilité — 24 %</td></tr>
+      <tr>
+        <td><strong>Relations presse &amp; annonces</strong></td>
+        <td>Communiqués, relais presse école / assos, budget visibilité média locale</td>
+        <td class="text-right mono"><strong>700 €</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Partenariats &amp; co-visibilité</strong></td>
+        <td>Logo sur support partenaire, bannière événement, co-animateur atelier avec école / asso</td>
+        <td class="text-right mono"><strong>1 200 €</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Terrain &amp; animation</strong></td>
+        <td>Mini ateliers / démos (café, prints, location salle modeste)</td>
+        <td class="text-right mono"><strong>900 €</strong></td>
+      </tr>
+      <tr class="section-header"><td colspan="3">Digital — 19 %</td></tr>
+      <tr>
+        <td><strong>Publicité en ligne</strong></td>
+        <td>TikTok + Meta + boosts LinkedIn ciblés (lancement et pics salon) — après premier feedback utilisateurs (M9+)</td>
+        <td class="text-right mono"><strong>1 500 €</strong></td>
+      </tr>
+      <tr>
+        <td><strong>SEA / recherche ciblée (pilote)</strong></td>
+        <td>Campagne Google Ads limitée sur mots-clés marque + EdTech, pour capter les curieux post-salon</td>
+        <td class="text-right mono"><strong>700 €</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Micro-influence / contenus sponsorisés</strong></td>
+        <td>2–3 collaborations modestes avec micro-créateurs éducation / étudiants (honoraires symboliques + produit)</td>
+        <td class="text-right mono"><strong>700 €</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Outils communication</strong></td>
+        <td>Newsletter payante légère (Mailchimp plan bas), nom de domaine dédié landing produit</td>
+        <td class="text-right mono"><strong>500 €</strong></td>
+      </tr>
+      <tr class="total"><td colspan="2">Total Communication, salons &amp; visibilité</td><td class="text-right mono">18 000 €</td></tr>
+    </tbody>
+  </table>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Budget prévisionnel</span>
+    <span>07</span>
+  </div>
+</section>
+
+<!-- PAGE 8 — COMMUNICATION JUSTIFICATIONS -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand"><div class="brand-name">Flow<em>Learn</em></div></div>
+    <div class="doc-tag">§05 · Communication — justifications</div>
+  </div>
+
+  <span class="section-num">§ 05 (suite) — Pourquoi ces choix</span>
+  <h1 class="section-title">La logique <span class="accent">derrière les chiffres</span>.</h1>
+
+  <h2>Les salons d'abord</h2>
+  <p>Une participation "sérieuse" à un salon EdTech — même en stand partagé — se situe souvent entre <strong>2 000 € et 4 000 €</strong> par événement selon l'organisateur. On budgète 3 × ~2 900 € en moyenne ≈ 8 700 € sur 24 mois. Ajustable si tarif réduit ou partenariat école.</p>
+
+  <div class="pull-quote">
+    Un salon bien préparé vaut cent emails de prospection. C'est là que se passent les vraies rencontres et que se signent les premiers partenariats.
+  </div>
+
+  <h2>Le digital complète — il ne remplace pas</h2>
+  <p>La pub en ligne et le pilote SEA ne remplacent pas le salon. Ils <strong>prolongent l'effet</strong> — le QR code lu sur un salon, la recherche de marque après une mention presse. C'est pour ça que le digital ne démarre qu'en M9+ (après premiers retours utilisateurs réels).</p>
+
+  <h2>Répartition visuelle des 18 000 €</h2>
+  <div class="alloc-row"><div class="alloc-label">Salons &amp; foires (×3)</div><div class="alloc-track"><div class="alloc-fill amber" style="width: 100%;"></div></div><div class="alloc-amount">8 700 €</div><div class="alloc-pct">48,3%</div></div>
+  <div class="alloc-row"><div class="alloc-label">Kit présence salon</div><div class="alloc-track"><div class="alloc-fill amber" style="width: 18%;"></div></div><div class="alloc-amount">1 600 €</div><div class="alloc-pct">8,9%</div></div>
+  <div class="alloc-row"><div class="alloc-label">Événements &amp; concours</div><div class="alloc-track"><div class="alloc-fill amber" style="width: 17%;"></div></div><div class="alloc-amount">1 500 €</div><div class="alloc-pct">8,3%</div></div>
+  <div class="alloc-row"><div class="alloc-label">Pub en ligne</div><div class="alloc-track"><div class="alloc-fill blue" style="width: 17%;"></div></div><div class="alloc-amount">1 500 €</div><div class="alloc-pct">8,3%</div></div>
+  <div class="alloc-row"><div class="alloc-label">Partenariats &amp; co-visibilité</div><div class="alloc-track"><div class="alloc-fill pink" style="width: 14%;"></div></div><div class="alloc-amount">1 200 €</div><div class="alloc-pct">6,7%</div></div>
+  <div class="alloc-row"><div class="alloc-label">Terrain &amp; animation</div><div class="alloc-track"><div class="alloc-fill pink" style="width: 10%;"></div></div><div class="alloc-amount">900 €</div><div class="alloc-pct">5,0%</div></div>
+  <div class="alloc-row"><div class="alloc-label">Relations presse</div><div class="alloc-track"><div class="alloc-fill pink" style="width: 8%;"></div></div><div class="alloc-amount">700 €</div><div class="alloc-pct">3,9%</div></div>
+  <div class="alloc-row"><div class="alloc-label">SEA pilote</div><div class="alloc-track"><div class="alloc-fill blue" style="width: 8%;"></div></div><div class="alloc-amount">700 €</div><div class="alloc-pct">3,9%</div></div>
+  <div class="alloc-row"><div class="alloc-label">Micro-influence</div><div class="alloc-track"><div class="alloc-fill blue" style="width: 8%;"></div></div><div class="alloc-amount">700 €</div><div class="alloc-pct">3,9%</div></div>
+  <div class="alloc-row"><div class="alloc-label">Outils com</div><div class="alloc-track"><div class="alloc-fill blue" style="width: 6%;"></div></div><div class="alloc-amount">500 €</div><div class="alloc-pct">2,8%</div></div>
+
+  <div class="callout">
+    <span class="callout-label">Règle de flexibilité</span>
+    <p>Si une année ne prévoit aucun gros salon, la ligne peut être basculée vers plus de pub ou un second événement partenaire. <strong>Arbitrage trimestriel obligatoire</strong>, avec devis réel avant tout engagement supérieur à 1 000 €.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Budget prévisionnel</span>
+    <span>08</span>
+  </div>
+</section>
+
+<!-- PAGE 9 — RÉCAPITULATIF + PROVISION -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand"><div class="brand-name">Flow<em>Learn</em></div></div>
+    <div class="doc-tag">§06 · Récapitulatif &amp; provision</div>
+  </div>
+
+  <span class="section-num">§ 06 — Récapitulatif &amp; provision de sécurité</span>
+  <h1 class="section-title">Le tableau <span class="accent">complet</span>.</h1>
+  <p class="section-deck">Mensuel moyen, projection annuelle, total 24 mois. Et les 16 389 € qui dorment jusqu'à ce qu'on en ait vraiment besoin.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Catégorie</th>
+        <th class="text-right">Mensuel moy.</th>
+        <th class="text-right">Annuel (moy.)</th>
+        <th class="text-right">Total 24 mois</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Salaires (7 SMIC, charges incluses)</td><td class="text-right mono">12 250 €</td><td class="text-right mono">147 000 €</td><td class="text-right mono"><strong>294 000 €</strong></td></tr>
+      <tr><td>Abonnements outils &amp; hébergement (VPS inclus)</td><td class="text-right mono">475 €</td><td class="text-right mono">5 695 €</td><td class="text-right mono"><strong>11 390 €</strong></td></tr>
+      <tr><td>Déplacements (hors frais salon)</td><td class="text-right mono">183 €</td><td class="text-right mono">2 190 €</td><td class="text-right mono"><strong>4 380 €</strong></td></tr>
+      <tr><td>Communication, salons &amp; visibilité</td><td class="text-right mono">750 €</td><td class="text-right mono">9 000 €</td><td class="text-right mono"><strong>18 000 €</strong></td></tr>
+      <tr class="subtotal"><td>Sous-total opérationnel</td><td class="text-right mono">13 657 €</td><td class="text-right mono">163 885 €</td><td class="text-right mono">327 770 €</td></tr>
+      <tr><td>Provision de sécurité (~5 %)</td><td class="text-right mono">683 €</td><td class="text-right mono">8 195 €</td><td class="text-right mono"><strong>16 389 €</strong></td></tr>
+      <tr class="total"><td>Total recommandé</td><td class="text-right mono">14 340 €</td><td class="text-right mono">172 080 €</td><td class="text-right mono">344 159 €</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Pourquoi 5 % de provision ?</h2>
+  <div class="two-col">
+    <div>
+      <h3>Ce qu'elle couvre</h3>
+      <ul>
+        <li><strong>Hausse de tarifs SaaS</strong> : Notion, Cursor, Claude augmentent régulièrement leurs prix</li>
+        <li><strong>Frais administratifs</strong> : compte bancaire pro, expert-comptable ponctuel, frais juridiques</li>
+        <li><strong>Casse matérielle</strong> : remplacement d'un laptop ou téléphone de test</li>
+        <li><strong>Déplacements imprévus</strong> : opportunité de présenter à un événement non identifié au départ</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Ce qu'elle ne couvre pas</h3>
+      <ul>
+        <li><strong>Dépassements normaux</strong> de budget — la provision n'est pas un filet de sécurité pour mauvaise gestion</li>
+        <li><strong>Nouveaux abonnements</strong> non validés en revue mensuelle</li>
+        <li><strong>Augmentations salariales</strong> ou primes non budgétées</li>
+      </ul>
+      <div class="callout" style="margin-top: 10px;">
+        <span class="callout-label">Règle d'or</span>
+        <p>Si la provision est consommée à plus de <strong>50 % avant M18</strong>, on déclenche une revue en équipe immédiate.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Budget prévisionnel</span>
+    <span>09</span>
+  </div>
+</section>
+
+<!-- PAGE 10 — GOUVERNANCE -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand"><div class="brand-name">Flow<em>Learn</em></div></div>
+    <div class="doc-tag">§07 · Gouvernance &amp; suivi</div>
+  </div>
+
+  <span class="section-num">§ 07 — Gouvernance et suivi</span>
+  <h1 class="section-title">Qui vérifie <span class="accent">quoi, quand</span>.</h1>
+  <p class="section-deck">Un budget sans gouvernance, c'est un vœu pieux. Voici le rythme de revue et les indicateurs qui permettent de savoir, chaque mois, si on est en train de tenir la route.</p>
+
+  <h2>Rythme de revue</h2>
+  <table>
+    <thead>
+      <tr><th>Revue</th><th>Fréquence</th><th>Format</th><th>Décisions prises</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Suivi mensuel</strong></td><td>1ᵉʳ lundi du mois</td><td>30 min, équipe complète</td><td>Comparaison réel vs prévisionnel par catégorie</td></tr>
+      <tr><td><strong>Arbitrage trimestriel</strong></td><td>Tous les 3 mois</td><td>1 h, équipe complète</td><td>Ajustement abonnements, lancement vagues pub, confirmation salons</td></tr>
+      <tr><td><strong>Bilan annuel</strong></td><td>M12 puis M24</td><td>2 h, équipe + école porteuse</td><td>Bilan budgétaire complet, préparation de la suite</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Indicateurs de pilotage</h2>
+  <div class="kpi-grid">
+    <div class="kpi"><div class="kpi-label">Coût réel mensuel total (cible)</div><div class="kpi-value">≤ 14 700 €</div></div>
+    <div class="kpi"><div class="kpi-label">Coût réel mensuel (alerte)</div><div class="kpi-value">&gt; 16 200 €</div></div>
+    <div class="kpi"><div class="kpi-label">Cumul annuel vs budget validé</div><div class="kpi-value">≤ 100 %</div></div>
+    <div class="kpi"><div class="kpi-label">Cumul annuel (alerte)</div><div class="kpi-value">&gt; 110 %</div></div>
+    <div class="kpi"><div class="kpi-label">Provision consommée à M12 (cible)</div><div class="kpi-value">≤ 30 %</div></div>
+    <div class="kpi"><div class="kpi-label">Provision (alerte déclenchée)</div><div class="kpi-value">&gt; 50 % avant M12</div></div>
+    <div class="kpi"><div class="kpi-label">CPI pub en phase test (cible)</div><div class="kpi-value">≤ 2 €</div></div>
+    <div class="kpi"><div class="kpi-label">CPI pub (alerte durable)</div><div class="kpi-value">&gt; 5 €</div></div>
+  </div>
+
+  <h2>Règles d'or</h2>
+  <ol>
+    <li><strong>Aucun nouvel abonnement</strong> sans validation en revue mensuelle.</li>
+    <li><strong>La provision de sécurité ne sert jamais</strong> à payer un dépassement de budget normal — uniquement à couvrir un vrai imprévu.</li>
+    <li><strong>Tout dépassement &gt; 10 %</strong> d'un poste budgétaire déclenche une note explicative de la personne responsable du poste.</li>
+    <li><strong>Pas de dépense pub majeure avant retours utilisateurs</strong> (repère M9+). En phase active, le digital reste piloté mois par mois.</li>
+    <li><strong>Tout salon se valide à l'arbitrage trimestriel</strong> — devis réel obligatoire avant tout engagement.</li>
+  </ol>
+
+  <div class="flourish"></div>
+
+  <div class="callout">
+    <span class="callout-label">Note finale</span>
+    <p>Ces valeurs sont des <strong>estimations de cadrage</strong> pour un projet pédagogique. Elles ne tiennent pas compte d'un éventuel financement externe. Avant validation finale, vérifier les tarifs SaaS au moment de la souscription, le nombre exact de sièges payants et le périmètre exact des déplacements.</p>
+    <p style="margin-top: 6px; color: var(--slate-500); font-size: 9pt;">Document maintenu par : équipe FlowLearn · Version 2.3</p>
+  </div>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Budget prévisionnel</span>
+    <span>10</span>
+  </div>
+</section>
+
+</body>
+</html>
