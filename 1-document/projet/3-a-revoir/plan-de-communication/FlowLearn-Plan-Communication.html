@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>FlowLearn — Plan de communication 2026-2028</title>
+<title>FlowLearn Plan de communication 2026 à 2028</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -801,26 +801,44 @@
 
   .funnel { margin: 16px 0; }
   .funnel-step {
-    display: flex; align-items: center;
-    margin-bottom: 6px; gap: 14px;
-  }
-  .funnel-bar {
-    height: 36px;
-    background: var(--grad-signature);
-    border-radius: 6px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 95px 1fr;
     align-items: center;
-    padding: 0 14px;
-    color: white;
-    font-weight: 600;
-    font-size: 10pt;
-    box-shadow: 0 2px 4px rgba(59,130,246,0.15);
+    margin-bottom: 8px;
+    gap: 14px;
   }
   .funnel-meta {
     font-size: 9pt;
     color: var(--slate-500);
-    flex-shrink: 0;
-    width: 90px;
+    text-align: right;
+    font-weight: 500;
+  }
+  .funnel-track {
+    position: relative;
+    height: 32px;
+    background: var(--slate-100);
+    border-radius: 6px;
+    overflow: visible;
+  }
+  .funnel-bar {
+    height: 100%;
+    background: var(--grad-signature);
+    border-radius: 6px;
+    min-width: 4px;
+    box-shadow: 0 2px 4px rgba(59,130,246,0.15);
+  }
+  .funnel-label {
+    position: absolute;
+    top: 0;
+    left: 14px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 10pt;
+    color: var(--deep-ocean);
+    white-space: nowrap;
+    pointer-events: none;
   }
 
   @media print {
@@ -834,7 +852,7 @@
 <body>
 
 <!-- ============================================================
-     PAGE 1 — COVER
+     PAGE 1  COVER
      ============================================================ -->
 <section class="page cover">
   <div class="cover-inner">
@@ -852,15 +870,15 @@
     </div>
 
     <div class="cover-middle">
-      <div class="cover-eyebrow">Plan de communication · 24 mois</div>
+      <div class="cover-eyebrow">Plan de communication . 24 mois</div>
       <h1 class="cover-title">
         Apprendre<br>
         en jouant,<br>
         <span class="accent">retenir en s'amusant.</span>
       </h1>
       <p class="cover-deck">
-        Comment FlowLearn se rend visible et crédible pendant deux ans
-        — avec 18&nbsp;k€, sept paires de mains, et l'envie de bien faire les choses.
+        Comment FlowLearn se rend visible et crédible en 24 mois.
+        18&nbsp;k€. Sept personnes. L'envie de bien faire.
       </p>
     </div>
 
@@ -888,7 +906,7 @@
 
 
 <!-- ============================================================
-     PAGE 2 — AVANT-PROPOS + SOMMAIRE
+     PAGE 2  AVANT-PROPOS + SOMMAIRE
      ============================================================ -->
 <section class="page">
   <div class="running-header">
@@ -896,51 +914,43 @@
       <div class="brand-mark"></div>
       <div class="brand-name">Flow<em>Learn</em></div>
     </div>
-    <div class="doc-tag">Plan de communication · 2026—2028</div>
+    <div class="doc-tag">Plan de communication . 20262028</div>
   </div>
 
-  <span class="section-num">— Avant-propos</span>
+  <span class="section-num"> Avant propos</span>
   <h1 class="section-title">Quelques mots <span class="accent">avant de commencer.</span></h1>
 
-  <p class="lede">Ce document n'est pas une bible. C'est une carte. On l'a écrit pour qu'une nouvelle recrue puisse l'ouvrir un lundi matin et savoir, le jeudi, ce qu'elle doit faire. Pour que l'école porteuse comprenne où va chaque euro. Et pour que nous, l'équipe, on s'en serve comme boussole les jours où on ne sait plus très bien dans quelle direction ramer.</p>
-
-  <p>On a fait deux paris en l'écrivant. Le premier&nbsp;: <strong>commencer par l'organique</strong>. Discord, contenu, communauté. Pas parce que c'est gratuit — la communauté coûte du temps, et le temps ce n'est jamais gratuit — mais parce qu'une marque qui démarre par la pub se construit sur du sable. Le second&nbsp;: <strong>investir l'essentiel du budget sur le terrain</strong>, dans des salons et des événements où on rencontre vraiment des gens. C'est moins sexy qu'une campagne TikTok, c'est plus efficace pour un projet à notre échelle.</p>
-
-  <div class="pull-quote">
-    Si vous ne devez retenir qu'une chose&nbsp;: la communication FlowLearn ne sert pas à crier plus fort, elle sert à mieux raconter une histoire qui mérite d'être racontée.
-  </div>
+  <p class="lede">On a écrit ce document pour qu'une nouvelle recrue puisse l'ouvrir un lundi matin et savoir, le jeudi, ce qu'elle doit faire. Pour qu'on voie tous où va chaque euro. Et pour qu'on s'en serve les jours où on hésite.</p>
 
   <h2>Sommaire</h2>
 
   <div class="toc-section">Corps principal</div>
   <ol class="toc-list">
-    <li><span class="toc-num">01</span><span class="toc-title">Synthèse exécutive</span><span class="toc-page">04</span></li>
-    <li><span class="toc-num">02</span><span class="toc-title">Le parcours utilisateur, raconté en quatre actes</span><span class="toc-page">05</span></li>
-    <li><span class="toc-num">03</span><span class="toc-title">À qui on parle, et comment</span><span class="toc-page">06</span></li>
-    <li><span class="toc-num">04</span><span class="toc-title">Trois axes, trois tempos</span><span class="toc-page">07</span></li>
-    <li><span class="toc-num">05</span><span class="toc-title">Articulation avec le budget global</span><span class="toc-page">09</span></li>
-    <li><span class="toc-num">06</span><span class="toc-title">Le calendrier des 24 mois</span><span class="toc-page">10</span></li>
-    <li><span class="toc-num">07</span><span class="toc-title">Tableau de bord et indicateurs</span><span class="toc-page">11</span></li>
+    <li><span class="toc-num">01</span><span class="toc-title">Synthèse exécutive</span><span class="toc-page">03</span></li>
+    <li><span class="toc-num">02</span><span class="toc-title">Le parcours utilisateur</span><span class="toc-page">04</span></li>
+    <li><span class="toc-num">03</span><span class="toc-title">À qui on parle, et comment</span><span class="toc-page">05</span></li>
+    <li><span class="toc-num">04</span><span class="toc-title">Trois axes, trois tempos</span><span class="toc-page">06</span></li>
+    <li><span class="toc-num">05</span><span class="toc-title">Notre budget comm</span><span class="toc-page">07</span></li>
+    <li><span class="toc-num">06</span><span class="toc-title">Le calendrier</span><span class="toc-page">08</span></li>
+    <li><span class="toc-num">07</span><span class="toc-title">KPIs par phase</span><span class="toc-page">09</span></li>
   </ol>
 
   <div class="toc-section">Annexes</div>
   <ol class="toc-list" start="8" style="--counter-reset: 7;">
-    <li><span class="toc-num">A.1</span><span class="toc-title">Funnel de conversion par phase</span><span class="toc-page">14</span></li>
-    <li><span class="toc-num">A.2</span><span class="toc-title">Plans de contingence</span><span class="toc-page">15</span></li>
-    <li><span class="toc-num">A.3</span><span class="toc-title">Gouvernance &amp; gestion des risques</span><span class="toc-page">16</span></li>
-    <li><span class="toc-num">A.4</span><span class="toc-title">Matrice détaillée des canaux</span><span class="toc-page">17</span></li>
+    <li><span class="toc-num">A.1</span><span class="toc-title">Funnel de conversion</span><span class="toc-page">12</span></li>
+    <li><span class="toc-num">A.2</span><span class="toc-title">Matrice détaillée des canaux</span><span class="toc-page">13</span></li>
   </ol>
 
   <div class="page-footer">
-    <span>Confidentiel · Usage interne</span>
-    <span class="pf-brand">FlowLearn — Apprendre en jouant</span>
+    <span>Confidentiel . Usage interne</span>
+    <span class="pf-brand">FlowLearn Apprendre en jouant</span>
     <span>02</span>
   </div>
 </section>
 
 
 <!-- ============================================================
-     PAGE 3 — SYNTHÈSE
+     PAGE 3  SYNTHÈSE
      ============================================================ -->
 <section class="page">
   <div class="running-header">
@@ -948,19 +958,19 @@
       <div class="brand-mark"></div>
       <div class="brand-name">Flow<em>Learn</em></div>
     </div>
-    <div class="doc-tag">§01 · Synthèse</div>
+    <div class="doc-tag">§01 . Synthèse</div>
   </div>
 
-  <span class="section-num">§ 01 — Synthèse exécutive</span>
+  <span class="section-num">§ 01 Synthèse exécutive</span>
   <h1 class="section-title">18 k€ pour <span class="accent">se rendre visibles</span><br>et crédibles.</h1>
-  <p class="section-deck">Si on devait résumer ce plan en un dîner de famille&nbsp;: on construit d'abord la crédibilité, on va ensuite à la rencontre des gens sur les salons, on prolonge l'effet en digital, et on consolide ce qu'on a appris. Voilà. Le reste, c'est de la mise en œuvre.</p>
+  <p class="section-deck">Notre plan: On construit d'abbord la crédibilité, ensuite on va à la rencontre des gens sur les salons, en communiquant parallèlement en digital.</p>
 
   <div class="callout">
     <span class="callout-label">En bref</span>
-    <p><strong>18 k€ de communication sur 24 mois</strong>, ce qui représente <strong>5,2 % du budget global</strong> FlowLearn (344 k€). La logique est simple à formuler, plus difficile à exécuter&nbsp;: <strong>l'organique d'abord</strong> (Discord, contenu, communauté), <strong>le terrain ensuite</strong> (salons EdTech, dont Bett UK), <strong>le digital en accompagnement</strong> (TikTok, Meta, SEA pilote). Trois participations à des salons sur 24 mois constituent le cœur du dispositif — c'est là que se signent les premiers contacts qualifiés.</p>
+    <p><strong>18 k€ sur 24 mois</strong>, soit <strong>5,2 % du budget global</strong> FlowLearn (344 k€). <strong>L'organique d'abord</strong> (Discord, contenu, communauté). <strong>Le terrain ensuite</strong> (salons EdTech, dont Bett UK). <strong>Le digital en accompagnement</strong> (TikTok, Meta, SEA pilote). Trois salons en 24 mois forment le cœur du plan. C'est là qu'on signe les premiers contacts qualifiés.</p>
   </div>
 
-  <h2>La feuille de route, en quatre temps</h2>
+  <h2>Les 4 phases du projet</h2>
 
   <div class="phase no-break">
     <div class="phase-header">
@@ -968,7 +978,7 @@
       <span class="phase-period">Avril 2026 → Septembre 2026</span>
     </div>
     <div class="phase-title">Construire la crédibilité</div>
-    <div class="phase-tagline">"L'apprentissage est cassé. On répare."</div>
+    <div class="phase-tagline">"Le systeme scholaire ne conviens pas a tout le monde, rendons le inclusif."</div>
     <div class="phase-grid">
       <div class="phase-cell"><div class="cell-label">Budget</div><div class="cell-value">3 k€</div></div>
       <div class="phase-cell"><div class="cell-label">Cible</div><div class="cell-value">Bêta active</div></div>
@@ -996,7 +1006,7 @@
       <span class="phase-period">Avril 2027 → Novembre 2027</span>
     </div>
     <div class="phase-title">Élargir le cercle</div>
-    <div class="phase-tagline">"Bett UK, partenariats, premières micro-influences."</div>
+    <div class="phase-tagline">"Bett UK, partenariats, premières micro influences."</div>
     <div class="phase-grid">
       <div class="phase-cell"><div class="cell-label">Budget</div><div class="cell-value">7 k€</div></div>
       <div class="phase-cell"><div class="cell-label">Cible</div><div class="cell-value">Bett + salon EU</div></div>
@@ -1010,7 +1020,7 @@
       <span class="phase-period">Décembre 2027 → Mars 2028</span>
     </div>
     <div class="phase-title">Consolider les acquis</div>
-    <div class="phase-tagline">"Bilan, pérennisation, transmission."</div>
+    <div class="phase-tagline">"pérennisation de l'activité"</div>
     <div class="phase-grid">
       <div class="phase-cell"><div class="cell-label">Budget</div><div class="cell-value">3 k€</div></div>
       <div class="phase-cell"><div class="cell-label">Cible</div><div class="cell-value">Stabiliser</div></div>
@@ -1019,15 +1029,15 @@
   </div>
 
   <div class="page-footer">
-    <span>Confidentiel · Usage interne</span>
-    <span class="pf-brand">FlowLearn — Apprendre en jouant</span>
+    <span>Confidentiel . Usage interne</span>
+    <span class="pf-brand">FlowLearn Apprendre en jouant</span>
     <span>03</span>
   </div>
 </section>
 
 
 <!-- ============================================================
-     PAGE 4 — PARCOURS UTILISATEUR
+     PAGE 4  PARCOURS UTILISATEUR
      ============================================================ -->
 <section class="page">
   <div class="running-header">
@@ -1035,53 +1045,51 @@
       <div class="brand-mark"></div>
       <div class="brand-name">Flow<em>Learn</em></div>
     </div>
-    <div class="doc-tag">§02 · Parcours utilisateur</div>
+    <div class="doc-tag">§02 . Parcours utilisateur</div>
   </div>
 
-  <span class="section-num">§ 02 — Parcours utilisateur</span>
-  <h1 class="section-title">Quatre actes, quatre <span class="accent">façons de raconter</span> la même histoire.</h1>
-  <p class="section-deck">À chaque phase, on change d'audience. À chaque audience, on change de message. Ce n'est pas du marketing à plusieurs vitesses, c'est une conversation qui mûrit.</p>
+  <span class="section-num">§ 02 Parcours utilisateur</span>
+  <h1 class="section-title">Quatre actes, quatre <span class="accent">missions</span>.</h1>
+  <p class="section-deck">À chaque phase, on change d'audience. Donc on change de message.</p>
 
   <div class="two-col">
     <div>
-      <h3>Acte I · Sensibilisation</h3>
-      <p>Au début, personne ne nous connaît. Et c'est très bien comme ça. On parle aux <strong>curieux</strong>, ceux qui suivent quelques newsletters EdTech et qui ont déjà essayé Duolingo, Brilliant ou Kahoot. La question dans leur tête&nbsp;: <em>"Pourquoi un produit de plus&nbsp;?"</em></p>
-      <p>Notre réponse arrive sur Discord, sur LinkedIn, dans un blog qu'on tient honnêtement. On ne vend pas. On raconte ce qui nous fait râler dans l'apprentissage actuel — et pourquoi on pense pouvoir le réparer.</p>
+      <h3>Acte I . Sensibilisation</h3>
+      <p>Au début, personne ne nous connaît. On parle aux <strong>curieux</strong>, ceux qui suivent des newsletters EdTech et qui ont déjà essayé Duolingo, Brilliant ou Kahoot.</p>
+      <p>On communique d'abord sur Discord, sur LinkedIn, dans un blog. On ne vend pas tout de suite. On raconte ce qui nous fait râler dans le système scolaire classique et pourquoi on pense pouvoir le réparer.</p>
     </div>
     <div>
-      <h3>Acte II · Premiers contacts</h3>
-      <p>Six mois plus tard, le produit existe. Il a des bugs, mais il existe. Et là, le ton change&nbsp;: on ne demande plus la confiance, on la <strong>prouve</strong>. Les premiers utilisateurs bêta deviennent nos meilleurs ambassadeurs. On commence à préparer le premier salon — c'est un cap énorme pour une équipe étudiante.</p>
-      <p>C'est aussi le moment où l'on engage le premier petit budget pub (1,5 k€ digital total). Pas avant. Acheter du trafic vers un produit qui fuit, c'est arroser un seau percé.</p>
+      <h3>Acte II . Premiers contacts</h3>
+      <p>Six mois plus tard, le produit existe. Il a des bugs, mais il existe. Les premiers utilisateurs bêta deviennent nos ambassadeurs et on prépare le premier salon.</p>
+      <p>C'est aussi le moment où on investit dans de la publicité (1,5 k€ digital total).</p>
     </div>
   </div>
 
   <div class="two-col">
     <div>
-      <h3>Acte III · Élargissement</h3>
-      <p>Au mois 13, on n'est plus une jeune pousse anonyme. On a un salon de fait, une communauté qui s'auto-anime, des écoles partenaires qui répondent à nos mails. Le rythme accélère&nbsp;: <strong>Bett UK</strong> en janvier, un second salon européen au printemps, et les premiers <em>creators</em> de l'éducation qui acceptent de parler de nous.</p>
-      <p>Le message devient plus assuré — sans devenir arrogant. <strong>"On fait ce qu'on dit, on dit ce qu'on fait."</strong></p>
+      <h3>Acte III . Élargissement</h3>
+      <p>Au treizième mois, on vise un premier salon fait, une communauté qui s'auto anime, des écoles partenaires qui répondent à nos mails. <strong>Bett UK</strong> en janvier, un second salon européen au printemps, et les premiers profs qui acceptent de parler de nous.</p>
     </div>
     <div>
-      <h3>Acte IV · Consolidation</h3>
-      <p>Les six derniers mois ressemblent moins à une campagne marketing qu'à un travail de <strong>pérennisation</strong>. Les acquis de phase 3 sont consolidés, les contacts noués sur les salons sont relancés, la communauté Discord est outillée pour vivre sans qu'on lui parle tous les jours.</p>
-      <p>C'est le moment où le projet devient transmissible. Une nouvelle promo Epitech pourra reprendre sans tout réapprendre — et c'est aussi un cadeau qu'on se fait à nous-mêmes.</p>
+      <h3>Acte IV . Consolidation</h3>
+      <p>Les six derniers mois servent à <strong>pérenniser</strong>. On consolide les acquis de la phase 3. On relance les contacts noués sur les salons. On outille la communauté Discord pour qu'elle vive sans qu'on lui parle tous les jours.</p>
     </div>
   </div>
 
   <div class="pull-quote" style="margin-top: 22px;">
-    Le marketing, ce n'est pas dire la même chose à tout le monde plus fort. C'est dire la bonne chose à la bonne personne au bon moment — et savoir se taire le reste du temps.
+    Le marketing, ce n'est pas dire la même chose à tout le monde plus fort. C'est dire la bonne chose à la bonne personne au bon moment.
   </div>
 
   <div class="page-footer">
-    <span>Confidentiel · Usage interne</span>
-    <span class="pf-brand">FlowLearn — Apprendre en jouant</span>
+    <span>Confidentiel . Usage interne</span>
+    <span class="pf-brand">FlowLearn Apprendre en jouant</span>
     <span>04</span>
   </div>
 </section>
 
 
 <!-- ============================================================
-     PAGE 5 — PERSONAS (REMONTÉS)
+     PAGE 5  PERSONAS (REMONTÉS)
      ============================================================ -->
 <section class="page">
   <div class="running-header">
@@ -1089,53 +1097,53 @@
       <div class="brand-mark"></div>
       <div class="brand-name">Flow<em>Learn</em></div>
     </div>
-    <div class="doc-tag">§03 · Personas &amp; messages</div>
+    <div class="doc-tag">§03 . Personas &amp; messages</div>
   </div>
 
-  <span class="section-num">§ 03 — Personas et messages</span>
-  <h1 class="section-title">Trois <span class="accent">interlocuteurs</span>, trois langues différentes.</h1>
-  <p class="section-deck">L'erreur la plus commune en communication, c'est de croire qu'un message peut parler à tout le monde. Ce n'est jamais vrai. Chaque message qui s'adresse à tout le monde ne touche personne en particulier.</p>
+  <span class="section-num">§ 03 Personas et messages</span>
+  <h1 class="section-title">Trois <span class="accent">interlocuteurs</span>.</h1>
+  <p class="section-deck">Un message qui s'adresse à tout le monde ne touche personne alors on se spécialise.</p>
 
   <div class="persona blue">
-    <span class="persona-tag">Persona 01 · Étudiant</span>
+    <span class="persona-tag">Persona 01 . Étudiant</span>
     <div class="persona-name">Léa, 19 ans, étudiante</div>
     <div class="persona-desc">Elle scrolle TikTok pendant qu'elle révise. Et le pire, c'est que ça marche.</div>
-    <p style="font-size: 9.5pt; color: var(--slate-600); margin-bottom: 10px;">Léa étudie le droit en deuxième année. Elle a essayé Anki, abandonné Anki, repris Anki, ré-abandonné Anki. Elle veut un truc qui s'adapte à son rythme et à son humeur. Ce qu'elle déteste&nbsp;: les apps qui culpabilisent.</p>
-    <div class="persona-msg"><span class="phase-marker">PHASE 1</span>"Pourquoi tes révisions sont-elles aussi ennuyeuses&nbsp;?" — TikTok 15 secondes, sans voix off, juste une vibe.</div>
-    <div class="persona-msg"><span class="phase-marker">PHASE 2</span>"J'ai appris le droit civil en 30 jours, et j'ai pris zéro Doliprane." — Témoignage utilisateur partagé sur Discord et nos réseaux.</div>
-    <div class="persona-msg"><span class="phase-marker">PHASE 3</span>"Une communauté qui galère et qui s'entraide." — Posts Stories, mises en avant des contributeurs Discord.</div>
+    <p style="font-size: 9.5pt; color: var(--slate-600); margin-bottom: 10px;">Léa étudie le droit en deuxième année. Elle a essayé Anki, abandonné Anki, repris Anki, ré abandonné Anki. Elle veut un truc qui s'adapte à son rythme et à son humeur. Elle déteste les apps qui culpabilisent.</p>
+    <div class="persona-msg"><span class="phase-marker">PHASE 1</span>"Pourquoi tes révisions sont elles aussi ennuyeuses&nbsp;?". TikTok 15 secondes, sans voix off, juste une vibe.</div>
+    <div class="persona-msg"><span class="phase-marker">PHASE 2</span>"J'ai appris le droit civil en 30 jours, et j'ai pris zéro Doliprane." Témoignage utilisateur partagé sur Discord et nos réseaux.</div>
+    <div class="persona-msg"><span class="phase-marker">PHASE 3</span>"Une communauté qui galère et qui s'entraide." Posts Stories, mises en avant des contributeurs Discord.</div>
   </div>
 
   <div class="persona pink">
-    <span class="persona-tag">Persona 02 · Référent pédagogique</span>
+    <span class="persona-tag">Persona 02 . Référent pédagogique</span>
     <div class="persona-name">Marc, 42 ans, responsable scolaire</div>
     <div class="persona-desc">Il a vu passer trois EdTech depuis 2020. Aucune ne lui a sauvé la vie.</div>
-    <p style="font-size: 9.5pt; color: var(--slate-600); margin-bottom: 10px;">Marc supervise la pédagogie d'un établissement de 800 élèves. Son problème principal&nbsp;: le décrochage en seconde. Ce qu'il veut&nbsp;: des chiffres avant des slogans. Ce qu'il déteste&nbsp;: les démos qui durent 45 minutes et les commerciaux qui n'ont jamais mis les pieds dans une salle de classe.</p>
-    <div class="persona-msg"><span class="phase-marker">PHASE 1</span>"Mes élèves abandonnent. Comment les garder&nbsp;?" — Article LinkedIn long format, sans appel à l'action commercial.</div>
-    <div class="persona-msg"><span class="phase-marker">PHASE 2</span>"Voici ce qu'on a appris avec nos premiers utilisateurs." — Cas d'étude PDF, deux pages, données brutes en tête.</div>
-    <div class="persona-msg"><span class="phase-marker">PHASE 3</span>"Rencontrons-nous à Bett." — Invitation directe à une démo de quinze minutes sur le salon, pas dans son bureau.</div>
+    <p style="font-size: 9.5pt; color: var(--slate-600); margin-bottom: 10px;">Marc supervise la pédagogie d'un établissement de 800 élèves. Son problème principal, c'est le décrochage en seconde. Il veut des chiffres avant des slogans. Il déteste les démos qui durent 45 minutes et les commerciaux qui n'ont jamais mis les pieds dans une salle de classe.</p>
+    <div class="persona-msg"><span class="phase-marker">PHASE 1</span>"Mes élèves abandonnent. Comment les garder&nbsp;?" Article LinkedIn long format, sans appel à l'action commercial.</div>
+    <div class="persona-msg"><span class="phase-marker">PHASE 2</span>"Voici ce qu'on a appris avec nos premiers utilisateurs." Cas d'étude PDF, deux pages, données brutes en tête.</div>
+    <div class="persona-msg"><span class="phase-marker">PHASE 3</span>"Rencontrons nous à Bett." Invitation directe à une démo de quinze minutes sur le salon, pas dans son bureau.</div>
   </div>
 
   <div class="persona lav">
-    <span class="persona-tag">Persona 03 · Pair / partenaire</span>
+    <span class="persona-tag">Persona 03 . Pair / partenaire</span>
     <div class="persona-name">Sarah, 28 ans, fondatrice EdTech</div>
     <div class="persona-desc">Elle ne nous achètera rien. Mais elle peut nous citer, nous recommander, nous ouvrir des portes.</div>
-    <p style="font-size: 9.5pt; color: var(--slate-600); margin-bottom: 10px;">Sarah dirige une petite EdTech complémentaire (formation continue, B2B). Ce qu'elle cherche&nbsp;: des projets sérieux à connecter avec son réseau. Ce qu'elle déteste&nbsp;: les fondateurs qui parlent fort et qui n'ont rien sous le capot.</p>
-    <div class="persona-msg"><span class="phase-marker">PHASE 1</span>"On commence, voici notre approche." — Post LinkedIn honnête, pas de hype, partage du parcours réel.</div>
-    <div class="persona-msg"><span class="phase-marker">PHASE 2</span>"On va à tel salon — tu y es&nbsp;? On se croise&nbsp;?" — Approche directe, peer-to-peer, sans agenda commercial caché.</div>
-    <div class="persona-msg"><span class="phase-marker">PHASE 3</span>"On a un partenariat possible. Voici l'idée concrète." — Proposition courte, claire, avec une valeur réciproque.</div>
+    <p style="font-size: 9.5pt; color: var(--slate-600); margin-bottom: 10px;">Sarah dirige une petite EdTech complémentaire (formation continue, B2B). Elle cherche des projets sérieux à connecter avec son réseau. Elle déteste les fondateurs qui parlent fort et qui n'ont rien sous le capot.</p>
+    <div class="persona-msg"><span class="phase-marker">PHASE 1</span>"On commence, voici notre approche." Post LinkedIn simple, pas de hype, partage du parcours réel.</div>
+    <div class="persona-msg"><span class="phase-marker">PHASE 2</span>"On va à tel salon. Tu y es&nbsp;? On se croise&nbsp;?" Approche directe, peer to peer, sans agenda commercial caché.</div>
+    <div class="persona-msg"><span class="phase-marker">PHASE 3</span>"On a un partenariat possible. Voici l'idée concrète." Proposition courte, claire, avec une valeur réciproque.</div>
   </div>
 
   <div class="page-footer">
-    <span>Confidentiel · Usage interne</span>
-    <span class="pf-brand">FlowLearn — Apprendre en jouant</span>
+    <span>Confidentiel . Usage interne</span>
+    <span class="pf-brand">FlowLearn Apprendre en jouant</span>
     <span>05</span>
   </div>
 </section>
 
 
 <!-- ============================================================
-     PAGE 6 — TROIS AXES (adapté 18k)
+     PAGE 6  TROIS AXES (adapté 18k)
      ============================================================ -->
 <section class="page">
   <div class="running-header">
@@ -1143,63 +1151,63 @@
       <div class="brand-mark"></div>
       <div class="brand-name">Flow<em>Learn</em></div>
     </div>
-    <div class="doc-tag">§04 · Architecture budgétaire</div>
+    <div class="doc-tag">§04 . Architecture budgétaire</div>
   </div>
 
-  <span class="section-num">§ 04 — Architecture des moyens</span>
-  <h1 class="section-title">Trois axes, trois <span class="accent">tempos</span> différents.</h1>
-  <p class="section-deck">Le terrain joue la partition principale — c'est là que se passent les vraies rencontres. Le digital prolonge l'écho. L'organique fait le travail de fond, en sourdine, tout le temps.</p>
+  <span class="section-num">§ 04 Architecture des moyens</span>
+  <h1 class="section-title">Trois axes, trois <span class="accent">tempos</span>.</h1>
+  <p class="section-deck">On rencontre les utilisateurs sur le terrain, mais aussi par les résaux</p>
 
   <div class="three-col">
     <div class="stat amber">
       <div class="stat-value">10,3<span class="unit"> k€</span></div>
-      <div class="stat-label">Terrain · 57 %</div>
-      <div class="stat-note">Salons, kit présence, événements et concours. Le cœur battant du plan.</div>
+      <div class="stat-label">Terrain . 57 %</div>
+      <div class="stat-note">Salons, kit présence, événements et concours.</div>
     </div>
     <div class="stat blue">
       <div class="stat-value">3,4<span class="unit"> k€</span></div>
-      <div class="stat-label">Digital · 19 %</div>
-      <div class="stat-note">Pub en ligne ciblée, SEA pilote, micro-influence, outils com.</div>
+      <div class="stat-label">Digital . 19 %</div>
+      <div class="stat-note">Pub en ligne, SEA pilote, micro influence, outils comm.</div>
     </div>
     <div class="stat pink">
       <div class="stat-value">4,3<span class="unit"> k€</span></div>
-      <div class="stat-label">Visibilité &amp; partenariats · 24 %</div>
+      <div class="stat-label">Visibilité &amp; partenariats . 24 %</div>
       <div class="stat-note">Relations presse, partenariats, animation terrain et communauté.</div>
     </div>
   </div>
 
-  <h2>Le terrain, dans le détail</h2>
-  <p>C'est le poste qui peut surprendre&nbsp;: <strong>plus de la moitié du budget</strong> sur des salons. C'est volontaire. À notre échelle (équipe étudiante, sans force commerciale), un salon vaut cent emails de prospection. On y rencontre vraiment des gens, on observe vraiment leurs réactions face au produit, et on signe vraiment des premiers partenariats. Une participation sérieuse — même en stand partagé — coûte entre 2 000 € et 4 000 €&nbsp;: c'est le prix à payer pour ne pas avoir l'air d'amateurs.</p>
+  <h2>Le terrain</h2>
+  <p>Plus de la moitié du budget sur des salons. Pour nous, un salon vaut cent emails de prospection. On rencontre des gens, on observe leurs réactions face au produit, on signe des premiers partenariats c'est ce côté humain qui justifie nos investissements dans ce secteur. Une participation en stand partagé coûte entre 2 000 € et 4 000 €.</p>
 
   <div class="alloc-row"><div class="alloc-label">Salons &amp; foires (×3)</div><div class="alloc-track"><div class="alloc-fill amber" style="width: 100%;"></div></div><div class="alloc-amount">8 700 €</div><div class="alloc-pct">48,3%</div></div>
   <div class="alloc-row"><div class="alloc-label">Kit présence salon</div><div class="alloc-track"><div class="alloc-fill amber" style="width: 18%;"></div></div><div class="alloc-amount">1 600 €</div><div class="alloc-pct">8,9%</div></div>
 
-  <h2>Le digital, dans le détail</h2>
-  <p>Une enveloppe modeste, et c'est volontaire. Le digital, à notre stade, sert à <strong>prolonger</strong> les effets terrain (QR code lu sur un salon, recherche après une rencontre presse) — pas à acquérir massivement. On garde 700 € de SEA pilote pour capter les recherches de marque, 1 500 € de pub sociale pour les pics d'événement, et 700 € de micro-influence pour des collaborations modestes mais crédibles.</p>
+  <h2>Le digital</h2>
+  <p>Le digitalise le contact en lui faisant lire un QR code sur le salon et en les invitant a notre newsletter. On garde 700 € de SEA pour capter les recherches de marque, 1 500 € de pub sociale pour les pics d'événement, et 700 € de micro influence pour quelques collaborations.</p>
 
   <div class="alloc-row"><div class="alloc-label">Pub en ligne (TikTok/Meta)</div><div class="alloc-track"><div class="alloc-fill blue" style="width: 100%;"></div></div><div class="alloc-amount">1 500 €</div><div class="alloc-pct">8,3%</div></div>
   <div class="alloc-row"><div class="alloc-label">SEA pilote (Google Ads)</div><div class="alloc-track"><div class="alloc-fill blue" style="width: 47%;"></div></div><div class="alloc-amount">700 €</div><div class="alloc-pct">3,9%</div></div>
-  <div class="alloc-row"><div class="alloc-label">Micro-influence</div><div class="alloc-track"><div class="alloc-fill blue" style="width: 47%;"></div></div><div class="alloc-amount">700 €</div><div class="alloc-pct">3,9%</div></div>
-  <div class="alloc-row"><div class="alloc-label">Outils com (newsletter, domaine)</div><div class="alloc-track"><div class="alloc-fill blue" style="width: 33%;"></div></div><div class="alloc-amount">500 €</div><div class="alloc-pct">2,8%</div></div>
+  <div class="alloc-row"><div class="alloc-label">Micro influence</div><div class="alloc-track"><div class="alloc-fill blue" style="width: 47%;"></div></div><div class="alloc-amount">700 €</div><div class="alloc-pct">3,9%</div></div>
+  <div class="alloc-row"><div class="alloc-label">Outils comm (newsletter, domaine)</div><div class="alloc-track"><div class="alloc-fill blue" style="width: 33%;"></div></div><div class="alloc-amount">500 €</div><div class="alloc-pct">2,8%</div></div>
 
-  <h2>La visibilité &amp; les partenariats, dans le détail</h2>
-  <p>Cette ligne réunit tout ce qui n'achète pas du média mais qui crée de la légitimité&nbsp;: relations presse, événements et concours (un pitch contest, un hackathon), co-visibilité avec d'autres acteurs, et animation terrain (mini-ateliers, démos sur place).</p>
+  <h2>La visibilité et les partenariats</h2>
+  <p>Tout ce qui crée de la légitimité sans acheter de média. Relations presse, événements et concours (pitch contest, hackathon), co visibilité, animation terrain (mini ateliers, démos sur place).</p>
 
   <div class="alloc-row"><div class="alloc-label">Événements &amp; concours</div><div class="alloc-track"><div class="alloc-fill pink" style="width: 100%;"></div></div><div class="alloc-amount">1 500 €</div><div class="alloc-pct">8,3%</div></div>
-  <div class="alloc-row"><div class="alloc-label">Partenariats &amp; co-visibilité</div><div class="alloc-track"><div class="alloc-fill pink" style="width: 80%;"></div></div><div class="alloc-amount">1 200 €</div><div class="alloc-pct">6,7%</div></div>
+  <div class="alloc-row"><div class="alloc-label">Partenariats &amp; co visibilité</div><div class="alloc-track"><div class="alloc-fill pink" style="width: 80%;"></div></div><div class="alloc-amount">1 200 €</div><div class="alloc-pct">6,7%</div></div>
   <div class="alloc-row"><div class="alloc-label">Terrain &amp; animation</div><div class="alloc-track"><div class="alloc-fill pink" style="width: 60%;"></div></div><div class="alloc-amount">900 €</div><div class="alloc-pct">5,0%</div></div>
   <div class="alloc-row"><div class="alloc-label">Relations presse &amp; annonces</div><div class="alloc-track"><div class="alloc-fill pink" style="width: 47%;"></div></div><div class="alloc-amount">700 €</div><div class="alloc-pct">3,9%</div></div>
 
   <div class="page-footer">
-    <span>Confidentiel · Usage interne</span>
-    <span class="pf-brand">FlowLearn — Apprendre en jouant</span>
+    <span>Confidentiel . Usage interne</span>
+    <span class="pf-brand">FlowLearn Apprendre en jouant</span>
     <span>06</span>
   </div>
 </section>
 
 
 <!-- ============================================================
-     PAGE 7 — ARTICULATION BUDGET GLOBAL
+     PAGE 7  ARTICULATION BUDGET GLOBAL
      ============================================================ -->
 <section class="page">
   <div class="running-header">
@@ -1207,55 +1215,58 @@
       <div class="brand-mark"></div>
       <div class="brand-name">Flow<em>Learn</em></div>
     </div>
-    <div class="doc-tag">§05 · Articulation budgétaire</div>
+    <div class="doc-tag">§05 . Articulation budgétaire</div>
   </div>
 
-  <span class="section-num">§ 05 — Comment ce budget s'inscrit dans le tout</span>
-  <h1 class="section-title">Une <span class="accent">poupée russe</span> budgétaire.</h1>
-  <p class="section-deck">Le budget Communication n'existe pas seul. Il est une partie d'un tout — le budget prévisionnel global FlowLearn — qui couvre aussi salaires, outils, déplacements et provision. Voici comment les chiffres s'emboîtent.</p>
+  <span class="section-num">§ 05 Comment ce budget s'inscrit dans le tout</span>
+  <h1 class="section-title">Notre budget <span class="accent">comm</span>.</h1>
+  <p class="section-deck">Le budget communication fait partie du budget global FlowLearn, qui couvre aussi salaires, outils, déplacements et provision.</p>
 
   <table>
     <thead>
-      <tr><th>Niveau</th><th>Périmètre</th><th style="text-align:right;">Montant</th><th style="text-align:right;">Part</th></tr>
+      <tr><th>Périmètre</th><th style="text-align:right;">Montant</th><th style="text-align:right;">Part</th></tr>
     </thead>
     <tbody>
-      <tr><td><strong>1.</strong></td><td><strong>Budget global FlowLearn</strong> (24 mois, toutes lignes)</td><td style="text-align:right;"><strong>344 159 €</strong></td><td style="text-align:right;">100 %</td></tr>
-      <tr><td>↳</td><td>Salaires (7 personnes au SMIC, charges incluses)</td><td style="text-align:right;">294 000 €</td><td style="text-align:right;">85,4 %</td></tr>
-      <tr><td>↳</td><td>Abonnements outils &amp; hébergement</td><td style="text-align:right;">11 390 €</td><td style="text-align:right;">3,3 %</td></tr>
-      <tr><td>↳</td><td>Déplacements (hors frais de salon)</td><td style="text-align:right;">4 380 €</td><td style="text-align:right;">1,3 %</td></tr>
-      <tr><td>↳</td><td><strong>Communication, salons &amp; visibilité</strong> (le présent document)</td><td style="text-align:right;"><strong>18 000 €</strong></td><td style="text-align:right;"><strong>5,2 %</strong></td></tr>
-      <tr><td>↳↳</td><td>Salons &amp; foires</td><td style="text-align:right;">8 700 €</td><td style="text-align:right;">2,5 %</td></tr>
-      <tr><td>↳↳</td><td>Kit présence salon</td><td style="text-align:right;">1 600 €</td><td style="text-align:right;">0,5 %</td></tr>
-      <tr><td>↳↳</td><td>Événements &amp; concours</td><td style="text-align:right;">1 500 €</td><td style="text-align:right;">0,4 %</td></tr>
-      <tr><td>↳↳</td><td>Pub en ligne</td><td style="text-align:right;">1 500 €</td><td style="text-align:right;">0,4 %</td></tr>
-      <tr><td>↳↳</td><td>Partenariats &amp; co-visibilité</td><td style="text-align:right;">1 200 €</td><td style="text-align:right;">0,3 %</td></tr>
-      <tr><td>↳↳</td><td>Terrain &amp; animation</td><td style="text-align:right;">900 €</td><td style="text-align:right;">0,3 %</td></tr>
-      <tr><td>↳↳</td><td>Relations presse</td><td style="text-align:right;">700 €</td><td style="text-align:right;">0,2 %</td></tr>
-      <tr><td>↳↳</td><td>SEA pilote</td><td style="text-align:right;">700 €</td><td style="text-align:right;">0,2 %</td></tr>
-      <tr><td>↳↳</td><td>Micro-influence</td><td style="text-align:right;">700 €</td><td style="text-align:right;">0,2 %</td></tr>
-      <tr><td>↳↳</td><td>Outils communication</td><td style="text-align:right;">500 €</td><td style="text-align:right;">0,2 %</td></tr>
-      <tr><td>↳</td><td>Provision de sécurité (≈ 5 %)</td><td style="text-align:right;">16 389 €</td><td style="text-align:right;">4,8 %</td></tr>
+      <tr><td><strong>Budget global FlowLearn</strong> (24 mois, toutes lignes)</td><td style="text-align:right;"><strong>344 159 €</strong></td><td style="text-align:right;">100 %</td></tr>
+      <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Salaires (7 personnes au SMIC, charges incluses)</td><td style="text-align:right;">294 000 €</td><td style="text-align:right;">85,4 %</td></tr>
+      <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Abonnements outils &amp; hébergement</td><td style="text-align:right;">11 390 €</td><td style="text-align:right;">3,3 %</td></tr>
+      <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Déplacements (hors frais de salon)</td><td style="text-align:right;">4 380 €</td><td style="text-align:right;">1,3 %</td></tr>
+      <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Communication, salons &amp; visibilité</strong> (le présent document)</td><td style="text-align:right;"><strong>18 000 €</strong></td><td style="text-align:right;"><strong>5,2 %</strong></td></tr>
+      <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Salons &amp; foires</td><td style="text-align:right;">8 700 €</td><td style="text-align:right;">2,5 %</td></tr>
+      <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kit présence salon</td><td style="text-align:right;">1 600 €</td><td style="text-align:right;">0,5 %</td></tr>
+      <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Événements &amp; concours</td><td style="text-align:right;">1 500 €</td><td style="text-align:right;">0,4 %</td></tr>
+      <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pub en ligne</td><td style="text-align:right;">1 500 €</td><td style="text-align:right;">0,4 %</td></tr>
+      <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Partenariats &amp; co visibilité</td><td style="text-align:right;">1 200 €</td><td style="text-align:right;">0,3 %</td></tr>
+      <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Terrain &amp; animation</td><td style="text-align:right;">900 €</td><td style="text-align:right;">0,3 %</td></tr>
+      <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Relations presse</td><td style="text-align:right;">700 €</td><td style="text-align:right;">0,2 %</td></tr>
+      <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SEA pilote</td><td style="text-align:right;">700 €</td><td style="text-align:right;">0,2 %</td></tr>
+      <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Micro influence</td><td style="text-align:right;">700 €</td><td style="text-align:right;">0,2 %</td></tr>
+      <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Outils communication</td><td style="text-align:right;">500 €</td><td style="text-align:right;">0,2 %</td></tr>
+      <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Provision de sécurité (≈ 5 %)</td><td style="text-align:right;">16 389 €</td><td style="text-align:right;">4,8 %</td></tr>
     </tbody>
   </table>
 
   <div class="callout">
     <span class="callout-label">Ce qu'il faut retenir</span>
-    <p>Quand on dit <strong>"18 k€ de communication"</strong>, on parle de tout ce qui sert à <strong>se faire connaître hors du bouche-à-oreille</strong>&nbsp;: salons, kit, presse, partenariats, pub, micro-influence. Les <strong>déplacements liés aux salons</strong> (transport et nuitées vers Londres, Paris, Bruxelles, Amsterdam, Berlin) sont budgétés <strong>à part</strong>, dans la ligne 2.3 du budget global (4 380 €) — c'est volontaire, parce que ce ne sont pas des dépenses de communication mais de logistique d'équipe.</p>
+    <p>Les <strong>18 k€</strong> couvrent ce qui nous fait connaître hors bouche à oreille. Salons, kit, presse, partenariats, pub, micro influence. Les <strong>déplacements vers les salons</strong> (Londres, Paris, Bruxelles, Amsterdam, Berlin) sont à part, dans la ligne 2.3 du budget global (4 380 €). Logistique d'équipe, pas communication.</p>
   </div>
 
-  <h2>Pourquoi 5,2 % et pas plus ?</h2>
-  <p>Parce que ce projet est avant tout pédagogique. La majeure partie de la valeur que nous produisons, c'est du temps humain (85 % du budget en salaires). La communication est un accélérateur — pas le moteur. Sur un projet à notre échelle, surinvestir en communication serait contre-productif&nbsp;: on attirerait des gens vers un produit qui n'aurait pas eu le temps de mûrir. <strong>Mieux vaut un peu de communication bien ciblée qu'une grande campagne sur du sable.</strong></p>
+  <h2>Pourquoi 5,2 % ?</h2>
+  <p>Le projet est avant tout pédagogique. 85 % du budget va aux salaires. 
+    La communication accélère le projet, elle n'en est pas le moteur. 
+    Surinvestir en comm nous attirerait des utilisateurs vers un produit pas prêt. 
+  </p>
 
   <div class="page-footer">
-    <span>Confidentiel · Usage interne</span>
-    <span class="pf-brand">FlowLearn — Apprendre en jouant</span>
+    <span>Confidentiel . Usage interne</span>
+    <span class="pf-brand">FlowLearn Apprendre en jouant</span>
     <span>07</span>
   </div>
 </section>
 
 
 <!-- ============================================================
-     PAGE 8 — CALENDRIER
+     PAGE 8  CALENDRIER
      ============================================================ -->
 <section class="page">
   <div class="running-header">
@@ -1263,81 +1274,81 @@
       <div class="brand-mark"></div>
       <div class="brand-name">Flow<em>Learn</em></div>
     </div>
-    <div class="doc-tag">§06 · Calendrier 24 mois</div>
+    <div class="doc-tag">§06 . Calendrier 24 mois</div>
   </div>
 
-  <span class="section-num">§ 06 — Le calendrier des 24 mois</span>
-  <h1 class="section-title">Vingt-quatre mois, <span class="accent">jalonnés</span>.</h1>
-  <p class="section-deck">Chaque trimestre a son objectif, son budget engagé, son indicateur de succès. Ce n'est pas une prophétie&nbsp;: c'est une intention écrite. On la révisera tous les trois mois, comme prévu dans la gouvernance.</p>
+  <span class="section-num">§ 06 Le calendrier des 24 mois</span>
+  <h1 class="section-title">Le <span class="accent">calendrier</span>.</h1>
+  <p class="section-deck">Chaque trimestre a son objectif, son budget engagé, son indicateur de succès. On le révise tous les trois mois.</p>
 
   <div class="timeline">
 
     <div class="tl-item">
-      <div class="tl-month">M1–M2 · AVRIL–MAI 2026</div>
+      <div class="tl-month">MOIS 1 ET 2 . PRINTEMPS 2026</div>
       <div class="tl-title">Setup &amp; démarrage en sourdine</div>
-      <div class="tl-text">Discord lancé, premier article de blog au ton fondateur, premier post LinkedIn. Pas de budget engagé hors outils com (domaine, newsletter — ~250 €). <strong>Cible&nbsp;: 100 membres Discord, 500 abonnés email.</strong></div>
+      <div class="tl-text">Discord lancé, premier article de blog au ton fondateur, premier post LinkedIn. Pas de budget engagé hors outils comm (domaine, newsletter, ~250 €). <strong>Cible. 100 membres Discord, 500 abonnés email.</strong></div>
     </div>
 
     <div class="tl-item">
-      <div class="tl-month">M3–M4 · JUIN–JUILLET 2026</div>
+      <div class="tl-month">MOIS 3 ET 4 . ÉTÉ 2026</div>
       <div class="tl-title">Préparation et lancement bêta</div>
-      <div class="tl-text">Landing page en ligne. Inscriptions bêta ouvertes. Premier article presse calé chez un média ami. Aucune dépense pub à ce stade (règle d'or n°4&nbsp;: pas de pub avant retours utilisateurs). <strong>Cumul Phase 1 ≈ 1,5 k€.</strong></div>
+      <div class="tl-text">Landing page en ligne. Inscriptions bêta ouvertes. Premier article presse calé chez un média ami. Aucune dépense pub à ce stade (règle d'or n°4. pas de pub avant retours utilisateurs). <strong>Cumul Phase 1 ≈ 1,5 k€.</strong></div>
     </div>
 
     <div class="tl-item">
-      <div class="tl-month">M5–M6 · AOÛT–SEPT. 2026</div>
+      <div class="tl-month">MOIS 5 ET 6 . FIN ÉTÉ 2026</div>
       <div class="tl-title">Stabilisation et apprentissage</div>
-      <div class="tl-text">Cadence hebdomadaire&nbsp;: deux posts Discord, une newsletter, une session témoignages. On collecte les retours. <strong>Cumul Phase 1 ≈ 3 k€.</strong> Premier comité d'arbitrage trimestriel pour valider l'engagement du salon n°1.</div>
+      <div class="tl-text">Cadence hebdomadaire. Deux posts Discord, une newsletter, une session témoignages. On collecte les retours. <strong>Cumul Phase 1 ≈ 3 k€.</strong> Premier comité d'arbitrage trimestriel pour valider l'engagement du salon n°1.</div>
     </div>
 
     <div class="tl-item">
-      <div class="tl-month">M7–M9 · OCT.–DÉC. 2026</div>
-      <div class="tl-title">Premier salon &amp; premier digital</div>
+      <div class="tl-month">MOIS 7 À 9 . FIN 2026</div>
+      <div class="tl-title">Premier salon et premier digital</div>
       <div class="tl-text">Préparation et participation au <strong>premier salon</strong> (français ou européen, ~2 900 €). Lancement de la pub digitale (1ᵉʳ tiers, ~500 €). Premier cas d'étude rédigé. Recommandation produit du salon dans la newsletter.</div>
     </div>
 
     <div class="tl-item">
-      <div class="tl-month">M10–M12 · JAN.–MARS 2027</div>
-      <div class="tl-title">Capitalisation post-salon</div>
-      <div class="tl-text">Relances qualifiées des contacts pris au salon. SEA pilote sur la marque (~250 €). Premier concours/pitch contest si opportunité (~500 €). <strong>Cumul Phase 2 ≈ 8 k€.</strong></div>
+      <div class="tl-month">MOIS 10 À 12 . DÉBUT 2027</div>
+      <div class="tl-title">Capitalisation post salon</div>
+      <div class="tl-text">Relances qualifiées des contacts pris au salon. SEA pilote sur la marque (~250 €). Premier concours ou pitch contest si opportunité (~500 €). <strong>Cumul Phase 2 ≈ 8 k€.</strong></div>
     </div>
 
     <div class="tl-item">
-      <div class="tl-month">M13–M15 · AVR.–JUIN 2027</div>
+      <div class="tl-month">MOIS 13 À 15 . PRINTEMPS 2027</div>
       <div class="tl-title">Préparation Bett UK</div>
-      <div class="tl-text">Préparation du <strong>second salon, plus ambitieux</strong> (Bett UK ou équivalent, ~3 500 €). Renouvellement du kit présence (~800 €). Premières conversations avec micro-influenceurs.</div>
+      <div class="tl-text">Préparation du <strong>second salon, plus ambitieux</strong> (Bett UK ou équivalent, ~3 500 €). Renouvellement du kit présence (~800 €). Premières conversations avec micro influenceurs.</div>
     </div>
 
     <div class="tl-item">
-      <div class="tl-month">M16–M18 · JUIL.–SEPT. 2027</div>
+      <div class="tl-month">MOIS 16 À 18 . ÉTÉ 2027</div>
       <div class="tl-title">Élargissement du cercle</div>
-      <div class="tl-text">Activation du budget partenariats (~600 €). Première collaboration micro-influence (~350 €). Pic digital coordonné avec le salon (~500 €). <strong>Cumul Phase 3 ≈ 15 k€.</strong></div>
+      <div class="tl-text">Activation du budget partenariats (~600 €). Première collaboration micro influence (~350 €). Pic digital coordonné avec le salon (~500 €). <strong>Cumul Phase 3 ≈ 15 k€.</strong></div>
     </div>
 
     <div class="tl-item">
-      <div class="tl-month">M19–M20 · OCT.–NOV. 2027</div>
-      <div class="tl-title">Troisième salon &amp; bilan d'étape</div>
-      <div class="tl-text">Participation au <strong>troisième salon</strong> (~2 300 €) — un événement plus modeste, axé sur les pairs et partenaires. Bilan annuel anticipé&nbsp;: ce qui a marché, ce qui n'a pas marché, ce qu'on garde.</div>
+      <div class="tl-month">MOIS 19 ET 20 . AUTOMNE 2027</div>
+      <div class="tl-title">Troisième salon et bilan d'étape</div>
+      <div class="tl-text">Participation au <strong>troisième salon</strong> (~2 300 €). Un événement plus modeste, axé sur les pairs et partenaires. Bilan annuel anticipé. Ce qui a marché, ce qui n'a pas marché, ce qu'on garde.</div>
     </div>
 
     <div class="tl-item">
-      <div class="tl-month">M21–M24 · DÉC. 27 – MARS 28</div>
-      <div class="tl-title">Consolidation &amp; transmission</div>
+      <div class="tl-month">MOIS 21 À 24 . HIVER 2027 2028</div>
+      <div class="tl-title">Consolidation et transmission</div>
       <div class="tl-text">Reliquat budgétaire engagé sur les <strong>actions à plus fort retour</strong> identifiées en cours de route. Documentation finale du dispositif communication pour la promo suivante. <strong>Cumul total ≈ 18 k€.</strong></div>
     </div>
 
   </div>
 
   <div class="page-footer">
-    <span>Confidentiel · Usage interne</span>
-    <span class="pf-brand">FlowLearn — Apprendre en jouant</span>
+    <span>Confidentiel . Usage interne</span>
+    <span class="pf-brand">FlowLearn Apprendre en jouant</span>
     <span>08</span>
   </div>
 </section>
 
 
 <!-- ============================================================
-     PAGE 9 — KPI (CONSERVÉ)
+     PAGE 9  KPI (CONSERVÉ)
      ============================================================ -->
 <section class="page">
   <div class="running-header">
@@ -1345,12 +1356,12 @@
       <div class="brand-mark"></div>
       <div class="brand-name">Flow<em>Learn</em></div>
     </div>
-    <div class="doc-tag">§07 · Tableau de bord</div>
+    <div class="doc-tag">§07 . Tableau de bord</div>
   </div>
 
-  <span class="section-num">§ 07 — Tableau de bord</span>
-  <h1 class="section-title">Les <span class="accent">chiffres</span> qu'on regardera tous les mois.</h1>
-  <p class="section-deck">Un bon tableau de bord, c'est une dizaine de chiffres qu'on connaît par cœur. Pas trente. Voici les nôtres, par phase, pour qu'à chaque jalon on sache si on est en avance, en retard, ou pile.</p>
+  <span class="section-num">§ 07 Tableau de bord</span>
+  <h1 class="section-title">Les <span class="accent">KPIs</span> par phase.</h1>
+  <p class="section-deck">Les statistiques qui nous montrent notre état d'avancement.</p>
 
   <h2>Cibles à la fin de la Phase 1 (M6)</h2>
   <div class="kpi-grid">
@@ -1381,7 +1392,7 @@
     <div class="kpi"><div class="kpi-label">Salons participés</div><div class="kpi-value">3</div></div>
     <div class="kpi"><div class="kpi-label">Partenariats actifs</div><div class="kpi-value">3+</div></div>
     <div class="kpi"><div class="kpi-label">Mentions presse cumulées</div><div class="kpi-value">10+</div></div>
-    <div class="kpi"><div class="kpi-label">Collaborations micro-influence</div><div class="kpi-value">3</div></div>
+    <div class="kpi"><div class="kpi-label">Collaborations micro influence</div><div class="kpi-value">3</div></div>
     <div class="kpi"><div class="kpi-label">CPI moyen pub</div><div class="kpi-value">≤ 2 €</div></div>
     <div class="kpi"><div class="kpi-label">Budget consommé</div><div class="kpi-value">15 k€</div></div>
   </div>
@@ -1397,15 +1408,15 @@
   </div>
 
   <div class="page-footer">
-    <span>Confidentiel · Usage interne</span>
-    <span class="pf-brand">FlowLearn — Apprendre en jouant</span>
+    <span>Confidentiel . Usage interne</span>
+    <span class="pf-brand">FlowLearn Apprendre en jouant</span>
     <span>09</span>
   </div>
 </section>
 
 
 <!-- ============================================================
-     PAGE 10 — CLOSING (corps principal)
+     ANNEXE 1  FUNNEL
      ============================================================ -->
 <section class="page">
   <div class="running-header">
@@ -1413,117 +1424,66 @@
       <div class="brand-mark"></div>
       <div class="brand-name">Flow<em>Learn</em></div>
     </div>
-    <div class="doc-tag">Mot de fin</div>
-  </div>
-
-  <span class="section-num">— En guise de conclusion</span>
-  <h1 class="section-title">Ce que <span class="accent">ce plan ne dit pas</span>.</h1>
-  <p class="section-deck">Un plan, c'est utile. Mais ce qui fera la différence, ce ne sera pas le plan. Ce sera la rigueur dans son exécution, et l'honnêteté avec laquelle on saura le réviser quand le réel ne ressemblera pas à nos hypothèses.</p>
-
-  <p>On a écrit ces 18 k€ comme si c'était une recette de cuisine&nbsp;: ingrédients, temps, dosage. La réalité ressemblera plus à un dîner où l'invité principal arrive en avance, où le four ne marche pas, et où il faut quand même servir un plat qui rassasie. <strong>Le talent communicationnel, ce n'est pas suivre le plan&nbsp;: c'est savoir improviser sans le perdre de vue.</strong></p>
-
-  <h2>Les six prochaines étapes concrètes</h2>
-
-  <table>
-    <tbody>
-      <tr><td style="width: 40px;"><strong>01</strong></td><td>Faire valider ce document par l'école porteuse et l'équipe avant la fin du mois 1.</td></tr>
-      <tr><td><strong>02</strong></td><td>Lancer Discord et la page LinkedIn FlowLearn dès le mois 1, sans attendre que tout soit parfait.</td></tr>
-      <tr><td><strong>03</strong></td><td>Identifier le premier salon cible et obtenir un devis réel avant le comité trimestriel suivant.</td></tr>
-      <tr><td><strong>04</strong></td><td>Mettre en place le tracking analytique (Firebase, déjà budgété) — c'est ce qui rend tout le reste mesurable.</td></tr>
-      <tr><td><strong>05</strong></td><td>Définir les templates email + landing page avec un designer interne, version 1 imparfaite, version 2 prévue à M3.</td></tr>
-      <tr><td><strong>06</strong></td><td>Tenir un calendrier éditorial hebdomadaire dès M2 — un document Notion partagé, simple, mis à jour le vendredi.</td></tr>
-    </tbody>
-  </table>
-
-  <div class="flourish"></div>
-
-  <div class="closing-message">
-    <div class="signoff">
-      Un produit qui mérite d'être trouvé<br>
-      <span class="accent">finit toujours par être trouvé.</span><br>
-      Notre job, c'est juste de raccourcir le délai.
-    </div>
-    <div class="sig-line">— L'équipe FlowLearn, Mai 2026</div>
-  </div>
-
-  <div class="page-footer">
-    <span>Confidentiel · Usage interne</span>
-    <span class="pf-brand">FlowLearn — Apprendre en jouant</span>
-    <span>10</span>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     ANNEXE — PAGE DE GARDE
-     ============================================================ -->
-<section class="page">
-  <div class="annex-divider">
-    <div class="label">— Annexes —</div>
-    <div class="title">Pour aller<br><span class="accent">plus loin.</span></div>
-    <div class="deck">
-      Les sections qui suivent ne sont pas indispensables à la lecture courante.
-      Elles existent pour ceux qui veulent creuser — l'école porteuse,
-      les nouvelles recrues, ou nous-mêmes dans six mois quand on aura oublié pourquoi
-      on avait pris telle décision.
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     ANNEXE 1 — FUNNEL
-     ============================================================ -->
-<section class="page">
-  <div class="running-header">
-    <div class="brand">
-      <div class="brand-mark"></div>
-      <div class="brand-name">Flow<em>Learn</em></div>
-    </div>
-    <div class="doc-tag">Annexe A.1 · Funnel</div>
+    <div class="doc-tag">Annexe A.1 . Funnel</div>
   </div>
 
   <span class="annex-marker">Annexe A.1</span>
-  <span class="section-num">— Funnel de conversion par phase</span>
-  <h1 class="section-title">L'argent rentre <span class="accent">par le bas</span> de l'entonnoir.</h1>
-  <p class="section-deck">Tout en haut, l'attention. Tout en bas, l'utilisateur engagé. Entre les deux, des étapes où l'on perd des gens — et c'est normal. L'enjeu, c'est d'optimiser chaque marche, pas de remplir le seau.</p>
+  <span class="section-num"> Funnel de conversion</span>
+  <h1 class="section-title">Comment va se passer la <span class="accent">génération de leads</span> qualifiés et leur conversion en utilisateurs.</h1>
+  <p class="section-deck">Voici à quoi peut ressembler la transformation d'un visiteur de salon en utilisateur engagé, étape par étape.</p>
 
-  <h2>Funnel typique en Phase 2 (post-salon n°1)</h2>
+  <h2>Funnel typique en Phase 2 (post salon n°1)</h2>
 
   <div class="funnel">
     <div class="funnel-step">
-      <div class="funnel-bar" style="width: 100%;">~3 000 visiteurs sur le salon</div>
       <div class="funnel-meta">Affluence stand</div>
+      <div class="funnel-track">
+        <div class="funnel-bar" style="width: 100%;"></div>
+        <div class="funnel-label" style="color: white;">~3 000 visiteurs sur le salon</div>
+      </div>
     </div>
     <div class="funnel-step">
-      <div class="funnel-bar" style="width: 60%;">~600 conversations entamées</div>
       <div class="funnel-meta">Engagement</div>
+      <div class="funnel-track">
+        <div class="funnel-bar" style="width: 60%;"></div>
+        <div class="funnel-label" style="color: white;">~600 conversations entamées</div>
+      </div>
     </div>
     <div class="funnel-step">
-      <div class="funnel-bar" style="width: 35%;">~150 démos rapides faites</div>
       <div class="funnel-meta">Démo flash</div>
+      <div class="funnel-track">
+        <div class="funnel-bar" style="width: 35%;"></div>
+        <div class="funnel-label" style="color: white;">~150 démos rapides faites</div>
+      </div>
     </div>
     <div class="funnel-step">
-      <div class="funnel-bar" style="width: 22%;">~80 contacts capturés (QR/badge)</div>
       <div class="funnel-meta">Lead salon</div>
+      <div class="funnel-track">
+        <div class="funnel-bar" style="width: 22%;"></div>
+        <div class="funnel-label" style="left: calc(22% + 12px);">~80 contacts capturés (QR/badge)</div>
+      </div>
     </div>
     <div class="funnel-step">
-      <div class="funnel-bar" style="width: 13%;">~50 contacts qualifiés relancés</div>
       <div class="funnel-meta">Lead chaud</div>
+      <div class="funnel-track">
+        <div class="funnel-bar" style="width: 13%;"></div>
+        <div class="funnel-label" style="left: calc(13% + 12px);">~50 contacts qualifiés relancés</div>
+      </div>
     </div>
     <div class="funnel-step">
-      <div class="funnel-bar" style="width: 6%;">~20 réunions de suivi obtenues</div>
       <div class="funnel-meta">RDV concret</div>
+      <div class="funnel-track">
+        <div class="funnel-bar" style="width: 6%;"></div>
+        <div class="funnel-label" style="left: calc(6% + 12px);">~20 réunions de suivi obtenues</div>
+      </div>
     </div>
     <div class="funnel-step">
-      <div class="funnel-bar" style="width: 3%;">~5 partenariats / pilotes</div>
       <div class="funnel-meta">Concrétisé</div>
+      <div class="funnel-track">
+        <div class="funnel-bar" style="width: 3%;"></div>
+        <div class="funnel-label" style="left: calc(3% + 12px);">~5 partenariats / pilotes</div>
+      </div>
     </div>
-  </div>
-
-  <div class="callout">
-    <span class="callout-label">Lecture utile</span>
-    <p>Ces chiffres sont des ordres de grandeur, pas des engagements. Un bon salon pour un projet de notre taille, c'est <strong>5 à 10 partenariats ou pilotes concrétisés</strong> dans les trois mois qui suivent. Si on en obtient zéro, on est dans le scénario d'alerte décrit en <strong>Annexe A.2</strong>.</p>
   </div>
 
   <h2>Indicateurs de qualité de funnel</h2>
@@ -1542,15 +1502,15 @@
   </table>
 
   <div class="page-footer">
-    <span>Confidentiel · Usage interne</span>
-    <span class="pf-brand">FlowLearn — Apprendre en jouant</span>
+    <span>Confidentiel . Usage interne</span>
+    <span class="pf-brand">FlowLearn Apprendre en jouant</span>
     <span>A.1</span>
   </div>
 </section>
 
 
 <!-- ============================================================
-     ANNEXE 2 — PLANS DE CONTINGENCE
+     ANNEXE 2  MATRICE DÉTAILLÉE DES CANAUX
      ============================================================ -->
 <section class="page">
   <div class="running-header">
@@ -1558,141 +1518,12 @@
       <div class="brand-mark"></div>
       <div class="brand-name">Flow<em>Learn</em></div>
     </div>
-    <div class="doc-tag">Annexe A.2 · Plans de contingence</div>
+    <div class="doc-tag">Annexe A.2 . Canaux</div>
   </div>
 
   <span class="annex-marker">Annexe A.2</span>
-  <span class="section-num">— Plans de contingence</span>
-  <h1 class="section-title">Quand <span class="accent">ça déraille</span> — et ça finira par dérailler.</h1>
-  <p class="section-deck">Un plan qui ne prévoit pas son propre échec n'est pas un plan, c'est un vœu pieux. On a écrit trois scénarios noirs et la façon d'y répondre. On espère ne jamais avoir à les ouvrir.</p>
-
-  <div class="alert alert-red">
-    <div class="alert-tag">🔴 Alerte rouge · Si le premier salon génère zéro lead qualifié</div>
-    <div class="alert-title">"On a payé le stand, et le stand est resté vide."</div>
-    <p style="font-size: 10pt; color: var(--slate-700); margin-bottom: 8px;">C'est le pire scénario. À ce stade, on a engagé ~3 k€ sur un salon, et zéro contact concret. Réaction immédiate&nbsp;:</p>
-    <ul>
-      <li>Déclencher un retour d'expérience honnête avec toute l'équipe sous 7 jours.</li>
-      <li>Identifier ce qui a manqué&nbsp;: stand mal positionné, démo pas claire, mauvais salon, mauvais moment de l'année&nbsp;?</li>
-      <li>Réallouer une partie du budget salon n°2 vers du digital ciblé et de la micro-influence (où le ROI est plus mesurable).</li>
-      <li>Considérer un salon plus petit et plus ciblé pour la deuxième tentative — pas Bett UK avant d'avoir les fondamentaux.</li>
-    </ul>
-  </div>
-
-  <div class="alert alert-amber">
-    <div class="alert-tag">🟡 Alerte jaune · Si la communauté Discord stagne en dessous de 200 membres au M6</div>
-    <div class="alert-title">"On parle, mais personne n'écoute."</div>
-    <p style="font-size: 10pt; color: var(--slate-700); margin-bottom: 8px;">La communauté est notre fondation. Si elle ne décolle pas, tout le reste est plus difficile. Réaction&nbsp;:</p>
-    <ul>
-      <li>Auditer le contenu produit&nbsp;: parle-t-on vraiment aux bonnes personnes&nbsp;? Le ton est-il juste&nbsp;?</li>
-      <li>Tripler la fréquence de publication pendant 4 semaines — pas pour spammer, mais pour donner plus d'angles d'entrée.</li>
-      <li>Lancer un mini-événement Discord (AMA avec un fondateur ami, démo en live).</li>
-      <li>Activer 2-3 collaborations sans budget avec d'autres créateurs étudiants (échange de visibilité).</li>
-    </ul>
-  </div>
-
-  <div class="alert alert-amber">
-    <div class="alert-tag">🟡 Alerte jaune · Si les coûts SaaS dépassent l'enveloppe</div>
-    <div class="alert-title">"Notion a augmenté, Cursor a augmenté, et notre VPS aussi."</div>
-    <p style="font-size: 10pt; color: var(--slate-700); margin-bottom: 8px;">Cas réaliste, déjà observé sur d'autres projets. Réaction&nbsp;:</p>
-    <ul>
-      <li>Déclencher la provision de sécurité globale (16 389 €) — pas le budget com.</li>
-      <li>Vérifier les conditions Education chez chaque éditeur (Notion, Figma, Claude). Plusieurs offrent des tarifs étudiants.</li>
-      <li>En dernier recours, basculer un siège payant vers un siège gratuit en limitant l'usage à un sous-ensemble de l'équipe.</li>
-    </ul>
-  </div>
-
-  <div class="page-footer">
-    <span>Confidentiel · Usage interne</span>
-    <span class="pf-brand">FlowLearn — Apprendre en jouant</span>
-    <span>A.2</span>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     ANNEXE 3 — GOUVERNANCE & RISQUES (LUCA)
-     ============================================================ -->
-<section class="page">
-  <div class="running-header">
-    <div class="brand">
-      <div class="brand-mark"></div>
-      <div class="brand-name">Flow<em>Learn</em></div>
-    </div>
-    <div class="doc-tag">Annexe A.3 · Gouvernance &amp; risques</div>
-  </div>
-
-  <span class="annex-marker">Annexe A.3</span>
-  <span class="section-num">— Gouvernance &amp; gestion des risques</span>
-  <h1 class="section-title">Qui décide <span class="accent">quoi</span>, et quand.</h1>
-  <p class="section-deck">Une bonne communication, c'est aussi une bonne gouvernance interne. On ne veut pas se retrouver à mi-parcours en se demandant qui devait valider quoi.</p>
-
-  <div class="owner-badge">Pilotage des risques · Luca</div>
-
-  <p>La <strong>gestion des risques liés à la communication</strong> est portée par Luca dans l'équipe. C'est lui qui suit les indicateurs d'alerte, déclenche les revues quand nécessaire et propose les arbitrages au comité trimestriel. Cette responsabilité couvre&nbsp;:</p>
-
-  <h2>Rythme de revue</h2>
-  <table>
-    <thead>
-      <tr><th>Revue</th><th>Fréquence</th><th>Format</th><th>Décisions prises</th></tr>
-    </thead>
-    <tbody>
-      <tr><td><strong>Suivi mensuel</strong></td><td>1ᵉʳ lundi du mois</td><td>30 min, équipe complète</td><td>Comparaison réel vs prévisionnel par catégorie</td></tr>
-      <tr><td><strong>Arbitrage trimestriel</strong></td><td>Tous les 3 mois</td><td>1 h, équipe complète</td><td>Engagement salons, ajustement abonnements, lancement vagues pub</td></tr>
-      <tr><td><strong>Bilan annuel</strong></td><td>M12 puis M24</td><td>2 h, équipe + école porteuse</td><td>Bilan budgétaire complet, préparation année suivante</td></tr>
-      <tr><td><strong>Alerte risque</strong></td><td>À déclencher</td><td>Variable, déclenché par Luca</td><td>Quand un seuil d'alerte est franchi</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Cartographie des risques communication</h2>
-  <table>
-    <thead>
-      <tr><th>Risque</th><th style="text-align:center;">Impact</th><th style="text-align:center;">Probabilité</th><th>Mesure de mitigation</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Salon raté (zéro lead)</td><td style="text-align:center;">Élevé</td><td style="text-align:center;">Moyen</td><td>Préparation rigoureuse, plan B en A.2</td></tr>
-      <tr><td>Communauté qui stagne</td><td style="text-align:center;">Moyen</td><td style="text-align:center;">Moyen</td><td>Audit ton, plan d'animation A.2</td></tr>
-      <tr><td>Hausse tarifs SaaS</td><td style="text-align:center;">Faible</td><td style="text-align:center;">Élevé</td><td>Provision sécurité, vérif. tarifs Education</td></tr>
-      <tr><td>Bad buzz sur RS</td><td style="text-align:center;">Élevé</td><td style="text-align:center;">Faible</td><td>Charte modération Discord, réactivité 24h</td></tr>
-      <tr><td>Conflit interne sur la stratégie</td><td style="text-align:center;">Moyen</td><td style="text-align:center;">Moyen</td><td>Comité trimestriel, décisions documentées</td></tr>
-      <tr><td>Perte d'un membre clé</td><td style="text-align:center;">Élevé</td><td style="text-align:center;">Faible</td><td>Documentation Notion, doublons sur les comptes</td></tr>
-      <tr><td>Salon annulé / reporté</td><td style="text-align:center;">Moyen</td><td style="text-align:center;">Faible</td><td>Devis avec clause de remboursement vérifiée</td></tr>
-      <tr><td>Pub digitale CPI &gt; 5 €</td><td style="text-align:center;">Moyen</td><td style="text-align:center;">Moyen</td><td>Pause &amp; retravail créatif sous 2 semaines</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Règles d'or de la communication</h2>
-  <ol style="margin-left: 18px; font-size: 10pt;">
-    <li style="margin-bottom: 6px;"><strong>Aucun engagement &gt; 1 000 €</strong> sans validation au comité trimestriel.</li>
-    <li style="margin-bottom: 6px;"><strong>Pas de pub majeure avant retours utilisateurs réels</strong> (repère M9+).</li>
-    <li style="margin-bottom: 6px;"><strong>Tout dépassement &gt; 10 %</strong> d'un poste déclenche une note explicative de Luca.</li>
-    <li style="margin-bottom: 6px;"><strong>La provision de sécurité ne sert qu'aux imprévus</strong>, jamais aux dépassements normaux.</li>
-    <li style="margin-bottom: 6px;"><strong>Tout salon doit avoir un devis réel</strong> avant l'arbitrage trimestriel qui le valide.</li>
-  </ol>
-
-  <div class="page-footer">
-    <span>Confidentiel · Usage interne</span>
-    <span class="pf-brand">FlowLearn — Apprendre en jouant</span>
-    <span>A.3</span>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     ANNEXE 4 — MATRICE DÉTAILLÉE DES CANAUX
-     ============================================================ -->
-<section class="page">
-  <div class="running-header">
-    <div class="brand">
-      <div class="brand-mark"></div>
-      <div class="brand-name">Flow<em>Learn</em></div>
-    </div>
-    <div class="doc-tag">Annexe A.4 · Canaux</div>
-  </div>
-
-  <span class="annex-marker">Annexe A.4</span>
-  <span class="section-num">— Matrice détaillée des canaux</span>
+  <span class="section-num"> Matrice détaillée des canaux</span>
   <h1 class="section-title">Le <span class="accent">détail</span> de chaque canal.</h1>
-  <p class="section-deck">Pour ceux qui veulent vraiment savoir où va chaque ligne — et ce qu'on en attend.</p>
 
   <table>
     <thead>
@@ -1705,34 +1536,62 @@
       </tr>
     </thead>
     <tbody>
-      <tr><td><strong>Discord</strong></td><td>1→4</td><td>Animation communauté, AMA, salons thématiques</td><td>Quotidien</td><td style="text-align:right;">— (temps)</td></tr>
-      <tr><td><strong>Blog</strong></td><td>1→4</td><td>Articles fondateur, leçons apprises, deep-dives</td><td>Bi-mensuel</td><td style="text-align:right;">— (temps)</td></tr>
-      <tr><td><strong>LinkedIn</strong></td><td>1→4</td><td>Posts texte, carrousels, tribunes</td><td>2/sem</td><td style="text-align:right;">— (temps)</td></tr>
-      <tr><td><strong>TikTok organique</strong></td><td>2→3</td><td>Vidéos courtes, vibe étudiante</td><td>2/sem</td><td style="text-align:right;">— (temps)</td></tr>
-      <tr><td><strong>Newsletter</strong></td><td>1→4</td><td>Format court, ton honnête</td><td>Mensuel</td><td style="text-align:right;">500 €</td></tr>
+      <tr><td><strong>Discord</strong></td><td>1-4</td><td>Animation communauté, AMA, salons thématiques</td><td>Quotidien</td><td style="text-align:right;"> (temps)</td></tr>
+      <tr><td><strong>Blog</strong></td><td>1-4</td><td>Articles fondateur, leçons apprises, analyses approfondies</td><td>Bi mensuel</td><td style="text-align:right;"> (temps)</td></tr>
+      <tr><td><strong>LinkedIn</strong></td><td>1-4</td><td>Posts texte, carrousels, tribunes</td><td>2/sem</td><td style="text-align:right;"> (temps)</td></tr>
+      <tr><td><strong>TikTok organique</strong></td><td>2-3</td><td>Vidéos courtes, vibe étudiante</td><td>2/sem</td><td style="text-align:right;"> (temps)</td></tr>
+      <tr><td><strong>Newsletter</strong></td><td>1-4</td><td>Format court</td><td>Mensuel</td><td style="text-align:right;">500 €</td></tr>
       <tr><td><strong>Salon n°1</strong></td><td>2</td><td>Stand partagé, démo flash</td><td>1 événement</td><td style="text-align:right;">~2 900 €</td></tr>
       <tr><td><strong>Salon n°2 (Bett UK)</strong></td><td>3</td><td>Corner partenaire, conférence</td><td>1 événement</td><td style="text-align:right;">~3 500 €</td></tr>
       <tr><td><strong>Salon n°3</strong></td><td>3</td><td>Table projet étudiant</td><td>1 événement</td><td style="text-align:right;">~2 300 €</td></tr>
-      <tr><td><strong>Kit présence</strong></td><td>2→3</td><td>Roll-up, flyers A5, QR, goodies</td><td>2 renouvellements</td><td style="text-align:right;">1 600 €</td></tr>
-      <tr><td><strong>Événements / pitch contests</strong></td><td>2→3</td><td>Inscriptions et déplacements complémentaires</td><td>3-4 événements</td><td style="text-align:right;">1 500 €</td></tr>
-      <tr><td><strong>Pub TikTok / Meta</strong></td><td>2→3</td><td>Boost ciblé pic salon, créatifs courts</td><td>3 vagues</td><td style="text-align:right;">1 500 €</td></tr>
-      <tr><td><strong>Partenariats</strong></td><td>2→4</td><td>Logo, co-animation, atelier conjoint</td><td>3-4 partenariats</td><td style="text-align:right;">1 200 €</td></tr>
-      <tr><td><strong>Terrain &amp; animation</strong></td><td>2→3</td><td>Mini ateliers, démos, location salle</td><td>4-5 actions</td><td style="text-align:right;">900 €</td></tr>
-      <tr><td><strong>SEA (Google Ads)</strong></td><td>2→3</td><td>Mots-clés marque + niche EdTech</td><td>2 vagues</td><td style="text-align:right;">700 €</td></tr>
-      <tr><td><strong>Relations presse</strong></td><td>1→4</td><td>Communiqués, tribunes, presse école/asso</td><td>3-4 actions</td><td style="text-align:right;">700 €</td></tr>
-      <tr><td><strong>Micro-influence</strong></td><td>3</td><td>Collaborations modestes, contenu honnête</td><td>2-3 collabs</td><td style="text-align:right;">700 €</td></tr>
-      <tr class="total"><td colspan="4">Total — Communication, salons &amp; visibilité</td><td style="text-align:right;">18 000 €</td></tr>
+      <tr><td><strong>Kit présence</strong></td><td>2-3</td><td>Roll up, flyers A5, QR, goodies</td><td>2 renouvellements</td><td style="text-align:right;">1 600 €</td></tr>
+      <tr><td><strong>Événements / pitch contests</strong></td><td>2-3</td><td>Inscriptions et déplacements complémentaires</td><td>3 ou 4 événements</td><td style="text-align:right;">1 500 €</td></tr>
+      <tr><td><strong>Pub TikTok / Meta</strong></td><td>2-3</td><td>Boost ciblé pic salon, créatifs courts</td><td>3 vagues</td><td style="text-align:right;">1 500 €</td></tr>
+      <tr><td><strong>Partenariats</strong></td><td>2-4</td><td>Logo, co animation, atelier conjoint</td><td>3 ou 4 partenariats</td><td style="text-align:right;">1 200 €</td></tr>
+      <tr><td><strong>Terrain &amp; animation</strong></td><td>2-3</td><td>Mini ateliers, démos, location salle</td><td>4 ou 5 actions</td><td style="text-align:right;">900 €</td></tr>
+      <tr><td><strong>SEA (Google Ads)</strong></td><td>2-3</td><td>Mots clés marque + niche EdTech</td><td>2 vagues</td><td style="text-align:right;">700 €</td></tr>
+      <tr><td><strong>Relations presse</strong></td><td>1-4</td><td>Communiqués, tribunes, presse spécialisée et associative</td><td>3 ou 4 actions</td><td style="text-align:right;">700 €</td></tr>
+      <tr><td><strong>Micro influence</strong></td><td>3</td><td>Collaborations modestes</td><td>2 ou 3 collabs</td><td style="text-align:right;">700 €</td></tr>
+      <tr class="total"><td colspan="4">Total Communication, salons &amp; visibilité</td><td style="text-align:right;">18 000 €</td></tr>
     </tbody>
   </table>
 
   <p style="margin-top: 18px; font-style: italic; color: var(--slate-600); font-size: 10pt;">
-    Les canaux marqués <em>"— (temps)"</em> ne consomment pas de budget direct&nbsp;: ils s'appuient sur le temps salarié déjà budgété en ligne 2.1 du budget global. C'est la force de l'organique&nbsp;: financièrement gratuit, humainement coûteux. Et c'est précisément pour ça que peu de concurrents le tiennent dans la durée.
+    Les canaux marqués <em>" (temps)"</em> ne consomment pas de budget direct. Ils s'appuient sur le temps salarié déjà budgété en ligne 2.1 du budget global. C'est la force de l'organique. Financièrement gratuit mais humainement coûteux.
   </p>
 
   <div class="page-footer">
-    <span>Confidentiel · Usage interne</span>
-    <span class="pf-brand">FlowLearn — Apprendre en jouant</span>
-    <span>A.4</span>
+    <span>Confidentiel . Usage interne</span>
+    <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+    <span>A.2</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MOT DE FIN
+     ============================================================ -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      <div class="brand-name">Flow<em>Learn</em></div>
+    </div>
+    <div class="doc-tag">Mot de fin</div>
+  </div>
+
+  <div class="closing-message" style="margin: 70mm auto;">
+    <div class="signoff">
+      <span class="accent">"Le jeu est le travail<br>
+      de l'enfant."</span>
+    </div>
+    <div class="sig-line">Maria Montessori</div>
+  </div>
+
+  <div class="page-footer">
+    <span>Confidentiel . Usage interne</span>
+    <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+    <span></span>
   </div>
 </section>
 
