@@ -4,71 +4,64 @@
 
 ### Flux documentaire
 
-`projet` regroupe les livrables FlowLearn. Sous **`2-en-cours`** : budget, planning, risques, charte, stack, etc. **PBS / WBS / DoD** vivent sous **`3-a-revoir/mvp-pbs/`** ; le flux est : **relecture des docs** → **mise en forme charte** (`2-en-cours/charte-graphique/`) → **copie figée dans `4-termine/`** (voir [`3-a-revoir/README.md`](projet/3-a-revoir/README.md)).
+`projet` regroupe les livrables FlowLearn. Point d’entrée : [`00-guide-lecture.md`](00-guide-lecture.md) (index T-ESP-800 ↔ fichiers).
+
+- **`2-en-cours/`** — cadrage, qualité, specs, budget, planning, risques, stack, OBS/RACI, charte, livret.
+- **`3-a-revoir/`** — PBS / WBS / DoD (`mvp-pbs/`) + plan de communication ; relecture → charte → `4-termine/`.
+- **`4-termine/`** — copies validées après charte (vide tant que rien n’est figé).
 
 ```txt
 ├── 1-document
+│   ├── 00-guide-lecture.md         // index livrables & correspondance jury
 │   ├── architecture.md
 │   └── projet/
 │       ├── 2-en-cours/
-│           ├── budgetaire/
-│           │   └── budget-previsionnel.md
-│           ├── cadrage-projet/
-│           │   └── geneses-projet-objectifs.md
-│           ├── charte-graphique/
-│           │   ├── TODO.md
-│           │   └── pages/          // charte HTML
-│           ├── plan-de-communication/
-│           │   ├── plan-de-communication.md
-│           │   └── *.html          // versions exportées
-│           ├── planning/
-│           │   └── planning-detaille.md
-│           ├── risques/
-│           │   └── gestion-des-risques.md
-│           ├── stack-technique/
-│           │   ├── technos.md
-│           │   └── mvp-techno.md
-│           └── structure-organisation/
-│               ├── organisation-general.md
-│               └── schema-obs.md
-│       ├── 3-a-revoir/             // PBS / WBS / DoD (fichiers + checklist)
+│       │   ├── budgetaire/
+│       │   ├── cadrage-projet/
+│       │   ├── charte-graphique/
+│       │   ├── description-fonctionnelle.md
+│       │   ├── livret-accueil/
+│       │   ├── plan-qualite.md
+│       │   ├── planning/
+│       │   ├── risques/
+│       │   ├── stack-technique/
+│       │   └── structure-organisation/   // OBS, orga, matrice-raci
+│       ├── 3-a-revoir/
 │       │   ├── README.md
 │       │   ├── pbs-wbs-dod-a-revoir.md
-│       │   └── mvp-pbs/
-│       │       ├── dod-globale.md
-│       │       ├── mvp-definition.md
-│       │       ├── mvp-pbs.md
-│       │       ├── pbs-globale.md
-│       │       ├── dod/
-│       │       └── wbs/
-│       └── 4-termine/              // après charte + validation (copies figées)
+│       │   ├── mvp-pbs/                  // PBS, WBS, DoD
+│       │   └── plan-de-communication/
+│       └── 4-termine/
 │           └── README.md
 └── README.md
 ```
 
-### Légende des dossiers `2-en-cours`
+### Légende `2-en-cours`
 
-| Dossier | Contenu |
+| Dossier / fichier | Contenu |
 | --- | --- |
-| `budgetaire/` | Budget prévisionnel, enveloppes, contingence |
-| `cadrage-projet/` | Genèse du projet, objectifs, périmètre |
-| `charte-graphique/` | Identité visuelle, pages HTML de la charte |
-| `plan-de-communication/` | Plan com (markdown + exports HTML) |
-| `planning/` | Gantt, dépendances, gates, KPI |
-| `risques/` | Registre des risques, matrices, plans de réponse |
-| `stack-technique/` | Choix technos, variantes MVP techno |
-| `structure-organisation/` | Organisation générale, schéma OBS |
+| `cadrage-projet/` | Genèse, objectifs SMART |
+| `plan-qualite.md` | Processus, tickets, tests, CI, livraisons |
+| `description-fonctionnelle.md` | Exigences testables, lien PBS/WBS/OBS/DoD |
+| `budgetaire/` | Budget prévisionnel (+ HTML charte) |
+| `planning/` | Gantt, gates, KPI |
+| `risques/` | Registre des risques |
+| `stack-technique/` | Choix technos |
+| `structure-organisation/` | Organisation, OBS, **matrice RACI** |
+| `charte-graphique/` | Identité visuelle, HTML |
+| `livret-accueil/` | Onboarding équipe |
 
 ### Dossier `3-a-revoir`
 
-| Fichier | Contenu |
+| Élément | Contenu |
 | --- | --- |
-| `README.md` | **Processus** : relecture des docs → charte graphique → archivage dans `4-termine/` |
-| `pbs-wbs-dod-a-revoir.md` | Liste détaillée (liens) vers chaque fichier PBS / WBS / DoD dans `mvp-pbs/` |
-| `mvp-pbs/` | MVP, PBS, DoD globale, arborescence PBS, dossiers `dod/` et `wbs/` (contenu **physiquement** ici) |
+| `README.md` | Processus relecture → charte → `4-termine/` |
+| `mvp-pbs/` | MVP, PBS, WBS, DoD (fichiers de fond) |
+| `pbs-wbs-dod-a-revoir.md` | Checklist liens PBS/WBS/DoD |
+| `plan-de-communication/` | Plan com HTML + PDF (en relecture) |
 
 ### Dossier `4-termine`
 
 | Fichier | Contenu |
 | --- | --- |
-| `README.md` | Livrables **après charte** et validation finale (copies figées) |
+| `README.md` | Archivage après charte et validation finale |

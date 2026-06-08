@@ -9,14 +9,16 @@ Ce dépôt concentre les **documents de projet**, la **charte graphique** (HTML)
 
 | Ressource | Rôle |
 | --- | --- |
+| [`1-document/00-guide-lecture.md`](1-document/00-guide-lecture.md) | **Index jury** : correspondance livrables T-ESP-800 ↔ fichiers FlowLearn |
 | [`1-document/architecture.md`](1-document/architecture.md) | Arborescence des livrables et légende des dossiers |
+| [`1-document/projet/2-en-cours/plan-qualite.md`](1-document/projet/2-en-cours/plan-qualite.md) | Processus qualité, tests, tickets, CI |
+| [`1-document/projet/2-en-cours/description-fonctionnelle.md`](1-document/projet/2-en-cours/description-fonctionnelle.md) | Specs fonctionnelles & traçabilité PBS/WBS/DoD |
 | [`1-document/projet/3-a-revoir/README.md`](1-document/projet/3-a-revoir/README.md) | Flux : **relecture** → **charte graphique** → **`4-termine/`** |
-| [`1-document/projet/3-a-revoir/pbs-wbs-dod-a-revoir.md`](1-document/projet/3-a-revoir/pbs-wbs-dod-a-revoir.md) | Liste des fichiers PBS / WBS / DoD (sous `3-a-revoir/mvp-pbs/`) |
 
 Résumé du flux documentaire :
 
 1. **`2-en-cours/`** — travail courant : budget, planning, risques, charte, stack, cadrage, communication, organisation (OBS), livret, etc.
-2. **`3-a-revoir/`** — fond **PBS / WBS / DoD** (`mvp-pbs/`) + processus de relecture décrit dans le README du dossier.
+2. **`3-a-revoir/`** — fond **PBS / WBS / DoD** (`mvp-pbs/`) + **plan de communication** ; relecture avant charte.
 3. **`2-en-cours/charte-graphique/`** — mise en forme selon la charte (pages HTML).
 4. **`4-termine/`** — copies **validées** après charte et accord équipe.
 

@@ -1,12 +1,17 @@
 # À revoir — ordre de travail
 
-1. **Relire tous les docs proprement**  
-   Corriger le fond, la cohérence et la forme des textes (dont le périmètre PBS / WBS / DoD dans [`mvp-pbs/`](mvp-pbs/) — liste détaillée dans [`pbs-wbs-dod-a-revoir.md`](pbs-wbs-dod-a-revoir.md) si besoin).
+## Contenu de ce dossier
 
-2. **Passage charte graphique**  
-   Quand le contenu est validé par l’équipe, le transposer **sous la charte graphique** : pages et règles visuelles dans [`../2-en-cours/charte-graphique/`](../2-en-cours/charte-graphique/).
+| Élément | Rôle |
+| --- | --- |
+| **`mvp-pbs/`** | PBS, WBS, DoD, MVP (fond produit / technique) |
+| **`pbs-wbs-dod-a-revoir.md`** | Checklist avec liens vers chaque fichier `mvp-pbs/` |
+| **`plan-de-communication/`** | Plan com (HTML + PDF) en cours de relecture |
 
-3. **Terminé**  
-   Quand la version « charte » est figée, **archiver** la copie finale dans [`../4-termine/`](../4-termine/).
+## Processus
 
-Ce dossier reste le lieu du **travail de fond** (textes bruts et structure PBS/WBS/DoD) tant que les étapes 2 et 3 ne sont pas faites.
+1. **Relire tous les docs proprement** (fond, cohérence, forme).
+2. **Passage charte graphique** → [`../2-en-cours/charte-graphique/`](../2-en-cours/charte-graphique/).
+3. **Archivage** → [`../4-termine/`](../4-termine/) quand la version est figée.
+
+Index global des livrables : [`../../00-guide-lecture.md`](../../00-guide-lecture.md).

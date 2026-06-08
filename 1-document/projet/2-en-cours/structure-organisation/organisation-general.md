@@ -61,7 +61,12 @@ Liste des outils validés pour le projet :
 
 ## 6. Gestion de la Qualité (DOD)
 
-Chaque livrable doit répondre à la **Definition of Done (DOD)**
+Chaque livrable doit répondre à la **Definition of Done (DOD)**.
+
+- Plan qualité (processus, tests, tickets) : [`../plan-qualite.md`](../plan-qualite.md)
+- DoD globale : [`../../3-a-revoir/mvp-pbs/dod-globale.md`](../../3-a-revoir/mvp-pbs/dod-globale.md)
+- Matrice RACI : [`matrice-raci.md`](matrice-raci.md)
+- Description fonctionnelle : [`../description-fonctionnelle.md`](../description-fonctionnelle.md)
 
 [DOD (Definition of Done) pour chaque feature ✅](https://www.notion.so/DOD-Definition-of-Done-pour-chaque-feature-2ea6aaec6a1c817e96dce81a9fd92ec7?pvs=21)
 
