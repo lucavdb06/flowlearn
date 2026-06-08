@@ -68,15 +68,10 @@ L'OBS est aligné avec :
 
 - Porteur de projet
 
-**Niveau 2 – Coordination**
+**Niveau 2 – Opérationnel**
 
 - Pôle Développement
 - Pôle Cybersécurité
-
-**Niveau 3 – Opérationnel**
-
-- Développeurs IA / Big Data
-- Développeurs / Auditeurs Cybersécurité
 
 ### Relations
 
@@ -87,28 +82,23 @@ L'OBS est aligné avec :
 
 ```mermaid
 flowchart TB
-  subgraph N1["Niveau 1 — Pilotage"]
-    PP["OBS-01<br/>Porteur de projet"]
+  JB["Jean-Baptiste Vigreux<br/>Porteur de projet / Dev<br/>IA / Big Data"]
+
+  subgraph dev["Pôle Développement"]
+    NT["Nathan Plessis<br/>Dev IA / Big Data"]
+    LC["Luca Vanden-Brande<br/>Dev IA / Big Data"]
+    DN["Daniel Okpe<br/>Dev IA / Big Data"]
   end
 
-  subgraph N2["Niveau 2 — Coordination"]
-    DEV["OBS-02<br/>Pôle Développement"]
-    CYBER["OBS-04<br/>Pôle Cybersécurité"]
+  subgraph cyber["Pôle Cybersécurité"]
+    MX["Maxime Ruault<br/>Cybersécurité"]
+    CS["César Lextraît<br/>Dev / Cyber"]
   end
 
-  subgraph N3["Niveau 3 — Opérationnel"]
-    DEVIA["OBS-03<br/>Dev IA / Big Data"]
-    DEVCYBER["OBS-05<br/>Dev / Auditeur Cyber"]
-  end
-
-  PP -->|arbitrage & validation| DEV
-  PP -->|arbitrage & validation| CYBER
-  DEV -->|pilotage technique| DEVIA
-  CYBER -->|audit & revue| DEVCYBER
-  CYBER -.->|revue croisée sécurité| DEV
-  DEV -.->|collaboration| CYBER
+  JB --> dev
+  JB --> cyber
+  dev <-.->|collaboration| cyber
 ```
-
 ---
 
 ## 4. Décomposition organisationnelle
