@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowLearn — Matrice RACI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../charte-graphique/flowlearn-document.css">
+</head>
+<body>
+
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="cover-top">
+      <div class="cover-logo"><div class="wordmark">Flow<em>Learn</em></div></div>
+      <div class="cover-meta">
+        <div>T-ESP-800</div>
+        <div><strong>Livrable 06</strong></div>
+        <div>Mai 2026</div>
+      </div>
+    </div>
+    <div class="cover-middle">
+      <div class="cover-eyebrow">Organisation &amp; gouvernance</div>
+      <h1 class="cover-title">Matrice<br><span class="accent">RACI</span></h1>
+      <p class="cover-deck">Qui réalise, approuve, consulte et informe — complète l’OBS et l’organisation générale.</p>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-stat"><div class="label">Légende</div><div class="value" style="font-size:13pt;">R · A · C · I</div></div>
+      <div class="cover-stat"><div class="label">Référence MD</div><div class="value" style="font-size:14pt;">matrice-raci.md</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="running-header">
+    <span class="brand-name">Flow<em>Learn</em></span>
+    <span class="doc-tag">Matrice RACI · Légende</span>
+  </div>
+  <span class="section-num">§ LÉGENDE</span>
+  <h1 class="section-title">Codes <span class="accent">RACI</span></h1>
+  <table class="no-break" style="max-width:100%;">
+    <thead><tr><th>Code</th><th>Signification</th></tr></thead>
+    <tbody>
+      <tr><td><strong>R</strong></td><td>Réalise — exécute le travail</td></tr>
+      <tr><td><strong>A</strong></td><td>Approuve — responsable final (une seule personne par activité)</td></tr>
+      <tr><td><strong>C</strong></td><td>Consulté — apporte son expertise</td></tr>
+      <tr><td><strong>I</strong></td><td>Informé — tenu au courant</td></tr>
+      <tr><td><strong>—</strong></td><td>Non concerné</td></tr>
+    </tbody>
+  </table>
+  <div class="callout" style="margin-top:24px;">
+    <p><strong>Règle d’or :</strong> une seule personne <strong>A</strong> par activité. Le pôle cyber a un <strong>A</strong> bloquant sur la sécurité avant fusion ; le porteur de projet a l’<strong>A</strong> final sur le produit et le périmètre.</p>
+  </div>
+  <div class="page-footer"><span>06</span><span class="pf-brand">FlowLearn — Matrice RACI</span><span>02</span></div>
+</section>
+
+<section class="page">
+  <div class="running-header">
+    <span class="brand-name">Flow<em>Learn</em></span>
+    <span class="doc-tag">§ Matrice</span>
+  </div>
+  <span class="section-num">§ MATRICE PAR ACTIVITÉ</span>
+  <h1 class="section-title">Répartition <span class="accent">des rôles</span></h1>
+  <table style="font-size:9.5pt;">
+    <thead>
+      <tr>
+        <th>Activité</th>
+        <th>Porteur de projet</th>
+        <th>Pôle Dev</th>
+        <th>Pôle Cyber</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Vision produit &amp; cadrage</td><td><strong>A/R</strong></td><td>C</td><td>I</td></tr>
+      <tr><td>Priorisation backlog / WBS</td><td><strong>A</strong></td><td>R</td><td>C</td></tr>
+      <tr><td>Arbitrage scope &amp; planning</td><td><strong>A</strong></td><td>C</td><td>I</td></tr>
+      <tr><td>Conception PBS / specs fonctionnelles</td><td><strong>A</strong></td><td><strong>R</strong></td><td>C</td></tr>
+      <tr><td>Développement features MVP</td><td>I</td><td><strong>R</strong></td><td>C</td></tr>
+      <tr><td>Revue de code technique</td><td>C</td><td><strong>R</strong> (pair)</td><td>C</td></tr>
+      <tr><td>Revue sécurité (PR)</td><td>I</td><td>C</td><td><strong>A/R</strong></td></tr>
+      <tr><td>Merge sur <span class="mono">main</span></td><td><strong>A</strong></td><td>R</td><td><strong>A</strong> (check cyber)</td></tr>
+      <tr><td>Tests automatisés / CI</td><td>I</td><td><strong>R</strong></td><td>C</td></tr>
+      <tr><td>Documentation technique (GitHub)</td><td><strong>A</strong></td><td><strong>R</strong></td><td>C</td></tr>
+      <tr><td>Documentation projet (Notion → Git)</td><td><strong>A/R</strong></td><td>C</td><td>I</td></tr>
+      <tr><td>Gestion des risques (registre)</td><td><strong>A</strong></td><td>C</td><td><strong>R</strong></td></tr>
+      <tr><td>Budget &amp; achats outils</td><td><strong>A</strong></td><td>C</td><td>I</td></tr>
+      <tr><td>Plan de communication</td><td><strong>A</strong></td><td>C</td><td>I</td></tr>
+      <tr><td>Charte graphique / identité</td><td><strong>A</strong></td><td>C</td><td>I</td></tr>
+      <tr><td>Livret d’accueil &amp; onboarding</td><td><strong>A/R</strong></td><td>C</td><td>C</td></tr>
+      <tr><td>Gates Go/No-Go (planning)</td><td><strong>A</strong></td><td>C</td><td>C</td></tr>
+      <tr><td>Incident sécurité / données</td><td><strong>A</strong></td><td>C</td><td><strong>R</strong></td></tr>
+    </tbody>
+  </table>
+  <div class="page-footer"><span>06</span><span class="pf-brand">FlowLearn — Matrice RACI</span><span>03</span></div>
+</section>
+
+<section class="page">
+  <div class="running-header">
+    <span class="brand-name">Flow<em>Learn</em></span>
+    <span class="doc-tag">§ Rôles nominatifs</span>
+  </div>
+  <span class="section-num">§ RÔLES (RAPPEL)</span>
+  <h1 class="section-title">Membres <span class="accent">de l’équipe</span></h1>
+  <table>
+    <thead><tr><th>Rôle</th><th>Membres (réf. livret)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Porteur de projet</strong></td><td>Jean-Baptiste Vigreux</td></tr>
+      <tr><td><strong>Pôle Dev</strong></td><td>Nathan Plessis, Luca Vanden-Brande, Daniel Okpe, César Lextraît (partiel)</td></tr>
+      <tr><td><strong>Pôle Cyber</strong></td><td>Maxime Ruault, César Lextraît</td></tr>
+    </tbody>
+  </table>
+  <div class="callout" style="margin-top:24px;">
+    <p>En cas d’absence du porteur, un dev senior désigné en réunion hebdo assure le <strong>A</strong> temporaire (à tracer en comité de pilotage).</p>
+  </div>
+  <div class="page-footer"><span>06</span><span class="pf-brand">FlowLearn — Matrice RACI</span><span>04</span></div>
+</section>
+
+</body>
+</html>

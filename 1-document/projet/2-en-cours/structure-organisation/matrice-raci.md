@@ -1,5 +1,7 @@
 # FlowLearn — Matrice RACI
 
+> Version charte : [`FlowLearn-Matrice-RACI.html`](FlowLearn-Matrice-RACI.html)
+
 Complète l’[OBS](schema-obs.md) et l’[organisation générale](organisation-general.md).
 
 **Légende :** **R** = Réalise · **A** = Approuve (responsable final) · **C** = Consulté · **I** = Informé · **—** = non concerné

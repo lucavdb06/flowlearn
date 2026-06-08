@@ -1,5 +1,25 @@
 # Product Breakdown Structure (PBS) — DopaLearn MVP
 
+> Version charte : [`mvp-pbs.html`](mvp-pbs.html)
+
+## Fiche document
+
+| Champ | Valeur |
+| --- | --- |
+| Projet | FlowLearn |
+| Formation | T-ESP-800 |
+| Livrable | 04 — PBS |
+| Version | v0.1 — brouillon |
+| Statut | À revoir |
+
+## Questions traitées
+
+| Question | Section |
+| --- | --- |
+| De quoi le produit est-il composé ? | § Arborescence + dictionnaire |
+| Qui est responsable de chaque livrable ? | § Rôles PBS |
+| Quelles contraintes techniques ? | § Spécificités techniques |
+
 ---
 
 ## 1. Arborescence hiérarchique du produit

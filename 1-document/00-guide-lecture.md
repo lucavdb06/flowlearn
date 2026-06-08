@@ -1,5 +1,7 @@
 # FlowLearn — Guide de lecture des livrables
 
+> Version charte : [`FlowLearn-Guide-Lecture.html`](FlowLearn-Guide-Lecture.html)
+
 **Formation :** T-ESP-800  
 **Dépôt équipe :** [github.com/lucavdb06/flowlearn](https://github.com/lucavdb06/flowlearn)
 
@@ -71,12 +73,17 @@ Détail du processus : [`projet/3-a-revoir/README.md`](projet/3-a-revoir/README.
 
 ## 5. Versions « charte » (HTML / PDF)
 
-Certains livrables existent aussi en **mise en forme charte** (hors markdown brut) :
+Certains livrables existent aussi en **mise en forme charte** (CSS partagée `flowlearn-document.css`) :
 
-| Sujet | Fichier |
+| Sujet | Fichier HTML |
 | --- | --- |
-| Budget | `projet/2-en-cours/budgetaire/Flowlearn budget-previsionnel.html` |
-| Charte | `projet/2-en-cours/charte-graphique/charte-graphique.html` |
-| Communication | `projet/3-a-revoir/plan-de-communication/FlowLearn-Plan-Communication.html` (+ PDF dans le même dossier) |
+| Guide de lecture | [`FlowLearn-Guide-Lecture.html`](FlowLearn-Guide-Lecture.html) |
+| Plan qualité | [`projet/2-en-cours/FlowLearn-Plan-Qualite.html`](projet/2-en-cours/FlowLearn-Plan-Qualite.html) |
+| Description fonctionnelle | [`projet/2-en-cours/FlowLearn-Description-Fonctionnelle.html`](projet/2-en-cours/FlowLearn-Description-Fonctionnelle.html) |
+| Matrice RACI | [`projet/2-en-cours/structure-organisation/FlowLearn-Matrice-RACI.html`](projet/2-en-cours/structure-organisation/FlowLearn-Matrice-RACI.html) |
+| Budget | [`projet/2-en-cours/budgetaire/Flowlearn budget-previsionnel.html`](projet/2-en-cours/budgetaire/Flowlearn%20budget-previsionnel.html) |
+| Charte | [`projet/2-en-cours/charte-graphique/charte-graphique.html`](projet/2-en-cours/charte-graphique/charte-graphique.html) |
+| Communication | [`projet/3-a-revoir/plan-de-communication/FlowLearn-Plan-Communication.html`](projet/3-a-revoir/plan-de-communication/FlowLearn-Plan-Communication.html) (+ PDF dans le même dossier) |
+| PBS / WBS / DoD (à revoir) | Un `.html` charte par `.md` dans [`projet/3-a-revoir/mvp-pbs/`](projet/3-a-revoir/mvp-pbs/) — index : [`pbs-wbs-dod-a-revoir.html`](projet/3-a-revoir/pbs-wbs-dod-a-revoir.html) |
 
 Les versions figées validées iront dans **`4-termine/`** une fois l’équipe d’accord.

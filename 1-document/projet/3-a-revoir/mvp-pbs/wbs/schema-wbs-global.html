@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowLearn — Schéma WBS Global — DopaLearn MVP (v0.1)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../2-en-cours/charte-graphique/flowlearn-document.css">
+</head>
+<body>
+
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="cover-top">
+      <div class="cover-logo"><div class="wordmark">Flow<em>Learn</em></div></div>
+      <div class="cover-meta">
+        <div>T-ESP-800</div>
+        <div><strong>À revoir</strong></div>
+        <div>Juin 2026</div>
+      </div>
+    </div>
+    <div class="cover-middle">
+      <div class="cover-eyebrow">3-a-revoir · <span class="tag tag-revoir">À revoir</span></div>
+      <h1 class="cover-title">Schéma WBS Global — DopaLearn MVP (v0.1)</h1>
+      <p class="cover-deck mono" style="font-size:10pt;">mvp-pbs/wbs/schema-wbs-global.md</p>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-stat"><div class="label">Source MD</div><div class="value" style="font-size:12pt;">schema-wbs-global.md</div></div>
+      <div class="cover-stat"><div class="label">Version</div><div class="value" style="font-size:14pt;">v0.1 — brouillon</div></div>
+    </div>
+  </div>
+</section>
+<section class="page">
+  <div class="running-header">
+    <span class="brand-name">Flow<em>Learn</em></span>
+    <span class="doc-tag">À revoir · schema-wbs-global</span>
+  </div>
+  <h2 class="section-title">Schéma WBS Global — DopaLearn MVP (v0.1)</h2>
+<div class="callout"><p>Version charte : <a href="schema-wbs-global.html"><span class="mono">schema-wbs-global.html</span></a></p></div>
+<h3>Fiche document</h3>
+<table class="no-break">
+<thead><tr><th>Champ</th><th>Valeur</th></tr></thead><tbody>
+<tr><td>Projet</td><td>FlowLearn</td></tr>
+<tr><td>Formation</td><td>T-ESP-800</td></tr>
+<tr><td>Livrable</td><td>05 — WBS</td></tr>
+<tr><td>Version</td><td>v0.1 — brouillon</td></tr>
+<tr><td>Statut</td><td>À revoir</td></tr>
+</tbody></table>
+<h3>Questions traitées</h3>
+<table class="no-break">
+<thead><tr><th>Question</th><th>Section</th></tr></thead><tbody>
+<tr><td>Quels lots de travail pour le MVP ?</td><td>Vue macro WP1–WP5</td></tr>
+<tr><td>Comment PBS et WBS se relient ?</td><td>Tableau PBS → WBS → fichiers</td></tr>
+<tr><td>Quelles dépendances entre blocs ?</td><td>Schéma dépendances</td></tr>
+</tbody></table>
+<div class="flourish"></div>
+<h3>Vue d'ensemble (Mermaid)</h3>
+<pre class="mermaid-block"><code>mindmap  root((DopaLearn MVP))    1. Conteneur Multiplateforme      1.1 Encapsulateurs        1.1.1 Config Electron Desktop        1.1.2 Config Capacitor Mobile        1.1.3 Build &amp; livraison    2. Jeux &amp; Expériences      2.1 API RAG/IA → jeux        2.1.1 Exposition API RAG        2.1.2 Transformation cours → quiz        2.1.3 Intégration Godot      2.2 API jeux → externe        2.2.1 Schéma JSON        2.2.2 API côté jeu Godot        2.2.3 Interpréteur Rust        2.2.4 Intégration ESP32      2.3 Jeu Archero / Vampire Survivors        2.3.1 Déplacement personnage        2.3.2 Spawn monstres        2.3.3 3 types ennemis        2.3.4 3 armes        2.3.5 Carte / niveau        2.3.6 Évolution difficulté        2.3.7 Intégration quiz MVP    3. Intelligence Centrale &amp; RAG      3.1 Serveur FastAPI        3.1.1 Structure &amp; config        3.1.2 Endpoints ingestion/RAG        3.1.3 Endpoints quiz        3.1.4 Robustesse &amp; doc API      3.2 Base vectorielle pgvector        3.2.1 Instance &amp; extension        3.2.2 Schéma stockage      3.3 Ingestion RAG LlamaIndex        3.3.1 Pipeline ingestion        3.3.2 Indexation &amp; embeddings        3.3.3 Moteur recherche RAG      3.4 Orchestrateur agents IA        3.4.1 Schémas Pydantic        3.4.2 Agent génération quiz        3.4.3 Intégration RAG + 4.1        3.4.4 Flux complexes LangGraph      3.5 Générateurs LLM        3.5.1 Config LiteLLM        3.5.2 Générateur quiz QCM        3.5.3 Histoires interactives        3.5.4 Robustesse &amp; coût    4. Algorithmes Personnalisation      4.1 Sélection des questions        4.1.1 Modèle de données SRS        4.1.2 Logique Anki        4.1.3 Endpoint /next-question      4.2 Algorithme de rétention        4.2.1 Modèle KPIs        4.2.2 Moteur scoring        4.2.3 Adaptation Hook éthique        4.2.4 API contrat jeu    5. Sécurité &amp; Données      5.1 Coffre-fort &amp; RGPD        5.1.1 Politique données        5.1.2 Accès &amp; secrets        5.1.3 Suppression &amp; rétention        5.1.4 Audit sécurité</code></pre>
+<div class="flourish"></div>
+
+  <div class="page-footer"><span>3</span><span class="pf-brand">FlowLearn — Schéma WBS Global — DopaLearn MVP (v0.1)</span><span>02</span></div>
+</section>
+<section class="page">
+  <div class="running-header">
+    <span class="brand-name">Flow<em>Learn</em></span>
+    <span class="doc-tag">À revoir · schema-wbs-global</span>
+  </div>
+  <h3>Vue tabulaire (PBS → WBS → fichiers)</h3>
+<table class="no-break">
+<thead><tr><th>PBS</th><th>Feature</th><th>Sous-features (WBS)</th><th>Fichier WBS</th><th>Fichier DOD</th></tr></thead><tbody>
+<tr><td><strong>1. Conteneur</strong></td><td>1.1 Encapsulateurs</td><td>1.1.1 Electron, 1.1.2 Capacitor, 1.1.3 Build</td><td><span class="mono">wbs/conteneur-multiplateforme/wbs-1.1-encapsulateurs.md</span></td><td><span class="mono">dod/conteneur-multiplateforme/dod-1.1-encapsulateurs.md</span></td></tr>
+<tr><td><strong>2. Jeux</strong></td><td>2.1 API RAG → jeux</td><td>2.1.1 Expo API, 2.1.2 Transformation, 2.1.3 Godot</td><td><span class="mono">wbs/jeux-et-experience/wbs-2.1-api-rag-ia-jeux.md</span></td><td><span class="mono">dod/jeux-et-experience/dod-2.1-api-rag-ia-jeux.md</span></td></tr>
+<tr><td></td><td>2.2 API jeux → externe</td><td>2.2.1 JSON, 2.2.2 Godot, 2.2.3 Rust, 2.2.4 ESP32</td><td><span class="mono">wbs/jeux-et-experience/wbs-2.2-api-jeux-externe.md</span></td><td><span class="mono">dod/jeux-et-experience/dod-2.2-api-jeux-externe.md</span></td></tr>
+<tr><td></td><td>2.3 Archero / VS</td><td>2.3.1→2.3.7 (7 features)</td><td><span class="mono">wbs/jeux-et-experience/wbs-2.3-archero-vampire-survivors.md</span></td><td><span class="mono">dod/jeux-et-experience/dod-2.3-archero-vampire-survivors.md</span></td></tr>
+<tr><td><strong>3. Backend IA</strong></td><td>3.1 Serveur FastAPI</td><td>3.1.1→3.1.4</td><td><span class="mono">wbs/backend-ia/wbs-3.1-serveur-fastapi.md</span></td><td><span class="mono">dod/backend-ia/dod-3.1-serveur-fastapi.md</span></td></tr>
+<tbody>
+<tr><td></td><td>3.2 Base vectorielle</td><td>3.2.1 Instance, 3.2.2 Schéma</td><td><span class="mono">wbs/backend-ia/wbs-3.2-base-vectorielle.md</span></td><td><span class="mono">dod/backend-ia/dod-3.2-base-vectorielle.md</span></td></tr>
+<tr><td></td><td>3.3 Ingestion RAG</td><td>3.3.1 Pipeline, 3.3.2 Indexation, 3.3.3 Retrieval</td><td><span class="mono">wbs/backend-ia/wbs-3.3-ingestion-rag.md</span></td><td><span class="mono">dod/backend-ia/dod-3.3-ingestion-rag.md</span></td></tr>
+<tr><td></td><td>3.4 Orchestrateur IA</td><td>3.4.1→3.4.4</td><td><span class="mono">wbs/backend-ia/wbs-3.4-orchestrateur-agents.md</span></td><td><span class="mono">dod/backend-ia/dod-3.4-orchestrateur-agents.md</span></td></tr>
+<tbody>
+<tr><td></td><td>3.5 Générateurs LLM</td><td>3.5.1→3.5.4</td><td><span class="mono">wbs/backend-ia/wbs-3.5-generateurs-llm.md</span></td><td><span class="mono">dod/backend-ia/dod-3.5-generateurs-llm.md</span></td></tr>
+<tr><td><strong>4. Algos</strong></td><td>4.1 Sélection questions</td><td>4.1.1 Data SRS, 4.1.2 Anki, 4.1.3 Endpoint</td><td><span class="mono">wbs/algorithmes-personnalisation/wbs-4.1-selection-questions.md</span></td><td><span class="mono">dod/algorithmes-personnalisation/dod-4.1-selection-questions.md</span></td></tr>
+<tr><td></td><td>4.2 Rétention (Hook)</td><td>4.2.1 KPIs, 4.2.2 Scoring, 4.2.3 Hook, 4.2.4 API</td><td><span class="mono">wbs/algorithmes-personnalisation/wbs-4.2-algorithme-retention.md</span></td><td><span class="mono">dod/algorithmes-personnalisation/dod-4.2-algorithme-retention.md</span></td></tr>
+<tbody>
+<tr><td><strong>5. Sécu</strong></td><td>5.1 RGPD & Coffre</td><td>5.1.1→5.1.4</td><td><span class="mono">wbs/securite/wbs-5.1-securite-rgpd.md</span></td><td><span class="mono">dod/securite/dod-5.1-securite-rgpd.md</span></td></tr>
+</tbody></table>
+<div class="flourish"></div>
+<h3>Flux de validation (DOD global)</h3>
+<pre class="mermaid-block"><code>flowchart LR  A[Dev sur branche] --&gt; B[Tests locaux]  B --&gt; C[PR GitHub]  C --&gt; D[CI / Tests auto]  D --&gt; E[Revue cyber + tech]  E --&gt; F[DOD spécifique feature validée]  F --&gt; G[Merge main]  G --&gt; H[Done sur GitHub Projects]</code></pre>
+<div class="flourish"></div>
+<h3>Dépendances entre blocs</h3>
+<pre class="mermaid-block"><code>flowchart TB  subgraph &quot;Données &amp; IA&quot;    DB[&quot;3.2 Base vectorielle&quot;]    ING[&quot;3.3 Ingestion RAG&quot;]    ORC[&quot;3.4 Orchestrateur&quot;]    GEN[&quot;3.5 Générateurs LLM&quot;]    API[&quot;3.1 Serveur FastAPI&quot;]  end  subgraph &quot;Algorithmes&quot;    SEL[&quot;4.1 Sélection questions&quot;]    RET[&quot;4.2 Rétention / Hook&quot;]  end  subgraph &quot;Jeux &amp; Front&quot;    J1[&quot;2.1 API RAG → jeux&quot;]    J2[&quot;2.2 API jeux → ESP32&quot;]    J3[&quot;2.3 Jeu Archero/VS&quot;]    FRONT[&quot;1.1 Electron / Capacitor&quot;]  end  subgraph &quot;Transverse&quot;    SEC[&quot;5.1 Sécurité &amp; RGPD&quot;]  end  DB --&gt; ING  ING --&gt; ORC  ORC --&gt; GEN  GEN --&gt; API  SEL --&gt; API  RET --&gt; SEL  API --&gt; J1  J1 --&gt; J3  J2 --&gt; J3  API --&gt; FRONT  SEC -.-&gt; DB  SEC -.-&gt; API</code></pre>
+  <div class="page-footer"><span>3</span><span class="pf-brand">FlowLearn — Schéma WBS Global — DopaLearn MVP (v0.1)</span><span>03</span></div>
+</section>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowLearn — WBS – 2.3 Type de jeu : style « Archero » / « Vampire Survivors »</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../2-en-cours/charte-graphique/flowlearn-document.css">
+</head>
+<body>
+
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="cover-top">
+      <div class="cover-logo"><div class="wordmark">Flow<em>Learn</em></div></div>
+      <div class="cover-meta">
+        <div>T-ESP-800</div>
+        <div><strong>À revoir</strong></div>
+        <div>Juin 2026</div>
+      </div>
+    </div>
+    <div class="cover-middle">
+      <div class="cover-eyebrow">3-a-revoir · <span class="tag tag-revoir">À revoir</span></div>
+      <h1 class="cover-title">WBS – 2.3 Type de jeu : style « Archero » / « Vampire Surviv…</h1>
+      <p class="cover-deck mono" style="font-size:10pt;">mvp-pbs/wbs/2-jeux-et-experiences/wbs-2.3-archero-vampire-survivors.md</p>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-stat"><div class="label">Source MD</div><div class="value" style="font-size:12pt;">wbs-2.3-archero-vampire-survivors.md</div></div>
+      <div class="cover-stat"><div class="label">Version</div><div class="value" style="font-size:14pt;">v0.1 — brouillon</div></div>
+    </div>
+  </div>
+</section>
+<section class="page">
+  <div class="running-header">
+    <span class="brand-name">Flow<em>Learn</em></span>
+    <span class="doc-tag">À revoir · wbs-2.3-archero-vampire-survivors</span>
+  </div>
+  <h2 class="section-title">WBS – 2.3 Type de jeu : style « Archero » / « Vampire Survivors »</h2>
+<p><strong>PBS :</strong> jeux de survie casual</p>
+<div class="flourish"></div>
+<h3>Features (WBS)</h3>
+<h4>2.3.1 Déplacement du personnage</h4>
+<ul class="bullet-list">
+<li>Contrôles (clavier / manette / tactile) et collision avec la carte.</li>
+</ul>
+<h4>2.3.2 Apparition (spawn) des monstres</h4>
+<ul class="bullet-list">
+<li>Spawn aléatoire des ennemis sur la carte (zones ou points prédéfinis).</li>
+</ul>
+<h4>2.3.3 Variété des ennemis (3 types de monstres)</h4>
+<ul class="bullet-list">
+<li>Définir 3 types distincts (comportement, stats, apparence).</li>
+<li>Intégration dans le système de spawn et de récompenses/quiz si prévu.</li>
+</ul>
+<h4>2.3.4 Variété des armes (3 armes)</h4>
+<ul class="bullet-list">
+<li>Implémenter 3 armes différentes (portée, dégâts, cadence ou effet).</li>
+<li>Boucle de tir / compétence et feedback visuel.</li>
+</ul>
+<h4>2.3.5 Carte / niveau désigné</h4>
+<ul class="bullet-list">
+<li>Créer ou désigner une carte de jeu (arène, limites, obstacles).</li>
+<li>Intégration avec le spawn et le déplacement (zones jouables, respawn).</li>
+</ul>
+<h4>2.3.6 evolution de la difficulter :</h4>
+<ul class="bullet-list">
+<li>Augmenter le rythme ou la densité de spawn au fur du temps (courbe de difficulté).</li>
+</ul>
+<h4>2.3.6 Intégrer la mécanique de gameplay quiz (MVP)</h4>
+<ul class="bullet-list">
+<li>Déclencher le quiz à des moments clés du jeu (ex. après N ennemis éliminés, sur ramassage d’objet, niveau atteint).</li>
+<li>Afficher les questions issues de l’API RAG/IA (2.1) dans l’interface du jeu (HUD, pop-up ou overlay cohérent avec le style).</li>
+<li>Traiter la réponse (bonne / mauvaise) et l’utiliser comme mécanique de gameplay : bonus (dégâts, soin, buff), malus ou neutre selon le cas.</li>
+<li>Relayer le résultat (et la difficulté) vers l’API jeux → externe (2.2) pour les récompenses tangibles (ex. distribution M&Ms sur ESP32).</li>
+<li>S’assurer que le quiz reste une mécanique principale et fluide (pas une pause arbitraire), intégrable de la même façon dans d’autres jeux du SDK.</li>
+</ul>
+  <div class="page-footer"><span>3</span><span class="pf-brand">FlowLearn — WBS – 2.3 Type de jeu : style « Archero » / « Vampire Surviv…</span><span>02</span></div>
+</section>
+</body>
+</html>

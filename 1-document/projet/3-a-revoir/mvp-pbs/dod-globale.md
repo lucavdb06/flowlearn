@@ -1,5 +1,27 @@
 # Definition of Done (DOD) - Contrat de Qualité (globale)
 
+> Version charte : [`dod-globale.html`](dod-globale.html)
+
+## Fiche document
+
+| Champ | Valeur |
+| --- | --- |
+| Projet | FlowLearn |
+| Formation | T-ESP-800 |
+| Livrable | 07 — Critères de fin |
+| Version | v0.1 — brouillon |
+| Statut | À revoir |
+
+## Questions traitées
+
+| Question | Section |
+| --- | --- |
+| Quand une tâche est-elle Done ? | § Socle commun + processus |
+| Quelles preuves fournir ? | PR, tests, revue cyber, merge |
+| Différence MVP vs Agile ? | § Phase 1 (prédictif) vs Phase 2 |
+
+---
+
 Ce document définit les critères obligatoires à remplir avant qu'un élément (tâche WBS ou User Story) ne soit considéré comme "Terminé" (Done).
 
 ## 1. Socle Commun (Applicable à tout le projet)

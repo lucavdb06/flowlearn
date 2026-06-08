@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowLearn — DOD – 3.3 Ingestion &amp; RAG « Le Bibliothécaire »</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../2-en-cours/charte-graphique/flowlearn-document.css">
+</head>
+<body>
+
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="cover-top">
+      <div class="cover-logo"><div class="wordmark">Flow<em>Learn</em></div></div>
+      <div class="cover-meta">
+        <div>T-ESP-800</div>
+        <div><strong>À revoir</strong></div>
+        <div>Juin 2026</div>
+      </div>
+    </div>
+    <div class="cover-middle">
+      <div class="cover-eyebrow">3-a-revoir · <span class="tag tag-revoir">À revoir</span></div>
+      <h1 class="cover-title">DOD – 3.3 Ingestion &amp; RAG « Le Bibliothécaire »</h1>
+      <p class="cover-deck mono" style="font-size:10pt;">mvp-pbs/dod/3-intelligence-centrale-module-rag/dod-3.3-ingestion-rag.md</p>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-stat"><div class="label">Source MD</div><div class="value" style="font-size:12pt;">dod-3.3-ingestion-rag.md</div></div>
+      <div class="cover-stat"><div class="label">Version</div><div class="value" style="font-size:14pt;">v0.1 — brouillon</div></div>
+    </div>
+  </div>
+</section>
+<section class="page">
+  <div class="running-header">
+    <span class="brand-name">Flow<em>Learn</em></span>
+    <span class="doc-tag">À revoir · dod-3.3-ingestion-rag</span>
+  </div>
+  <h2 class="section-title">DOD – 3.3 Ingestion & RAG « Le Bibliothécaire »</h2>
+<p><strong>PBS :</strong> Implémenter le module d'ingestion de documents (LlamaIndex) et le moteur de recherche RAG pour alimenter l'orchestrateur d'agents (3.4) et le générateur de quiz (3.5).</p>
+<div class="flourish"></div>
+<h3>Comment valider chaque feature</h3>
+<h4>3.3.1 Pipeline d'ingestion (LlamaIndex)</h4>
+<p><strong>Cas d'erreur à gérer :</strong></p>
+<ul class="bullet-list">
+<li>Fichier corrompu ou format non supporté : rejet propre avec message ou log, pas de crash.</li>
+<li>PDF sans texte extractible (images uniquement) : comportement défini (skip, OCR futur, ou message clair).</li>
+<li>Fichier trop volumineux : limite documentée et gérée (chunking ou rejet).</li>
+</ul>
+<p><strong>Feature validée si :</strong> au moins un type PDF et un type texte sont ingérés ; le chunking produit des segments cohérents (taille/overlap documentés) et les chunks sont tracés jusqu'au document source.</p>
+<div class="flourish"></div>
+<h4>3.3.2 Indexation et écriture dans la base vectorielle</h4>
+<p><strong>Cas d'erreur à gérer :</strong></p>
+<ul class="bullet-list">
+<li>Échec du modèle d'embedding (API down, quota) : retry, file d'attente ou échec explicite sans perte de données partielles incohérentes.</li>
+<li>Conflit ou doublon (ré-ingestion) : stratégie claire (upsert, remplacement par document, ou versioning) et appliquée de façon déterministe.</li>
+</ul>
+<p><strong>Feature validée si :</strong> chaque chunk ingéré possède un embedding et est persisté dans la base avec ses métadonnées ; une ré-ingestion (totale ou partielle) est testée et ne laisse pas la base dans un état incohérent.</p>
+<div class="flourish"></div>
+<h4>3.3.3 Moteur de recherche RAG (retrieval)</h4>
+<p><strong>Cas d'erreur à gérer :</strong></p>
+<ul class="bullet-list">
+<li>Base vide ou aucune similarité au-dessus du seuil : retour structuré (liste vide ou message explicite), pas d'exception non gérée.</li>
+<li>Requête mal formée ou embedding indisponible : validation en entrée, erreur 4xx ou message clair côté consommateur.</li>
+</ul>
+<p><strong>Feature validée si :</strong> une requête (texte ou embedding) renvoie les N chunks les plus pertinents dans un format stable (JSON/Pydantic) ; le contrat est documenté et un consommateur (ex. orchestrateur 3.4 ou générateur de quiz 3.5) peut l'utiliser sans ambiguïté. Les critères PBS « indexation réussie dans Supabase/PostgreSQL, recherche pertinent » sont satisfaits.</p>
+  <div class="page-footer"><span>3</span><span class="pf-brand">FlowLearn — DOD – 3.3 Ingestion &amp; RAG « Le Bibliothécaire »</span><span>02</span></div>
+</section>
+</body>
+</html>

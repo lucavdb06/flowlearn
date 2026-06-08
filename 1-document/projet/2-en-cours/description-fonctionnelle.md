@@ -1,5 +1,7 @@
 # FlowLearn — Description fonctionnelle logicielle
 
+> Version charte : [`FlowLearn-Description-Fonctionnelle.html`](FlowLearn-Description-Fonctionnelle.html)
+
 Ce que le logiciel doit faire, comment il est découpé, et comment relier **exigences ↔ PBS ↔ WBS ↔ OBS ↔ DoD**.
 
 Sources détaillées : [`../3-a-revoir/mvp-pbs/`](../3-a-revoir/mvp-pbs/) (PBS, WBS, DoD par lot).

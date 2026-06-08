@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowLearn — WBS – 3.2 Base de Connaissances Vectorielle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../2-en-cours/charte-graphique/flowlearn-document.css">
+</head>
+<body>
+
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="cover-top">
+      <div class="cover-logo"><div class="wordmark">Flow<em>Learn</em></div></div>
+      <div class="cover-meta">
+        <div>T-ESP-800</div>
+        <div><strong>À revoir</strong></div>
+        <div>Juin 2026</div>
+      </div>
+    </div>
+    <div class="cover-middle">
+      <div class="cover-eyebrow">3-a-revoir · <span class="tag tag-revoir">À revoir</span></div>
+      <h1 class="cover-title">WBS – 3.2 Base de Connaissances Vectorielle</h1>
+      <p class="cover-deck mono" style="font-size:10pt;">mvp-pbs/wbs/3-intelligence-centrale-module-rag/wbs-3.2-base-vectorielle.md</p>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-stat"><div class="label">Source MD</div><div class="value" style="font-size:12pt;">wbs-3.2-base-vectorielle.md</div></div>
+      <div class="cover-stat"><div class="label">Version</div><div class="value" style="font-size:14pt;">v0.1 — brouillon</div></div>
+    </div>
+  </div>
+</section>
+<section class="page">
+  <div class="running-header">
+    <span class="brand-name">Flow<em>Learn</em></span>
+    <span class="doc-tag">À revoir · wbs-3.2-base-vectorielle</span>
+  </div>
+  <h2 class="section-title">WBS – 3.2 Base de Connaissances Vectorielle</h2>
+<p><strong>PBS :</strong> Mettre en place la base de connaissances vectorielle (PostgreSQL / Supabase + pgvector) pour stocker les documents, chunks et embeddings nécessaires au RAG.</p>
+<div class="flourish"></div>
+<h3>Features (WBS)</h3>
+<h4>3.2.1 Mise en place de la base vectorielle (PostgreSQL / Supabase pgvector)</h4>
+<ul class="bullet-list">
+<li>Créer ou configurer l'instance PostgreSQL / Supabase dédiée au RAG.</li>
+<li>Activer l'extension <strong>pgvector</strong> et vérifier son bon fonctionnement.</li>
+<li>Exposer une connexion sécurisée pour le backend FastAPI / LlamaIndex (variables d'environnement, pas de secrets en dur dans le code).</li>
+</ul>
+<h4>3.2.2 Schéma de stockage des embeddings et métadonnées</h4>
+<ul class="bullet-list">
+<li>Définir le schéma de base :</li>
+<li>table des documents (source, type, propriétaire, thème),</li>
+<li>table des chunks (texte, position, id_document),</li>
+<li>colonne ou table d'<strong>embeddings</strong> (vecteur, modèle utilisé, date de génération).</li>
+<li>Prévoir le multi‑utilisateur / multi‑namespace (cours par utilisateur, RGPD : suppression et anonymisation possibles).</li>
+<li>Rédiger un court document de référence (diagramme ou description textuelle du schéma).</li>
+</ul>
+  <div class="page-footer"><span>3</span><span class="pf-brand">FlowLearn — WBS – 3.2 Base de Connaissances Vectorielle</span><span>02</span></div>
+</section>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowLearn — DOD – 3.5 Générateurs LLM via Adaptateur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../2-en-cours/charte-graphique/flowlearn-document.css">
+</head>
+<body>
+
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="cover-top">
+      <div class="cover-logo"><div class="wordmark">Flow<em>Learn</em></div></div>
+      <div class="cover-meta">
+        <div>T-ESP-800</div>
+        <div><strong>À revoir</strong></div>
+        <div>Juin 2026</div>
+      </div>
+    </div>
+    <div class="cover-middle">
+      <div class="cover-eyebrow">3-a-revoir · <span class="tag tag-revoir">À revoir</span></div>
+      <h1 class="cover-title">DOD – 3.5 Générateurs LLM via Adaptateur</h1>
+      <p class="cover-deck mono" style="font-size:10pt;">mvp-pbs/dod/3-intelligence-centrale-module-rag/dod-3.5-generateurs-llm.md</p>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-stat"><div class="label">Source MD</div><div class="value" style="font-size:12pt;">dod-3.5-generateurs-llm.md</div></div>
+      <div class="cover-stat"><div class="label">Version</div><div class="value" style="font-size:14pt;">v0.1 — brouillon</div></div>
+    </div>
+  </div>
+</section>
+<section class="page">
+  <div class="running-header">
+    <span class="brand-name">Flow<em>Learn</em></span>
+    <span class="doc-tag">À revoir · dod-3.5-generateurs-llm</span>
+  </div>
+  <h2 class="section-title">DOD – 3.5 Générateurs LLM via Adaptateur</h2>
+<p><strong>PBS :</strong> Fournir une couche d’appel aux modèles LLM (via LiteLLM) pour la génération de quiz QCM et, si prévu, d’histoires interactives.</p>
+<div class="flourish"></div>
+<h3>Comment valider chaque feature</h3>
+<h4>3.5.1 Configuration LiteLLM</h4>
+<p><strong>Cas d’erreur à gérer :</strong></p>
+<ul class="bullet-list">
+<li>Clé API manquante ou invalide : erreur au démarrage ou au premier appel, message explicite.</li>
+<li>Provider indisponible : message ou fallback documenté (ex. autre modèle).</li>
+</ul>
+<p><strong>Feature validée si :</strong> au moins un provider (ex. OpenAI ou Mistral) est configuré et un appel de test renvoie une réponse ; la config est documentée (env, modèle utilisé).</p>
+<div class="flourish"></div>
+<h4>3.5.2 Générateur de quiz QCM</h4>
+<p><strong>Cas d’erreur à gérer :</strong></p>
+<ul class="bullet-list">
+<li>Réponse LLM non conforme au schéma attendu : parsing échoue, retry ou erreur structurée sans crash.</li>
+<li>Contexte trop long (dépassement de fenêtre) : troncature ou découpage documenté, pas d’erreur silencieuse.</li>
+</ul>
+<p><strong>Feature validée si :</strong> pour un contexte RAG donné, le générateur produit des questions QCM valides (format JSON/Pydantic) ; un test unitaire ou manuel valide un cas nominal et un cas de réponse invalide.</p>
+<div class="flourish"></div>
+<h4>3.5.3 Générateur d’histoires interactives (optionnel MVP)</h4>
+<p><strong>Cas d’erreur à gérer :</strong></p>
+<ul class="bullet-list">
+<li>Choix ou contexte incohérent : sortie par défaut ou message, pas de crash.</li>
+</ul>
+<p><strong>Feature validée si :</strong> si implémenté, une entrée (contexte + choix) produit une sortie structurée exploitable par l’orchestrateur ou le front ; le format est documenté.</p>
+<div class="flourish"></div>
+<h4>3.5.4 Robustesse et coût</h4>
+<p><strong>Cas d’erreur à gérer :</strong></p>
+<ul class="bullet-list">
+<li>Timeout ou 5xx du provider : retry limité puis erreur explicite.</li>
+<li>Quota dépassé : message clair pour l’opérateur ou l’utilisateur.</li>
+</ul>
+<p><strong>Feature validée si :</strong> les erreurs courantes (timeout, quota, clé invalide) sont gérées et ne provoquent pas de crash ; un log ou métrique permet de suivre l’usage si requis.</p>
+  <div class="page-footer"><span>3</span><span class="pf-brand">FlowLearn — DOD – 3.5 Générateurs LLM via Adaptateur</span><span>02</span></div>
+</section>
+</body>
+</html>

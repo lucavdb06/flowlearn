@@ -1,5 +1,25 @@
 # Schéma WBS Global — DopaLearn MVP (v0.1)
 
+> Version charte : [`schema-wbs-global.html`](schema-wbs-global.html)
+
+## Fiche document
+
+| Champ | Valeur |
+| --- | --- |
+| Projet | FlowLearn |
+| Formation | T-ESP-800 |
+| Livrable | 05 — WBS |
+| Version | v0.1 — brouillon |
+| Statut | À revoir |
+
+## Questions traitées
+
+| Question | Section |
+| --- | --- |
+| Quels lots de travail pour le MVP ? | Vue macro WP1–WP5 |
+| Comment PBS et WBS se relient ? | Tableau PBS → WBS → fichiers |
+| Quelles dépendances entre blocs ? | Schéma dépendances |
+
 ---
 
 ## Vue d'ensemble (Mermaid)

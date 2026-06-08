@@ -1,5 +1,7 @@
 # FlowLearn — Plan qualité
 
+> Version charte : [`FlowLearn-Plan-Qualite.html`](FlowLearn-Plan-Qualite.html)
+
 Processus de développement, tickets, tests, revues et livraisons.  
 Complète la [DoD globale](../3-a-revoir/mvp-pbs/dod-globale.md) et l’[organisation générale](structure-organisation/organisation-general.md).
 

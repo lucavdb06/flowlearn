@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowLearn — WBS – 4.1 Algorithme de Sélection des Questions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../2-en-cours/charte-graphique/flowlearn-document.css">
+</head>
+<body>
+
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="cover-top">
+      <div class="cover-logo"><div class="wordmark">Flow<em>Learn</em></div></div>
+      <div class="cover-meta">
+        <div>T-ESP-800</div>
+        <div><strong>À revoir</strong></div>
+        <div>Juin 2026</div>
+      </div>
+    </div>
+    <div class="cover-middle">
+      <div class="cover-eyebrow">3-a-revoir · <span class="tag tag-revoir">À revoir</span></div>
+      <h1 class="cover-title">WBS – 4.1 Algorithme de Sélection des Questions</h1>
+      <p class="cover-deck mono" style="font-size:10pt;">mvp-pbs/wbs/4-algorithmes-personnalisation/wbs-4.1-selection-questions.md</p>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-stat"><div class="label">Source MD</div><div class="value" style="font-size:12pt;">wbs-4.1-selection-questions.md</div></div>
+      <div class="cover-stat"><div class="label">Version</div><div class="value" style="font-size:14pt;">v0.1 — brouillon</div></div>
+    </div>
+  </div>
+</section>
+<section class="page">
+  <div class="running-header">
+    <span class="brand-name">Flow<em>Learn</em></span>
+    <span class="doc-tag">À revoir · wbs-4.1-selection-questions</span>
+  </div>
+  <h2 class="section-title">WBS – 4.1 Algorithme de Sélection des Questions</h2>
+<p><strong>PBS :</strong> Décider quelle question poser via une méthode de répétition espacée type Anki (globale) ou une sélection manuelle d'un thème choisi par l'utilisateur.</p>
+<div class="flourish"></div>
+<h3>Features (WBS)</h3>
+<h4>4.1.1 Modèle de données pour la sélection</h4>
+<ul class="bullet-list">
+<li>Définir les champs nécessaires (id_question, thème, date_dernière_revue, niveau_maîtrise, succès/échec, intervalle SRS).</li>
+<li>Stocker l'historique des réponses par utilisateur (lié à la base RAG / cours).</li>
+<li>Concevoir les tables ou schémas en base pour persister l'état SRS par utilisateur et par question.</li>
+</ul>
+<h4>4.1.2 Logique de répétition espacée (type Anki)</h4>
+<ul class="bullet-list">
+<li>Implémenter le calcul de la prochaine date de revue et de l'intervalle selon la performance (bonne/mauvaise réponse).</li>
+<li>Exposer une règle « prochaine question à revoir » (priorité aux cartes dues, puis nouvelles).</li>
+<li>Gérer le mode global (tous les cours) et le mode thème ciblé (sélection manuelle par l'utilisateur).</li>
+</ul>
+<h4>4.1.3 Endpoint / API « prochaine question »</h4>
+<ul class="bullet-list">
+<li>Exposer un endpoint (ex. GET /next-question) qui renvoie une question au format JSON standardisé (cf. 2.3).</li>
+<li>Intégrer l'algorithme de sélection avec la base RAG (choix du thème / des chunks pertinents).</li>
+<li>Gérer les cas sans question disponible (thème vide, aucune carte due) : réponse explicite ou fallback.</li>
+</ul>
+  <div class="page-footer"><span>3</span><span class="pf-brand">FlowLearn — WBS – 4.1 Algorithme de Sélection des Questions</span><span>02</span></div>
+</section>
+</body>
+</html>
