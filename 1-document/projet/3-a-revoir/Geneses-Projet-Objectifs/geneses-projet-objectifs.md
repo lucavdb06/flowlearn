@@ -1,8 +1,10 @@
-status : terminer
-
-# Document de Genèse et Objectifs : DopaLearn
+# Document de Genèse et Objectifs : FlowLearn
 
 **Projet :** FlowLearn
+
+**Rôle :** Product Owner
+
+**Statut :** Phase de Conception / MVP
 
 ## 1. Genèse du Projet
 
@@ -15,12 +17,12 @@ L'apprentissage traditionnel est perçu comme une activité à haute charge ment
 
 ### 1.2. La Vision (La Solution)
 
-DopaLearn a pour ambition de **détourner les mécaniques addictives** au profit de l'éducation en créant un environnement qui diminue toutes les frictions au maximum. Le projet exploite la puissance des mécanismes de dopamine pour servir l'apprentissage, et non pour maximiser des revenus publicitaires.
+FlowLearn a pour ambition de **détourner les mécaniques addictives** au profit de l'éducation en créant un environnement qui diminue toutes les frictions au maximum. Le projet exploite la puissance des mécanismes de dopamine pour servir l'apprentissage, et non pour maximiser des revenus publicitaires.
 
 - **Construction de son cours (Zéro Saisie) :** L'idée est de supprimer l'effort de préparation. Le système interagit avec l'utilisateur pendant ses phases de jeu ou de scroll ("Qu'as-tu appris aujourd'hui ?"). La base de connaissances se construit ainsi de manière organique et conversationnelle, sans obliger l'utilisateur à ressaisir ses notes ou à importer manuellement des PDF (bien que l'import externe reste possible).
 - **Révision par le Gameplay :** Proposer des expériences où la révision est une mécanique de gameplay du jeu. Le succès du joueur dépend de sa connaissance : une bonne réponse génère des bonus immédiats, tandis qu'une erreur entraîne des malus, ancrant ainsi la mémorisation par l'enjeu ludique.
 
-**Modèle Économique & Diffusion :** DopaLearn est conçu comme une application SaaS (Web-App) avec une dimension **Open Source**. Le business model repose sur :
+**Modèle Économique & Diffusion :** FlowLearn est conçu comme une application SaaS (Web-App) avec une dimension **Open Source**. Le business model repose sur :
 
 1. **B2C :** Des abonnements premium pour les particuliers.
 2. **B2B :** Des solutions de formation personnalisées pour les entreprises afin d'optimiser la montée en compétences interne.
@@ -53,7 +55,8 @@ DopaLearn a pour ambition de **détourner les mécaniques addictives** au profit
 
 ### 3.2. Proposition de Valeur Unique (UVP)
 
-> "DopaLearn : Votre temps est précieux, ne le laissez plus être une marchandise pour les algorithmes. Là où les réseaux sociaux agissent comme une drogue numérique pour vous saturer de vide et de publicités, DopaLearn transforme vos moments de repos en micro-activités constructives. L'algorithme est à votre services Pas l'inverse.
+> "FlowLearn : Votre temps est précieux, ne le laissez plus être une marchandise pour les algorithmes. Là où les réseaux sociaux agissent comme une drogue numérique pour vous saturer de vide et de publicités, FlowLearn transforme vos moments de repos en micro-activités constructives. L'algorithme est à votre services Pas l'inverse.
+> 
 
 ## 4. Indicateurs de Succès (KPIs)
 

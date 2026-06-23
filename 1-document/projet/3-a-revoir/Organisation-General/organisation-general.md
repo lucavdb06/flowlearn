@@ -27,22 +27,22 @@ Le choix d'un modèle hybride répond à deux besoins critiques :
 
 ### 2.3. Le Pivot (La Transition)
 
-- Le passage du mode WBS au mode Agile s'effectue dès la validation de la **Mise en Production (MEP)** du MVP et la **Phase Review**
+- Le passage du mode WBS au mode Agile s'effectue dès la validation de la **Mise en Production (MEP)** du MVP et  la **Phase Review**
 
 ## 3. Instances de Gouvernance (Les Rituels)
 
 Tableau récapitulatif des réunions et comités.
 
-| Instance                     | Fréquence    | Participants                         | Objectif                                                                                                                                                                                            | Traçabilité / Historique      |
-| ---------------------------- | ------------ | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
-| **Réunion d'Équipe (Hebdo)** | Hebdomadaire | Toute l'équipe                       | **Phase 1 (Dev) :** Démo des fonctionnalités implémentées. **Phase 2 (Cyber) :** Partage des failles trouvées et compte-rendu de Code Review. **Global :** Brainstorming et résolution de blocages. | **Enregistrement Vidéo**      |
-| **Point Ad-hoc / Technique** | À la demande | Membres concernés, Porteur de projet | Lever un verrou technique complexe ou approfondir un point spécifique du projet.                                                                                                                    | **Enregistrement Vidéo**      |
-| **Comité de Pilotage**       | Mensuel      | Porteur de projet, Toute l'équipe    | Contrôle de l'avancement (deadlines). Redistribution des tâches pour optimiser la charge de travail et éviter les retards.                                                                          | **Prise de notes uniquement** |
-| **Phase Review**             | Fin de phase | Toute l'équipe                       | Faire le point sur l'organisation, partager les apprentissages et organiser la transition (ex: passage à l'Agile).                                                                                  | **Enregistrement Vidéo**      |
+| Instance | Fréquence | Participants | Objectif | Traçabilité / Historique |
+| --- | --- | --- | --- | --- |
+| **Réunion d'Équipe (Hebdo)** | Hebdomadaire | Toute l'équipe | **Phase 1 (Dev) :** Démo des fonctionnalités implémentées.  **Phase 2 (Cyber) :** Partage des failles trouvées et compte-rendu de Code Review.  **Global :** Brainstorming et résolution de blocages. | **Enregistrement Vidéo** |
+| **Point Ad-hoc / Technique** | À la demande | Membres concernés, Porteur de projet | Lever un verrou technique complexe ou approfondir un point spécifique du projet. | **Enregistrement Vidéo** |
+| **Comité de Pilotage** | Mensuel | Porteur de projet, Toute l'équipe | Contrôle de l'avancement (deadlines). Redistribution des tâches pour optimiser la charge de travail et éviter les retards. | **Prise de notes uniquement** |
+| **Phase Review** | Fin de phase | Toute l'équipe | Faire le point sur l'organisation, partager les apprentissages et organiser la transition (ex: passage à l'Agile). | **Enregistrement Vidéo** |
 
 ## 4. Rôles et Responsabilités
 
-_Note : Se référer au schéma OBS pour l'attribution nominative des rôles._
+*Note : Se référer au schéma OBS pour l'attribution nominative des rôles.*
 
 - **Porteur de Projet:** Responsable de la vision stratégique, de la définition des besoins (Backlog), ainsi que du pilotage opérationnel (PBS, WBS, planning).
 - **Pôle Cybersécurité (2 personnes) :** Garant de la robustesse du système. Responsable de l'analyse des risques et du "Security by Design". Assure une revue de code régulière pour identifier et renforcer les failles.
@@ -55,20 +55,15 @@ Liste des outils validés pour le projet :
 - **Gestion de tâches :** GitHub (via GitHub Projects) pour le suivi du WBS puis du Backlog.
 - **Communication :** Discord.
 - **Documentation :**
-  - **Notion :** Espace collaboratif pour la rédaction, le brouillon et la retouche des documents en équipe.
-  - **GitHub (Wiki/Dépôt) :** Référentiel officiel pour les versions finales et validées ("Single Source of Truth").
+    - **Notion :** Espace collaboratif pour la rédaction, le brouillon et la retouche des documents en équipe.
+    - **GitHub (Wiki/Dépôt) :** Référentiel officiel pour les versions finales et validées ("Single Source of Truth").
 - **Dépôt de code :** GitHub.
 
 ## 6. Gestion de la Qualité (DOD)
 
-Chaque livrable doit répondre à la **Definition of Done (DOD)**.
+Chaque livrable doit répondre à la **Definition of Done (DOD)** 
 
-- Plan qualité (processus, tests, tickets) : [`../plan-qualite.md`](../plan-qualite.md)
-- DoD globale : [`../../3-a-revoir/mvp-pbs/dod-globale.md`](../../3-a-revoir/mvp-pbs/dod-globale.md)
-- Matrice RACI : [`matrice-raci.md`](matrice-raci.md)
-- Description fonctionnelle : [`../description-fonctionnelle.md`](../description-fonctionnelle.md)
-
-[DOD (Definition of Done) pour chaque feature ✅](https://www.notion.so/DOD-Definition-of-Done-pour-chaque-feature-2ea6aaec6a1c817e96dce81a9fd92ec7?pvs=21)
+[DOD (Definition of Done) ](https://app.notion.com/p/DOD-Definition-of-Done-341cc9a55ae18124bf88e6f44b56766c?pvs=21)
 
 ## 7. Gestion du Changement
 
