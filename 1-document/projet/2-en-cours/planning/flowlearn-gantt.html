@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowLearn — Gantt 24 mois</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --flow-blue:#3B82F6; --brain-pink:#EC4899; --deep-ocean:#1E3A5F;
+    --soft-lavender:#8B5CF6; --success-green:#10B981; --warning-amber:#F59E0B;
+    --slate-700:#334155; --slate-600:#475569; --slate-500:#64748B;
+    --slate-300:#CBD5E1; --slate-200:#E2E8F0; --slate-100:#F1F5F9; --slate-50:#F8FAFC;
+    --paper:#FBFAF7; --ink:#0F172A;
+    --grad-main:linear-gradient(135deg,#3B82F6 0%,#EC4899 100%);
+    --grad-crit:linear-gradient(135deg,#1E3A5F 0%,#3B82F6 100%);
+    --grad-green:linear-gradient(135deg,#059669 0%,#34D399 100%);
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  @page { size:A4 landscape; margin:12mm; }
+
+  html, body {
+    background:var(--paper); color:var(--ink);
+    font-family:'Inter',-apple-system,sans-serif; font-size:14px; line-height:1.5;
+    -webkit-font-smoothing:antialiased; -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .page { max-width:1180px; width:100%; padding:28px 30px; margin:0 auto; position:relative; }
+
+  /* ── EN-TÊTE ── */
+  .head { display:flex; align-items:flex-end; justify-content:space-between;
+    border-bottom:1px solid var(--slate-200); padding-bottom:12px; margin-bottom:16px; }
+  .wordmark { font-family:'Fraunces',serif; font-weight:600; font-size:24px; color:var(--deep-ocean); letter-spacing:-.01em; }
+  .wordmark em { background:var(--grad-main); -webkit-background-clip:text; background-clip:text; color:transparent; font-style:normal; }
+  .head .title { font-family:'Fraunces',serif; font-weight:400; font-size:18px; color:var(--deep-ocean); margin-top:3px; }
+  .head .title .accent { font-style:italic; background:var(--grad-main); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .head .meta { text-align:right; font-size:11px; color:var(--slate-500); letter-spacing:.06em; text-transform:uppercase; line-height:1.7; }
+  .head .meta strong { color:var(--deep-ocean); font-weight:600; }
+
+  /* ── LÉGENDE ── */
+  .legend { display:flex; flex-wrap:wrap; gap:14px 18px; margin-bottom:18px; font-size:11.5px; color:var(--slate-600); }
+  .legend .item { display:flex; align-items:center; gap:6px; }
+  .swatch { width:26px; height:11px; border-radius:4px; }
+  .sw-p1{background:linear-gradient(135deg,#3B82F6,#60A5FA);}
+  .sw-crit{background:var(--grad-crit); border:1px solid var(--brain-pink);}
+  .sw-p2{background:linear-gradient(135deg,#EC4899,#F472B6);}
+  .sw-p3{background:linear-gradient(135deg,#8B5CF6,#A78BFA);}
+  .sw-p4{background:var(--grad-green);}
+  .dia { width:12px; height:12px; background:var(--deep-ocean); transform:rotate(45deg); box-shadow:0 0 0 1px var(--deep-ocean); }
+  .dia.gate { background:var(--warning-amber); box-shadow:0 0 0 1px var(--warning-amber); }
+
+  /* ── BANDEAU BUDGET ── */
+  .budget { display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; padding:10px 14px;
+    margin-bottom:18px; border:1px solid var(--slate-200); border-radius:12px; background:var(--slate-50);
+    font-size:11.5px; color:var(--slate-600); }
+  .budget .total { font-family:'Fraunces',serif; font-weight:600; color:var(--deep-ocean); font-size:13px; }
+  .budget .total b { background:var(--grad-main); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .budget .chip { background:#fff; border:1px solid var(--slate-200); border-radius:20px; padding:2px 10px; }
+  .budget .note { margin-left:auto; font-style:italic; color:var(--slate-500); font-size:10.5px; }
+
+  /* ── BLOC GANTT ── */
+  .block { margin-bottom:20px; }
+  .block-title { font-family:'Fraunces',serif; font-size:13px; font-weight:600; color:var(--deep-ocean);
+    margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+  .block-title .yr { font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:500;
+    color:var(--slate-500); letter-spacing:.08em; }
+
+  .gantt { display:grid; grid-template-columns:210px repeat(12,1fr);
+    border:1px solid var(--slate-200); border-radius:14px; overflow:hidden; background:#fff; }
+
+  /* en-têtes */
+  .corner { grid-column:1; grid-row:1 / span 2; background:var(--slate-50);
+    border-right:1px solid var(--slate-200); border-bottom:1px solid var(--slate-200);
+    display:flex; align-items:center; padding:0 14px; font-size:10px; font-weight:600;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--slate-500); }
+  .yrcell { grid-row:1; text-align:center; padding:6px 0 4px; background:var(--slate-50);
+    border-bottom:1px solid var(--slate-200); font-family:'JetBrains Mono',monospace;
+    font-size:10px; font-weight:500; letter-spacing:.16em; color:var(--slate-500); }
+  .yrcell.split { border-left:1px solid var(--slate-300); }
+  .mo { grid-row:2; text-align:center; padding:5px 0; background:var(--slate-50);
+    border-bottom:1px solid var(--slate-200); border-left:1px solid var(--slate-100); font-size:10px; color:var(--slate-500); line-height:1.25; }
+  .mo b { display:block; font-family:'JetBrains Mono',monospace; font-weight:500; color:var(--slate-600); font-size:9px; }
+
+  /* fond colonnes */
+  .grid-bg { grid-column:2 / -1; grid-row:3 / -1; position:relative; z-index:0;
+    background-image:repeating-linear-gradient(to right, var(--slate-100) 0, var(--slate-100) 1px, transparent 1px, transparent calc(100%/12)); }
+
+  /* bande de phase */
+  .phase { grid-column:1 / -1; z-index:1; display:flex; align-items:center; gap:8px;
+    padding:6px 14px; font-family:'Fraunces',serif; font-weight:600; font-size:12.5px; color:#fff; }
+  .phase .tag { font-family:'JetBrains Mono',monospace; font-size:9.5px; font-weight:500;
+    background:rgba(255,255,255,.22); padding:1px 8px; border-radius:20px; letter-spacing:.04em; }
+  .phase .sp { margin-left:auto; font-family:'Inter'; font-weight:400; font-size:10.5px; opacity:.92; }
+  .ph1{background:linear-gradient(90deg,#1E3A5F,#3B82F6);}
+  .ph2{background:linear-gradient(90deg,#9D174D,#EC4899);}
+  .ph3{background:linear-gradient(90deg,#5B21B6,#8B5CF6);}
+  .ph4{background:linear-gradient(90deg,#065F46,#10B981);}
+
+  /* libellé + ligne */
+  .lbl { grid-column:1; z-index:2; display:flex; align-items:center; padding:0 14px;
+    font-size:11.5px; color:var(--slate-700); border-right:1px solid var(--slate-200);
+    border-top:1px solid var(--slate-100); min-height:26px; }
+  .lbl .bolt { color:var(--brain-pink); font-weight:700; margin-right:4px; }
+  .row-bg { grid-column:2 / -1; z-index:0; border-top:1px solid var(--slate-100); }
+
+  /* barre */
+  .bar { z-index:2; align-self:center; height:18px; border-radius:6px; margin:4px 3px; color:#fff;
+    font-size:9.5px; font-weight:600; display:flex; align-items:center; padding:0 8px;
+    box-shadow:0 1px 2px rgba(15,23,42,.12); white-space:nowrap; overflow:hidden; }
+  .bar.b1{background:linear-gradient(135deg,#3B82F6,#60A5FA);}
+  .bar.crit{background:var(--grad-crit); border:1.5px solid var(--brain-pink);}
+  .bar.b2{background:linear-gradient(135deg,#EC4899,#F472B6);}
+  .bar.b3{background:linear-gradient(135deg,#8B5CF6,#A78BFA);}
+  .bar.b4{background:var(--grad-green);}
+
+  /* jalon */
+  .ms { z-index:3; align-self:center; justify-self:center; position:relative; }
+  .ms i { display:block; width:14px; height:14px; transform:rotate(45deg); background:var(--deep-ocean);
+    border:1.5px solid #fff; box-shadow:0 0 0 1px var(--deep-ocean),0 1px 3px rgba(15,23,42,.25); }
+  .ms.gate i { background:var(--warning-amber); box-shadow:0 0 0 1px var(--warning-amber),0 1px 3px rgba(15,23,42,.25); }
+  .ms span { position:absolute; top:17px; left:50%; transform:translateX(-50%); font-size:9px;
+    font-weight:600; color:var(--deep-ocean); white-space:nowrap; }
+
+  .foot { display:flex; justify-content:space-between; align-items:center; margin-top:6px; font-size:10.5px; color:var(--slate-500); }
+  .foot .pf-brand { font-family:'Fraunces',serif; color:var(--deep-ocean); }
+</style>
+</head>
+<body>
+<section class="page">
+
+  <div class="head">
+    <div>
+      <div class="wordmark">Flow<em>Learn</em></div>
+      <div class="title">Planning <span class="accent">Gantt</span> — 24 mois</div>
+    </div>
+    <div class="meta">
+      <div><strong>Avr 2026 → Mars 2028</strong></div>
+      <div>4 phases · 8 gates · ⚡ chemin critique</div>
+      <div>T-ESP-800 · lucavdb06/flowlearn</div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="item"><span class="swatch sw-p1"></span> Ph1 · Fondations</div>
+    <div class="item"><span class="swatch sw-crit"></span> ⚡ Chemin critique (RAG/IA)</div>
+    <div class="item"><span class="swatch sw-p2"></span> Ph2 · Traction</div>
+    <div class="item"><span class="swatch sw-p3"></span> Ph3 · Scaling</div>
+    <div class="item"><span class="swatch sw-p4"></span> Ph4 · Exit</div>
+    <div class="item"><span class="dia"></span> Jalon livrable</div>
+    <div class="item"><span class="dia gate"></span> Gate Go/No-Go</div>
+  </div>
+
+  <div class="budget">
+    <span class="total">Budget prévisionnel 24 mois · <b>344 159 €</b></span>
+    <span class="chip">Salaires 294 k€ · 85 %</span>
+    <span class="chip">Communication 18 k€</span>
+    <span class="chip">Provision 16 k€</span>
+    <span class="chip">Outils &amp; hébergement 11 k€</span>
+    <span class="chip">Déplacements 4 k€</span>
+    <span class="note">Répartition par phase = prorata temporel (≈ 14,3 k€/mois)</span>
+  </div>
+
+  <!-- ════ ANNÉE 1 : M1 → M12 ════ -->
+  <div class="block">
+    <div class="block-title">Année 1 — Fondations &amp; Traction <span class="yr">M1 → M12 · Avr 2026 → Mars 2027</span></div>
+    <div class="gantt">
+      <div class="corner">Lot / Tâche</div>
+      <div class="yrcell" style="grid-column:2 / span 9;">2026</div>
+      <div class="yrcell split" style="grid-column:11 / span 3;">2027</div>
+
+      <div class="mo" style="grid-column:2;"><b>M1</b>Avr</div>
+      <div class="mo" style="grid-column:3;"><b>M2</b>Mai</div>
+      <div class="mo" style="grid-column:4;"><b>M3</b>Juin</div>
+      <div class="mo" style="grid-column:5;"><b>M4</b>Juil</div>
+      <div class="mo" style="grid-column:6;"><b>M5</b>Aoû</div>
+      <div class="mo" style="grid-column:7;"><b>M6</b>Sep</div>
+      <div class="mo" style="grid-column:8;"><b>M7</b>Oct</div>
+      <div class="mo" style="grid-column:9;"><b>M8</b>Nov</div>
+      <div class="mo" style="grid-column:10;"><b>M9</b>Déc</div>
+      <div class="mo" style="grid-column:11;"><b>M10</b>Jan</div>
+      <div class="mo" style="grid-column:12;"><b>M11</b>Fév</div>
+      <div class="mo" style="grid-column:13;"><b>M12</b>Mar</div>
+
+      <div class="grid-bg"></div>
+
+      <div class="phase ph1" style="grid-row:3;"><span>Phase 1 — Fondations &amp; Lancement MVP</span><span class="tag">M1–M6</span><span class="sp">≈ 86 k€ · 50k DAU</span></div>
+
+      <div class="lbl" style="grid-row:4;">Setup infra &amp; CI/CD</div>
+      <div class="row-bg" style="grid-row:4;"></div>
+      <div class="bar b1" style="grid-row:4; grid-column:2 / span 2;">Infra · CI/CD</div>
+
+      <div class="lbl" style="grid-row:5;"><span class="bolt">⚡</span>PBS3 — RAG / IA Core</div>
+      <div class="row-bg" style="grid-row:5;"></div>
+      <div class="bar crit" style="grid-row:5; grid-column:2 / span 3;">FastAPI · LlamaIndex · PydanticAI</div>
+
+      <div class="lbl" style="grid-row:6;">PBS1 — Conteneur multi-plateforme</div>
+      <div class="row-bg" style="grid-row:6;"></div>
+      <div class="bar b1" style="grid-row:6; grid-column:3 / span 2;">Electron · Capacitor</div>
+
+      <div class="lbl" style="grid-row:7;">PBS2 — Mini-jeux Godot</div>
+      <div class="row-bg" style="grid-row:7;"></div>
+      <div class="bar b1" style="grid-row:7; grid-column:5 / span 2;">Moteur jeu · API</div>
+
+      <div class="lbl" style="grid-row:8;">PBS4 — Algo SRS basique</div>
+      <div class="row-bg" style="grid-row:8;"></div>
+      <div class="bar b1" style="grid-row:8; grid-column:6 / span 2;">Répétition espacée</div>
+
+      <div class="lbl" style="grid-row:9;">PBS5 — Audit cyber + GDPR</div>
+      <div class="row-bg" style="grid-row:9;"></div>
+      <div class="bar b1" style="grid-row:9; grid-column:6 / span 2;">Conformité · Audit</div>
+
+      <div class="lbl" style="grid-row:10;">Bêta + Lancement public</div>
+      <div class="row-bg" style="grid-row:10;"></div>
+      <div class="ms" style="grid-row:10; grid-column:7;"><i></i><span>Lancement</span></div>
+
+      <div class="phase ph2" style="grid-row:11;"><span>Phase 2 — Traction &amp; Monétisation</span><span class="tag">M7–M12</span><span class="sp">≈ 86 k€ · 300k DAU</span></div>
+
+      <div class="lbl" style="grid-row:12;">IA avancée — Multi-LLM + voix</div>
+      <div class="row-bg" style="grid-row:12;"></div>
+      <div class="bar b2" style="grid-row:12; grid-column:8 / span 3;">Multi-LLM · Vocal</div>
+
+      <div class="lbl" style="grid-row:13;">GTM — Scale TikTok / Meta</div>
+      <div class="row-bg" style="grid-row:13;"></div>
+      <div class="bar b2" style="grid-row:13; grid-column:8 / span 6;">Acquisition payante</div>
+
+      <div class="lbl" style="grid-row:14;">Produit — Premium + B2B SSO</div>
+      <div class="row-bg" style="grid-row:14;"></div>
+      <div class="bar b2" style="grid-row:14; grid-column:10 / span 3;">Premium · Licence B2B</div>
+
+      <div class="lbl" style="grid-row:15;">Push presse + investisseurs</div>
+      <div class="row-bg" style="grid-row:15;"></div>
+      <div class="bar b2" style="grid-row:15; grid-column:11 / span 3;">Presse · Pitch</div>
+
+      <div class="lbl" style="grid-row:16;">Gate validation B2B</div>
+      <div class="row-bg" style="grid-row:16;"></div>
+      <div class="ms gate" style="grid-row:16; grid-column:11;"><i></i><span>5+ contrats</span></div>
+    </div>
+  </div>
+
+  <!-- ════ ANNÉE 2 : M13 → M24 ════ -->
+  <div class="block">
+    <div class="block-title">Année 2 — Scaling &amp; Exit <span class="yr">M13 → M24 · Avr 2027 → Mars 2028</span></div>
+    <div class="gantt">
+      <div class="corner">Lot / Tâche</div>
+      <div class="yrcell" style="grid-column:2 / span 9;">2027</div>
+      <div class="yrcell split" style="grid-column:11 / span 3;">2028</div>
+
+      <div class="mo" style="grid-column:2;"><b>M13</b>Avr</div>
+      <div class="mo" style="grid-column:3;"><b>M14</b>Mai</div>
+      <div class="mo" style="grid-column:4;"><b>M15</b>Juin</div>
+      <div class="mo" style="grid-column:5;"><b>M16</b>Juil</div>
+      <div class="mo" style="grid-column:6;"><b>M17</b>Aoû</div>
+      <div class="mo" style="grid-column:7;"><b>M18</b>Sep</div>
+      <div class="mo" style="grid-column:8;"><b>M19</b>Oct</div>
+      <div class="mo" style="grid-column:9;"><b>M20</b>Nov</div>
+      <div class="mo" style="grid-column:10;"><b>M21</b>Déc</div>
+      <div class="mo" style="grid-column:11;"><b>M22</b>Jan</div>
+      <div class="mo" style="grid-column:12;"><b>M23</b>Fév</div>
+      <div class="mo" style="grid-column:13;"><b>M24</b>Mar</div>
+
+      <div class="grid-bg"></div>
+
+      <div class="phase ph3" style="grid-row:3;"><span>Phase 3 — Scaling &amp; International</span><span class="tag">M13–M20</span><span class="sp">≈ 115 k€ · 1M DAU</span></div>
+
+      <div class="lbl" style="grid-row:4;">Multi-langues + serveurs intl</div>
+      <div class="row-bg" style="grid-row:4;"></div>
+      <div class="bar b3" style="grid-row:4; grid-column:2 / span 4;">i18n · EU / APAC</div>
+
+      <div class="lbl" style="grid-row:5;">Roadshow Series A</div>
+      <div class="row-bg" style="grid-row:5;"></div>
+      <div class="bar b3" style="grid-row:5; grid-column:4 / span 4;">Levée de fonds</div>
+
+      <div class="lbl" style="grid-row:6;">Lancement EU + Brésil</div>
+      <div class="row-bg" style="grid-row:6;"></div>
+      <div class="bar b3" style="grid-row:6; grid-column:5 / span 3;">Expansion marchés</div>
+
+      <div class="lbl" style="grid-row:7;">White-label + marketplace</div>
+      <div class="row-bg" style="grid-row:7;"></div>
+      <div class="bar b3" style="grid-row:7; grid-column:7 / span 2;">Plateforme · Marketplace</div>
+
+      <div class="phase ph4" style="grid-row:8;"><span>Phase 4 — Consolidation &amp; Exit</span><span class="tag">M21–M24</span><span class="sp">≈ 57 k€ · 1.5M DAU</span></div>
+
+      <div class="lbl" style="grid-row:9;">Optimisation coûts + IA</div>
+      <div class="row-bg" style="grid-row:9;"></div>
+      <div class="bar b4" style="grid-row:9; grid-column:10 / span 3;">Coûts · Churn</div>
+
+      <div class="lbl" style="grid-row:10;">Due diligence Series A</div>
+      <div class="row-bg" style="grid-row:10;"></div>
+      <div class="bar b4" style="grid-row:10; grid-column:10 / span 3;">Audit · Légal · Finance</div>
+
+      <div class="lbl" style="grid-row:11;">Closing Series A / M&amp;A</div>
+      <div class="row-bg" style="grid-row:11;"></div>
+      <div class="ms gate" style="grid-row:11; grid-column:13;"><i></i><span>Exit</span></div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>Source : planning-detaille.md · 2-en-cours</span>
+    <span class="pf-brand">FlowLearn — Planning Gantt</span>
+    <span>Confidentiel · Usage interne</span>
+  </div>
+
+</section>
+</body>
+</html>
