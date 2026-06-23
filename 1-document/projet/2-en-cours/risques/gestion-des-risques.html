@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>FlowLearn - Gestion des Risques (24 Mois)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <!-- Load Mermaid for diagrams rendering -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'neutral',
+      securityLevel: 'loose',
+      flowchart: { useMaxWidth: true, htmlLabels: true }
+    });
+  </script>
+  <link rel="stylesheet" href="../charte-graphique/flowlearn-document.css">
+</head>
+
+<body>
+
+  <!-- ============================================================
+     PAGE 1  COVER PAGE
+     ============================================================ -->
+  <section class="page cover">
+    <div class="cover-inner">
+
+      <div class="cover-top">
+        <div class="cover-logo" style="display: flex; align-items: center; gap: 12px;">
+          <img src="../charte-graphique/assets/flowlearn-logo1.png" alt="Logo"
+            style="width: 42px; height: 42px; object-fit: contain;">
+          <div class="wordmark">Flow<em>Learn</em></div>
+        </div>
+        <div class="cover-meta">
+          <div>Document interne</div>
+          <div><strong>Version 1.0</strong></div>
+          <div>Mai 2026</div>
+        </div>
+      </div>
+
+      <div class="cover-middle">
+        <div class="cover-eyebrow">Pilotage opérationnel</div>
+        <h1 class="cover-title">Gestion des<br><span class="accent">Risques</span></h1>
+        <div class="cover-deck">
+          Registre Unifié, Matrices d'Impact, Indicateurs Clés de Risque (KRI) et Plans de Traitement Opérationnels
+          (Horizon 24 Mois).
+        </div>
+      </div>
+
+      <div class="cover-bottom">
+        <div class="cover-stat">
+          <div class="label">Registre Unifié</div>
+          <div class="value">25 <span class="unit">Risques</span></div>
+        </div>
+        <div class="cover-stat">
+          <div class="label">Contingence Financière</div>
+          <div class="value">98 <span class="unit">k€</span></div>
+        </div>
+        <div class="cover-stat">
+          <div class="label">Buffer Planning</div>
+          <div class="value">2 <span class="unit">Sem/phase</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PAGE 2  TABLE DES MATIÈRES & SYNTHÈSE EXÉCUTIVE
+     ============================================================ -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§01 . Synthèse &amp; TOC</div>
+    </div>
+
+    <span class="section-num">Section 01</span>
+    <h1 class="section-title">Table des matières &amp; <span class="accent">Synthèse</span></h1>
+
+    <div class="flourish"></div>
+
+    <div class="two-col">
+      <div>
+        <h2>Sommaire détaillé</h2>
+        <ul class="toc-list">
+          <li><span class="toc-num">01</span><span class="toc-title">Synthèse exécutive &amp; Alignements</span><span
+              class="toc-page">p.2</span></li>
+          <li><span class="toc-num">02</span><span class="toc-title">Cartographie globale &amp; Top 6</span><span
+              class="toc-page">p.3</span></li>
+          <li><span class="toc-num">03</span><span class="toc-title">Méthodologie &amp; Postures</span><span
+              class="toc-page">p.4</span></li>
+          <li><span class="toc-num">04</span><span class="toc-title">Registre : Risques Techniques &amp;
+              Produit</span><span class="toc-page">p.5</span></li>
+          <li><span class="toc-num">05</span><span class="toc-title">Registre : Humains &amp;
+              Organisationnels</span><span class="toc-page">p.6</span></li>
+          <li><span class="toc-num">06</span><span class="toc-title">Registre : Business, Finance &amp;
+              Externes</span><span class="toc-page">p.7</span></li>
+          <li><span class="toc-num">07</span><span class="toc-title">Matrice 5×5 Probabilité × Impact</span><span
+              class="toc-page">p.8</span></li>
+          <li><span class="toc-num">07b</span><span class="toc-title">Visualisations Graphiques (Mermaid)</span><span
+              class="toc-page">p.9</span></li>
+          <li><span class="toc-num">08</span><span class="toc-title">Timeline du cycle de vigilance (24
+              mois)</span><span class="toc-page">p.10</span></li>
+          <li><span class="toc-num">09</span><span class="toc-title">Plans détaillés de mitigation (T01 &amp;
+              H02)</span><span class="toc-page">p.11</span></li>
+          <li><span class="toc-num">09b</span><span class="toc-title">Plans détaillés (H06, H04, H05)</span><span
+              class="toc-page">p.12</span></li>
+          <li><span class="toc-num">10</span><span class="toc-title">Tableau de bord des Indicateurs (KRI)</span><span
+              class="toc-page">p.13</span></li>
+          <li><span class="toc-num">11</span><span class="toc-title">Processus de gestion &amp; Cycle de vie</span><span
+              class="toc-page">p.14</span></li>
+          <li><span class="toc-num">12</span><span class="toc-title">Gouvernance, Escalade &amp; RACI</span><span
+              class="toc-page">p.15</span></li>
+          <li><span class="toc-num">13</span><span class="toc-title">Alignement vision &amp; Conclusion</span><span
+              class="toc-page">p.16</span></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Synthèse exécutive</h2>
+        <p class="lede">
+          La réussite du projet FlowLearn sur son horizon de 24 mois repose sur notre capacité à anticiper et traiter
+          proactivement les menaces qui pèsent sur l'exécution.
+        </p>
+        <p>
+          Avec un budget de <strong>654k€</strong> et une équipe à taille humaine, chaque écart peut fragiliser le
+          chemin critique. C'est pourquoi nous avons modélisé ce <strong>Registre Unifié de 25 Risques</strong>,
+          structurés en six catégories clés.
+        </p>
+        <p>
+          Notre bouclier repose sur deux leviers majeurs : une enveloppe de contingence financière de
+          <strong>98k€</strong> (soit 15% du budget global) et un buffer planning de sécurité de <strong>2 semaines par
+            phase</strong>.
+        </p>
+        <div class="callout">
+          <span class="callout-label">Règle d'or : "Zéro Surprise"</span>
+          <p>Chaque risque est associé à un propriétaire unique, un indicateur de déclenchement (KRI), et des actions
+            préventives et correctives précises.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>02</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PAGE 3  CARTOGRAPHIE GLOBALE & TOP 6 PRIORITÉS
+     ============================================================ -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§02 . Cartographie &amp; Top 6</div>
+    </div>
+
+    <span class="section-num">Section 02</span>
+    <h1 class="section-title">Cartographie des risques &amp; <span class="accent">Priorités</span></h1>
+    <p class="section-deck">Aperçu quantitatif de la distribution de nos 25 risques identifiés et focus immédiat sur les
+      6 criticites majeures.</p>
+
+    <div class="two-col">
+      <div>
+        <h2>Répartition par nature de risque</h2>
+        <p>Le registre consolide 25 risques répartis de manière équilibrée sur tout le spectre opérationnel :</p>
+
+        <div class="alloc-row">
+          <div class="alloc-label">Risques Techniques (T)</div>
+          <div class="alloc-track">
+            <div class="alloc-fill red" style="width: 24%;"></div>
+          </div>
+          <div class="alloc-amount">6 risques</div>
+          <div class="alloc-pct">24%</div>
+        </div>
+
+        <div class="alloc-row">
+          <div class="alloc-label">Humains &amp; Organisation (H)</div>
+          <div class="alloc-track">
+            <div class="alloc-fill pink" style="width: 24%;"></div>
+          </div>
+          <div class="alloc-amount">6 risques</div>
+          <div class="alloc-pct">24%</div>
+        </div>
+
+        <div class="alloc-row">
+          <div class="alloc-label">Business &amp; Growth (B)</div>
+          <div class="alloc-track">
+            <div class="alloc-fill blue" style="width: 16%;"></div>
+          </div>
+          <div class="alloc-amount">4 risques</div>
+          <div class="alloc-pct">16%</div>
+        </div>
+
+        <div class="alloc-row">
+          <div class="alloc-label">Externes &amp; Réglementaire (E)</div>
+          <div class="alloc-track">
+            <div class="alloc-fill lav" style="width: 16%;"></div>
+          </div>
+          <div class="alloc-amount">4 risques</div>
+          <div class="alloc-pct">16%</div>
+        </div>
+
+        <div class="alloc-row">
+          <div class="alloc-label">Risques Produit (P)</div>
+          <div class="alloc-track">
+            <div class="alloc-fill amber" style="width: 12%;"></div>
+          </div>
+          <div class="alloc-amount">3 risques</div>
+          <div class="alloc-pct">12%</div>
+        </div>
+
+        <div class="alloc-row">
+          <div class="alloc-label">Risques Financiers (F)</div>
+          <div class="alloc-track">
+            <div class="alloc-fill green" style="width: 8%;"></div>
+          </div>
+          <div class="alloc-amount">2 risques</div>
+          <div class="alloc-pct">8%</div>
+        </div>
+
+        <p style="margin-top: 14px; font-style: italic; font-size: 8.5pt;">
+          Les risques avec une criticité &ge; 15 (🔴) font l'objet d'un suivi hebdomadaire. Les criticites
+          intermédiaires 10-14 (🟡) font l'objet d'une mitigation recommandée mensuelle.
+        </p>
+      </div>
+
+      <div>
+        <h2>Le Top 6 des priorités absolues</h2>
+
+        <div class="mitigation-card red" style="margin: 4px 0 8px 0; padding: 10px 12px;">
+          <div class="mitigation-header" style="margin-bottom: 4px; padding-bottom: 2px;">
+            <div class="mitigation-title" style="font-size: 10.5pt;"><strong>T01 — Retard RAG / IA Core</strong></div>
+            <span class="badge badge-red">Crit. 20</span>
+          </div>
+          <p style="font-size: 8.5pt; margin-bottom: 0;">Intégration complexe LlamaIndex + Pydantic AI. Retard critique
+            sur le noyau principal. Propriétaire : <strong>Tech Lead</strong></p>
+        </div>
+
+        <div class="mitigation-card red" style="margin: 4px 0 8px 0; padding: 10px 12px;">
+          <div class="mitigation-header" style="margin-bottom: 4px; padding-bottom: 2px;">
+            <div class="mitigation-title" style="font-size: 10.5pt;"><strong>H02 — Épuisement de l'équipe
+                (Burnout)</strong></div>
+            <span class="badge badge-red">Crit. 16</span>
+          </div>
+          <p style="font-size: 8.5pt; margin-bottom: 0;">Surcharge humaine due à la polyvalence extrême requise sur 7
+            FTE. Propriétaire : <strong>Project Manager</strong></p>
+        </div>
+
+        <div class="mitigation-card red" style="margin: 4px 0 8px 0; padding: 10px 12px;">
+          <div class="mitigation-header" style="margin-bottom: 4px; padding-bottom: 2px;">
+            <div class="mitigation-title" style="font-size: 10.5pt;"><strong>T02 — Explosion des coûts d'API
+                LLM</strong></div>
+            <span class="badge badge-red">Crit. 16</span>
+          </div>
+          <p style="font-size: 8.5pt; margin-bottom: 0;">Token s'envolent, volume hors de contrôle ou scale viral non
+            bridé. Propriétaire : <strong>Tech Lead / CFO</strong></p>
+        </div>
+
+        <div class="mitigation-card red" style="margin: 4px 0 8px 0; padding: 10px 12px;">
+          <div class="mitigation-header" style="margin-bottom: 4px; padding-bottom: 2px;">
+            <div class="mitigation-title" style="font-size: 10.5pt;"><strong>H06 — Sous-effectif prolongé</strong></div>
+            <span class="badge badge-red">Crit. 15</span>
+          </div>
+          <p style="font-size: 8.5pt; margin-bottom: 0;">Échec de recrutement ou départ bloquant la production sur un
+            jalon clé. Propriétaire : <strong>CEO / PM</strong></p>
+        </div>
+
+        <div class="mitigation-card red" style="margin: 4px 0 8px 0; padding: 10px 12px;">
+          <div class="mitigation-header" style="margin-bottom: 4px; padding-bottom: 2px;">
+            <div class="mitigation-title" style="font-size: 10.5pt;"><strong>P01 — Rétention J+7 &lt; 20% en
+                Bêta</strong></div>
+            <span class="badge badge-red">Crit. 15</span>
+          </div>
+          <p style="font-size: 8.5pt; margin-bottom: 0;">Onboarding trop complexe ou boucle d'engagement trop faible.
+            Propriétaire : <strong>Product Manager</strong></p>
+        </div>
+
+        <div class="mitigation-card red" style="margin: 4px 0 8px 0; padding: 10px 12px;">
+          <div class="mitigation-header" style="margin-bottom: 4px; padding-bottom: 2px;">
+            <div class="mitigation-title" style="font-size: 10.5pt;"><strong>P03 — Gameplay non engageant</strong></div>
+            <span class="badge badge-red">Crit. 15</span>
+          </div>
+          <p style="font-size: 8.5pt; margin-bottom: 0;">Cours déguisé sans aspect ludique fun et authentique.
+            Propriétaire : <strong>Game Designer</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>03</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PAGE 4  MÉTHODOLOGIE & POSTURES STRATÉGIQUES
+     ============================================================ -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§03 . Méthodologie &amp; Tolérances</div>
+    </div>
+
+    <span class="section-num">Section 03</span>
+    <h1 class="section-title">Méthodologie &amp; <span class="accent">Tolérance</span></h1>
+    <p class="section-deck">Détermination mathématique de la criticité des risques et structuration des postures de
+      réponse.</p>
+
+    <h2>Évaluation Probabilité × Impact</h2>
+    <p>Chaque risque est évalué selon une matrice croisant la probabilité d'occurrence et l'impact sur le projet, sur
+      une échelle de 1 à 5. La <strong>Criticité = Probabilité × Impact</strong> (Score final de 1 à 25).</p>
+
+    <div class="two-col" style="margin-bottom: 8px;">
+      <div>
+        <h3 style="margin-top:0;">Échelle de Probabilité (P)</h3>
+        <table style="margin-top:6px;">
+          <thead>
+            <tr>
+              <th style="width: 25px;">P</th>
+              <th>Niveau</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1</strong></td>
+              <td>Très faible</td>
+              <td>Probabilité &lt; 5%</td>
+            </tr>
+            <tr>
+              <td><strong>2</strong></td>
+              <td>Faible</td>
+              <td>Probabilité entre 5% et 20%</td>
+            </tr>
+            <tr>
+              <td><strong>3</strong></td>
+              <td>Moyenne</td>
+              <td>Probabilité entre 20% et 50%</td>
+            </tr>
+            <tr>
+              <td><strong>4</strong></td>
+              <td>Élevée</td>
+              <td>Probabilité entre 50% et 80%</td>
+            </tr>
+            <tr>
+              <td><strong>5</strong></td>
+              <td>Très élevée</td>
+              <td>Probabilité &gt; 80%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <h3 style="margin-top:0;">Échelle d'Impact (I)</h3>
+        <table style="margin-top:6px;">
+          <thead>
+            <tr>
+              <th style="width: 25px;">I</th>
+              <th>Niveau</th>
+              <th>Impact direct estimé</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1</strong></td>
+              <td>Mineur</td>
+              <td>&lt; 2 k€ d'impact / &lt; 1 semaine de retard</td>
+            </tr>
+            <tr>
+              <td><strong>2</strong></td>
+              <td>Faible</td>
+              <td>2 - 10 k€ d'impact / 1 - 2 semaines de retard</td>
+            </tr>
+            <tr>
+              <td><strong>3</strong></td>
+              <td>Modéré</td>
+              <td>10 - 30 k€ d'impact / 2 - 4 semaines de retard</td>
+            </tr>
+            <tr>
+              <td><strong>4</strong></td>
+              <td>Majeur</td>
+              <td>30 - 80 k€ d'impact / 1 - 2 mois de retard</td>
+            </tr>
+            <tr>
+              <td><strong>5</strong></td>
+              <td>Critique</td>
+              <td>&gt; 80 k€ d'impact / mort du projet</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h2>Nos 4 postures stratégiques</h2>
+    <div class="two-col" style="margin-top: 10px;">
+      <div class="stat pink" style="padding: 14px;">
+        <div class="stat-value" style="font-size: 14pt;">Éviter</div>
+        <div class="stat-note" style="margin-top:4px; font-size: 9pt;">Refuser catégoriquement de s'exposer à un risque.
+          Par exemple, refuser le stockage de données sensibles non indispensables pour éliminer totalement le risque
+          réglementaire ou de fuite.</div>
+      </div>
+      <div class="stat blue" style="padding: 14px;">
+        <div class="stat-value" style="font-size: 14pt;">Réduire</div>
+        <div class="stat-note" style="margin-top:4px; font-size: 9pt;">Mettre en place des mesures de mitigation actives
+          pour réduire la probabilité ou l'impact (ex: architecture multi-LLM, systèmes de cache, redondance de
+          serveurs).</div>
+      </div>
+      <div class="stat lavender" style="padding: 14px;">
+        <div class="stat-value" style="font-size: 14pt;">Transférer</div>
+        <div class="stat-note" style="margin-top:4px; font-size: 9pt;">Déléguer la gestion opérationnelle ou financière
+          à un tiers externe. Par exemple, confier les audits cyber ou l'hébergement cloud à des prestataires réputés et
+          assurés.</div>
+      </div>
+      <div class="stat green" style="padding: 14px;">
+        <div class="stat-value" style="font-size: 14pt;">Accepter</div>
+        <div class="stat-note" style="margin-top:4px; font-size: 9pt;">Assumer les conséquences si le coût de mitigation
+          dépasse les pertes estimées, tout en conservant une surveillance simple des indicateurs clés (KRI).</div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>04</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PAGE 5  REGISTRE DES RISQUES - TECHNIQUES (T) & PRODUIT (P)
+     ============================================================ -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§04 . Registre partiel T &amp; P</div>
+    </div>
+
+    <span class="section-num">Section 04</span>
+    <h1 class="section-title">Registre : Risques <span class="accent">Techniques &amp; Produit</span></h1>
+    <p class="section-deck">Analyse détaillée des causes racines, criticité intrinsèque et attribution opérationnelle.
+    </p>
+
+    <h2>4.1 Risques Techniques (T)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 35px;">ID</th>
+          <th style="width: 140px;">Risque</th>
+          <th>Cause Racine</th>
+          <th style="width: 20px; text-align:center;">P</th>
+          <th style="width: 20px; text-align:center;">I</th>
+          <th style="width: 30px; text-align:center;">Crit.</th>
+          <th style="width: 50px; text-align:center;">Niv.</th>
+          <th style="width: 120px;">Propriétaire</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>T01</strong></td>
+          <td><strong>Retard noyau PBS3 (RAG / IA)</strong></td>
+          <td>Intégration complexe LlamaIndex + Pydantic AI</td>
+          <td style="text-align:center;">4</td>
+          <td style="text-align:center;">5</td>
+          <td style="text-align:center;"><strong>20</strong></td>
+          <td style="text-align:center;"><span class="badge badge-red">🔴</span></td>
+          <td><span class="owner-badge">Tech Lead</span></td>
+        </tr>
+        <tr>
+          <td><strong>T02</strong></td>
+          <td><strong>Explosion des coûts d'API LLM</strong></td>
+          <td>Volume de tokens hors de contrôle ou scale viral</td>
+          <td style="text-align:center;">4</td>
+          <td style="text-align:center;">4</td>
+          <td style="text-align:center;"><strong>16</strong></td>
+          <td style="text-align:center;"><span class="badge badge-red">🔴</span></td>
+          <td><span class="owner-badge">Tech Lead / CFO</span></td>
+        </tr>
+        <tr>
+          <td><strong>T03</strong></td>
+          <td><strong>Faille de sécurité / Fuite de données</strong></td>
+          <td>Vulnérabilité majeure non détectée sur le backend</td>
+          <td style="text-align:center;">2</td>
+          <td style="text-align:center;">5</td>
+          <td style="text-align:center;"><strong>10</strong></td>
+          <td style="text-align:center;"><span class="badge badge-yellow">🟡</span></td>
+          <td><span class="owner-badge">Cyber Lead</span></td>
+        </tr>
+        <tr>
+          <td><strong>T04</strong></td>
+          <td><strong>Crash serveur / Problème de scaling</strong></td>
+          <td>Pic d'audience soudain mal absorbé par Supabase/AWS</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;">4</td>
+          <td style="text-align:center;"><strong>12</strong></td>
+          <td style="text-align:center;"><span class="badge badge-yellow">🟡</span></td>
+          <td><span class="owner-badge">DevOps</span></td>
+        </tr>
+        <tr>
+          <td><strong>T05</strong></td>
+          <td><strong>Dette technique / Sur-ingénierie MCP</strong></td>
+          <td>Volonté de trop bien faire, perte de focus sur le MVP</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;">4</td>
+          <td style="text-align:center;"><strong>12</strong></td>
+          <td style="text-align:center;"><span class="badge badge-yellow">🟡</span></td>
+          <td><span class="owner-badge">Tech Lead</span></td>
+        </tr>
+        <tr>
+          <td><strong>T06</strong></td>
+          <td><strong>Perte de matériel ou de données</strong></td>
+          <td>Absence de politique stricte de backup cloud/local</td>
+          <td style="text-align:center;">2</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;"><strong>6</strong></td>
+          <td style="text-align:center;"><span class="badge badge-green">🟢</span></td>
+          <td><span class="owner-badge">DevOps</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>4.2 Risques Produit (P)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 35px;">ID</th>
+          <th style="width: 140px;">Risque</th>
+          <th>Cause Racine</th>
+          <th style="width: 20px; text-align:center;">P</th>
+          <th style="width: 20px; text-align:center;">I</th>
+          <th style="width: 30px; text-align:center;">Crit.</th>
+          <th style="width: 50px; text-align:center;">Niv.</th>
+          <th style="width: 120px;">Propriétaire</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>P01</strong></td>
+          <td><strong>Rétention J+7 &lt; 20% au Jalon 2</strong></td>
+          <td>Onboarding laborieux, boucle d'engagement faible</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;">5</td>
+          <td style="text-align:center;"><strong>15</strong></td>
+          <td style="text-align:center;"><span class="badge badge-red">🔴</span></td>
+          <td><span class="owner-badge">Product Manager</span></td>
+        </tr>
+        <tr>
+          <td><strong>P02</strong></td>
+          <td><strong>Algorithme SRS (répétition) inefficace</strong></td>
+          <td>Modèle de mémorisation mal calibré pour l'utilisateur</td>
+          <td style="text-align:center;">2</td>
+          <td style="text-align:center;">5</td>
+          <td style="text-align:center;"><strong>10</strong></td>
+          <td style="text-align:center;"><span class="badge badge-yellow">🟡</span></td>
+          <td><span class="owner-badge">Data Scientist</span></td>
+        </tr>
+        <tr>
+          <td><strong>P03</strong></td>
+          <td><strong>Gameplay mou ou non engageant</strong></td>
+          <td>Difficulté à injecter du vrai fun dans les cours</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;">5</td>
+          <td style="text-align:center;"><strong>15</strong></td>
+          <td style="text-align:center;"><span class="badge badge-red">🔴</span></td>
+          <td><span class="owner-badge">Game Designer</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>05</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PAGE 6  REGISTRE DES RISQUES - HUMAINS & ORG (H)
+     ============================================================ -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§05 . Registre partiel H</div>
+    </div>
+
+    <span class="section-num">Section 05</span>
+    <h1 class="section-title">Registre : Humains &amp; <span class="accent">Organisationnels</span></h1>
+    <p class="section-deck">L'aspect humain constitue 85% de notre budget. Une gestion stricte du bien-être et de
+      l'alignement est vitale.</p>
+
+    <h2>4.3 Risques Humains &amp; Organisationnels (H)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 35px;">ID</th>
+          <th style="width: 150px;">Risque</th>
+          <th>Cause Racine</th>
+          <th style="width: 20px; text-align:center;">P</th>
+          <th style="width: 20px; text-align:center;">I</th>
+          <th style="width: 30px; text-align:center;">Crit.</th>
+          <th style="width: 50px; text-align:center;">Niv.</th>
+          <th style="width: 120px;">Propriétaire</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>H01</strong></td>
+          <td><strong>Turnover d'un développeur clé</strong></td>
+          <td>Charge mentale élevée, salaire d'amorçage bas</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;">4</td>
+          <td style="text-align:center;"><strong>12</strong></td>
+          <td style="text-align:center;"><span class="badge badge-yellow">🟡</span></td>
+          <td><span class="owner-badge">CEO</span></td>
+        </tr>
+        <tr>
+          <td><strong>H02</strong></td>
+          <td><strong>Épuisement de l'équipe (Burnout)</strong></td>
+          <td>Polyvalence extrême demandée sur seulement 7 FTE</td>
+          <td style="text-align:center;">4</td>
+          <td style="text-align:center;">4</td>
+          <td style="text-align:center;"><strong>16</strong></td>
+          <td style="text-align:center;"><span class="badge badge-red">🔴</span></td>
+          <td><span class="owner-badge">Project Manager</span></td>
+        </tr>
+        <tr>
+          <td><strong>H03</strong></td>
+          <td><strong>Recrutement difficile sur l'IA</strong></td>
+          <td>Marché ultra-tendu, salaires non compétitifs</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;"><strong>9</strong></td>
+          <td style="text-align:center;"><span class="badge badge-green">🟢</span></td>
+          <td><span class="owner-badge">CEO</span></td>
+        </tr>
+        <tr>
+          <td><strong>H04</strong></td>
+          <td><strong>Absence imprévue (Maladie/Accident)</strong></td>
+          <td>Équipe très réduite sans doublons opérationnels</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;">4</td>
+          <td style="text-align:center;"><strong>12</strong></td>
+          <td style="text-align:center;"><span class="badge badge-yellow">🟡</span></td>
+          <td><span class="owner-badge">Project Manager</span></td>
+        </tr>
+        <tr>
+          <td><strong>H05</strong></td>
+          <td><strong>Perte d'alignement / Mauvaise comm'</strong></td>
+          <td>Équipe en télétravail complet, manque de rituels</td>
+          <td style="text-align:center;">4</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;"><strong>12</strong></td>
+          <td style="text-align:center;"><span class="badge badge-yellow">🟡</span></td>
+          <td><span class="owner-badge">Project Manager</span></td>
+        </tr>
+        <tr>
+          <td><strong>H06</strong></td>
+          <td><strong>Sous-effectif prolongé sur la prod</strong></td>
+          <td>Échec de recrutement ou départ non remplacé vite</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;">5</td>
+          <td style="text-align:center;"><strong>15</strong></td>
+          <td style="text-align:center;"><span class="badge badge-red">🔴</span></td>
+          <td><span class="owner-badge">CEO / PM</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout" style="margin-top: 24px;">
+      <span class="callout-label">Focus Résilience Humaine</span>
+      <p>
+        Étant donné que notre équipe est restreinte, la perte d'un collaborateur ou le ralentissement dû à un burnout
+        (H02) impacterait immédiatement les délais du RAG (T01). Nos plans de mitigation intègrent le binômage pour
+        assurer la continuité opérationnelle.
+      </p>
+    </div>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>06</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PAGE 7  REGISTRE DES RISQUES - BUSINESS (B), FINANCIERS (F) & EXTERNES (E)
+     ============================================================ -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§06 . Registre partiel B, F &amp; E</div>
+    </div>
+
+    <span class="section-num">Section 06</span>
+    <h1 class="section-title">Registre : Business, Finance &amp; <span class="accent">Externes</span></h1>
+    <p class="section-deck">La viabilité à long terme dépend de l'adéquation au marché, du runway financier et de la
+      conformité réglementaire.</p>
+
+    <h2>4.4 Risques Business &amp; Growth (B)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 35px;">ID</th>
+          <th style="width: 150px;">Risque</th>
+          <th>Cause Racine</th>
+          <th style="width: 20px; text-align:center;">P</th>
+          <th style="width: 20px; text-align:center;">I</th>
+          <th style="width: 30px; text-align:center;">Crit.</th>
+          <th style="width: 50px; text-align:center;">Niv.</th>
+          <th style="width: 120px;">Propriétaire</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>B01</strong></td>
+          <td><strong>Rejet de la validation B2B (Jalon 4)</strong></td>
+          <td>Cycles de vente trop longs en milieu scolaire</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;"><strong>9</strong></td>
+          <td style="text-align:center;"><span class="badge badge-green">🟢</span></td>
+          <td><span class="owner-badge">Head of Sales</span></td>
+        </tr>
+        <tr>
+          <td><strong>B02</strong></td>
+          <td><strong>Coût d'Acquisition (CAC) trop haut</strong></td>
+          <td>Campagnes TikTok/Meta mal ciblées ou créas moyennes</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;">4</td>
+          <td style="text-align:center;"><strong>12</strong></td>
+          <td style="text-align:center;"><span class="badge badge-yellow">🟡</span></td>
+          <td><span class="owner-badge">Growth Manager</span></td>
+        </tr>
+        <tr>
+          <td><strong>B03</strong></td>
+          <td><strong>Croissance organique au point mort</strong></td>
+          <td>Rythme de contenu trop faible, communauté inactive</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;"><strong>9</strong></td>
+          <td style="text-align:center;"><span class="badge badge-green">🟢</span></td>
+          <td><span class="owner-badge">Community Mgr</span></td>
+        </tr>
+        <tr>
+          <td><strong>B04</strong></td>
+          <td><strong>Échec de la conversion Premium (&lt; 5%)</strong></td>
+          <td>Friction sur le paywall, pricing mal accepté</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;">4</td>
+          <td style="text-align:center;"><strong>12</strong></td>
+          <td style="text-align:center;"><span class="badge badge-yellow">🟡</span></td>
+          <td><span class="owner-badge">Product Manager</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>4.5 Risques Financiers (F) &amp; 4.6 Risques Externes (E)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 35px;">ID</th>
+          <th style="width: 150px;">Risque</th>
+          <th>Cause Racine</th>
+          <th style="width: 20px; text-align:center;">P</th>
+          <th style="width: 20px; text-align:center;">I</th>
+          <th style="width: 30px; text-align:center;">Crit.</th>
+          <th style="width: 50px; text-align:center;">Niv.</th>
+          <th style="width: 120px;">Propriétaire</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>F01</strong></td>
+          <td><strong>Dépassement du budget des 654k€</strong></td>
+          <td>Accumulation de petits retards, imprévus en cascade</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;">4</td>
+          <td style="text-align:center;"><strong>12</strong></td>
+          <td style="text-align:center;"><span class="badge badge-yellow">🟡</span></td>
+          <td><span class="owner-badge">CFO</span></td>
+        </tr>
+        <tr>
+          <td><strong>F02</strong></td>
+          <td><strong>Échec de la levée de fonds Série A</strong></td>
+          <td>KPIs métriques insatisfaisants, frilosité des VCs</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;">4</td>
+          <td style="text-align:center;"><strong>12</strong></td>
+          <td style="text-align:center;"><span class="badge badge-yellow">🟡</span></td>
+          <td><span class="owner-badge">CEO / CFO</span></td>
+        </tr>
+        <tr>
+          <td><strong>E01</strong></td>
+          <td><strong>Non-conformité RGPD / Sanction CNIL</strong></td>
+          <td>Mauvaise gestion des données mineurs, audit raté</td>
+          <td style="text-align:center;">2</td>
+          <td style="text-align:center;">5</td>
+          <td style="text-align:center;"><strong>10</strong></td>
+          <td style="text-align:center;"><span class="badge badge-yellow">🟡</span></td>
+          <td><span class="owner-badge">DPO / Cyber Lead</span></td>
+        </tr>
+        <tr>
+          <td><strong>E02</strong></td>
+          <td><strong>Crise d'image éthique (Dopamine)</strong></td>
+          <td>Concept "Hack dopamine" mal perçu par les parents</td>
+          <td style="text-align:center;">2</td>
+          <td style="text-align:center;">4</td>
+          <td style="text-align:center;"><strong>8</strong></td>
+          <td style="text-align:center;"><span class="badge badge-green">🟢</span></td>
+          <td><span class="owner-badge">Communication</span></td>
+        </tr>
+        <tr>
+          <td><strong>E03</strong></td>
+          <td><strong>Attaque de la concurrence frontale</strong></td>
+          <td>Pivot rapide d'un gros acteur de l'EdTech existant</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;"><strong>9</strong></td>
+          <td style="text-align:center;"><span class="badge badge-green">🟢</span></td>
+          <td><span class="owner-badge">Product Manager</span></td>
+        </tr>
+        <tr>
+          <td><strong>E04</strong></td>
+          <td><strong>Échec de la dynamique Open Source</strong></td>
+          <td>Manque de visibilité, documentation technique pauvre</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;">3</td>
+          <td style="text-align:center;"><strong>9</strong></td>
+          <td style="text-align:center;"><span class="badge badge-green">🟢</span></td>
+          <td><span class="owner-badge">Tech Lead</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>07</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PAGE 8  MATRICE DE CRITICITÉ PROBABILITÉ × IMPACT
+     ============================================================ -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§07 . Matrice de criticité</div>
+    </div>
+
+    <span class="section-num">Section 07</span>
+    <h1 class="section-title">Matrice <span class="accent">Probabilité × Impact</span></h1>
+    <p class="section-deck">Cartographie visuelle 5&times;5 de la sévérité des 25 risques consolidés de FlowLearn.</p>
+
+    <table class="heatmap-grid">
+      <thead>
+        <tr>
+          <th style="width: 140px;">P \ I</th>
+          <th>1. Mineur</th>
+          <th>2. Faible</th>
+          <th>3. Modéré</th>
+          <th>4. Majeur</th>
+          <th>5. Critique</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="y-label">5. Très Élevée</td>
+          <td class="green-zone"></td>
+          <td class="green-zone"></td>
+          <td class="amber-zone"></td>
+          <td class="red-zone"></td>
+          <td class="red-zone"></td>
+        </tr>
+        <tr>
+          <td class="y-label">4. Élevée</td>
+          <td class="green-zone"></td>
+          <td class="green-zone"></td>
+          <td class="amber-zone">H05</td>
+          <td class="red-zone">H02, T02</td>
+          <td class="red-zone">T01</td>
+        </tr>
+        <tr>
+          <td class="y-label">3. Moyenne</td>
+          <td class="green-zone"></td>
+          <td class="green-zone"></td>
+          <td class="green-zone">B01, B03, E03, H03, E04</td>
+          <td class="amber-zone">T04, T05, H01, H04, B02, B04, F01, F02</td>
+          <td class="red-zone">P01, P03, H06</td>
+        </tr>
+        <tr>
+          <td class="y-label">2. Faible</td>
+          <td class="green-zone"></td>
+          <td class="green-zone"></td>
+          <td class="green-zone">T06</td>
+          <td class="green-zone">E02</td>
+          <td class="amber-zone">T03, E01, P02</td>
+        </tr>
+        <tr>
+          <td class="y-label">1. Très Faible</td>
+          <td class="green-zone"></td>
+          <td class="green-zone"></td>
+          <td class="green-zone"></td>
+          <td class="green-zone"></td>
+          <td class="green-zone"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="two-col" style="margin-top: 20px;">
+      <div>
+        <h3>Priorités opérationnelles</h3>
+        <p style="font-size: 9.5pt;">
+          <strong>Zone Rouge (🔴 Criticité &ge; 15) :</strong> Traitement obligatoire immédiat. Plan budgétisé avec KRI
+          sur le dashboard hedomadaire.
+        </p>
+        <p style="font-size: 9.5pt;">
+          <strong>Zone Jaune (🟡 Criticité 10-14) :</strong> Alerte et monitoring. Mitigation recommandée active et
+          examen lors du Copil mensuel.
+        </p>
+        <p style="font-size: 9.5pt;">
+          <strong>Zone Verte (🟢 Criticité &lt; 10) :</strong> Veille simple et passive. Revue trimestrielle de
+          recalibrage.
+        </p>
+      </div>
+
+      <div class="callout" style="margin: 0;">
+        <span class="callout-label">Réserve de contingence active</span>
+        <p style="font-size: 9.5pt;">
+          L'enveloppe de <strong>98k€</strong> est allouée comme suit pour parer aux risques rouges et jaunes majeurs :
+        </p>
+        <ul style="margin-left: 14px; font-size: 8.5pt; color: var(--slate-700);">
+          <li><strong>Cyber &amp; RGPD (T03/E01)</strong> : 15 000 € sanctuarisés.</li>
+          <li><strong>Renfort dev freelance (H01/H02/H06)</strong> : 10 000 €.</li>
+          <li><strong>Dérive consommation API (T02)</strong> : 5 000 €.</li>
+          <li><strong>Pivot/Ajustement produit (P01/P03)</strong> : 10 000 €.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>08</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PAGE 9  VISUALISATIONS GRAPHIQUES (MERMAID)
+     ============================================================ -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§07b . Visualisations graphiques</div>
+    </div>
+
+    <span class="section-num">Section 07b</span>
+    <h1 class="section-title">Visualisations <span class="accent">Graphiques</span></h1>
+    <p class="section-deck">Représentation graphique de la répartition des risques par priorité d'action et par quadrant
+      d'exposition.</p>
+
+    <div class="two-col no-break">
+      <div style="border: 1px solid var(--slate-200); padding: 12px; border-radius: 8px; background: white;">
+        <h3 style="margin-top: 0; margin-bottom: 12px; text-align: center; font-size: 10pt;">Priorité d'Action</h3>
+        <pre class="mermaid" style="text-align: center;">
+graph TD
+    subgraph Red ["🔴 TRAITEMENT OBLIGATOIRE - Score >= 15"]
+        T01[T01: Retard RAG]
+        H02[H02: Burnout]
+        T02[T02: Surcoût LLM]
+        H06[H06: Sous-effectif]
+        P01[P01: Rétention D7]
+        P03[P03: Gameplay]
+    end
+    subgraph Yellow ["🟡 MITIGATION RECOMMANDÉE - Score 10-14"]
+        H05[H05: Comm]
+        T04[T04: Crash Scale]
+        T05[T05: Dette Tech]
+        H01[H01: Turnover]
+        B02[B02: CAC Élevé]
+        B04[B04: Échec Monétisation]
+        F01[F01: Budget Overshoot]
+        F02[F02: Échec Levée]
+        H04[H04: Absence Maladie]
+        T03[T03: Faille Cyber]
+        E01[E01: RGPD / CNIL]
+        P02[P02: Algo SRS]
+    end
+    subgraph Green ["🟢 SURVEILLANCE SIMPLE - Score &lt; 10"]
+        T06[T06: No Backup]
+        B01[B01: Échec B2B]
+        B03[B03: Organique Stagnante]
+        E03[E03: Concurrence]
+        H03[H03: Recrutement]
+        E04[E04: Échec Open Source]
+        E02[E02: Image Dopamine]
+    end
+    
+    style Red fill:#ffcccc,stroke:#ff3333,stroke-width:2px
+    style Yellow fill:#fff2cc,stroke:#ffcc00,stroke-width:2px
+    style Green fill:#d9ead3,stroke:#6aa84f,stroke-width:2px
+      </pre>
+      </div>
+
+      <div style="border: 1px solid var(--slate-200); padding: 12px; border-radius: 8px; background: white;">
+        <h3 style="margin-top: 0; margin-bottom: 12px; text-align: center; font-size: 10pt;">Exposition Quadrant (P × I)
+        </h3>
+        <pre class="mermaid" style="text-align: center;">
+quadrantChart
+    title Matrice des Risques FlowLearn
+    x-axis "Impact Faible" --> "Impact Critique"
+    y-axis "Probabilité Faible" --> "Probabilité Élevée"
+    quadrant-1 "🔴 CRITIQUE - Action Obligatoire"
+    quadrant-2 "🟡 IMPORTANT - Alerte"
+    quadrant-3 "🟢 ACCEPTABLE - Veille Simple"
+    quadrant-4 "🟡 IMPORTANT - Mitigation Active"
+    T01 - Retard RAG/IA Core: [0.92, 0.76]
+    T02 - Surcoût APIs LLM: [0.74, 0.76]
+    H02 - Burnout Équipe: [0.74, 0.76]
+    H05 - Comm Télétravail: [0.40, 0.76]
+    P01 - Rétention D7 Faible: [0.92, 0.55]
+    P03 - Gameplay Non Engageant: [0.92, 0.55]
+    H06 - Sous-effectif Prolongé: [0.92, 0.55]
+    T04 - Indisponibilité Cloud: [0.74, 0.45]
+    T05 - Dette Tech MCP: [0.74, 0.45]
+    H01 - Turnover Dev: [0.74, 0.45]
+    H04 - Absence Maladie: [0.74, 0.45]
+    B02 - CAC Paid trop Élevé: [0.74, 0.45]
+    B04 - Échec Monétisation: [0.74, 0.45]
+    F01 - Dépassement Budget: [0.74, 0.45]
+    F02 - Échec Series A: [0.74, 0.45]
+    T03 - Faille Cyber: [0.92, 0.34]
+    E01 - Non-conformité GDPR: [0.92, 0.34]
+    P02 - Algo SRS Inefficace: [0.92, 0.34]
+    E02 - Image Éthique Dopamine: [0.74, 0.34]
+    T06 - Perte Données/No Backup: [0.40, 0.34]
+    B01 - Échec Validation B2B: [0.40, 0.40]
+    B03 - Organique Stagnante: [0.40, 0.40]
+    E03 - Concurrence EdTech: [0.40, 0.40]
+    H03 - Recrutement Difficile: [0.40, 0.40]
+    E04 - Échec Open Source: [0.40, 0.40]
+      </pre>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>09</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PAGE 10  TIMELINE DU CYCLE DE VIGILANCE (24 MOIS)
+     ============================================================ -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§08 . Calendrier de vigilance</div>
+    </div>
+
+    <span class="section-num">Section 08</span>
+    <h1 class="section-title">Timeline &amp; cycle de <span class="accent">vigilance</span></h1>
+    <p class="section-deck">L'exposition aux risques évolue selon les étapes clés de croissance du projet. Notre
+      calendrier de suivi sur 24 mois.</p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-month">PHASE 1 . MOIS 1 À 6 (PRINTEMPS - ÉTÉ 2026)</div>
+        <div class="tl-title">Les Fondations — Focus "Exécution Technique"</div>
+        <div class="tl-text">
+          Validation rapide du RAG et prototypage IA. <strong>T01 (RAG)</strong> et <strong>P03 (Gameplay)</strong> sont
+          à leur maximum de probabilité.
+          Passage obligatoire des <strong>Gates 1 &amp; 2 (M3-M4)</strong> : si la rétention ou le RAG échouent, le
+          projet s'arrête.
+          Audits obligatoires de conformité <strong>E01 (RGPD)</strong> et <strong>T03 (Cyber)</strong> avant ouverture
+          au public.
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-month">PHASE 2 . MOIS 7 À 12 (AUTOMNE 2026 - DÉBUT 2027)</div>
+        <div class="tl-title">La Traction — Focus "Gestion du Scale"</div>
+        <div class="tl-text">
+          Première croissance significative des utilisateurs. Risque majeur de dérive des coûts <strong>T02 (APIs
+            LLM)</strong> nécessitant du caching.
+          Passage de la <strong>Gate 4 (M10)</strong> (Validation du pilote B2B en établissement scolaire).
+          Optimisation du coût d'acquisition payant <strong>B02</strong> et du taux de conversion premium
+          <strong>B04</strong>.
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-month">PHASE 3 . MOIS 13 À 20 (COURANT 2027)</div>
+        <div class="tl-title">Le Passage à l'Échelle — Focus "International"</div>
+        <div class="tl-text">
+          Robustesse de l'infrastructure serveurs <strong>T04</strong> face à l'ouverture internationale.
+          Dépôt du dossier et préparation active de la levée de fonds Série A <strong>F02</strong>. Veille
+          concurrentielle <strong>E03</strong>.
+          Plan de nettoyage de la dette technique <strong>T05</strong> accumulée durant la phase de traction.
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-month">PHASE 4 . MOIS 21 À 24 (FIN 2027 - MARS 2028)</div>
+        <div class="tl-title">La Pérennisation — Focus "Financement"</div>
+        <div class="tl-text">
+          Closing de la Série A. En cas de gel du marché du capital-risque, déclenchement du plan "Lean/Bootstrap" de
+          contingence.
+          Atterrissage budgétaire consolidé <strong>F01</strong> et bilan final de l'exécution sur le périmètre des 24
+          mois.
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>10</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PAGE 10 PLANS DE MITIGATION DÉTAILLÉS (T01 & H02)
+     ============================================================ -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§09 . Plans détaillés T01 &amp; H02</div>
+    </div>
+
+    <span class="section-num">Section 09</span>
+    <h1 class="section-title">Plans détaillés de <span class="accent">mitigation</span></h1>
+    <p class="section-deck">Fiches actions opérationnelles prêtes à être déployées au moindre signal d'alarme
+      hedomadaire.</p>
+
+    <div class="mitigation-card red">
+      <div class="mitigation-header">
+        <div class="mitigation-title">T01 — Retard noyau PBS3 (RAG / IA Core)</div>
+        <div class="mitigation-meta">Fenêtre : M2 à M4 | Propriétaire : Tech Lead</div>
+      </div>
+      <div class="mitigation-section">
+        <strong>Indicateurs d'alerte (KRI) :</strong>
+        <p style="margin-bottom:6px;">Avancement du sprint des tâches PBS3 &lt; 70% à la fin du Mois 3, ou retard cumulé
+          sur les dailies &gt; 5 jours sur la brique de parsing des PDF.</p>
+      </div>
+      <div class="two-col" style="margin: 4px 0 0 0;">
+        <div class="mitigation-section" style="margin-top:0;">
+          <strong>Actions Préventives (Shield) :</strong>
+          <ul>
+            <li>Injection d'un buffer de 2 semaines d'office dans la roadmap M2-M3.</li>
+            <li>Création d'un prototype jetable LlamaIndex dès la semaine 1 pour dérisquer.</li>
+            <li>Spike technique immédiat sur Pydantic AI / Groq.</li>
+          </ul>
+        </div>
+        <div class="mitigation-section" style="margin-top:0;">
+          <strong>Actions Correctives (Triggered) :</strong>
+          <ul>
+            <li><strong>Plan A :</strong> Simplification du scope RAG (système de cache lourd et retrieval simple).</li>
+            <li><strong>Plan B :</strong> Fallback direct vers OpenAI ou Mistral si Groq ou notre API subit des baisses
+              de performances.</li>
+            <li><strong>Plan C :</strong> Recrutement hedomadaire d'un freelance senior.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mitigation-card red" style="margin-top: 20px;">
+      <div class="mitigation-header">
+        <div class="mitigation-title">H02 — Épuisement de l'équipe (Burnout)</div>
+        <div class="mitigation-meta">Fenêtre : M6 à M20 | Propriétaire : Project Manager</div>
+      </div>
+      <div class="mitigation-section">
+        <strong>Indicateurs d'alerte (KRI) :</strong>
+        <p style="margin-bottom:6px;">Heures supplémentaires cumulées de l'équipe &gt; 10h/semaine pendant 3 semaines
+          consécutives, ou score du Weekly Mood &lt; 6/10.</p>
+      </div>
+      <div class="two-col" style="margin: 4px 0 0 0;">
+        <div class="mitigation-section" style="margin-top:0;">
+          <strong>Actions Préventives (Shield) :</strong>
+          <ul>
+            <li>Planification des sprints basée sur une capacité plafonnée à 80% maximum de la charge théorique.</li>
+            <li>Gel immédiat des fonctionnalités "nice-to-have" au moindre signal.</li>
+            <li>1:1 hebdomadaires focalisés sur la charge mentale et non sur la performance.</li>
+          </ul>
+        </div>
+        <div class="mitigation-section" style="margin-top:0;">
+          <strong>Actions Correctives (Triggered) :</strong>
+          <ul>
+            <li><strong>Plan A :</strong> Gel complet d'un sprint sur quatre dédié exclusivement à la technique ou au
+              repos (Sprint de respiration).</li>
+            <li><strong>Plan B :</strong> Externalisation rapide de briques secondaires à des prestataires via
+              l'enveloppe de contingence.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>11</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PAGE 12 PLANS DÉTAILLÉS (H06, H04, H05)
+     ============================================================ -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§09b . Plans détaillés H &amp; Org</div>
+    </div>
+
+    <span class="section-num">Section 09b</span>
+    <h1 class="section-title">Plans de mitigation : <span class="accent">Ressources Humaines</span></h1>
+    <p class="section-deck">Fiches actions opérationnelles pour sécuriser l'alignement et la continuité de l'équipe
+      projet.</p>
+
+    <div class="mitigation-card red" style="margin: 4px 0 8px 0;">
+      <div class="mitigation-header" style="padding-bottom: 4px; margin-bottom: 6px;">
+        <div class="mitigation-title" style="font-size: 11pt;">H06 — Sous-effectif prolongé (Échec de recrutement /
+          Départ)</div>
+        <div class="mitigation-meta">Fenêtre : Continu | Propriétaire : CEO</div>
+      </div>
+      <p style="font-size: 8.5pt; margin-bottom: 4px;"><strong>Indicateur (KRI) :</strong> Poste critique vacant depuis
+        plus de 45 jours, ou départ d'un dev clé.</p>
+      <div class="two-col" style="margin-top:4px;">
+        <div class="mitigation-section" style="margin-top:0;">
+          <strong>Actions Préventives :</strong>
+          <ul style="font-size: 8.5pt; margin-left: 12px;">
+            <li>Processus d'onboarding standardisé pour une mise en production en moins de 5 jours.</li>
+            <li>Vivier de freelances activables de confiance en réserve.</li>
+          </ul>
+        </div>
+        <div class="mitigation-section" style="margin-top:0;">
+          <strong>Actions Correctives :</strong>
+          <ul style="font-size: 8.5pt; margin-left: 12px;">
+            <li>Recours immédiat à un freelance du réseau pour couvrir le transit.</li>
+            <li>Réallocation immédiate des sprints et gel du backlog avec le PM.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mitigation-card yellow" style="margin: 4px 0 8px 0;">
+      <div class="mitigation-header" style="padding-bottom: 4px; margin-bottom: 6px;">
+        <div class="mitigation-title" style="font-size: 11pt;">H04 — Absence Imprévue Majeure (Maladie / Accident)</div>
+        <div class="mitigation-meta">Fenêtre : Continu | Propriétaire : Project Manager</div>
+      </div>
+      <p style="font-size: 8.5pt; margin-bottom: 4px;"><strong>Indicateur (KRI) :</strong> Arrêt maladie soudain d'un
+        membre clé de l'équipe technique sans doublon.</p>
+      <div class="two-col" style="margin-top:4px;">
+        <div class="mitigation-section" style="margin-top:0;">
+          <strong>Actions Préventives :</strong>
+          <ul style="font-size: 8.5pt; margin-left: 12px;">
+            <li>Partage de connaissances : sessions hebdomadaires de binômage sur les briques critiques.</li>
+            <li>Documentation asynchrone stricte et centralisée (Notion/Github Wiki).</li>
+          </ul>
+        </div>
+        <div class="mitigation-section" style="margin-top:0;">
+          <strong>Actions Correctives :</strong>
+          <ul style="font-size: 8.5pt; margin-left: 12px;">
+            <li>Revue instantanée des objectifs du sprint : transfert des priorités sur le maintien de l'existant.</li>
+            <li>Alerte hedomadaire des parties prenantes.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mitigation-card yellow" style="margin: 4px 0 4px 0;">
+      <div class="mitigation-header" style="padding-bottom: 4px; margin-bottom: 6px;">
+        <div class="mitigation-title" style="font-size: 11pt;">H05 — Mauvaise communication interne liée au Télétravail
+        </div>
+        <div class="mitigation-meta">Fenêtre : M1 à M6 | Propriétaire : Project Manager</div>
+      </div>
+      <p style="font-size: 8.5pt; margin-bottom: 4px;"><strong>Indicateur (KRI) :</strong> Retards de livraison de specs
+        répétés, baisse flagrante de participation sur Slack/Discord.</p>
+      <div class="two-col" style="margin-top:4px;">
+        <div class="mitigation-section" style="margin-top:0;">
+          <strong>Actions Préventives :</strong>
+          <ul style="font-size: 8.5pt; margin-left: 12px;">
+            <li>Daily standups stricts et rythmés de 15 minutes max tous les matins.</li>
+            <li>Outils collaboratifs visuels et structurés (Linear, Notion, Miro).</li>
+          </ul>
+        </div>
+        <div class="mitigation-section" style="margin-top:0;">
+          <strong>Actions Correctives :</strong>
+          <ul style="font-size: 8.5pt; margin-left: 12px;">
+            <li>Mise à plat des flux de travail lors d'une rétrospective d'urgence.</li>
+            <li>Organisation d'un team building en physique pour recréer du lien.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>12</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PAGE 13 TABLEAU DE BORD DES KEY RISK INDICATORS (KRI)
+     ============================================================ -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§10 . Dashboard KRI</div>
+    </div>
+
+    <span class="section-num">Section 10</span>
+    <h1 class="section-title">Tableau de bord des <span class="accent">Indicateurs (KRI)</span></h1>
+    <p class="section-deck">Nos détecteurs de fumée mesurés mensuellement. Ils déclenchent la gouvernance d'urgence.</p>
+
+    <table style="font-size: 8pt; margin-top: 8px;">
+      <thead>
+        <tr>
+          <th style="width: 80px;">Catégorie</th>
+          <th style="width: 50px;">Code</th>
+          <th>Indicateur Mesuré</th>
+          <th style="width: 90px; color: #059669;">Vert (Ok)</th>
+          <th style="width: 90px; color: #D97706;">Jaune (Vigilance)</th>
+          <th style="width: 90px; color: #DC2626;">Rouge (Alerte)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-weight:600;">Technique</td>
+          <td>KRI-T1</td>
+          <td>Avancement du noyau PBS3 (RAG)</td>
+          <td>&ge; 80%</td>
+          <td>60% - 80%</td>
+          <td>&lt; 60%</td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;">Technique</td>
+          <td>KRI-T2</td>
+          <td>Dérive budget API LLM / mois</td>
+          <td>Dans les clous</td>
+          <td>+30% vs prévu</td>
+          <td>+50% ou plus</td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;">Technique</td>
+          <td>KRI-T3</td>
+          <td>Uptime de l'infrastructure</td>
+          <td>&ge; 99.9%</td>
+          <td>99.0% - 99.9%</td>
+          <td>&lt; 99.0%</td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;">Technique</td>
+          <td>KRI-T4</td>
+          <td>Latence p95 du backend</td>
+          <td>&lt; 300 ms</td>
+          <td>300 - 1000 ms</td>
+          <td>&gt; 1000 ms</td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;">Technique</td>
+          <td>KRI-T5</td>
+          <td>Failles de sécurité critiques (Snyk)</td>
+          <td>0</td>
+          <td>1 à 2</td>
+          <td>&ge; 3</td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;">Produit</td>
+          <td>KRI-P1</td>
+          <td>Taux de rétention J+1 (Bêta)</td>
+          <td>&ge; 50%</td>
+          <td>35% - 50%</td>
+          <td>&lt; 35%</td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;">Produit</td>
+          <td>KRI-P2</td>
+          <td>Taux de rétention J+7 (Bêta)</td>
+          <td>&ge; 30%</td>
+          <td>20% - 30%</td>
+          <td>&lt; 20%</td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;">Produit</td>
+          <td>KRI-P3</td>
+          <td>Taux de rétention J+30 (Bêta)</td>
+          <td>&ge; 15%</td>
+          <td>10% - 15%</td>
+          <td>&lt; 10%</td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;">Produit</td>
+          <td>KRI-P4</td>
+          <td>Durée moyenne d'une session</td>
+          <td>&ge; 6 min</td>
+          <td>4 - 6 min</td>
+          <td>&lt; 4 min</td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;">Produit</td>
+          <td>KRI-P5</td>
+          <td>Net Promoter Score (NPS)</td>
+          <td>&ge; 30</td>
+          <td>10 - 30</td>
+          <td>&lt; 10</td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;">Humain</td>
+          <td>KRI-H1</td>
+          <td>Heures sup déclarées par semaine</td>
+          <td>&lt; 5 h</td>
+          <td>5 - 10 h</td>
+          <td>&gt; 10 h</td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;">Humain</td>
+          <td>KRI-H2</td>
+          <td>Taux de tickets en retard</td>
+          <td>&lt; 15%</td>
+          <td>15% - 30%</td>
+          <td>&gt; 30%</td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;">Humain</td>
+          <td>KRI-H3</td>
+          <td>Mood Score de l'équipe</td>
+          <td>&ge; 7/10</td>
+          <td>6 - 7/10</td>
+          <td>&lt; 6/10</td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;">Humain</td>
+          <td>KRI-H4</td>
+          <td>Turnover d'équipe (départs)</td>
+          <td>0</td>
+          <td>1 départ</td>
+          <td>&ge; 2 départs</td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;">Business</td>
+          <td>KRI-B1</td>
+          <td>CAC payé (TikTok / Meta)</td>
+          <td>&le; 2 €</td>
+          <td>2 - 5 €</td>
+          <td>&gt; 5 €</td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;">Business</td>
+          <td>KRI-B2</td>
+          <td>ROAS (Retour sur dépenses pub)</td>
+          <td>&ge; 1.5</td>
+          <td>1.0 - 1.5</td>
+          <td>&lt; 1.0</td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;">Business</td>
+          <td>KRI-B3</td>
+          <td>Conversion Premium</td>
+          <td>&ge; 10%</td>
+          <td>5% - 10%</td>
+          <td>&lt; 5%</td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;">Finance</td>
+          <td>KRI-F1</td>
+          <td>Burn rate mensuel effectif</td>
+          <td>Conforme</td>
+          <td>100% - 110%</td>
+          <td>&gt; 110%</td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;">Finance</td>
+          <td>KRI-F2</td>
+          <td>Runway financier disponible</td>
+          <td>&ge; 9 mois</td>
+          <td>6 - 9 mois</td>
+          <td>&lt; 6 mois</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout" style="margin-top: 14px;">
+      <span class="callout-label">Règles de gouvernance opérationnelle</span>
+      <p style="font-size: 9pt;">
+        <strong>Déclencheur rouge (🔴) :</strong> Un seul KRI au rouge active la réunion d'urgence du Comité Projet sous
+        48h.
+      </p>
+      <p style="font-size: 9pt; margin-top:4px;">
+        <strong>Cumul de jaunes (🟡) :</strong> Trois KRI au jaune au cours du même mois équivalent à un déclencheur
+        rouge et imposent des actions correctives immédiates.
+      </p>
+    </div>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>13</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PAGE 14 PROCESSUS DE GESTION & CYCLE DE VIE
+     ============================================================ -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§11 . Processus de gestion</div>
+    </div>
+
+    <span class="section-num">Section 11</span>
+    <h1 class="section-title">Processus de gestion &amp; <span class="accent">Cycle de vie</span></h1>
+    <p class="section-deck">Le cycle de vie d'un risque chez FlowLearn et le processus d'escalade en cas d'aggravation.
+    </p>
+
+    <div class="no-break"
+      style="border: 1px solid var(--slate-200); padding: 16px; border-radius: 8px; background: white; margin: 20px 0;">
+      <h3 style="margin-top: 0; margin-bottom: 16px; text-align: center;">Cycle de vie d'un risque chez FlowLearn</h3>
+      <pre class="mermaid" style="text-align: center;">
+flowchart TD
+  A["1. Identification<br/>(Brainstorming permanent)"] --> B["2. Évaluation<br/>Calcul P × I"]
+  B --> C{"3. Score de Criticité"}
+  C -->|"&ge; 15 🔴"| D["4a. Plan d'urgence obligatoire"]
+  C -->|"10-14 🟡"| E["4b. Mitigation active"]
+  C -->|"&lt; 10 🟢"| F["4c. Surveillance passive"]
+  D --> G["5. Attribution<br/>Propriétaire + Date limite"]
+  E --> G
+  F --> G
+  G --> H["6. Revue mensuelle<br/>(Analyse des KRI)"]
+  H --> I{"7. Statut du Risque ?"}
+  I -->|"Maîtrisé / Éteint"| J["✅ Clôture de la fiche"]
+  I -->|"Persistant"| H
+  I -->|"Aggravé / Menaçant"| K["⚠️ Escalade au niveau supérieur"]
+  K --> D
+    </pre>
+    </div>
+
+    <div class="callout" style="margin-top: 20px;">
+      <span class="callout-label">Gouvernance active</span>
+      <p>Ce processus garantit une réactivité maximale. Tout signal d'alarme déclenche immédiatement l'analyse
+        corrective par le propriétaire assigné, évitant ainsi l'effet de surprise et sécurisant l'atterrissage des
+        sprints.</p>
+    </div>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>14</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PAGE 15 GOUVERNANCE, ESCALADE & RACI
+     ============================================================ -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§12 . Gouvernance &amp; RACI</div>
+    </div>
+
+    <span class="section-num">Section 12</span>
+    <h1 class="section-title">Gouvernance, Escalade &amp; <span class="accent">RACI</span></h1>
+    <p class="section-deck">Définition des responsabilités opérationnelles et des circuits de décision.</p>
+
+    <div class="two-col">
+      <div>
+        <h2>Matrice RACI des risques</h2>
+        <p style="font-size: 9pt;">Attribution des rôles clés pour l'évaluation et la résolution :</p>
+        <table style="font-size: 7.2pt; margin-top: 6px;">
+          <thead>
+            <tr>
+              <th>Activité</th>
+              <th style="text-align:center;">Tech Lead</th>
+              <th style="text-align:center;">Product Mgr</th>
+              <th style="text-align:center;">Project Mgr</th>
+              <th style="text-align:center;">Cyber Lead</th>
+              <th style="text-align:center;">CEO/CFO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Identifier risque tech</strong></td>
+              <td style="text-align:center;"><strong>R</strong></td>
+              <td style="text-align:center;">C</td>
+              <td style="text-align:center;">A</td>
+              <td style="text-align:center;">C</td>
+              <td style="text-align:center;">I</td>
+            </tr>
+            <tr>
+              <td><strong>Identifier risque produit</strong></td>
+              <td style="text-align:center;">C</td>
+              <td style="text-align:center;"><strong>R</strong></td>
+              <td style="text-align:center;">A</td>
+              <td style="text-align:center;">I</td>
+              <td style="text-align:center;">I</td>
+            </tr>
+            <tr>
+              <td><strong>Identifier risque cyber</strong></td>
+              <td style="text-align:center;">C</td>
+              <td style="text-align:center;">I</td>
+              <td style="text-align:center;">A</td>
+              <td style="text-align:center;"><strong>R</strong></td>
+              <td style="text-align:center;">I</td>
+            </tr>
+            <tr>
+              <td><strong>Identifier risque RH/budget</strong></td>
+              <td style="text-align:center;">I</td>
+              <td style="text-align:center;">I</td>
+              <td style="text-align:center;"><strong>R</strong></td>
+              <td style="text-align:center;">I</td>
+              <td style="text-align:center;"><strong>A</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Évaluation P×I</strong></td>
+              <td style="text-align:center;">C</td>
+              <td style="text-align:center;">C</td>
+              <td style="text-align:center;"><strong>R</strong></td>
+              <td style="text-align:center;">C</td>
+              <td style="text-align:center;"><strong>A</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Piloter mitigation</strong></td>
+              <td style="text-align:center;"><strong>R</strong></td>
+              <td style="text-align:center;"><strong>R</strong></td>
+              <td style="text-align:center;">A</td>
+              <td style="text-align:center;"><strong>R</strong></td>
+              <td style="text-align:center;">I</td>
+            </tr>
+            <tr>
+              <td><strong>Décision contingence &gt;5k€</strong></td>
+              <td style="text-align:center;">I</td>
+              <td style="text-align:center;">C</td>
+              <td style="text-align:center;">C</td>
+              <td style="text-align:center;">C</td>
+              <td style="text-align:center;"><strong>R</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Communication crise</strong></td>
+              <td style="text-align:center;">I</td>
+              <td style="text-align:center;">C</td>
+              <td style="text-align:center;">A</td>
+              <td style="text-align:center;">C</td>
+              <td style="text-align:center;"><strong>R</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Reporting board</strong></td>
+              <td style="text-align:center;">I</td>
+              <td style="text-align:center;">I</td>
+              <td style="text-align:center;">A</td>
+              <td style="text-align:center;">I</td>
+              <td style="text-align:center;"><strong>R</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size: 7.5pt; font-style: italic; margin-top:4px;">
+          <strong>R</strong> : Responsable / <strong>A</strong> : Approuve / <strong>C</strong> : Consulté /
+          <strong>I</strong> : Informé
+        </p>
+      </div>
+
+      <div>
+        <h2>Niveaux d'Escalade : Qui tranche ?</h2>
+
+        <p style="font-size: 9pt; margin-bottom: 6px;">
+          <strong>Niveau 1 : Le Terrain Opérationnel (Hebdo) |</strong> Gère les risques verts (🟢). Gère les
+          ajustements techniques quotidiens directement dans Linear ou Sentry.
+        </p>
+        <p style="font-size: 9pt; margin-bottom: 6px;">
+          <strong>Niveau 2 : Le Comité de Pilotage (Mensuel) |</strong> Tranche sur les risques jaunes (🟡). Valide les
+          micro-réallocations de budget (&lt; 5k€) sur l'enveloppe de contingence.
+        </p>
+        <p style="font-size: 9pt; margin-bottom: 6px;">
+          <strong>Niveau 3 : Le Comité Projet (Trimestriel) |</strong> Pilote les risques rouges (🔴). Autorise le gel
+          temporaire de features ou l'activation de renforts externes.
+        </p>
+        <p style="font-size: 9pt; margin-bottom: 6px;">
+          <strong>Niveau 4 : Le Board de Direction (Urgence) |</strong> Activé en cas de crise majeure mettant en péril
+          la viabilité de FlowLearn.
+        </p>
+      </div>
+    </div>
+
+    <h2>Lien concret avec les autres livrables</h2>
+    <ul style="font-size: 9pt; margin-left: 20px; color: var(--slate-700);">
+      <li>📅 <strong>Planning :</strong> Intègre 2 semaines de buffer par phase pour absorber le risque T01 (RAG).</li>
+      <li>💰 <strong>Budget :</strong> Les 98k€ de contingence sont précisément alloués pour parer aux risques (Cyber,
+        RAG, RH, et Monétisation).</li>
+      <li>📢 <strong>Communication :</strong> Scripts de communication de crise pré-rédigés pour parer à E02 (Bad buzz
+        dopamine) ou T03 (Cyber).</li>
+    </ul>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>15</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PAGE 16 ALIGNEMENT & CONCLUSION
+     ============================================================ -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">Annexe . Alignement vision</div>
+    </div>
+
+    <span class="annex-marker">Annexe</span>
+    <span class="section-num">Alignement avec la Vision FlowLearn</span>
+    <h1 class="section-title">Protéger nos <span class="accent">piliers</span></h1>
+
+    <p class="lede" style="margin-top: 14px;">
+      Chaque ligne de ce document de pilotage a été pensée pour protéger les principes fondamentaux de notre projet :
+    </p>
+
+    <div class="two-col" style="margin-top: 16px;">
+      <div>
+        <h2>1. Réduction de la friction cognitive</h2>
+        <p style="font-size: 9pt;">
+          Garantir un produit fiable et fluide en luttant contre la mauvaise rétention (P01), les défauts de gameplay
+          (P03) ou la latence du backend (KRI-T4).
+        </p>
+        <h2>2. Viabilité économique</h2>
+        <p style="font-size: 9pt;">
+          Une discipline financière de fer sur notre consommation d'APIs IA (T02) afin de maximiser notre runway
+          financier avant la Série A.
+        </p>
+      </div>
+
+      <div>
+        <h2>3. L'ambition Open Source</h2>
+        <p style="font-size: 9pt;">
+          Sécuriser la documentation technique et la qualité du code pour faciliter les contributions externes (E04).
+        </p>
+        <h2>4. Protection éthique</h2>
+        <p style="font-size: 9pt;">
+          Encadrer strictement notre gamification pour éviter toute dérive addictive (boucles de dopamine E02) chez nos
+          jeunes utilisateurs.
+        </p>
+      </div>
+    </div>
+
+    <div class="closing-message">
+      <div class="signoff">
+        <span class="accent">"Il n'est pas de vent favorable<br>
+          pour celui qui ne sait pas où il va."</span>
+      </div>
+      <div class="sig-line">Sénèque</div>
+    </div>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>16</span>
+    </div>
+  </section>
+
+</body>
+
+</html>
