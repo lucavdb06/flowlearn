@@ -990,11 +990,11 @@
     <p class="section-deck">Représentation graphique de la répartition des risques par priorité d'action et par quadrant
       d'exposition.</p>
 
-    <div class="two-col no-break">
+    <div class="no-break" style="display: flex; flex-direction: column; gap: 24px; margin-top: 20px;">
       <div style="border: 1px solid var(--slate-200); padding: 12px; border-radius: 8px; background: white;">
         <h3 style="margin-top: 0; margin-bottom: 12px; text-align: center; font-size: 10pt;">Priorité d'Action</h3>
         <pre class="mermaid" style="text-align: center;">
-graph TD
+graph LR
     subgraph Red ["🔴 TRAITEMENT OBLIGATOIRE - Score >= 15"]
         T01[T01: Retard RAG]
         H02[H02: Burnout]
@@ -1038,38 +1038,21 @@ graph TD
         </h3>
         <pre class="mermaid" style="text-align: center;">
 quadrantChart
-    title Matrice des Risques FlowLearn
-    x-axis "Impact Faible" --> "Impact Critique"
-    y-axis "Probabilité Faible" --> "Probabilité Élevée"
-    quadrant-1 "🔴 CRITIQUE - Action Obligatoire"
-    quadrant-2 "🟡 IMPORTANT - Alerte"
-    quadrant-3 "🟢 ACCEPTABLE - Veille Simple"
-    quadrant-4 "🟡 IMPORTANT - Mitigation Active"
-    T01 - Retard RAG/IA Core: [0.92, 0.76]
-    T02 - Surcoût APIs LLM: [0.74, 0.76]
-    H02 - Burnout Équipe: [0.74, 0.76]
-    H05 - Comm Télétravail: [0.40, 0.76]
-    P01 - Rétention D7 Faible: [0.92, 0.55]
-    P03 - Gameplay Non Engageant: [0.92, 0.55]
-    H06 - Sous-effectif Prolongé: [0.92, 0.55]
-    T04 - Indisponibilité Cloud: [0.74, 0.45]
-    T05 - Dette Tech MCP: [0.74, 0.45]
-    H01 - Turnover Dev: [0.74, 0.45]
-    H04 - Absence Maladie: [0.74, 0.45]
-    B02 - CAC Paid trop Élevé: [0.74, 0.45]
-    B04 - Échec Monétisation: [0.74, 0.45]
-    F01 - Dépassement Budget: [0.74, 0.45]
-    F02 - Échec Series A: [0.74, 0.45]
-    T03 - Faille Cyber: [0.92, 0.34]
-    E01 - Non-conformité GDPR: [0.92, 0.34]
-    P02 - Algo SRS Inefficace: [0.92, 0.34]
-    E02 - Image Éthique Dopamine: [0.74, 0.34]
-    T06 - Perte Données/No Backup: [0.40, 0.34]
-    B01 - Échec Validation B2B: [0.40, 0.40]
-    B03 - Organique Stagnante: [0.40, 0.40]
-    E03 - Concurrence EdTech: [0.40, 0.40]
-    H03 - Recrutement Difficile: [0.40, 0.40]
-    E04 - Échec Open Source: [0.40, 0.40]
+    x-axis Impact Faible --> Impact Critique
+    y-axis Probabilite Faible --> Probabilite Elevee
+    quadrant-1 Action Obligatoire
+    quadrant-2 Alerte
+    quadrant-3 Veille Simple
+    quadrant-4 Mitigation Active
+    T01: [0.92, 0.76]
+    T02, H02: [0.74, 0.76]
+    H05: [0.40, 0.76]
+    P01, P03, H06: [0.92, 0.55]
+    T04, T05, H01, H04, B02, B04, F01, F02: [0.74, 0.45]
+    T03, E01, P02: [0.92, 0.34]
+    E02: [0.74, 0.34]
+    T06: [0.40, 0.34]
+    B01, B03, E03, H03, E04: [0.40, 0.40]
       </pre>
       </div>
     </div>
