@@ -8,6 +8,350 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../charte-graphique/archives/flowlearn-document.css">
+<style>
+  .wbs-map { margin: 12px 0 0; }
+  .wbs-root { text-align: center; margin-bottom: 6px; }
+  .wbs-root-card {
+    display: inline-block;
+    background: var(--deep-ocean);
+    color: white;
+    font-family: 'Fraunces', serif;
+    font-size: 13.5pt;
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 14px;
+    border: 2px solid var(--brain-pink);
+    box-shadow: 0 8px 24px rgba(30, 58, 95, 0.12);
+  }
+  .wbs-root-card em { font-style: normal; color: #F9A8D4; }
+  .wbs-root-sub {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 7.5pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-top: 4px;
+    font-weight: 600;
+  }
+  .wbs-spine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto 8px;
+    width: 2px;
+    height: 22px;
+    background: linear-gradient(to bottom, var(--brain-pink), var(--flow-blue));
+    border-radius: 2px;
+  }
+  .wbs-lots { display: flex; flex-direction: column; gap: 8px; }
+  .wbs-lot {
+    background: white;
+    border: 1px solid var(--slate-200);
+    border-radius: 12px;
+    overflow: hidden;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .wbs-lot-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--slate-100);
+  }
+  .wbs-lot-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5pt;
+    font-weight: 600;
+    color: white;
+    background: var(--accent, var(--flow-blue));
+    padding: 3px 7px;
+    border-radius: 5px;
+    flex-shrink: 0;
+  }
+  .wbs-lot-title {
+    font-family: 'Fraunces', serif;
+    font-size: 10.5pt;
+    color: var(--deep-ocean);
+    font-weight: 500;
+    line-height: 1.25;
+  }
+  .wbs-lot-body { padding: 8px 10px 10px; display: flex; flex-direction: column; gap: 6px; }
+  .wbs-feature {
+    background: var(--slate-50);
+    border: 1px solid var(--slate-100);
+    border-radius: 9px;
+    padding: 7px 9px;
+  }
+  .wbs-feature-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 5px;
+  }
+  .wbs-feature-title {
+    font-size: 9pt;
+    font-weight: 600;
+    color: var(--slate-700);
+    line-height: 1.3;
+  }
+  .wbs-feature-title code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5pt;
+    color: var(--flow-blue);
+    margin-right: 5px;
+  }
+  .wbs-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7pt;
+    font-weight: 600;
+    color: white;
+    background: var(--flow-blue);
+    padding: 3px 8px;
+    border-radius: 5px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .wbs-link:hover { background: #2563EB; }
+  .wbs-tasks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .wbs-task {
+    font-size: 7.5pt;
+    color: var(--slate-600);
+    background: white;
+    border: 1px solid var(--slate-200);
+    border-radius: 5px;
+    padding: 2px 7px;
+    line-height: 1.4;
+  }
+  .wbs-task code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 6.5pt;
+    color: var(--soft-lavender);
+    font-weight: 600;
+    margin-right: 3px;
+  }
+  .wbs-lot.blue  { --accent: var(--flow-blue); }
+  .wbs-lot.pink  { --accent: var(--brain-pink); }
+  .wbs-lot.lav   { --accent: var(--soft-lavender); }
+  .wbs-lot.blue .wbs-lot-head { background: linear-gradient(90deg, rgba(59,130,246,0.06), transparent); }
+  .wbs-lot.pink .wbs-lot-head { background: linear-gradient(90deg, rgba(236,72,153,0.06), transparent); }
+  .wbs-lot.lav  .wbs-lot-head { background: linear-gradient(90deg, rgba(139,92,246,0.06), transparent); }
+
+  .val-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 14px 0 0;
+    position: relative;
+  }
+  .val-spine {
+    position: absolute;
+    left: 15px;
+    top: 28px;
+    bottom: 28px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--flow-blue), var(--soft-lavender) 45%, var(--brain-pink) 75%, var(--success-green));
+    border-radius: 2px;
+    z-index: 0;
+  }
+  .val-phase {
+    position: relative;
+    z-index: 1;
+    background: white;
+    border: 1px solid var(--slate-200);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .val-phase:last-child { margin-bottom: 0; }
+  .val-phase-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--slate-100);
+  }
+  .val-phase-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9pt;
+    font-weight: 700;
+    color: white;
+    background: var(--phase-color, var(--flow-blue));
+    flex-shrink: 0;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+  }
+  .val-phase-title {
+    font-family: 'Fraunces', serif;
+    font-size: 11pt;
+    font-weight: 500;
+    color: var(--deep-ocean);
+    line-height: 1.2;
+  }
+  .val-phase-sub {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 7.5pt;
+    color: var(--slate-500);
+    font-weight: 500;
+    margin-top: 1px;
+  }
+  .val-phase.blue  { --phase-color: var(--flow-blue); }
+  .val-phase.lav   { --phase-color: var(--soft-lavender); }
+  .val-phase.pink  { --phase-color: var(--brain-pink); }
+  .val-phase.blue .val-phase-head { background: linear-gradient(90deg, rgba(59,130,246,0.07), transparent); }
+  .val-phase.lav  .val-phase-head { background: linear-gradient(90deg, rgba(139,92,246,0.07), transparent); }
+  .val-phase.pink .val-phase-head { background: linear-gradient(90deg, rgba(236,72,153,0.07), transparent); }
+  .val-steps {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    padding: 10px 12px 12px;
+  }
+  .val-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 0;
+  }
+  .val-step-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7pt;
+    font-weight: 700;
+    color: var(--phase-color, var(--flow-blue));
+    background: var(--slate-50);
+    border: 1px solid var(--slate-200);
+    border-radius: 999px;
+    padding: 2px 8px;
+    margin-bottom: 5px;
+  }
+  .val-step-label {
+    font-size: 8.5pt;
+    font-weight: 500;
+    color: var(--slate-700);
+    line-height: 1.35;
+    padding: 0 4px;
+  }
+  .val-step.highlight .val-step-num {
+    background: #FEF3C7;
+    border-color: #F59E0B;
+    color: var(--deep-ocean);
+  }
+  .val-step.done .val-step-num {
+    background: #D1FAE5;
+    border-color: var(--success-green);
+    color: #065F46;
+  }
+  .val-step-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--slate-300);
+    font-size: 11pt;
+    padding: 0 2px;
+    flex-shrink: 0;
+    align-self: center;
+    margin-top: 10px;
+  }
+  .val-bridge {
+    display: flex;
+    justify-content: center;
+    margin: -2px 0 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .val-bridge span {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--slate-200);
+    color: var(--slate-400);
+    font-size: 10pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  .wbs-deps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .wbs-deps-group {
+    background: white;
+    border: 1px solid var(--slate-200);
+    border-radius: 10px;
+    padding: 8px 10px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .wbs-deps-group.span2 { grid-column: 1 / -1; }
+  .wbs-deps-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7pt;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--slate-500);
+    margin-bottom: 6px;
+  }
+  .wbs-deps-nodes { display: flex; flex-wrap: wrap; gap: 4px; }
+  .wbs-deps-node {
+    font-size: 7.5pt;
+    font-weight: 500;
+    color: var(--slate-700);
+    background: var(--slate-50);
+    border: 1px solid var(--slate-200);
+    border-radius: 6px;
+    padding: 4px 8px;
+  }
+  .wbs-deps-flow {
+    margin-top: 10px;
+    font-size: 7.5pt;
+    color: var(--slate-600);
+    background: var(--slate-50);
+    border: 1px solid var(--slate-100);
+    border-radius: 8px;
+    padding: 8px 10px;
+    line-height: 1.55;
+  }
+  .wbs-deps-flow code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7pt;
+    color: var(--flow-blue);
+  }
+  .wbs-deps-dotted {
+    color: var(--brain-pink);
+    font-weight: 600;
+  }
+
+  .file-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    color: var(--flow-blue);
+    text-decoration: none;
+  }
+  .file-link:hover { text-decoration: underline; }
+</style>
 </head>
 <body>
 
@@ -15,9 +359,9 @@
   <div class="cover-inner">
     <div class="cover-top">
       <div class="cover-logo" style="display: flex; align-items: center; gap: 12px;">
-          <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" style="width: 42px; height: 42px; object-fit: contain;">
-          <div class="wordmark">Flow<em>Learn</em></div>
-        </div>
+        <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" style="width: 42px; height: 42px; object-fit: contain;">
+        <div class="wordmark">Flow<em>Learn</em></div>
+      </div>
       <div class="cover-meta">
         <div>Document interne</div>
         <div><strong>Version 1.0</strong></div>
@@ -34,73 +378,588 @@
     </div>
   </div>
 </section>
-<section class="page">
-  <div class="running-header">
-    <div class="brand">
-        <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" class="brand-mark" style="width: 22px; height: 22px; object-fit: contain;">
-        <span class="brand-name">Flow<em>Learn</em></span>
-      </div>
-    <span class="doc-tag">À revoir · schema-wbs-global</span>
-  </div>
-  <h2 class="section-title">Schéma WBS Global — FlowLearn MVP (v0.1)</h2>
-<div class="callout"><p>Version charte : <a href="schema-wbs-global.html"><span class="mono">schema-wbs-global.html</span></a></p></div>
-<h3>Fiche document</h3>
-<table class="no-break">
-<thead><tr><th>Champ</th><th>Valeur</th></tr></thead><tbody>
-<tr><td>Projet</td><td>FlowLearn</td></tr>
-<tr><td>Formation</td><td>T-ESP-800</td></tr>
-<tr><td>Livrable</td><td>05 — WBS</td></tr>
-<tr><td>Version</td><td>v0.1 — brouillon</td></tr>
-<tr><td>Statut</td><td>À revoir</td></tr>
-</tbody></table>
-<h3>Questions traitées</h3>
-<table class="no-break">
-<thead><tr><th>Question</th><th>Section</th></tr></thead><tbody>
-<tr><td>Quels lots de travail pour le MVP ?</td><td>Vue macro WP1–WP5</td></tr>
-<tr><td>Comment PBS et WBS se relient ?</td><td>Tableau PBS → WBS → fichiers</td></tr>
-<tr><td>Quelles dépendances entre blocs ?</td><td>Schéma dépendances</td></tr>
-</tbody></table>
-<div class="flourish"></div>
-<h3>Vue d'ensemble (Mermaid)</h3>
-<pre class="mermaid-block"><code>mindmap  root((FlowLearn MVP))    1. Conteneur Multiplateforme      1.1 Encapsulateurs        1.1.1 Config Electron Desktop        1.1.2 Config Capacitor Mobile        1.1.3 Build &amp; livraison    2. Jeux &amp; Expériences      2.1 API RAG/IA → jeux        2.1.1 Exposition API RAG        2.1.2 Transformation cours → quiz        2.1.3 Intégration Godot      2.2 API jeux → externe        2.2.1 Schéma JSON        2.2.2 API côté jeu Godot        2.2.3 Interpréteur Rust        2.2.4 Intégration ESP32      2.3 Jeu Archero / Vampire Survivors        2.3.1 Déplacement personnage        2.3.2 Spawn monstres        2.3.3 3 types ennemis        2.3.4 3 armes        2.3.5 Carte / niveau        2.3.6 Évolution difficulté        2.3.7 Intégration quiz MVP    3. Intelligence Centrale &amp; RAG      3.1 Serveur FastAPI        3.1.1 Structure &amp; config        3.1.2 Endpoints ingestion/RAG        3.1.3 Endpoints quiz        3.1.4 Robustesse &amp; doc API      3.2 Base vectorielle pgvector        3.2.1 Instance &amp; extension        3.2.2 Schéma stockage      3.3 Ingestion RAG LlamaIndex        3.3.1 Pipeline ingestion        3.3.2 Indexation &amp; embeddings        3.3.3 Moteur recherche RAG      3.4 Orchestrateur agents IA        3.4.1 Schémas Pydantic        3.4.2 Agent génération quiz        3.4.3 Intégration RAG + 4.1        3.4.4 Flux complexes LangGraph      3.5 Générateurs LLM        3.5.1 Config LiteLLM        3.5.2 Générateur quiz QCM        3.5.3 Histoires interactives        3.5.4 Robustesse &amp; coût    4. Algorithmes Personnalisation      4.1 Sélection des questions        4.1.1 Modèle de données SRS        4.1.2 Logique Anki        4.1.3 Endpoint /next-question      4.2 Algorithme de rétention        4.2.1 Modèle KPIs        4.2.2 Moteur scoring        4.2.3 Adaptation Hook éthique        4.2.4 API contrat jeu    5. Sécurité &amp; Données      5.1 Coffre-fort &amp; RGPD        5.1.1 Politique données        5.1.2 Accès &amp; secrets        5.1.3 Suppression &amp; rétention        5.1.4 Audit sécurité</code></pre>
-<div class="flourish"></div>
 
-  <div class="page-footer"><span>3</span><span class="pf-brand">FlowLearn — Schéma WBS Global — FlowLearn MVP (v0.1)</span><span>02</span></div>
-</section>
 <section class="page">
   <div class="running-header">
     <div class="brand">
-        <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" class="brand-mark" style="width: 22px; height: 22px; object-fit: contain;">
-        <span class="brand-name">Flow<em>Learn</em></span>
-      </div>
+      <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" class="brand-mark" style="width: 22px; height: 22px; object-fit: contain;">
+      <span class="brand-name">Flow<em>Learn</em></span>
+    </div>
     <span class="doc-tag">À revoir · schema-wbs-global</span>
   </div>
-  <h3>Vue tabulaire (PBS → WBS → fichiers)</h3>
-<table class="no-break">
-<thead><tr><th>PBS</th><th>Feature</th><th>Sous-features (WBS)</th><th>Fichier WBS</th><th>Fichier DOD</th></tr></thead><tbody>
-<tr><td><strong>1. Conteneur</strong></td><td>1.1 Encapsulateurs</td><td>1.1.1 Electron, 1.1.2 Capacitor, 1.1.3 Build</td><td><span class="mono">wbs/conteneur-multiplateforme/wbs-1.1-encapsulateurs.md</span></td><td><span class="mono">dod/conteneur-multiplateforme/dod-1.1-encapsulateurs.md</span></td></tr>
-<tr><td><strong>2. Jeux</strong></td><td>2.1 API RAG → jeux</td><td>2.1.1 Expo API, 2.1.2 Transformation, 2.1.3 Godot</td><td><span class="mono">wbs/jeux-et-experience/wbs-2.1-api-rag-ia-jeux.md</span></td><td><span class="mono">dod/jeux-et-experience/dod-2.1-api-rag-ia-jeux.md</span></td></tr>
-<tr><td></td><td>2.2 API jeux → externe</td><td>2.2.1 JSON, 2.2.2 Godot, 2.2.3 Rust, 2.2.4 ESP32</td><td><span class="mono">wbs/jeux-et-experience/wbs-2.2-api-jeux-externe.md</span></td><td><span class="mono">dod/jeux-et-experience/dod-2.2-api-jeux-externe.md</span></td></tr>
-<tr><td></td><td>2.3 Archero / VS</td><td>2.3.1→2.3.7 (7 features)</td><td><span class="mono">wbs/jeux-et-experience/wbs-2.3-archero-vampire-survivors.md</span></td><td><span class="mono">dod/jeux-et-experience/dod-2.3-archero-vampire-survivors.md</span></td></tr>
-<tr><td><strong>3. Backend IA</strong></td><td>3.1 Serveur FastAPI</td><td>3.1.1→3.1.4</td><td><span class="mono">wbs/backend-ia/wbs-3.1-serveur-fastapi.md</span></td><td><span class="mono">dod/backend-ia/dod-3.1-serveur-fastapi.md</span></td></tr>
-<tbody>
-<tr><td></td><td>3.2 Base vectorielle</td><td>3.2.1 Instance, 3.2.2 Schéma</td><td><span class="mono">wbs/backend-ia/wbs-3.2-base-vectorielle.md</span></td><td><span class="mono">dod/backend-ia/dod-3.2-base-vectorielle.md</span></td></tr>
-<tr><td></td><td>3.3 Ingestion RAG</td><td>3.3.1 Pipeline, 3.3.2 Indexation, 3.3.3 Retrieval</td><td><span class="mono">wbs/backend-ia/wbs-3.3-ingestion-rag.md</span></td><td><span class="mono">dod/backend-ia/dod-3.3-ingestion-rag.md</span></td></tr>
-<tr><td></td><td>3.4 Orchestrateur IA</td><td>3.4.1→3.4.4</td><td><span class="mono">wbs/backend-ia/wbs-3.4-orchestrateur-agents.md</span></td><td><span class="mono">dod/backend-ia/dod-3.4-orchestrateur-agents.md</span></td></tr>
-<tbody>
-<tr><td></td><td>3.5 Générateurs LLM</td><td>3.5.1→3.5.4</td><td><span class="mono">wbs/backend-ia/wbs-3.5-generateurs-llm.md</span></td><td><span class="mono">dod/backend-ia/dod-3.5-generateurs-llm.md</span></td></tr>
-<tr><td><strong>4. Algos</strong></td><td>4.1 Sélection questions</td><td>4.1.1 Data SRS, 4.1.2 Anki, 4.1.3 Endpoint</td><td><span class="mono">wbs/algorithmes-personnalisation/wbs-4.1-selection-questions.md</span></td><td><span class="mono">dod/algorithmes-personnalisation/dod-4.1-selection-questions.md</span></td></tr>
-<tr><td></td><td>4.2 Rétention (Hook)</td><td>4.2.1 KPIs, 4.2.2 Scoring, 4.2.3 Hook, 4.2.4 API</td><td><span class="mono">wbs/algorithmes-personnalisation/wbs-4.2-algorithme-retention.md</span></td><td><span class="mono">dod/algorithmes-personnalisation/dod-4.2-algorithme-retention.md</span></td></tr>
-<tbody>
-<tr><td><strong>5. Sécu</strong></td><td>5.1 RGPD & Coffre</td><td>5.1.1→5.1.4</td><td><span class="mono">wbs/securite/wbs-5.1-securite-rgpd.md</span></td><td><span class="mono">dod/securite/dod-5.1-securite-rgpd.md</span></td></tr>
-</tbody></table>
-<div class="flourish"></div>
-<h3>Flux de validation (DOD global)</h3>
-<pre class="mermaid-block"><code>flowchart LR  A[Dev sur branche] --&gt; B[Tests locaux]  B --&gt; C[PR GitHub]  C --&gt; D[CI / Tests auto]  D --&gt; E[Revue cyber + tech]  E --&gt; F[DOD spécifique feature validée]  F --&gt; G[Merge main]  G --&gt; H[Done sur GitHub Projects]</code></pre>
-<div class="flourish"></div>
-<h3>Dépendances entre blocs</h3>
-<pre class="mermaid-block"><code>flowchart TB  subgraph &quot;Données &amp; IA&quot;    DB[&quot;3.2 Base vectorielle&quot;]    ING[&quot;3.3 Ingestion RAG&quot;]    ORC[&quot;3.4 Orchestrateur&quot;]    GEN[&quot;3.5 Générateurs LLM&quot;]    API[&quot;3.1 Serveur FastAPI&quot;]  end  subgraph &quot;Algorithmes&quot;    SEL[&quot;4.1 Sélection questions&quot;]    RET[&quot;4.2 Rétention / Hook&quot;]  end  subgraph &quot;Jeux &amp; Front&quot;    J1[&quot;2.1 API RAG → jeux&quot;]    J2[&quot;2.2 API jeux → ESP32&quot;]    J3[&quot;2.3 Jeu Archero/VS&quot;]    FRONT[&quot;1.1 Electron / Capacitor&quot;]  end  subgraph &quot;Transverse&quot;    SEC[&quot;5.1 Sécurité &amp; RGPD&quot;]  end  DB --&gt; ING  ING --&gt; ORC  ORC --&gt; GEN  GEN --&gt; API  SEL --&gt; API  RET --&gt; SEL  API --&gt; J1  J1 --&gt; J3  J2 --&gt; J3  API --&gt; FRONT  SEC -.-&gt; DB  SEC -.-&gt; API</code></pre>
-  <div class="page-footer"><span>3</span><span class="pf-brand">FlowLearn — Schéma WBS Global — FlowLearn MVP (v0.1)</span><span>03</span></div>
+
+  <h2 class="section-title">Schéma WBS Global — FlowLearn MVP (v0.1)</h2>
+
+  <h3>Fiche document</h3>
+  <table class="no-break">
+    <thead><tr><th>Champ</th><th>Valeur</th></tr></thead>
+    <tbody>
+      <tr><td>Projet</td><td>FlowLearn</td></tr>
+      <tr><td>Formation</td><td>T-ESP-800</td></tr>
+      <tr><td>Livrable</td><td>05 — WBS</td></tr>
+      <tr><td>Version</td><td>v0.1 — brouillon</td></tr>
+      <tr><td>Statut</td><td>À revoir</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Questions traitées</h3>
+  <table class="no-break">
+    <thead><tr><th>Question</th><th>Section</th></tr></thead>
+    <tbody>
+      <tr><td>Quels lots de travail pour le MVP ?</td><td>Vue macro WP1–WP5</td></tr>
+      <tr><td>Comment PBS et WBS se relient ?</td><td>Tableau PBS → WBS → fichiers</td></tr>
+      <tr><td>Quelles dépendances entre blocs ?</td><td>Schéma dépendances</td></tr>
+    </tbody>
+  </table>
+
+  <div class="flourish"></div>
+
+  <span class="section-num">§ 01 · Arborescence WBS</span>
+  <h3 class="section-title" style="font-size:14pt;margin-top:4px;">Vue d'ensemble <span class="accent">des lots de travail.</span></h3>
+  <p class="section-deck">Décomposition en lots, features PBS et sous-tâches WBS. Les badges bleus ouvrent la fiche WBS détaillée.</p>
+
+  <div class="wbs-map no-break">
+    <div class="wbs-root">
+      <div class="wbs-root-card">
+        Flow<em>Learn</em> MVP — WBS globale
+        <span class="wbs-root-sub">Work Breakdown Structure</span>
+      </div>
+    </div>
+    <div class="wbs-spine" aria-hidden="true"></div>
+
+    <div class="wbs-lots">
+
+      <article class="wbs-lot blue">
+        <header class="wbs-lot-head">
+          <span class="wbs-lot-num">01</span>
+          <h3 class="wbs-lot-title">Conteneur Multiplateforme</h3>
+        </header>
+        <div class="wbs-lot-body">
+          <div class="wbs-feature">
+            <div class="wbs-feature-head">
+              <span class="wbs-feature-title"><code>1.1</code> Encapsulateurs</span>
+              <a class="wbs-link" href="1-conteneur-multiplateforme/wbs-1.1-encapsulateurs.html">wbs-1.1</a>
+            </div>
+            <div class="wbs-tasks">
+              <span class="wbs-task"><code>1.1.1</code> Config Electron Desktop</span>
+              <span class="wbs-task"><code>1.1.2</code> Config Capacitor Mobile</span>
+              <span class="wbs-task"><code>1.1.3</code> Build &amp; livraison</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="wbs-lot pink">
+        <header class="wbs-lot-head">
+          <span class="wbs-lot-num">02</span>
+          <h3 class="wbs-lot-title">Jeux &amp; Expériences</h3>
+        </header>
+        <div class="wbs-lot-body">
+          <div class="wbs-feature">
+            <div class="wbs-feature-head">
+              <span class="wbs-feature-title"><code>2.1</code> API RAG/IA → jeux</span>
+              <a class="wbs-link" href="2-jeux-et-experiences/wbs-2.1-api-rag-ia-jeux.html">wbs-2.1</a>
+            </div>
+            <div class="wbs-tasks">
+              <span class="wbs-task"><code>2.1.1</code> Exposition API RAG</span>
+              <span class="wbs-task"><code>2.1.2</code> Transformation cours → quiz</span>
+              <span class="wbs-task"><code>2.1.3</code> Intégration Godot</span>
+            </div>
+          </div>
+          <div class="wbs-feature">
+            <div class="wbs-feature-head">
+              <span class="wbs-feature-title"><code>2.2</code> API jeux → externe</span>
+              <a class="wbs-link" href="2-jeux-et-experiences/wbs-2.2-api-jeux-externe.html">wbs-2.2</a>
+            </div>
+            <div class="wbs-tasks">
+              <span class="wbs-task"><code>2.2.1</code> Schéma JSON</span>
+              <span class="wbs-task"><code>2.2.2</code> API côté jeu Godot</span>
+              <span class="wbs-task"><code>2.2.3</code> Interpréteur Rust</span>
+              <span class="wbs-task"><code>2.2.4</code> Intégration ESP32</span>
+            </div>
+          </div>
+          <div class="wbs-feature">
+            <div class="wbs-feature-head">
+              <span class="wbs-feature-title"><code>2.3</code> Jeu Archero / Vampire Survivors</span>
+              <a class="wbs-link" href="2-jeux-et-experiences/wbs-2.3-archero-vampire-survivors.html">wbs-2.3</a>
+            </div>
+            <div class="wbs-tasks">
+              <span class="wbs-task"><code>2.3.1</code> Déplacement personnage</span>
+              <span class="wbs-task"><code>2.3.2</code> Spawn monstres</span>
+              <span class="wbs-task"><code>2.3.3</code> 3 types ennemis</span>
+              <span class="wbs-task"><code>2.3.4</code> 3 armes</span>
+              <span class="wbs-task"><code>2.3.5</code> Carte / niveau</span>
+              <span class="wbs-task"><code>2.3.6</code> Évolution difficulté</span>
+              <span class="wbs-task"><code>2.3.7</code> Intégration quiz MVP</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Schéma WBS Global</span>
+    <span>02</span>
+  </div>
 </section>
+
+<section class="page">
+  <div class="running-header">
+    <div class="brand">
+      <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" class="brand-mark" style="width: 22px; height: 22px; object-fit: contain;">
+      <span class="brand-name">Flow<em>Learn</em></span>
+    </div>
+    <span class="doc-tag">§01 · Arborescence WBS</span>
+  </div>
+
+  <div class="wbs-map">
+    <div class="wbs-lots">
+
+      <article class="wbs-lot lav">
+        <header class="wbs-lot-head">
+          <span class="wbs-lot-num">03</span>
+          <h3 class="wbs-lot-title">Intelligence Centrale &amp; RAG</h3>
+        </header>
+        <div class="wbs-lot-body">
+          <div class="wbs-feature">
+            <div class="wbs-feature-head">
+              <span class="wbs-feature-title"><code>3.1</code> Serveur FastAPI</span>
+              <a class="wbs-link" href="3-intelligence-centrale-module-rag/wbs-3.1-serveur-fastapi.html">wbs-3.1</a>
+            </div>
+            <div class="wbs-tasks">
+              <span class="wbs-task"><code>3.1.1</code> Structure &amp; config</span>
+              <span class="wbs-task"><code>3.1.2</code> Endpoints ingestion/RAG</span>
+              <span class="wbs-task"><code>3.1.3</code> Endpoints quiz</span>
+              <span class="wbs-task"><code>3.1.4</code> Robustesse &amp; doc API</span>
+            </div>
+          </div>
+          <div class="wbs-feature">
+            <div class="wbs-feature-head">
+              <span class="wbs-feature-title"><code>3.2</code> Base vectorielle pgvector</span>
+              <a class="wbs-link" href="3-intelligence-centrale-module-rag/wbs-3.2-base-vectorielle.html">wbs-3.2</a>
+            </div>
+            <div class="wbs-tasks">
+              <span class="wbs-task"><code>3.2.1</code> Instance &amp; extension</span>
+              <span class="wbs-task"><code>3.2.2</code> Schéma stockage</span>
+            </div>
+          </div>
+          <div class="wbs-feature">
+            <div class="wbs-feature-head">
+              <span class="wbs-feature-title"><code>3.3</code> Ingestion RAG LlamaIndex</span>
+              <a class="wbs-link" href="3-intelligence-centrale-module-rag/wbs-3.3-ingestion-rag.html">wbs-3.3</a>
+            </div>
+            <div class="wbs-tasks">
+              <span class="wbs-task"><code>3.3.1</code> Pipeline ingestion</span>
+              <span class="wbs-task"><code>3.3.2</code> Indexation &amp; embeddings</span>
+              <span class="wbs-task"><code>3.3.3</code> Moteur recherche RAG</span>
+            </div>
+          </div>
+          <div class="wbs-feature">
+            <div class="wbs-feature-head">
+              <span class="wbs-feature-title"><code>3.4</code> Orchestrateur agents IA</span>
+              <a class="wbs-link" href="3-intelligence-centrale-module-rag/wbs-3.4-orchestrateur-agents.html">wbs-3.4</a>
+            </div>
+            <div class="wbs-tasks">
+              <span class="wbs-task"><code>3.4.1</code> Schémas Pydantic</span>
+              <span class="wbs-task"><code>3.4.2</code> Agent génération quiz</span>
+              <span class="wbs-task"><code>3.4.3</code> Intégration RAG + 4.1</span>
+              <span class="wbs-task"><code>3.4.4</code> Flux complexes LangGraph</span>
+            </div>
+          </div>
+          <div class="wbs-feature">
+            <div class="wbs-feature-head">
+              <span class="wbs-feature-title"><code>3.5</code> Générateurs LLM</span>
+              <a class="wbs-link" href="3-intelligence-centrale-module-rag/wbs-3.5-generateurs-llm.html">wbs-3.5</a>
+            </div>
+            <div class="wbs-tasks">
+              <span class="wbs-task"><code>3.5.1</code> Config LiteLLM</span>
+              <span class="wbs-task"><code>3.5.2</code> Générateur quiz QCM</span>
+              <span class="wbs-task"><code>3.5.3</code> Histoires interactives</span>
+              <span class="wbs-task"><code>3.5.4</code> Robustesse &amp; coût</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Schéma WBS Global</span>
+    <span>03</span>
+  </div>
+</section>
+
+<section class="page">
+  <div class="running-header">
+    <div class="brand">
+      <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" class="brand-mark" style="width: 22px; height: 22px; object-fit: contain;">
+      <span class="brand-name">Flow<em>Learn</em></span>
+    </div>
+    <span class="doc-tag">§01 · Arborescence WBS</span>
+  </div>
+
+  <div class="wbs-map">
+    <div class="wbs-lots">
+
+      <article class="wbs-lot pink">
+        <header class="wbs-lot-head">
+          <span class="wbs-lot-num">04</span>
+          <h3 class="wbs-lot-title">Algorithmes de Personnalisation</h3>
+        </header>
+        <div class="wbs-lot-body">
+          <div class="wbs-feature">
+            <div class="wbs-feature-head">
+              <span class="wbs-feature-title"><code>4.1</code> Sélection des questions</span>
+              <a class="wbs-link" href="4-algorithmes-personnalisation/wbs-4.1-selection-questions.html">wbs-4.1</a>
+            </div>
+            <div class="wbs-tasks">
+              <span class="wbs-task"><code>4.1.1</code> Modèle de données SRS</span>
+              <span class="wbs-task"><code>4.1.2</code> Logique Anki</span>
+              <span class="wbs-task"><code>4.1.3</code> Endpoint /next-question</span>
+            </div>
+          </div>
+          <div class="wbs-feature">
+            <div class="wbs-feature-head">
+              <span class="wbs-feature-title"><code>4.2</code> Algorithme de rétention</span>
+              <a class="wbs-link" href="4-algorithmes-personnalisation/wbs-4.2-algorithme-retention.html">wbs-4.2</a>
+            </div>
+            <div class="wbs-tasks">
+              <span class="wbs-task"><code>4.2.1</code> Modèle KPIs</span>
+              <span class="wbs-task"><code>4.2.2</code> Moteur scoring</span>
+              <span class="wbs-task"><code>4.2.3</code> Adaptation Hook éthique</span>
+              <span class="wbs-task"><code>4.2.4</code> API contrat jeu</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="wbs-lot lav">
+        <header class="wbs-lot-head">
+          <span class="wbs-lot-num">05</span>
+          <h3 class="wbs-lot-title">Sécurité &amp; Gouvernance des données</h3>
+        </header>
+        <div class="wbs-lot-body">
+          <div class="wbs-feature">
+            <div class="wbs-feature-head">
+              <span class="wbs-feature-title"><code>5.1</code> Coffre-fort &amp; RGPD</span>
+              <a class="wbs-link" href="5-securite-gouvernance-donnees/Coffre-fort%20%26%20Protection-rgpd.html">wbs-5.1</a>
+            </div>
+            <div class="wbs-tasks">
+              <span class="wbs-task"><code>5.1.1</code> Politique données</span>
+              <span class="wbs-task"><code>5.1.2</code> Accès &amp; secrets</span>
+              <span class="wbs-task"><code>5.1.3</code> Suppression &amp; rétention</span>
+              <span class="wbs-task"><code>5.1.4</code> Audit sécurité</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Schéma WBS Global</span>
+    <span>04</span>
+  </div>
+</section>
+
+<section class="page">
+  <div class="running-header">
+    <div class="brand">
+      <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" class="brand-mark" style="width: 22px; height: 22px; object-fit: contain;">
+      <span class="brand-name">Flow<em>Learn</em></span>
+    </div>
+    <span class="doc-tag">À revoir · schema-wbs-global</span>
+  </div>
+
+  <span class="section-num">§ 02 · Correspondances</span>
+  <h3>Vue tabulaire (PBS → WBS → fichiers)</h3>
+  <table class="no-break" style="font-size:8.5pt;">
+    <thead>
+      <tr>
+        <th>PBS</th>
+        <th>Feature</th>
+        <th>Sous-features (WBS)</th>
+        <th>Fichier WBS</th>
+        <th>Fichier DOD</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>1. Conteneur multiplateforme</strong></td>
+        <td>1.1 Encapsulateurs</td>
+        <td>1.1.1 Electron, 1.1.2 Capacitor, 1.1.3 Build</td>
+        <td><a class="file-link" href="1-conteneur-multiplateforme/wbs-1.1-encapsulateurs.html">wbs-1.1</a></td>
+        <td><a class="file-link" href="../dod/1-conteneur-multiplateforme/dod-1.1-encapsulateurs.html">dod-1.1</a></td>
+      </tr>
+      <tr>
+        <td><strong>2. Jeux &amp; expériences</strong></td>
+        <td>2.1 API RAG → jeux</td>
+        <td>2.1.1 Expo API, 2.1.2 Transformation, 2.1.3 Godot</td>
+        <td><a class="file-link" href="2-jeux-et-experiences/wbs-2.1-api-rag-ia-jeux.html">wbs-2.1</a></td>
+        <td><a class="file-link" href="../dod/2-jeux-et-experiences/dod-2.1-api-rag-ia-jeux.html">dod-2.1</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>2.2 API jeux → externe</td>
+        <td>2.2.1 JSON, 2.2.2 Godot, 2.2.3 Rust, 2.2.4 ESP32</td>
+        <td><a class="file-link" href="2-jeux-et-experiences/wbs-2.2-api-jeux-externe.html">wbs-2.2</a></td>
+        <td><a class="file-link" href="../dod/2-jeux-et-experiences/dod-2.2-api-jeux-externe.html">dod-2.2</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>2.3 Archero / VS</td>
+        <td>2.3.1→2.3.7 (7 features)</td>
+        <td><a class="file-link" href="2-jeux-et-experiences/wbs-2.3-archero-vampire-survivors.html">wbs-2.3</a></td>
+        <td><a class="file-link" href="../dod/2-jeux-et-experiences/dod-2.3-archero-vampire-survivors.html">dod-2.3</a></td>
+      </tr>
+      <tr>
+        <td><strong>3. Intelligence centrale / RAG</strong></td>
+        <td>3.1 Serveur FastAPI</td>
+        <td>3.1.1→3.1.4</td>
+        <td><a class="file-link" href="3-intelligence-centrale-module-rag/wbs-3.1-serveur-fastapi.html">wbs-3.1</a></td>
+        <td><a class="file-link" href="../dod/3-intelligence-centrale-module-rag/dod-3.1-serveur-fastapi.html">dod-3.1</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>3.2 Base vectorielle</td>
+        <td>3.2.1 Instance, 3.2.2 Schéma</td>
+        <td><a class="file-link" href="3-intelligence-centrale-module-rag/wbs-3.2-base-vectorielle.html">wbs-3.2</a></td>
+        <td><a class="file-link" href="../dod/3-intelligence-centrale-module-rag/dod-3.2-base-vectorielle.html">dod-3.2</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>3.3 Ingestion RAG</td>
+        <td>3.3.1 Pipeline, 3.3.2 Indexation, 3.3.3 Retrieval</td>
+        <td><a class="file-link" href="3-intelligence-centrale-module-rag/wbs-3.3-ingestion-rag.html">wbs-3.3</a></td>
+        <td><a class="file-link" href="../dod/3-intelligence-centrale-module-rag/dod-3.3-ingestion-rag.html">dod-3.3</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>3.4 Orchestrateur IA</td>
+        <td>3.4.1→3.4.4</td>
+        <td><a class="file-link" href="3-intelligence-centrale-module-rag/wbs-3.4-orchestrateur-agents.html">wbs-3.4</a></td>
+        <td><a class="file-link" href="../dod/3-intelligence-centrale-module-rag/dod-3.4-orchestrateur-agents.html">dod-3.4</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>3.5 Générateurs LLM</td>
+        <td>3.5.1→3.5.4</td>
+        <td><a class="file-link" href="3-intelligence-centrale-module-rag/wbs-3.5-generateurs-llm.html">wbs-3.5</a></td>
+        <td><a class="file-link" href="../dod/3-intelligence-centrale-module-rag/dod-3.5-generateurs-llm.html">dod-3.5</a></td>
+      </tr>
+      <tr>
+        <td><strong>4. Algorithmes de personnalisation</strong></td>
+        <td>4.1 Sélection questions</td>
+        <td>4.1.1 Data SRS, 4.1.2 Anki, 4.1.3 Endpoint</td>
+        <td><a class="file-link" href="4-algorithmes-personnalisation/wbs-4.1-selection-questions.html">wbs-4.1</a></td>
+        <td><a class="file-link" href="../dod/4-algorithmes-personnalisation/dod-4.1-selection-questions.html">dod-4.1</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>4.2 Rétention (Hook)</td>
+        <td>4.2.1 KPIs, 4.2.2 Scoring, 4.2.3 Hook, 4.2.4 API</td>
+        <td><a class="file-link" href="4-algorithmes-personnalisation/wbs-4.2-algorithme-retention.html">wbs-4.2</a></td>
+        <td><a class="file-link" href="../dod/4-algorithmes-personnalisation/dod-4.2-algorithme-retention.html">dod-4.2</a></td>
+      </tr>
+      <tr>
+        <td><strong>5. Sécurité &amp; gouvernance des données</strong></td>
+        <td>5.1 Coffre-fort &amp; RGPD</td>
+        <td>5.1.1→5.1.4</td>
+        <td><a class="file-link" href="5-securite-gouvernance-donnees/Coffre-fort%20%26%20Protection-rgpd.html">wbs-5.1</a></td>
+        <td><a class="file-link" href="../dod/5-securite-gouvernance-donnees/Coffre-fort-%26-Protection-rgpd.html">dod-5.1</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Schéma WBS Global</span>
+    <span>05</span>
+  </div>
+</section>
+
+<section class="page">
+  <div class="running-header">
+    <div class="brand">
+      <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" class="brand-mark" style="width: 22px; height: 22px; object-fit: contain;">
+      <span class="brand-name">Flow<em>Learn</em></span>
+    </div>
+    <span class="doc-tag">§03 · Validation</span>
+  </div>
+
+  <span class="section-num">§ 03 · Validation</span>
+  <h2 class="section-title">Flux de validation <span class="accent">DOD global.</span></h2>
+  <p class="section-deck">Parcours standard d'une feature : du développement local jusqu'au statut Done sur GitHub Projects.</p>
+
+  <div class="val-flow no-break">
+    <div class="val-spine" aria-hidden="true"></div>
+
+    <section class="val-phase blue">
+      <header class="val-phase-head">
+        <span class="val-phase-icon">1</span>
+        <div>
+          <div class="val-phase-title">Développement</div>
+          <span class="val-phase-sub">Branche feature · tests locaux · pull request</span>
+        </div>
+      </header>
+      <div class="val-steps">
+        <div class="val-step">
+          <span class="val-step-num">01</span>
+          <span class="val-step-label">Dev sur branche</span>
+        </div>
+        <span class="val-step-arrow" aria-hidden="true">→</span>
+        <div class="val-step">
+          <span class="val-step-num">02</span>
+          <span class="val-step-label">Tests locaux</span>
+        </div>
+        <span class="val-step-arrow" aria-hidden="true">→</span>
+        <div class="val-step">
+          <span class="val-step-num">03</span>
+          <span class="val-step-label">PR GitHub</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="val-bridge" aria-hidden="true"><span>↓</span></div>
+
+    <section class="val-phase lav">
+      <header class="val-phase-head">
+        <span class="val-phase-icon">2</span>
+        <div>
+          <div class="val-phase-title">Intégration &amp; revue</div>
+          <span class="val-phase-sub">Pipeline CI · contrôle cyber et technique</span>
+        </div>
+      </header>
+      <div class="val-steps">
+        <div class="val-step">
+          <span class="val-step-num">04</span>
+          <span class="val-step-label">CI / Tests auto</span>
+        </div>
+        <span class="val-step-arrow" aria-hidden="true">→</span>
+        <div class="val-step">
+          <span class="val-step-num">05</span>
+          <span class="val-step-label">Revue cyber + tech</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="val-bridge" aria-hidden="true"><span>↓</span></div>
+
+    <section class="val-phase pink">
+      <header class="val-phase-head">
+        <span class="val-phase-icon">3</span>
+        <div>
+          <div class="val-phase-title">Livraison</div>
+          <span class="val-phase-sub">DOD validée · merge · clôture projet</span>
+        </div>
+      </header>
+      <div class="val-steps">
+        <div class="val-step highlight">
+          <span class="val-step-num">06</span>
+          <span class="val-step-label">DOD feature validée</span>
+        </div>
+        <span class="val-step-arrow" aria-hidden="true">→</span>
+        <div class="val-step">
+          <span class="val-step-num">07</span>
+          <span class="val-step-label">Merge main</span>
+        </div>
+        <span class="val-step-arrow" aria-hidden="true">→</span>
+        <div class="val-step done">
+          <span class="val-step-num">08</span>
+          <span class="val-step-label">Done GitHub Projects</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="callout" style="margin-top: 14px;">
+    <span class="callout-label">Point clé</span>
+    <p>L'étape <strong>06</strong> est le jalon DOD : la fiche Definition of Done de la feature doit être cochée avant merge. L'étape <strong>08</strong> marque la clôture sur le board projet.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Schéma WBS Global</span>
+    <span>06</span>
+  </div>
+</section>
+
+<section class="page">
+  <div class="running-header">
+    <div class="brand">
+      <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" class="brand-mark" style="width: 22px; height: 22px; object-fit: contain;">
+      <span class="brand-name">Flow<em>Learn</em></span>
+    </div>
+    <span class="doc-tag">§04 · Dépendances</span>
+  </div>
+
+  <span class="section-num">§ 04 · Dépendances</span>
+  <h3>Dépendances entre blocs</h3>
+
+  <div class="wbs-deps no-break">
+    <div class="wbs-deps-group">
+      <div class="wbs-deps-label">Données &amp; IA</div>
+      <div class="wbs-deps-nodes">
+        <span class="wbs-deps-node">3.2 Base vectorielle</span>
+        <span class="wbs-deps-node">3.3 Ingestion RAG</span>
+        <span class="wbs-deps-node">3.4 Orchestrateur</span>
+        <span class="wbs-deps-node">3.5 Générateurs LLM</span>
+        <span class="wbs-deps-node">3.1 Serveur FastAPI</span>
+      </div>
+    </div>
+    <div class="wbs-deps-group">
+      <div class="wbs-deps-label">Algorithmes</div>
+      <div class="wbs-deps-nodes">
+        <span class="wbs-deps-node">4.1 Sélection questions</span>
+        <span class="wbs-deps-node">4.2 Rétention / Hook</span>
+      </div>
+    </div>
+    <div class="wbs-deps-group">
+      <div class="wbs-deps-label">Jeux &amp; Front</div>
+      <div class="wbs-deps-nodes">
+        <span class="wbs-deps-node">2.1 API RAG → jeux</span>
+        <span class="wbs-deps-node">2.2 API jeux → ESP32</span>
+        <span class="wbs-deps-node">2.3 Jeu Archero/VS</span>
+        <span class="wbs-deps-node">1.1 Electron / Capacitor</span>
+      </div>
+    </div>
+    <div class="wbs-deps-group">
+      <div class="wbs-deps-label">Transverse</div>
+      <div class="wbs-deps-nodes">
+        <span class="wbs-deps-node">5.1 Sécurité &amp; RGPD</span>
+      </div>
+    </div>
+    <div class="wbs-deps-group span2">
+      <div class="wbs-deps-label">Chaînes de dépendance</div>
+      <div class="wbs-deps-flow">
+        <code>3.2</code> → <code>3.3</code> → <code>3.4</code> → <code>3.5</code> → <code>3.1</code> &nbsp;·&nbsp;
+        <code>4.2</code> → <code>4.1</code> → <code>3.1</code> &nbsp;·&nbsp;
+        <code>3.1</code> → <code>2.1</code> → <code>2.3</code> &nbsp;·&nbsp;
+        <code>2.2</code> → <code>2.3</code> &nbsp;·&nbsp;
+        <code>3.1</code> → <code>1.1</code> &nbsp;·&nbsp;
+        <span class="wbs-deps-dotted">5.1 ⇢ 3.2, 3.1</span> (transverse)
+      </div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 14px;">
+    <span class="callout-label">Lecture</span>
+    <p>Les badges <span class="mono">wbs-x.x</span> ouvrent la fiche de travail ; les <span class="mono">dod-x.x</span> la Definition of Done associée. Les dépendances en pointillés (<span class="mono">5.1</span>) s'appliquent transversalement à l'architecture.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Schéma WBS Global</span>
+    <span>07</span>
+  </div>
+</section>
+
 </body>
 </html>
