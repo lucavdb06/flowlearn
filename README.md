@@ -1,9 +1,20 @@
 # FlowLearn
 
 Projet **FlowLearn** : apprentissage par de courtes sessions ludiques, architecture modulaire (plugins / expériences) et socle IA (RAG, MCP).  
-Ce dépôt concentre les **documents de projet**, la **charte graphique** (HTML) et quelques **démos** (`media/`).
+Ce dépôt concentre les **documents de projet** et la **charte graphique** (HTML).
 
 **Dépôt équipe :** [github.com/lucavdb06/flowlearn](https://github.com/lucavdb06/flowlearn)
+
+## Équipe
+
+| Membre | Rôle |
+| --- | --- |
+| Luca Vanden-Brande | Porteur de projet / Dev IA |
+| Nathan Plessis | Dev IA / Big Data |
+| Daniel Okpe | Dev IA / Big Data |
+| Maxime Ruault | Cybersécurité |
+| César Lextraît | Dev / Cybersécurité |
+| Dumas Quentin | Dev Jeux vidéo / UI-UX |
 
 ## Documentation projet
 
