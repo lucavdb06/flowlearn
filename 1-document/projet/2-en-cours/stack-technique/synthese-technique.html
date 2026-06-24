@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>FlowLearn - Stack Technologique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <!-- Load Mermaid for diagrams rendering -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'neutral',
+      securityLevel: 'loose',
+      flowchart: { useMaxWidth: true, htmlLabels: true }
+    });
+  </script>
+  <link rel="stylesheet" href="../charte-graphique/flowlearn-document.css">
+  <style>
+    /* Add any local specific overrides if needed, but rely on flowlearn-document.css */
+    .mermaid-container {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid var(--slate-200);
+      margin: 16px 0;
+      display: flex;
+      justify-content: center;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+     PAGE 1  COVER PAGE
+     ============================================================ -->
+  <section class="page cover">
+    <div class="cover-inner">
+
+      <div class="cover-top">
+        <div class="cover-logo" style="display: flex; align-items: center; gap: 12px;">
+          <!-- Using the same logo path as gestion des risques -->
+          <img src="../charte-graphique/assets/flowlearn-logo1.png" alt="Logo"
+            style="width: 42px; height: 42px; object-fit: contain;" onerror="this.style.display='none'">
+          <div class="wordmark">Flow<em>Learn</em></div>
+        </div>
+        <div class="cover-meta">
+          <div>Document interne</div>
+          <div><strong>Version 1.0</strong></div>
+          <div>Mai 2026</div>
+        </div>
+      </div>
+
+      <div class="cover-middle">
+        <div class="cover-eyebrow">Architecture & Ingénierie</div>
+        <h1 class="cover-title">Stack<br><span class="accent">Technologique</span></h1>
+        <div class="cover-deck">
+          Vue d'ensemble de l'architecture, Infrastructure IA, Intégration Jeux & Déploiement Multiplateforme.
+        </div>
+      </div>
+
+      <div class="cover-bottom">
+        <div class="cover-stat">
+          <div class="label">Briques IA</div>
+          <div class="value">4 <span class="unit">Frameworks</span></div>
+        </div>
+        <div class="cover-stat">
+          <div class="label">Interface Unique</div>
+          <div class="value">React <span class="unit">Base</span></div>
+        </div>
+        <div class="cover-stat">
+          <div class="label">Jeux Éducatifs</div>
+          <div class="value">Godot <span class="unit">Engine</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PAGE 2  TABLE DES MATIÈRES & SYNTHÈSE EXÉCUTIVE
+     ============================================================ -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§01 . Synthèse &amp; TOC</div>
+    </div>
+
+    <span class="section-num">Section 01</span>
+    <h1 class="section-title">Table des matières &amp; <span class="accent">Synthèse</span></h1>
+
+    <div class="flourish"></div>
+
+    <div class="two-col">
+      <div>
+        <h2>Sommaire détaillé</h2>
+        <ul class="toc-list">
+          <li><span class="toc-num">01</span><span class="toc-title">Synthèse exécutive &amp; Architecture</span><span class="toc-page">p.2</span></li>
+          <li><span class="toc-num">02</span><span class="toc-title">Backend, Frontend, Jeux &amp; BDD</span><span class="toc-page">p.3</span></li>
+          <li><span class="toc-num">03</span><span class="toc-title">Intelligence Artificielle (RAG &amp; Logique)</span><span class="toc-page">p.4</span></li>
+          <li><span class="toc-num">04</span><span class="toc-title">Jeux Godot &amp; Déploiement Multiplateforme</span><span class="toc-page">p.5</span></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Synthèse exécutive</h2>
+        <p class="lede">
+          Ce document consolide les choix technologiques de l'écosystème FlowLearn, alliant performance, flexibilité et intégration profonde de l'Intelligence Artificielle.
+        </p>
+        <p>
+          L'architecture est construite autour de plusieurs piliers fondamentaux :
+        </p>
+        <ul>
+          <li><strong>Infrastructure & Backend :</strong> Un noyau <strong>FastAPI (Python)</strong> performant pour la logique métier et l'IA, soutenu par <strong>PostgreSQL / Supabase</strong> pour le stockage relationnel et vectoriel (pgvector).</li>
+          <li><strong>Interfaces Multiplateformes :</strong> Une base de code <strong>React</strong> unique, encapsulée par <strong>Electron</strong> (Desktop) et <strong>Capacitor</strong> (Mobile), avec <strong>Flutter</strong> en alternative de repli.</li>
+          <li><strong>Intelligence Artificielle :</strong> Un pipeline modulaire orchestrant <strong>LiteLLM</strong>, <strong>PydanticAI</strong>, <strong>LlamaIndex</strong>, <strong>LangGraph</strong> et <strong>CopilotKit</strong>.</li>
+          <li><strong>Moteur de Jeu :</strong> <strong>Godot Engine</strong> pour la création de modules ludiques interactifs, connectés au web via export WebAssembly / HTML5.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 style="margin-top: 30px;">1. Vue d'ensemble de l'architecture</h2>
+    <div class="mermaid-container">
+      <pre class="mermaid" style="margin: 0;">
+flowchart TB
+  subgraph front["Frontend & Conteneurs"]
+    REACT["React<br/>(1 base de code)"]
+    ELECTRON["Electron<br/>Desktop Mac/Windows"]
+    CAPACITOR["Capacitor<br/>Mobile iOS/Android"]
+    GODOT["Godot Engine<br/>Jeux éducatifs"]
+    ESP32["ESP32<br/>IoT (Rust)"]
+  end
+
+  subgraph backend["Backend & API"]
+    FASTAPI["FastAPI<br/>(Python)"]
+  end
+
+  subgraph ia["Intelligence Artificielle"]
+    LITELLM["LiteLLM<br/>Gateway LLM"]
+    PYDANTIC["PydanticAI<br/>Orchestration logique métier"]
+    LLAMA["LlamaIndex<br/>RAG & Data Retrieval"]
+    LANGGRAPH["LangGraph<br/>Flux complexes"]
+    COPILOT["CopilotKit<br/>Intégration UI"]
+  end
+
+  subgraph data["Base de données"]
+    PG["PostgreSQL + pgvector<br/>(Cloud / Supabase)"]
+    SQLITE["SQLite<br/>(Local)"]
+  end
+
+  REACT --> ELECTRON
+  REACT --> CAPACITOR
+  REACT -->|iframe / Wasm| GODOT
+  REACT --> FASTAPI
+  GODOT -->|API JSON| FASTAPI
+  ESP32 -->|API JSON| FASTAPI
+  FASTAPI --> LITELLM
+  FASTAPI --> PYDANTIC
+  PYDANTIC --> LLAMA
+  PYDANTIC --> LANGGRAPH
+  LITELLM -->|Ollama local / APIs cloud| PYDANTIC
+  LLAMA --> PG
+  FASTAPI --> PG
+  FASTAPI --> SQLITE
+  COPILOT --> REACT
+      </pre>
+    </div>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>02</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PAGE 3  BACKEND, FRONTEND, JEUX & BDD
+     ============================================================ -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§02 . Briques Logicielles Principales</div>
+    </div>
+
+    <span class="section-num">Section 02</span>
+    <h1 class="section-title">Backend, Frontend, Jeux &amp; <span class="accent">Base de données</span></h1>
+    
+    <div class="two-col">
+        <div>
+            <h2>2. Backend</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Techno</th>
+                  <th>Rôle</th>
+                  <th>Justification</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>FastAPI</strong><br><span style="font-size: 8pt; color: var(--slate-500);">(Python)</span></td>
+                  <td>Serveur API principal</td>
+                  <td>Écosystème IA mature en Python, performances élevées (async), connu de l'équipe. Il expose les API, gère la logique métier et assure la communication rapide.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2>3. Frontend</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Techno</th>
+                  <th>Rôle</th>
+                  <th>Justification</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>React</strong></td>
+                  <td>Base de code unique UI</td>
+                  <td>1 codebase pour desktop + mobile.</td>
+                </tr>
+                <tr>
+                  <td><strong>Electron</strong></td>
+                  <td>Encapsulateur desktop</td>
+                  <td>Application Mac/Windows native.</td>
+                </tr>
+                <tr>
+                  <td><strong>Capacitor</strong></td>
+                  <td>Encapsulateur mobile</td>
+                  <td>Déploiement iOS / Play Store.</td>
+                </tr>
+                <tr>
+                  <td><em style="font-size: 8.5pt;">Alt:</em> <strong>Flutter</strong></td>
+                  <td>App multiplateforme native</td>
+                  <td>Utilisé en cas de problème de performance/optimisation de la stack hybride.</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        
+        <div>
+            <h2>4. Jeux Éducatifs</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Techno</th>
+                  <th>Rôle</th>
+                  <th>Justification</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Godot Engine</strong></td>
+                  <td>Moteur de jeu éducatif</td>
+                  <td>Open Source, export WebAssembly.</td>
+                </tr>
+                <tr>
+                  <td><strong>GDScript</strong></td>
+                  <td>Prototypage rapide</td>
+                  <td>Syntaxe simple, itérations rapides.</td>
+                </tr>
+                <tr>
+                  <td><strong>C#</strong></td>
+                  <td>Code performant</td>
+                  <td>Performances critiques du gameplay.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2>5. Base de données</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Techno</th>
+                  <th>Rôle</th>
+                  <th>Justification</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>PostgreSQL + pgvector</strong></td>
+                  <td>BDD principale (Cloud/Supabase)</td>
+                  <td>Stockage relationnel + vectoriel pour le RAG. Stocke utilisateurs, logs et vecteurs.</td>
+                </tr>
+                <tr>
+                  <td><strong>SQLite</strong></td>
+                  <td>BDD locale</td>
+                  <td>Mode hors-ligne, cache local.</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>03</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PAGE 4  INTELLIGENCE ARTIFICIELLE
+     ============================================================ -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§03 . Intelligence Artificielle</div>
+    </div>
+
+    <span class="section-num">Section 03</span>
+    <h1 class="section-title">Intelligence Artificielle &amp; <span class="accent">Pipeline</span></h1>
+    <p class="section-deck">L'écosystème IA garantit l'indépendance vis-à-vis des modèles, une logique fiabilisée et des interactions sémantiques poussées via RAG.</p>
+
+    <h2>6. Stack IA - Architecture Résumée</h2>
+    <div class="mermaid-container">
+      <pre class="mermaid" style="margin: 0;">
+flowchart LR
+  subgraph models["Models"]
+    OLLAMA["Ollama<br/>(Local)"]
+    CLOUD["APIs Cloud<br/>(Mistral / OpenAI)"]
+  end
+
+  subgraph gateway["Gateway"]
+    LITE["LiteLLM<br/>Routeur LLM agnostique"]
+  end
+
+  subgraph orchestration["Orchestration"]
+    PYAI["PydanticAI<br/>Logique métier structurée"]
+    LG["LangGraph<br/>Flux complexes & agents"]
+  end
+
+  subgraph retrieval["Data Retrieval"]
+    LI["LlamaIndex<br/>RAG & indexation"]
+  end
+
+  subgraph storage["Storage"]
+    PGV["PostgreSQL + pgvector"]
+  end
+
+  OLLAMA --> LITE
+  CLOUD --> LITE
+  LITE --> PYAI
+  PYAI --> LG
+  PYAI --> LI
+  LI --> PGV
+      </pre>
+    </div>
+
+    <h2 style="margin-top: 24px;">Détail des rôles IA</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Couche</th>
+          <th>Techno</th>
+          <th>Rôle</th>
+          <th>Quand l'utiliser</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="pill pill-blue">Gateway</span></td>
+          <td><strong>LiteLLM</strong></td>
+          <td>Routeur LLM agnostique (local Ollama ou cloud).</td>
+          <td>Simplicité, switch de modèle sans changer le code. Simplifie la gestion des clés.</td>
+        </tr>
+        <tr>
+          <td><span class="pill pill-pink">Orchestration</span></td>
+          <td><strong>PydanticAI</strong></td>
+          <td>Le Cerveau Logique : résultats structurés et fiables via le typage Python.</td>
+          <td>Traitement de données, interrogation RAG, sorties typées, validation entrées/sorties.</td>
+        </tr>
+        <tr>
+          <td><span class="pill pill-pink">Orchestration</span></td>
+          <td><strong>LangGraph</strong></td>
+          <td>L'Orchestrateur : graphe de décision, agents autonomes.</td>
+          <td>Flux complexes, agents qui naviguent, corrigent, itèrent sur des processus longs.</td>
+        </tr>
+        <tr>
+          <td><span class="pill pill-blue">Retrieval</span></td>
+          <td><strong>LlamaIndex</strong></td>
+          <td>Le Bibliothécaire : Indexation, embeddings, recherche RAG.</td>
+          <td>Gestion des cours, PDF, base de connaissances (découpe et recherche sémantique).</td>
+        </tr>
+        <tr>
+          <td><span class="pill pill-pink">UI</span></td>
+          <td><strong>CopilotKit</strong></td>
+          <td>Intégration front-end IA conversationnelle.</td>
+          <td>Chat, aide à la saisie, interaction fluide côté React.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>04</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     PAGE 5  JEUX GODOT & MULTIPLATEFORME
+     ============================================================ -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§04 . Intégration Godot</div>
+    </div>
+
+    <span class="section-num">Section 04</span>
+    <h1 class="section-title">Jeux Godot &amp; Déploiement <span class="accent">Multiplateforme</span></h1>
+    <p class="section-deck">Stratégies d'intégration du moteur de jeu au sein de l'application React et plans de mitigation pour les plateformes mobiles.</p>
+
+    <h2>7. Intégration Godot dans la Web-App</h2>
+    
+    <div class="two-col">
+        <div>
+            <h3>Flux d'intégration</h3>
+            <div class="mermaid-container" style="padding: 10px; margin: 10px 0;">
+              <pre class="mermaid" style="margin: 0;">
+flowchart TD
+  G["Godot<br/>(Jeu)"] -->|Export WebAssembly| W["Fichiers Web<br/>(.html, .js, .wasm)"]
+  W -->|Hébergement| R["React<br/>(iframe / canvas)"]
+  R --> E["Electron<br/>Desktop"]
+  R --> C["Capacitor<br/>Mobile"]
+              </pre>
+            </div>
+            
+            <div class="callout">
+                <span class="callout-label">Recommandation MVP</span>
+                <p><strong>Hub de jeux hébergés séparément :</strong> 
+                1. Développer le jeu séparément.<br>
+                2. Exporter au format Web (HTML5).<br>
+                3. Afficher dans React via une URL / iframe.<br>
+                4. Communication (scores, quiz) via API JSON/JS.</p>
+            </div>
+        </div>
+        
+        <div>
+            <h3>Compatibilité par plateforme</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Plateforme</th>
+                  <th>Support</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Electron (Desktop)</strong></td>
+                  <td>Excellent</td>
+                  <td>Chrome gère très bien WebAssembly + WebGL.</td>
+                </tr>
+                <tr>
+                  <td><strong>Capacitor (Mobile)</strong></td>
+                  <td>Correct</td>
+                  <td>Performances dépendantes du téléphone, restrictions sécurité <code>.wasm</code>.</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <h3>Points de vigilance Godot</h3>
+            <ul>
+                <li><strong>Poids :</strong> Export Web lourd (plusieurs dizaines de Mo).</li>
+                <li><strong>GPU :</strong> Exporter obligatoirement en <strong>Compatibility Mode (GLES2/WebGL)</strong>.</li>
+                <li><strong>Contrôles :</strong> Gérer séparément le tactile et clavier/souris.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="flourish"></div>
+
+    <h2>8. Alternative : Flutter + Godot (Performance & Optimisation)</h2>
+    <p>En cas de problème persistant de performance ou de rendu avec l'iframe Web/Wasm (notamment sur mobile via Capacitor), le couple <strong>Flutter + Godot</strong> constitue notre alternative de choix.</p>
+    
+    <div class="two-col" style="margin-top: 15px;">
+        <div class="stat blue" style="padding: 14px;">
+            <div class="stat-value" style="font-size: 13pt;">Performance native</div>
+            <div class="stat-note" style="margin-top:4px; font-size: 9pt;">Le moteur de rendu de Flutter et l'intégration native évitent la surcharge et les limites de WebAssembly sur mobile.</div>
+        </div>
+        <div class="stat pink" style="padding: 14px;">
+            <div class="stat-value" style="font-size: 13pt;">Communication fluide</div>
+            <div class="stat-note" style="margin-top:4px; font-size: 9pt;">Échange de données bidirectionnel à faible latence (via Method Channels ou plugins natifs comme <code>flutter_godot</code>).</div>
+        </div>
+        <div class="stat lavender" style="padding: 14px;">
+            <div class="stat-value" style="font-size: 13pt;">Optimisation ciblée</div>
+            <div class="stat-note" style="margin-top:4px; font-size: 9pt;">Gestion fine de la mémoire et du GPU pour un gameplay fluide même sur des terminaux plus modestes.</div>
+        </div>
+        <div class="stat" style="padding: 14px; border: 1px solid var(--slate-200); background: white;">
+            <div class="stat-value" style="font-size: 13pt; color: var(--deep-ocean);">Hybride Complexe</div>
+            <div class="stat-note" style="margin-top:4px; font-size: 9pt; color: var(--slate-600);">Idéal pour des apps avec mini-jeux, outils industriels ou éducation hautement interactive.</div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>05</span>
+    </div>
+  </section>
+
+</body>
+</html>

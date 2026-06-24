@@ -65,6 +65,7 @@ flowchart TB
 | **React** | Base de code unique UI | 1 codebase pour desktop + mobile |
 | **Electron** | Encapsulateur desktop | Application Mac/Windows native |
 | **Capacitor** | Encapsulateur mobile | Déploiement iOS / Play Store |
+| *Alternative (Performance)* : **Flutter** | Interface multiplateforme native | Utilisé en cas de problème de performance/optimisation de la stack hybride |
 
 ---
 
@@ -78,16 +79,7 @@ flowchart TB
 
 ---
 
-## 5. IoT
-
-| Techno | Rôle | Justification |
-| --- | --- | --- |
-| **ESP32** | Hardware IoT | Microcontrôleur connecté |
-| **Rust** | Langage embarqué | Performances, sécurité mémoire |
-
----
-
-## 6. Base de données
+## 5. Base de données
 
 | Techno | Rôle | Justification |
 | --- | --- | --- |
@@ -96,7 +88,7 @@ flowchart TB
 
 ---
 
-## 7. Stack IA
+## 6. Stack IA
 
 ```mermaid
 flowchart LR
@@ -149,7 +141,7 @@ flowchart LR
 
 ---
 
-## 8. Intégration Godot dans la Web-App
+## 7. Intégration Godot dans la Web-App
 
 ### Flux d'intégration
 
@@ -192,3 +184,19 @@ flowchart LR
 ### Communication React <-> Godot
 
 Le jeu Godot exporté en Web peut communiquer avec React via JavaScript (ex: envoi de scores, progression, déclenchement de quiz).
+
+---
+
+## 8. Alternative : Flutter + Godot (Performance & Optimisation)
+
+En cas de problème persistant de performance ou de rendu avec l'iframe Web/Wasm (notamment sur mobile via Capacitor), le couple **Flutter + Godot** constitue une alternative de choix.
+
+Cette architecture est de plus en plus prisée pour la création d'applications hybrides complexes :
+- Applications avec mini-jeux intégrés.
+- Outils industriels avec visualisation 3D.
+- Applications éducatives hautement interactives.
+
+### Avantages de Flutter + Godot :
+1. **Performance native :** Le moteur de rendu de Flutter et l'intégration de Godot en tant que widget/vue native permettent d'éviter la surcharge et les limites de WebAssembly sur mobile.
+2. **Communication bidirectionnelle fluide :** Échange de données à faible latence (via des Method Channels ou plugins natifs comme `flutter_godot`).
+3. **Optimisation des ressources :** Gestion fine de la mémoire et du GPU pour un gameplay fluide même sur des terminaux plus modestes.

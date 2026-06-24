@@ -8,6 +8,7 @@
 - **React :** Base de code unique pour le développement de l'interface utilisateur web.
 - **Electron :** Encapsule l'application React pour en faire un logiciel de bureau natif (Mac & Windows).
 - **Capacitor :** Adapte l'application React pour un déploiement natif sur iOS et Android.
+- **Alternative (Performance & Optimisation) :** **Flutter + Godot**, une architecture de plus en plus prisée pour la création d'applications hybrides complexes (ex: applications avec mini-jeux intégrés, outils industriels avec visualisation 3D, applications éducatives).
 
 ## 🧠 Intelligence Artificielle
 
@@ -17,15 +18,8 @@
 - **LangGraph (L'Orchestrateur) :** Utilisé spécifiquement pour les agents complexes nécessitant des boucles de réflexion, des corrections d'erreurs et des processus longs.
 - **CopilotKit :** Intégration front-end. Permet d'ajouter rapidement des composants d'IA conversationnelle (chat, aide à la saisie) directement dans l'interface React.
 
-## 🕹️ Spécialisations (Jeux & IoT)
+## 🕹️ Spécialisations (Jeux)
 
 - **Godot Engine :** Moteur de jeu.
 - _GDScript :_ Pour le prototypage rapide des mécaniques.
 - _C# :_ Pour optimiser les performances sur les systèmes lourds.
-
-- **ESP32 (IoT) :** Microcontrôleur pour le hardware.
-- _Rust :_ Langage utilisé pour coder le firmware de manière sécurisée et ultra-performante.
-
----
-
-**Veux-tu que je regroupe certains de ces éléments dans un tableau comparatif pour mieux visualiser les interactions ?**
