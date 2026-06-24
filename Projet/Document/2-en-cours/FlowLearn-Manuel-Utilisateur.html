@@ -1,0 +1,370 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowLearn — Manuel utilisateur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="charte-graphique/flowlearn-document.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     PAGE 1 — COUVERTURE
+══════════════════════════════════════════════ -->
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="cover-top">
+      <div class="cover-logo" style="display: flex; align-items: center; gap: 12px;">
+          <img src="../3-a-revoir/charte-graphique/archives/assets/flowlearn-logo.svg" alt="Logo" style="width: 42px; height: 42px; object-fit: contain;">
+          <div class="wordmark">Flow<em>Learn</em></div>
+        </div>
+      <div class="cover-meta">
+        <div>T-ESP-800</div>
+        <div><strong>Livrable 04</strong></div>
+        <div>Juin 2026</div>
+      </div>
+    </div>
+    <div class="cover-middle">
+      <div class="cover-eyebrow">Vision utilisateur</div>
+      <h1 class="cover-title">Manuel<br><span class="accent">utilisateur</span></h1>
+      <p class="cover-deck">Parcours et expériences attendus — référence de vision partagée pour orienter la conception et le développement du MVP FlowLearn.</p>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-stat"><div class="label">Statut</div><div class="value"><span class="tag tag-en-cours">En cours</span></div></div>
+      <div class="cover-stat"><div class="label">Cible produit</div><div class="value" style="font-size:14pt;">MVP v0.1</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     PAGE 2 — SOMMAIRE
+══════════════════════════════════════════════ -->
+<section class="page">
+  <div class="running-header">
+    <span class="brand-name">Flow<em>Learn</em></span>
+    <span class="doc-tag">Manuel utilisateur · Sommaire</span>
+  </div>
+  <span class="section-num">§ SOMMAIRE</span>
+  <h1 class="section-title">Structure du <span class="accent">document</span></h1>
+  <ol class="toc-list">
+    <li><span class="toc-num">01</span><span class="toc-title">Public cible &amp; personas</span></li>
+    <li><span class="toc-num">02</span><span class="toc-title">Première connexion &amp; onboarding</span></li>
+    <li><span class="toc-num">03</span><span class="toc-title">Construire sa base de connaissances</span></li>
+    <li><span class="toc-num">04</span><span class="toc-title">Les expériences d'apprentissage</span></li>
+    <li><span class="toc-num">05</span><span class="toc-title">L'algorithme de rétention</span></li>
+    <li><span class="toc-num">06</span><span class="toc-title">Progression &amp; récompenses</span></li>
+    <li><span class="toc-num">07</span><span class="toc-title">Paramètres &amp; compte</span></li>
+    <li><span class="toc-num">08</span><span class="toc-title">Multi-plateforme &amp; hors scope MVP</span></li>
+  </ol>
+  <div class="callout" style="margin-top:28px;">
+    <p><strong>Note :</strong> Ce document décrit l'expérience utilisateur cible telle qu'elle devrait être vécue une fois le produit livré. Il sert de base à la rédaction des user stories et des critères d'acceptance pour chaque lot PBS.</p>
+  </div>
+  <div class="page-footer"><span>04</span><span class="pf-brand">FlowLearn — Manuel utilisateur</span><span>02</span></div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     PAGE 3 — §01 PERSONAS + §02 ONBOARDING
+══════════════════════════════════════════════ -->
+<section class="page">
+  <div class="running-header">
+    <span class="brand-name">Flow<em>Learn</em></span>
+    <span class="doc-tag">§ 01–02</span>
+  </div>
+  <span class="section-num">§ 01 PUBLIC CIBLE</span>
+  <h1 class="section-title">Qui utilise <span class="accent">FlowLearn ?</span></h1>
+
+  <div class="two-col" style="margin-bottom:10px;">
+    <div class="feature-block">
+      <h3>L'étudiant</h3>
+      <p>Possède ses cours mais n'arrive pas à ouvrir Anki après une journée chargée. Victime principale du piège du scroll — il cherche à rentabiliser ses micro-pauses sans augmenter sa fatigue mentale.</p>
+    </div>
+    <div class="feature-block">
+      <h3>Le professionnel en auto-formation</h3>
+      <p>Doit maintenir ses compétences à jour sans bloquer deux heures dans son agenda. Il cherche des micro-sessions intégrées à son quotidien professionnel.</p>
+    </div>
+  </div>
+  <div class="feature-block">
+    <h3>Le dopamine seeker</h3>
+    <p>Volonté sincère de progresser, mais besoin constant de stimulation. Une fois capturé par le scroll, il ne peut plus s'en détacher. FlowLearn lui offre une alternative qui satisfait ce besoin tout en servant ses ambitions.</p>
+  </div>
+
+  <div class="flourish"></div>
+
+  <span class="section-num">§ 02 PREMIÈRE CONNEXION</span>
+  <h2>Onboarding par la conversation</h2>
+  <p>À l'ouverture de FlowLearn, l'utilisateur voit un écran minimal et une seule question posée par l'IA :</p>
+  <div class="callout">
+    <p style="font-family:'Fraunces',serif;font-size:13pt;font-style:italic;color:var(--deep-ocean);">"Sur quoi travailles-tu en ce moment ?"</p>
+  </div>
+  <p>L'IA structure la réponse en base de connaissances et propose immédiatement une première session. Il n'y a pas de formulaire long.</p>
+  <div class="callout">
+    <p><strong>Contrainte équipe :</strong> le temps entre l'ouverture de l'app et la première interaction pédagogique doit être <strong>inférieur à 60 secondes</strong>. Tout écran qui bloque ce chemin est un problème de friction à corriger.</p>
+  </div>
+  <div class="page-footer"><span>04</span><span class="pf-brand">FlowLearn — Manuel utilisateur</span><span>03</span></div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     PAGE 4 — §03 BASE DE CONNAISSANCES
+══════════════════════════════════════════════ -->
+<section class="page">
+  <div class="running-header">
+    <span class="brand-name">Flow<em>Learn</em></span>
+    <span class="doc-tag">§ 03 Base de connaissances</span>
+  </div>
+  <span class="section-num">§ 03 BASE DE CONNAISSANCES</span>
+  <h1 class="section-title">Construire son <span class="accent">cours</span></h1>
+  <p>La base de connaissances est le cœur de FlowLearn. Quiz, jeux et stories en découlent tous. Il existe deux façons de la construire — elles peuvent être utilisées en alternance.</p>
+
+  <h2>Import de document</h2>
+  <ol class="steps">
+    <li>L'utilisateur appuie sur <strong>"+ Ajouter un cours"</strong></li>
+    <li>Il sélectionne ou dépose un <strong>PDF ou un fichier texte</strong> depuis son appareil</li>
+    <li>FlowLearn affiche une barre de progression <em>("On prépare ton cours…")</em></li>
+    <li>Le cours apparaît en bibliothèque avec un <strong>titre généré automatiquement</strong>, modifiable en un tap</li>
+    <li>Une session de révision est proposée <strong>immédiatement</strong> après l'indexation</li>
+  </ol>
+
+  <div class="flourish"></div>
+
+  <h2>Dialogue IA — capture active</h2>
+  <p>Quand l'utilisateur n'a pas de document, il construit son cours par la conversation.</p>
+  <ol class="steps">
+    <li>Il ouvre le chat IA et <strong>écrit ce qu'il sait ou vient d'apprendre</strong> — en langage naturel, sans structure imposée</li>
+    <li>L'IA pose des questions de clarification, reformule et valide avec l'utilisateur</li>
+    <li>L'utilisateur confirme ou corrige les reformulations</li>
+    <li>Les notes sont intégrées automatiquement à sa base de connaissances</li>
+  </ol>
+  <div class="callout">
+    <p><strong>Contrainte équipe :</strong> ce mode doit fonctionner comme une messagerie, pas comme un éditeur de notes. L'utilisateur ne doit jamais avoir l'impression de "saisir" — il discute. Tout élément d'UI qui ressemble à un formulaire est une régression d'expérience.</p>
+  </div>
+  <div class="page-footer"><span>04</span><span class="pf-brand">FlowLearn — Manuel utilisateur</span><span>04</span></div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     PAGE 5 — §04 EXPÉRIENCES (1/2) : Quiz + Histoire
+══════════════════════════════════════════════ -->
+<section class="page">
+  <div class="running-header">
+    <span class="brand-name">Flow<em>Learn</em></span>
+    <span class="doc-tag">§ 04 Expériences — 1/2</span>
+  </div>
+  <span class="section-num">§ 04 EXPÉRIENCES D'APPRENTISSAGE</span>
+  <h1 class="section-title">Modes de <span class="accent">révision</span></h1>
+  <p style="margin-bottom:16px;">Toutes les expériences sont branchées sur le même noyau RAG (PBS lot 3). L'utilisateur choisit comment réviser selon son humeur ou sa disponibilité.</p>
+
+  <div class="feature-block">
+    <h3>Quiz classique</h3>
+    <ul class="bullet-list">
+      <li>L'IA génère un QCM à partir du cours indexé</li>
+      <li>Les questions sont <strong>reformulées à chaque session</strong> pour éviter la mémorisation de la forme plutôt que du fond</li>
+      <li>L'utilisateur peut cibler un thème précis ou laisser l'algorithme choisir</li>
+      <li>En fin de session : score, temps moyen par question, notions à retravailler</li>
+    </ul>
+  </div>
+
+  <div class="feature-block" style="margin-top:14px;">
+    <h3>Histoire interactive</h3>
+    <ul class="bullet-list">
+      <li>L'utilisateur suit une <strong>histoire narrative</strong> — genre, décor et personnages générés par l'IA selon ses préférences</li>
+      <li>Certains choix sont purement narratifs ; d'autres cachent une <strong>question de cours déguisée en situation</strong></li>
+      <li>Bonne réponse → l'histoire avance favorablement</li>
+      <li>Erreur → le cours du récit change (malus narratif, pas d'écran "game over" brutal)</li>
+    </ul>
+    <div class="callout" style="margin-top:10px;">
+      <p><strong>Contrainte équipe :</strong> les questions doivent s'intégrer naturellement à l'histoire. Une question qui casse l'immersion est un bug UX, pas seulement un bug de génération — traiter les deux avec la même priorité.</p>
+    </div>
+  </div>
+  <div class="page-footer"><span>04</span><span class="pf-brand">FlowLearn — Manuel utilisateur</span><span>05</span></div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     PAGE 6 — §04 EXPÉRIENCES (2/2) : Gaming + Scroll
+══════════════════════════════════════════════ -->
+<section class="page">
+  <div class="running-header">
+    <span class="brand-name">Flow<em>Learn</em></span>
+    <span class="doc-tag">§ 04 Expériences — 2/2</span>
+  </div>
+  <span class="section-num">§ 04 (SUITE)</span>
+
+  <div class="feature-block">
+    <h3>Mode gaming — Archero / Vampire Survivors-like</h3>
+    <ul class="bullet-list">
+      <li>L'utilisateur contrôle un personnage dans un <strong>jeu de survie en vue du dessus</strong></li>
+      <li>Pour attaquer, il doit <strong>répondre correctement à une question</strong> tirée de sa base de connaissances</li>
+      <li>Bonne réponse → attaque puissante + loot (arme, boost de vitesse, bouclier, XP)</li>
+      <li>Mauvaise réponse → le personnage perd de la vie ou rate l'attaque</li>
+      <li>L'utilisateur peut jouer sans jamais "ouvrir" un cours — <strong>la révision est la mécanique de gameplay</strong></li>
+    </ul>
+  </div>
+
+  <div class="feature-block" style="margin-top:14px;">
+    <h3>Scroll éducatif</h3>
+    <ul class="bullet-list">
+      <li>Un <strong>feed vertical</strong> défile automatiquement — style TikTok / Instagram Stories</li>
+      <li>Chaque carte contient un fait, une définition, une image annotée ou une question flash tirée de la base</li>
+      <li>Swipe → passer | Tap → répondre | Appui long → approfondir le point</li>
+    </ul>
+    <div class="callout" style="margin-top:10px;">
+      <p><strong>Contrainte équipe :</strong> le scroll ne doit jamais s'arrêter brusquement par manque de contenu. L'IA génère à la volée si le stock de cartes est faible — prévoir un buffer minimum de 10 cartes à tout instant.</p>
+    </div>
+  </div>
+
+  <div class="flourish" style="margin-top:18px;"></div>
+  <p style="font-size:9pt;color:var(--slate-500);">Architecture : brancher un nouveau mode d'expérience ne nécessite que l'implémentation d'une nouvelle interface vers l'API RAG commune — le noyau reste inchangé. C'est la promesse de modularité open source du projet.</p>
+
+  <div class="page-footer"><span>04</span><span class="pf-brand">FlowLearn — Manuel utilisateur</span><span>06</span></div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     PAGE 7 — §05 ALGORITHME DE RÉTENTION
+══════════════════════════════════════════════ -->
+<section class="page">
+  <div class="running-header">
+    <span class="brand-name">Flow<em>Learn</em></span>
+    <span class="doc-tag">§ 05 Rétention</span>
+  </div>
+  <span class="section-num">§ 05 ALGORITHME DE RÉTENTION</span>
+  <h1 class="section-title">Apprendre <span class="accent">durablement</span></h1>
+  <p>FlowLearn suit les performances de l'utilisateur pour décider quoi lui montrer ensuite. Il ne voit jamais l'algorithme directement — il ressent juste que l'app "sait" ce qu'il doit retravailler.</p>
+
+  <div class="two-col" style="margin-top:16px;">
+    <div class="feature-block">
+      <h3>Priorité des questions</h3>
+      <p>Logique inspirée d'Anki :</p>
+      <ul class="bullet-list">
+        <li>Notions mal maîtrisées → reviennent plus souvent</li>
+        <li>Notions récemment validées → intervalles croissants</li>
+        <li>Nouvelles notions → introduction progressive</li>
+      </ul>
+    </div>
+    <div class="feature-block">
+      <h3>Difficulté dynamique</h3>
+      <p>L'algorithme alterne :</p>
+      <ul class="bullet-list">
+        <li>Questions simples → confiance et fluidité</li>
+        <li>Questions difficiles ou reformulées → effort cognitif réel</li>
+      </ul>
+      <p style="font-size:8.5pt;color:var(--slate-500);margin-top:8px;">Objectif : maintenir l'état de "flow" — ni ennui, ni abandon.</p>
+    </div>
+  </div>
+
+  <h2>Ciblage manuel</h2>
+  <p>Quand l'utilisateur veut réviser un thème précis avant un examen, il peut passer en mode manuel :</p>
+  <ol class="steps">
+    <li>Il ouvre sa bibliothèque et sélectionne un cours</li>
+    <li>Il filtre par <strong>thème ou chapitre</strong></li>
+    <li>La session suivante se concentre exclusivement sur cette sélection</li>
+  </ol>
+
+  <div class="callout" style="margin-top:12px;">
+    <p>En mode par défaut (sans ciblage), l'algorithme prend la main et optimise l'ordre des révisions sur l'ensemble de la base de connaissances. L'utilisateur n'a rien à configurer.</p>
+  </div>
+  <div class="page-footer"><span>04</span><span class="pf-brand">FlowLearn — Manuel utilisateur</span><span>07</span></div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     PAGE 8 — §06 PROGRESSION + §07 PARAMÈTRES
+══════════════════════════════════════════════ -->
+<section class="page">
+  <div class="running-header">
+    <span class="brand-name">Flow<em>Learn</em></span>
+    <span class="doc-tag">§ 06–07</span>
+  </div>
+  <span class="section-num">§ 06 PROGRESSION &amp; RÉCOMPENSES</span>
+  <h1 class="section-title">Loot &amp; <span class="accent">métriques</span></h1>
+
+  <div class="two-col">
+    <div class="feature-block">
+      <h3>Loot &amp; boosts (mode gaming)</h3>
+      <p>Après chaque bonne réponse : arme, boost de vitesse, bouclier ou XP. Ces éléments n'ont d'effet que dans la session en cours — pas de progression permanente au sens RPG pour le MVP.</p>
+    </div>
+    <div class="feature-block">
+      <h3>Indicateurs sur le profil</h3>
+      <ul class="bullet-list">
+        <li>Notions maîtrisées vs à retravailler</li>
+        <li>Régularité — streak journalier</li>
+        <li>Temps total passé à apprendre</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout">
+    <p><strong>Ton des métriques — règle de présentation :</strong> toujours positif. Jamais <em>"tu as raté X questions"</em> — toujours <em>"tu as maîtrisé X nouvelles notions cette semaine"</em>.</p>
+  </div>
+
+  <div class="flourish" style="margin-top:20px;"></div>
+
+  <span class="section-num">§ 07 PARAMÈTRES &amp; COMPTE</span>
+  <h2>Données &amp; RGPD</h2>
+  <ul class="bullet-list">
+    <li><strong>Exporter ses données</strong> — base de connaissances et historique en JSON ou PDF</li>
+    <li><strong>Supprimer son compte</strong> — toutes les données associées, sans friction ni email de confirmation à rallonge</li>
+    <li>Les cours importés restent <strong>privés et chiffrés au repos</strong></li>
+    <li>FlowLearn ne vend pas les données utilisateur</li>
+  </ul>
+
+  <h2>Préférences</h2>
+  <table class="no-break">
+    <thead><tr><th>Paramètre</th><th>Options</th></tr></thead>
+    <tbody>
+      <tr><td>Langue</td><td>Interface et langue de génération des questions</td></tr>
+      <tr><td>Mode de révision par défaut</td><td>Quiz / Gaming / Scroll / Histoire interactive</td></tr>
+      <tr><td>Notifications</td><td>Rappels journaliers — heure et fréquence configurables, désactivables entièrement</td></tr>
+    </tbody>
+  </table>
+  <div class="page-footer"><span>04</span><span class="pf-brand">FlowLearn — Manuel utilisateur</span><span>08</span></div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     PAGE 9 — §08 MULTI-PLATEFORME & HORS SCOPE MVP
+══════════════════════════════════════════════ -->
+<section class="page">
+  <div class="running-header">
+    <span class="brand-name">Flow<em>Learn</em></span>
+    <span class="doc-tag">§ 08 Annexe</span>
+  </div>
+  <span class="section-num">§ 08 ANNEXE</span>
+  <h1 class="section-title">Multi-plateforme &amp; <span class="accent">futures versions</span></h1>
+
+  <h2>Plateformes cibles</h2>
+  <table class="no-break">
+    <thead><tr><th>Plateforme</th><th>Format</th><th>Scope</th></tr></thead>
+    <tbody>
+      <tr><td>Navigateur web</td><td>Application web — SaaS (prioritaire)</td><td><span class="tag tag-must">MVP</span></td></tr>
+      <tr><td>Desktop</td><td>Application Electron (Windows / macOS)</td><td><span class="tag tag-must">MVP</span></td></tr>
+      <tr><td>Mobile</td><td>Application native via Capacitor (iOS / Android)</td><td><span class="tag tag-revoir">Post-MVP</span></td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:9pt;color:var(--slate-500);margin-bottom:16px;">La base de connaissances est synchronisée entre les appareils. Une session commencée sur desktop peut être continuée sur mobile.</p>
+
+  <div class="flourish"></div>
+
+  <h2>Fonctionnalités documentées hors périmètre v0.1</h2>
+  <div class="two-col">
+    <div class="feature-block">
+      <h3>Intégration IoT</h3>
+      <p>ESP32 + composants électroniques pour déclencher des récompenses physiques à chaque bonne réponse.</p>
+    </div>
+    <div class="feature-block">
+      <h3>Mode B2B</h3>
+      <p>Parcours de formation entreprise avec tableau de bord RH et suivi des compétences par employé.</p>
+    </div>
+  </div>
+  <div class="two-col">
+    <div class="feature-block">
+      <h3>Plugins communautaires</h3>
+      <p>Architecture open source du noyau permettant à des tiers de brancher de nouvelles expériences d'apprentissage.</p>
+    </div>
+    <div class="feature-block">
+      <h3>LLM en local (ARM)</h3>
+      <p>Modèles LLM embarqués sur appareil — cible mobile ARM — pour garantir la confidentialité sans accès réseau.</p>
+    </div>
+  </div>
+  <div class="page-footer"><span>04</span><span class="pf-brand">FlowLearn — Manuel utilisateur</span><span>09</span></div>
+</section>
+
+</body>
+</html>
