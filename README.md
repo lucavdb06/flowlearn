@@ -9,11 +9,16 @@ Ce dépôt concentre les **documents de projet**, la **charte graphique** (HTML)
 
 | Ressource | Rôle |
 | --- | --- |
-| [`1-document/00-guide-lecture.md`](1-document/00-guide-lecture.md) | **Index jury** : correspondance livrables T-ESP-800 ↔ fichiers FlowLearn |
-| [`1-document/architecture.md`](1-document/architecture.md) | Arborescence des livrables et légende des dossiers |
-| [`1-document/projet/2-en-cours/plan-qualite.md`](1-document/projet/2-en-cours/plan-qualite.md) | Processus qualité, tests, tickets, CI |
-| [`1-document/projet/2-en-cours/description-fonctionnelle.md`](1-document/projet/2-en-cours/description-fonctionnelle.md) | Specs fonctionnelles & traçabilité PBS/WBS/DoD |
-| [`1-document/projet/3-a-revoir/README.md`](1-document/projet/3-a-revoir/README.md) | Flux : **relecture** → **charte graphique** → **`4-termine/`** |
+| [Guide de lecture](1-document/FlowLearn-Guide-Lecture.html) | **Index jury** : correspondance livrables T-ESP-800 ↔ fichiers FlowLearn |
+| [Plan qualité](1-document/projet/2-en-cours/FlowLearn-Plan-Qualite.html) | Processus qualité, tests, tickets, CI/CD |
+| [Description fonctionnelle](1-document/projet/2-en-cours/FlowLearn-Description-Fonctionnelle.html) | Specs fonctionnelles & traçabilité PBS/WBS/DoD |
+| [Matrice RACI](1-document/projet/2-en-cours/structure-organisation/FlowLearn-Matrice-RACI.html) | Responsabilités par activité (R/A/C/I) |
+| [Carte des compétences](1-document/projet/2-en-cours/structure-organisation/FlowLearn-Carte-Competences.html) | Couverture des compétences requises par l'équipe |
+| [Budget prévisionnel](1-document/projet/2-en-cours/budgetaire/Flowlearn%20budget-previsionnel.html) | Estimation budgétaire sur 24 mois |
+| [Gestion des risques](1-document/projet/3-a-revoir/risques/gestion-des-risques.html) | Registre des 25 risques identifiés, heatmap, mitigation |
+| [PBS / WBS / DoD — index](1-document/projet/3-a-revoir/pbs-wbs-dod-a-revoir.html) | Vue d'ensemble des livrables techniques en relecture |
+| [Flux de relecture](1-document/projet/3-a-revoir/README.html) | Flux : **relecture** → **charte graphique** → **`4-termine/`** |
+| [Architecture du dépôt](1-document/architecture.md) | Arborescence des livrables et légende des dossiers |
 
 Résumé du flux documentaire :
 
