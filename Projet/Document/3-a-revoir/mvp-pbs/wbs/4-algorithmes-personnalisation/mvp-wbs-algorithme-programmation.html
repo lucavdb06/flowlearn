@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowLearn — Document</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../2-en-cours/charte-graphique/flowlearn-document.css">
+</head>
+<body>
+
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="cover-top">
+      <div class="cover-logo" style="display: flex; align-items: center; gap: 12px;">
+          <img src="../../../charte-graphique/archives/assets/flowlearn-logo.svg" alt="Logo" style="width: 42px; height: 42px; object-fit: contain;">
+          <div class="wordmark">Flow<em>Learn</em></div>
+        </div>
+      <div class="cover-meta">
+        <div>T-ESP-800</div>
+        <div><strong>À revoir</strong></div>
+        <div>Juin 2026</div>
+      </div>
+    </div>
+    <div class="cover-middle">
+      <div class="cover-eyebrow">3-a-revoir · <span class="tag tag-revoir">À revoir</span></div>
+      <h1 class="cover-title">Document</h1>
+      <p class="cover-deck mono" style="font-size:10pt;">mvp-pbs/wbs/4-algorithmes-personnalisation/mvp-wbs-algorithme-programmation.md</p>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-stat"><div class="label">Source MD</div><div class="value" style="font-size:12pt;">mvp-wbs-algorithme-programmation.md</div></div>
+      <div class="cover-stat"><div class="label">Version</div><div class="value" style="font-size:14pt;">v0.1 — brouillon</div></div>
+    </div>
+  </div>
+</section>
+<section class="page">
+  <div class="running-header">
+    <span class="brand-name">Flow<em>Learn</em></span>
+    <span class="doc-tag">À revoir · mvp-wbs-algorithme-programmation</span>
+  </div>
+  <h4>4. Algorithmes de Personnalisation</h4>
+<ul class="bullet-list">
+<li>pbs :</li>
+</ul>
+<p><strong>4.1 Algorithme de Sélection des Questions</strong></p>
+<p>Méthode de répétition espacée type Anki (globale) ou sélection manuelle d'un thème choisi par l'utilisateur.</p>
+<ul class="bullet-list">
+<li>wbs :</li>
+<li>4.1.1 Modèle de données pour la sélection</li>
+<li>Définir les champs nécessaires (id_question, thème, date_dernière_revue, niveau_maîtrise, succès/échec, intervalle SRS).</li>
+<li>Stocker l’historique des réponses par utilisateur (lié à la base RAG / cours).</li>
+</ul>
+<ul class="bullet-list">
+<li>4.1.2 Logique de répétition espacée (type Anki)</li>
+<li>Implémenter le calcul de la prochaine date de revue et de l’intervalle selon la performance (bonne/mauvaise réponse).</li>
+<li>Exposer une règle « prochaine question à revoir » (priorité aux cartes dues, puis nouvelles).</li>
+</ul>
+<p>pbs :</p>
+<ul class="bullet-list">
+<li><strong>4.2 algorithme de rétention</strong></li>
+</ul>
+<p>Système de scoring basé sur les KPIs récoltés. Le but de l'algorithme est de cibler le profil utilisateur pour maximiser son taux de rétention sur l'application.</p>
+<p>wbs :</p>
+  <div class="page-footer"><span>3</span><span class="pf-brand">FlowLearn — Document</span><span>02</span></div>
+</section>
+</body>
+</html>

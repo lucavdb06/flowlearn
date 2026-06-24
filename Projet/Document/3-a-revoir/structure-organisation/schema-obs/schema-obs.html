@@ -1,0 +1,657 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>FlowLearn - Schéma OBS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'neutral',
+      securityLevel: 'loose',
+      flowchart: { useMaxWidth: true, htmlLabels: true }
+    });
+  </script>
+  <link rel="stylesheet" href="../../../2-en-cours/charte-graphique/flowlearn-document.css">
+</head>
+
+<body>
+
+  <!-- COVER -->
+  <section class="page cover">
+    <div class="cover-inner">
+      <div class="cover-top">
+        <div class="cover-logo" style="display: flex; align-items: center; gap: 12px;">
+          <img src="../../charte-graphique/archives/assets/flowlearn-logo.svg" alt="Logo" style="width: 42px; height: 42px; object-fit: contain;">
+          <div class="wordmark">Flow<em>Learn</em></div>
+        </div>
+        <div class="cover-meta">
+          <div>Document interne</div>
+          <div><strong>Version 1.0</strong></div>
+          <div>Mai 2026</div>
+        </div>
+      </div>
+
+      <div class="cover-middle">
+        <div class="cover-eyebrow">Organisation interne</div>
+        <h1 class="cover-title">Schéma<br><span class="accent">OBS</span></h1>
+        <div class="cover-deck">
+          Structure organisationnelle, rôles, responsabilités, autorités de décision et mécanismes de redevabilité.
+        </div>
+      </div>
+
+      <div class="cover-bottom">
+        <div class="cover-stat">
+          <div class="label">Niveaux</div>
+          <div class="value">3 <span class="unit">hiérarchiques</span></div>
+        </div>
+        <div class="cover-stat">
+          <div class="label">Pôles</div>
+          <div class="value">2 <span class="unit">opérationnels</span></div>
+        </div>
+        <div class="cover-stat">
+          <div class="label">FTE</div>
+          <div class="value">6 <span class="unit">membres</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 2: 1. Objectif & 2. Principes -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§01 . Objectif &amp; Principes</div>
+    </div>
+
+    <span class="section-num">Section 01</span>
+    <h1 class="section-title">Objectifs &amp; <span class="accent">Principes</span></h1>
+
+    <div class="two-col">
+      <div>
+        <h2>1. Objectif du document</h2>
+        <h3 class="subsec">Rôle du schéma OBS</h3>
+        <p>L'OBS définit la structure organisationnelle du projet FlowLearn.</p>
+        <p>Il précise les rôles, responsabilités, autorités de décision et mécanismes de redevabilité applicables à l'ensemble du projet. Il sert de référence officielle pour :</p>
+        <ul>
+          <li>la gouvernance,</li>
+          <li>l'affectation des responsabilités,</li>
+          <li>la traçabilité des décisions,</li>
+          <li>l'évaluation pédagogique du projet.</li>
+        </ul>
+
+        <h3 class="subsec">Différence avec WBS et organigramme</h3>
+        <ul>
+          <li><strong>OBS</strong> : structure organisationnelle (qui est responsable de quoi)</li>
+          <li><strong>WBS</strong> : structure du travail (quoi faire)</li>
+          <li><strong>Organigramme</strong> : hiérarchie RH formelle (non pertinente ici)</li>
+        </ul>
+
+        <h3 class="subsec">Ce que l'OBS permet de clarifier</h3>
+        <ul>
+          <li>Responsabilités exactes de chaque rôle</li>
+          <li>Autorité de décision et niveaux de validation</li>
+          <li>Redevabilité sur les livrables</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>2. Principes de construction</h2>
+        <h3 class="subsec">Logique retenue</h3>
+        <p>Découpage par <strong>rôles fonctionnels</strong>, indépendamment des individus, afin de :</p>
+        <ul>
+          <li>garantir la continuité du projet,</li>
+          <li>permettre la polyvalence,</li>
+          <li>maintenir une structure souple mais lisible.</li>
+        </ul>
+
+        <h3 class="subsec">Niveau de granularité</h3>
+        <p>Granularité volontairement intermédiaire, adaptée à :</p>
+        <ul>
+          <li>une équipe réduite,</li>
+          <li>un projet évolutif,</li>
+          <li>un contexte pédagogique.</li>
+        </ul>
+
+        <h3 class="subsec">Alignement</h3>
+        <p>L'OBS est aligné avec :</p>
+        <ul>
+          <li>l'Organisation Générale (modèle hybride),</li>
+          <li>la DOD (qualité contractuelle),</li>
+          <li>le planning et le WBS,</li>
+          <li>le livret d'accueil.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>02</span>
+    </div>
+  </section>
+
+  <!-- PAGE 3: 3. Structure globale -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§02 . Structure globale</div>
+    </div>
+
+    <span class="section-num">Section 02</span>
+    <h1 class="section-title">Structure globale de <span class="accent">l'OBS</span></h1>
+
+    <div class="two-col">
+      <div>
+        <h2>Niveaux organisationnels</h2>
+        <p><strong>Niveau 1 – Pilotage / Gouvernance</strong></p>
+        <ul>
+          <li>Porteur de projet</li>
+        </ul>
+        <p><strong>Niveau 2 – Opérationnel</strong></p>
+        <ul>
+          <li>Pôle Développement</li>
+          <li>Pôle Cybersécurité</li>
+        </ul>
+
+        <h3 class="subsec">Relations</h3>
+        <ul>
+          <li><strong>Verticales</strong> : arbitrage, validation, responsabilité finale</li>
+          <li><strong>Horizontales</strong> : collaboration, revue croisée, discussion prioritaire</li>
+        </ul>
+      </div>
+      <div>
+        <div class="callout" style="margin-top:22px;">
+          <span class="callout-label">Hybridation de l'équipe</span>
+          <p>La structure repose sur une hiérarchie minimale favorisant la polyvalence, mais gardant des référents clairs pour la prise de décision en cas de blocage.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>Schéma hiérarchique</h2>
+    <div style="background: white; border: 1px solid var(--slate-200); border-radius: 12px; padding: 20px; text-align: center; margin-top: 15px;">
+      <pre class="mermaid" style="background: transparent; border: none; margin: 0; padding: 0;">
+flowchart TB
+  LC["Luca Vanden-Brande&lt;br/&gt;Porteur de projet / Dev&lt;br/&gt;IA / Big Data"]
+
+  subgraph dev["Pôle Développement — Chef : Quentin Dumas"]
+    QD["Quentin Dumas&lt;br/&gt;Dev Jeux / UI-UX"]
+    NT["Nathan Plessis&lt;br/&gt;Dev IA / Big Data"]
+    DN["Daniel Okpe&lt;br/&gt;Dev IA / Big Data"]
+  end
+
+  subgraph cyber["Pôle Cybersécurité — Chef : Maxime Ruault"]
+    MX["Maxime Ruault&lt;br/&gt;Cybersécurité"]
+    CS["César Lextraît&lt;br/&gt;Dev / Cyber"]
+  end
+
+  LC --&gt; dev
+  LC --&gt; cyber
+  dev &lt;-.-&gt;|collaboration| cyber
+      </pre>
+    </div>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>03</span>
+    </div>
+  </section>
+
+  <!-- PAGE 4: 4. Décomposition organisationnelle -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§03 . Décomposition détaillée</div>
+    </div>
+
+    <span class="section-num">Section 03</span>
+    <h1 class="section-title">Décomposition <span class="accent">organisationnelle</span></h1>
+
+    <h2>OBS-01 — Porteur de projet</h2>
+    <table>
+      <tbody>
+        <tr>
+          <td style="width: 25%;"><strong>Position</strong></td>
+          <td>Niveau Pilotage</td>
+        </tr>
+        <tr>
+          <td><strong>Mission principale</strong></td>
+          <td>Porter la vision du projet et garantir sa cohérence globale.</td>
+        </tr>
+        <tr>
+          <td><strong>Périmètre de décision</strong></td>
+          <td>Total.</td>
+        </tr>
+        <tr>
+          <td><strong>Remplacement en absence</strong></td>
+          <td>Priorité à Nathan, à défaut Maxime.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="two-col" style="margin-top: 10px;">
+      <div>
+        <h3 class="subsec">Responsabilités</h3>
+        <ul>
+          <li>Vision produit et technique</li>
+          <li>Définition PBS / WBS / Backlog</li>
+          <li>Arbitrage stratégique et technique</li>
+          <li>Validation finale des livrables</li>
+          <li>Décision finale en cas de conflit</li>
+          <li>Responsabilité finale en cas de bug critique</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="subsec">Livrables</h3>
+        <p>Documents de cadrage, OBS, Livret d'accueil, MVP validé.</p>
+      </div>
+    </div>
+
+    <h2>OBS-02 — Pôle Développement</h2>
+    <table>
+      <tbody>
+        <tr>
+          <td style="width: 25%;"><strong>Position</strong></td>
+          <td>Niveau Coordination</td>
+        </tr>
+        <tr>
+          <td><strong>Chef de pôle</strong></td>
+          <td>Quentin Dumas (arbitre les désaccords techniques du pôle Dev).</td>
+        </tr>
+        <tr>
+          <td><strong>Mission principale</strong></td>
+          <td>Concevoir et développer les fonctionnalités du produit.</td>
+        </tr>
+        <tr>
+          <td><strong>Périmètre de décision</strong></td>
+          <td>Implémentation technique locale, hors changements structurants.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="two-col" style="margin-top: 10px;">
+      <div>
+        <h3 class="subsec">Responsabilités</h3>
+        <ul>
+          <li>Implémentation technique</li>
+          <li>Qualité du code</li>
+          <li>Tests fonctionnels</li>
+          <li>Documentation technique</li>
+          <li>Correction de failles simples (sous validation cyber)</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="subsec">Livrables</h3>
+        <p>Code applicatif, Tests, Documentation GitHub.</p>
+      </div>
+    </div>
+
+    <h2>OBS-03 — Développeur IA / Big Data</h2>
+    <table>
+      <tbody>
+        <tr>
+          <td style="width: 25%;"><strong>Position</strong></td>
+          <td>Niveau Opérationnel</td>
+        </tr>
+        <tr>
+          <td><strong>Mission principale</strong></td>
+          <td>Développer les composants IA et data du projet.</td>
+        </tr>
+        <tr>
+          <td><strong>Périmètre de décision</strong></td>
+          <td>Technique locale IA.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="two-col" style="margin-top: 10px;">
+      <div>
+        <h3 class="subsec">Responsabilités</h3>
+        <ul>
+          <li>Implémentation modèles et pipelines</li>
+          <li>Optimisation des performances</li>
+          <li>Tests locaux</li>
+          <li>Documentation IA</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="subsec">Livrables</h3>
+        <p>Code IA, Scripts, Tests associés.</p>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>04</span>
+    </div>
+  </section>
+
+  <!-- PAGE 5: 4. Décomposition organisationnelle (suite) & 5. Affectation -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§03 . Décomposition (suite)</div>
+    </div>
+
+    <h2>OBS-04 — Pôle Cybersécurité</h2>
+    <table>
+      <tbody>
+        <tr>
+          <td style="width: 25%;"><strong>Position</strong></td>
+          <td>Niveau Coordination transverse</td>
+        </tr>
+        <tr>
+          <td><strong>Chef de pôle</strong></td>
+          <td>Maxime Ruault (arbitre les désaccords sur les sujets de sécurité).</td>
+        </tr>
+        <tr>
+          <td><strong>Mission principale</strong></td>
+          <td>Garantir la sécurité du système dès la conception.</td>
+        </tr>
+        <tr>
+          <td><strong>Périmètre de décision</strong></td>
+          <td>Sécurité (droit de blocage, décision non encore bornée dans le temps).</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="two-col" style="margin-top: 10px;">
+      <div>
+        <h3 class="subsec">Responsabilités</h3>
+        <ul>
+          <li>Security by Design</li>
+          <li>Audit de code</li>
+          <li>Analyse des risques</li>
+          <li>Validation cybersécurité bloquante avant merge</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="subsec">Livrables</h3>
+        <p>Avis sécurité, Rapports d'audit, Validation cyber des PR.</p>
+      </div>
+    </div>
+
+    <h2>OBS-05 — Développeur / Auditeur Cybersécurité</h2>
+    <table>
+      <tbody>
+        <tr>
+          <td style="width: 25%;"><strong>Position</strong></td>
+          <td>Niveau Opérationnel</td>
+        </tr>
+        <tr>
+          <td><strong>Mission principale</strong></td>
+          <td>Analyser et renforcer la sécurité du code.</td>
+        </tr>
+        <tr>
+          <td><strong>Périmètre de décision</strong></td>
+          <td>Technique sécurité.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="two-col" style="margin-top: 10px;">
+      <div>
+        <h3 class="subsec">Responsabilités</h3>
+        <ul>
+          <li>Revue de code orientée sécurité</li>
+          <li>Tests de vulnérabilité</li>
+          <li>Recommandations correctives</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="subsec">Livrables</h3>
+        <p>Rapports d'analyse, Correctifs proposés, Validations cyber.</p>
+      </div>
+    </div>
+
+    <div class="flourish" style="margin: 30px 0;"></div>
+
+    <span class="section-num">Section 04</span>
+    <h1 class="section-title">Affectation des <span class="accent">responsabilités</span></h1>
+    <ul>
+      <li>Responsabilités <strong>collectives par pôle</strong></li>
+      <li>Aucune responsabilité individuelle figée</li>
+      <li>Validation finale centralisée</li>
+    </ul>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Domaine</th>
+          <th>Responsable final</th>
+          <th>Contributeurs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Vision / pilotage</strong></td>
+          <td>Porteur de projet</td>
+          <td>Équipe</td>
+        </tr>
+        <tr>
+          <td><strong>Développement</strong></td>
+          <td>Pôle Dev</td>
+          <td>Dev IA</td>
+        </tr>
+        <tr>
+          <td><strong>Sécurité</strong></td>
+          <td>Pôle Cyber</td>
+          <td>Dev/Cyber</td>
+        </tr>
+        <tr>
+          <td><strong>Validation finale</strong></td>
+          <td>Porteur de projet</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>05</span>
+    </div>
+  </section>
+
+  <!-- PAGE 6: 6. Gouvernance, 7. Conflits -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§05 . Gouvernance &amp; Conflits</div>
+    </div>
+
+    <span class="section-num">Section 05</span>
+    <h1 class="section-title">Gouvernance &amp; <span class="accent">Décision</span></h1>
+
+    <div class="two-col">
+      <div>
+        <h2>Niveaux de décisions</h2>
+        <ul>
+          <li><strong>Stratégiques</strong> : Porteur de projet</li>
+          <li><strong>Techniques locales</strong> : Développeurs</li>
+          <li><strong>Sécurité</strong> : Pôle Cybersécurité (bloquant)</li>
+        </ul>
+
+        <h2>Changements majeurs</h2>
+        <p>Tout changement impactant fortement l'existant (techno, architecture) doit remonter au porteur de projet.</p>
+
+        <h2>Arbitrage</h2>
+        <ul>
+          <li>Priorité à la discussion</li>
+          <li>Décision révisable</li>
+          <li>Report possible si non urgent</li>
+        </ul>
+      </div>
+      <div>
+        <div style="background: white; border: 1px solid var(--slate-200); border-radius: 12px; padding: 15px; margin-top: 22px;">
+          <pre class="mermaid" style="background: transparent; border: none; margin: 0; padding: 0;">
+flowchart LR
+  A[Décision à prendre] --&gt; B{Type ?}
+  B --&gt;|Stratégique| C[Porteur de projet]
+  B --&gt;|Techn. locale| D[Pôle Dev]
+  B --&gt;|Sécurité| E[Pôle Cyber]
+  D --&gt;|Structurant ?| F{Oui/Non}
+  F --&gt;|Oui| C
+  F --&gt;|Non| G[Décision locale]
+  E --&gt;|Blocage ?| H[Validation obligatoire]
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="flourish" style="margin: 30px 0;"></div>
+
+    <span class="section-num">Section 06</span>
+    <h1 class="section-title">Gestion des conflits &amp; <span class="accent">escalade</span></h1>
+
+    <div class="two-col">
+      <div>
+        <p>En cas de conflit de responsabilité :</p>
+        <ol>
+          <li><strong>Discussion directe</strong> entre parties</li>
+          <li><strong>Discussion collective</strong> / Vote</li>
+          <li><strong>Arbitrage</strong> par le chef de pôle concerné (Quentin Dumas pour le Dev, Maxime Ruault pour le Cyber)</li>
+          <li><strong>Escalade</strong> au porteur de projet si nécessaire (décision priorisant toujours la résolution du conflit)</li>
+        </ol>
+      </div>
+      <div>
+        <div style="background: white; border: 1px solid var(--slate-200); border-radius: 12px; padding: 15px;">
+          <pre class="mermaid" style="background: transparent; border: none; margin: 0; padding: 0;">
+flowchart TB
+  E1["1. Discussion directe"] --&gt; E2["2. Discussion collective"]
+  E2 --&gt; E3["3. Arbitrage (Chef Pôle / Porteur)"]
+  E3 --&gt; E4["4. Décision finale"]
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>06</span>
+    </div>
+  </section>
+
+  <!-- PAGE 7: 8. Lisibilité, 9. Scalabilité, 10. Cohérence, 11. Validation -->
+  <section class="page">
+    <div class="running-header">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+      <div class="doc-tag">§07 . Traçabilité &amp; Évolution</div>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <span class="section-num">Section 07</span>
+        <h1 class="section-title">Traçabilité &amp; <span class="accent">Scalabilité</span></h1>
+        
+        <h2>8. Lisibilité et traçabilité</h2>
+        <ul>
+          <li>Toute responsabilité OBS est traçable via :
+            <ul>
+              <li>Pull Requests</li>
+              <li>Historique GitHub</li>
+            </ul>
+          </li>
+          <li>L'OBS sert de référence pédagogique (école / jury).</li>
+        </ul>
+
+        <h2>9. Scalabilité de l'OBS</h2>
+        <h3 class="subsec">Évolution prévue</h3>
+        <ul>
+          <li>Ajout futur de <strong>chefs d'équipe</strong> si augmentation significative de l'effectif</li>
+          <li>Rôles principalement <strong>transverses</strong></li>
+          <li>Hiérarchie minimale, structure linéaire privilégiée</li>
+        </ul>
+        <h3 class="subsec">Seuil de structuration</h3>
+        <p>À définir lors de l'augmentation de l'effectif (7 membres selon le livret d'accueil).</p>
+      </div>
+
+      <div>
+        <span class="section-num">Section 08</span>
+        <h1 class="section-title">Cohérence &amp; <span class="accent">Validation</span></h1>
+
+        <h2>10. Cohérence documentaire</h2>
+        <p>L'OBS est cohérent avec :</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Livrable</th>
+              <th>Statut</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Organisation Générale</td>
+              <td><span class="pill pill-ok">Aligné</span></td>
+            </tr>
+            <tr>
+              <td>DOD</td>
+              <td><span class="pill pill-ok">Aligné</span></td>
+            </tr>
+            <tr>
+              <td>WBS / Planning</td>
+              <td><span class="pill pill-ok">Aligné</span></td>
+            </tr>
+            <tr>
+              <td>Livret d'accueil</td>
+              <td><span class="pill pill-ok">Aligné</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <p><em>Aucune contradiction identifiée.</em></p>
+
+        <h2>11. Validation du schéma</h2>
+        <table>
+          <tbody>
+            <tr>
+              <td><strong>Responsable</strong></td>
+              <td>Luca Vanden-Brande (Nathan en soutien)</td>
+            </tr>
+            <tr>
+              <td><strong>Moment de validation</strong></td>
+              <td>Avant lancement du MVP</td>
+            </tr>
+            <tr>
+              <td><strong>Mise à jour</strong></td>
+              <td>En cas d'évolution organisationnelle</td>
+            </tr>
+            <tr>
+              <td><strong>Versionnement</strong></td>
+              <td>Sur Notion / GitHub</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Confidentiel . Usage interne</span>
+      <span class="pf-brand">FlowLearn Apprendre en jouant</span>
+      <span>07</span>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowLearn — DOD – 2.3 Type de jeu : style « Archero » / « Vampire Survivors »</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../../2-en-cours/charte-graphique/flowlearn-document.css">
+</head>
+<body>
+
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="cover-top">
+      <div class="cover-logo" style="display: flex; align-items: center; gap: 12px;">
+          <img src="../../../charte-graphique/archives/assets/flowlearn-logo.svg" alt="Logo" style="width: 42px; height: 42px; object-fit: contain;">
+          <div class="wordmark">Flow<em>Learn</em></div>
+        </div>
+      <div class="cover-meta">
+        <div>T-ESP-800</div>
+        <div><strong>À revoir</strong></div>
+        <div>Juin 2026</div>
+      </div>
+    </div>
+    <div class="cover-middle">
+      <div class="cover-eyebrow">3-a-revoir · <span class="tag tag-revoir">À revoir</span></div>
+      <h1 class="cover-title">DOD – 2.3 Type de jeu : style « Archero » / « Vampire Surviv…</h1>
+      <p class="cover-deck mono" style="font-size:10pt;">mvp-pbs/dod/2-jeux-et-experiences/dod-2.3-archero-vampire-survivors.md</p>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-stat"><div class="label">Source MD</div><div class="value" style="font-size:12pt;">dod-2.3-archero-vampire-survivors.md</div></div>
+      <div class="cover-stat"><div class="label">Version</div><div class="value" style="font-size:14pt;">v0.1 — brouillon</div></div>
+    </div>
+  </div>
+</section>
+<section class="page">
+  <div class="running-header">
+    <span class="brand-name">Flow<em>Learn</em></span>
+    <span class="doc-tag">À revoir · dod-2.3-archero-vampire-survivors</span>
+  </div>
+  <h2 class="section-title">DOD – 2.3 Type de jeu : style « Archero » / « Vampire Survivors »</h2>
+<p><strong>PBS :</strong> Jeux de survie casual.</p>
+<div class="flourish"></div>
+<h3>Comment valider chaque feature</h3>
+<h4>2.3.1 Déplacement du personnage</h4>
+<p><strong>Cas d’erreur à gérer :</strong></p>
+<ul class="bullet-list">
+<li>Contrôles non répondants ou conflit clavier/manette/tactile : priorité définie, pas de blocage.</li>
+<li>Collision manquante : personnage ne doit pas sortir de la carte ou traverser les murs.</li>
+</ul>
+<p><strong>Feature validée si :</strong> le joueur peut se déplacer avec les contrôles prévus et les collisions avec la carte se comportent correctement.</p>
+<div class="flourish"></div>
+<h4>2.3.2 Apparition (spawn) des monstres</h4>
+<p><strong>Cas d’erreur à gérer :</strong></p>
+<ul class="bullet-list">
+<li>Spawn dans les murs ou hors carte : zones/spawn points validés pour éviter positions invalides.</li>
+<li>Trop de spawns (perf / lisibilité) : limite ou rythme plafonné si besoin.</li>
+</ul>
+<p><strong>Feature validée si :</strong> les monstres spawnent de façon cohérente dans les zones prévues et sont visibles/jouables.</p>
+<div class="flourish"></div>
+<h4>2.3.3 Variété des ennemis (3 types de monstres)</h4>
+<p><strong>Cas d’erreur à gérer :</strong></p>
+<ul class="bullet-list">
+<li>Type d’ennemi inconnu ou manquant : fallback ou type par défaut pour éviter crash.</li>
+<li>Stats incohérentes (PV ≤ 0, etc.) : validation des données ou valeurs par défaut.</li>
+</ul>
+<p><strong>Feature validée si :</strong> 3 types de monstres sont jouables, distincts et intégrés au spawn (et au quiz si applicable).</p>
+<div class="flourish"></div>
+<h4>2.3.4 Variété des armes (3 armes)</h4>
+<p><strong>Cas d’erreur à gérer :</strong></p>
+<ul class="bullet-list">
+<li>Arme inconnue ou non chargée : pas de crash, arme par défaut ou message.</li>
+<li>Tir sans cible / dégâts à 0 : comportement défini (feedback visuel ou sonore, pas de freeze).</li>
+</ul>
+<p><strong>Feature validée si :</strong> 3 armes sont utilisables, distinctes et donnent un feedback visuel et gameplay clair.</p>
+<div class="flourish"></div>
+<h4>2.3.5 Carte / niveau désigné</h4>
+<p><strong>Cas d’erreur à gérer :</strong></p>
+<ul class="bullet-list">
+<li>Carte non chargée ou corrompue : message d’erreur, pas de crash ; retry ou niveau fallback.</li>
+<li>Respawn dans un mur ou hors zone jouable : points de respawn validés.</li>
+</ul>
+<p><strong>Feature validée si :</strong> la carte est jouable, les limites et obstacles sont respectés par le déplacement et le spawn.</p>
+<div class="flourish"></div>
+<h4>2.3.6 Évolution de la difficulté</h4>
+<p><strong>Cas d’erreur à gérer :</strong></p>
+<ul class="bullet-list">
+<li>Difficulté qui n’évolue pas (bug timer/vague) : seuils ou courbe testables.</li>
+<li>Montée trop brutale : plafond ou limite pour rester jouable.</li>
+</ul>
+<p><strong>Feature validée si :</strong> la difficulté évolue de manière observable (spawn, dégâts, nombre d’ennemis, etc.) pendant une partie.</p>
+<div class="flourish"></div>
+<h4>2.3.7 Intégrer la mécanique de gameplay quiz (MVP)</h4>
+<p><strong>Cas d’erreur à gérer :</strong></p>
+<ul class="bullet-list">
+<li>API 2.1 indisponible ou sans questions : fallback (questions par défaut ou message), pas de blocage du jeu.</li>
+<li>API 2.2 indisponible (envoi résultat) : pas de crash ; retry, file d’attente ou message ; récompense tangible reportée ou indiquée.</li>
+<li>Réponse joueur non enregistrée ou doublon : un seul envoi par réponse, idempotence si besoin.</li>
+</ul>
+<p><strong>Feature validée si :</strong> le quiz se déclenche aux moments prévus, utilise l’API 2.1, affiche et traite les réponses avec des effets en jeu, et relaie vers 2.2 pour les récompenses ; l’ensemble reste fluide et réutilisable.</p>
+  <div class="page-footer"><span>3</span><span class="pf-brand">FlowLearn — DOD – 2.3 Type de jeu : style « Archero » / « Vampire Surviv…</span><span>02</span></div>
+</section>
+</body>
+</html>

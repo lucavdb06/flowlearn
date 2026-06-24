@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowLearn — Schéma global PBS + DOD — DopaLearn MVP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../2-en-cours/charte-graphique/flowlearn-document.css">
+</head>
+<body>
+
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="cover-top">
+      <div class="cover-logo" style="display: flex; align-items: center; gap: 12px;">
+          <img src="../charte-graphique/archives/assets/flowlearn-logo.svg" alt="Logo" style="width: 42px; height: 42px; object-fit: contain;">
+          <div class="wordmark">Flow<em>Learn</em></div>
+        </div>
+      <div class="cover-meta">
+        <div>T-ESP-800</div>
+        <div><strong>À revoir</strong></div>
+        <div>Juin 2026</div>
+      </div>
+    </div>
+    <div class="cover-middle">
+      <div class="cover-eyebrow">3-a-revoir · <span class="tag tag-revoir">À revoir</span></div>
+      <h1 class="cover-title">Schéma global PBS + DOD — DopaLearn MVP</h1>
+      <p class="cover-deck mono" style="font-size:10pt;">mvp-pbs/pbs-globale.md</p>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-stat"><div class="label">Source MD</div><div class="value" style="font-size:12pt;">pbs-globale.md</div></div>
+      <div class="cover-stat"><div class="label">Version</div><div class="value" style="font-size:14pt;">v0.1 — brouillon</div></div>
+    </div>
+  </div>
+</section>
+<section class="page">
+  <div class="running-header">
+    <span class="brand-name">Flow<em>Learn</em></span>
+    <span class="doc-tag">À revoir · pbs-globale</span>
+  </div>
+  <h2 class="section-title">Schéma global PBS + DOD — DopaLearn MVP</h2>
+<p>Grand schéma : <strong>PBS</strong> en tête, puis une zone par section avec des <strong>petits carrés jaunes</strong> (livrables / DOD).</p>
+<pre class="mermaid-block"><code>flowchart TB  PBS[&quot;DopaLearn MVP — PBS globale&quot;]  PBS --- S1  PBS --- S2  PBS --- S3  PBS --- S4  PBS --- S5  subgraph S1[&quot;1. Conteneur Multiplateforme&quot;]    direction LR    s1_1[1.1 Encapsulateurs]    s1_dod[dod-1.1]  end  subgraph S2[&quot;2. Jeux et Expériences&quot;]    direction LR    s2_1[2.1 API RAG jeux]    s2_d1[dod-2.1]    s2_2[2.2 API externe]    s2_d2[dod-2.2]    s2_3[2.3 Archero Vampire]    s2_d3[dod-2.3]  end  subgraph S3[&quot;3. Intelligence Centrale et Module RAG&quot;]    direction LR    s3_1[3.1 FastAPI]    s3_d1[dod-3.1]    s3_2[3.2 Base vectorielle]    s3_d2[dod-3.2]    s3_3[3.3 Ingestion RAG]    s3_d3[dod-3.3]    s3_4[3.4 Orchestrateur]    s3_d4[dod-3.4]    s3_5[3.5 Générateurs LLM]    s3_d5[dod-3.5]  end  subgraph S4[&quot;4. Algorithmes de Personnalisation&quot;]    direction LR    s4_1[4.1 Sélection questions]    s4_d1[dod-4.1]    s4_2[4.2 Rétention]    s4_d2[dod-4.2]  end  subgraph S5[&quot;5. Sécurité et Gouvernance&quot;]    direction LR    s5_1[5.1 Coffre-fort RGPD]    s5_d1[dod-5.1]  end  classDef yellow fill:#ffeb3b,stroke:#f57f17,color:#000  class s1_dod,s2_d1,s2_d2,s2_d3,s3_d1,s3_d2,s3_d3,s3_d4,s3_d5,s4_d1,s4_d2,s5_d1 yellow</code></pre>
+<p><strong>Légende :</strong> les carrés jaunes correspondent aux fichiers DOD de chaque livrable (voir dossiers <span class="mono">dod/</span> par section).</p>
+  <div class="page-footer"><span>3</span><span class="pf-brand">FlowLearn — Schéma global PBS + DOD — DopaLearn MVP</span><span>02</span></div>
+</section>
+</body>
+</html>
