@@ -15,7 +15,7 @@ META = {
     "formation": "T-ESP-800",
     "version": "v0.1 — brouillon",
     "date": "Juin 2026",
-    "responsable": "Jean-Baptiste Vigreux — Porteur de projet",
+    "responsable": "Luca Vanden-Brande — Porteur de projet",
     "statut": "À revoir",
 }
 

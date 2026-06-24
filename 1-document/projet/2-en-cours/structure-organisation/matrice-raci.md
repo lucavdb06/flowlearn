@@ -33,9 +33,9 @@ Complète l’[OBS](schema-obs.md) et l’[organisation générale](organisation
 
 | Rôle | Membres (réf. livret) |
 | --- | --- |
-| **Porteur de projet** | Jean-Baptiste Vigreux |
-| **Pôle Dev** | Nathan Plessis, Luca Vanden-Brande, Daniel Okpe, César Lextraît (partiel) |
-| **Pôle Cyber** | Maxime Ruault, César Lextraît |
+| **Porteur de projet** | Luca Vanden-Brande |
+| **Pôle Dev** (chef : Quentin Dumas) | Nathan Plessis, Quentin Dumas, Daniel Okpe, César Lextraît (partiel) |
+| **Pôle Cyber** (chef : Maxime Ruault) | Maxime Ruault, César Lextraît |
 
 En cas d’absence du porteur, un dev senior désigné en réunion hebdo assure le **A** temporaire (à tracer en comité de pilotage).
 
