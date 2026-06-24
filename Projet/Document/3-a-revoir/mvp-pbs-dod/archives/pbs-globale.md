@@ -1,10 +1,10 @@
-# Schéma global PBS + DOD — DopaLearn MVP
+# Schéma global PBS + DOD — FlowLearn MVP
 
 Grand schéma : **PBS** en tête, puis une zone par section avec des **petits carrés jaunes** (livrables / DOD).
 
 ```mermaid
 flowchart TB
-  PBS["DopaLearn MVP — PBS globale"]
+  PBS["FlowLearn MVP — PBS globale"]
 
   PBS --- S1
   PBS --- S2

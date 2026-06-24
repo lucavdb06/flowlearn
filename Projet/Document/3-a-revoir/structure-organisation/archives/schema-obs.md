@@ -1,4 +1,4 @@
-# Schéma OBS (Organizational Breakdown Structure) – Projet DopaLearn
+# Schéma OBS (Organizational Breakdown Structure) – Projet FlowLearn
 
 ---
 
@@ -6,7 +6,7 @@
 
 ### Rôle du schéma OBS
 
-L'OBS définit la structure organisationnelle du projet DopaLearn.
+L'OBS définit la structure organisationnelle du projet FlowLearn.
 
 Il précise les rôles, responsabilités, autorités de décision et mécanismes de redevabilité applicables à l'ensemble du projet.
 

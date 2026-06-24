@@ -1,4 +1,4 @@
-# Product Breakdown Structure (PBS) — DopaLearn MVP
+# Product Breakdown Structure (PBS) — FlowLearn MVP
 
 > Version charte : [`mvp-pbs.html`](mvp-pbs.html)
 
@@ -24,7 +24,7 @@
 
 ## 1. Arborescence hiérarchique du produit
 
-**Produit :** DopaLearn MVP (v0.1)
+**Produit :** FlowLearn MVP (v0.1)
 
 ### 1. Conteneur Multiplateforme (Frontend Web & Mobile)
 

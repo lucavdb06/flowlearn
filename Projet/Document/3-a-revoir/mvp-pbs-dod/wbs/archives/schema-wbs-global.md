@@ -1,4 +1,4 @@
-# Schéma WBS Global — DopaLearn MVP (v0.1)
+# Schéma WBS Global — FlowLearn MVP (v0.1)
 
 > Version charte : [`schema-wbs-global.html`](schema-wbs-global.html)
 
@@ -26,7 +26,7 @@
 
 ```mermaid
 mindmap
-  root((DopaLearn MVP))
+  root((FlowLearn MVP))
     1. Conteneur Multiplateforme
       1.1 Encapsulateurs
         1.1.1 Config Electron Desktop
