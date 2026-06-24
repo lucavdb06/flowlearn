@@ -161,6 +161,11 @@ html, body {
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
+.running-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
 .running-header .brand-name {
   font-family: 'Fraunces', serif;
   font-weight: 600;
