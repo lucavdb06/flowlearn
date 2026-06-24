@@ -8,30 +8,181 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../charte-graphique/archives/flowlearn-document.css">
-  <!-- Mermaid : rendu du schéma PBS -->
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: 'neutral',
-      securityLevel: 'loose',
-      flowchart: { useMaxWidth: true, htmlLabels: true }
-    });
-  </script>
-  <style>
-    .mermaid-wrap {
-      border: 1px solid var(--slate-200);
-      border-radius: 10px;
-      background: white;
-      padding: 16px;
-      margin: 16px 0;
-      overflow-x: auto;
-    }
-    .mermaid-wrap .mermaid {
-      display: flex;
-      justify-content: center;
-    }
-  </style>
+<style>
+  .pbs-map {
+    margin: 14px 0 0;
+  }
+  .pbs-root {
+    text-align: center;
+    margin-bottom: 6px;
+  }
+  .pbs-root-card {
+    display: inline-block;
+    background: var(--deep-ocean);
+    color: white;
+    font-family: 'Fraunces', serif;
+    font-size: 14pt;
+    font-weight: 500;
+    padding: 14px 28px;
+    border-radius: 14px;
+    border: 2px solid var(--brain-pink);
+    box-shadow: 0 8px 24px rgba(30, 58, 95, 0.12);
+  }
+  .pbs-root-card em {
+    font-style: normal;
+    color: #F9A8D4;
+  }
+  .pbs-root-sub {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 8pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-top: 4px;
+    font-weight: 600;
+  }
+  .pbs-spine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto 10px;
+    width: 2px;
+    height: 28px;
+    background: linear-gradient(to bottom, var(--brain-pink), var(--flow-blue));
+    border-radius: 2px;
+  }
+  .pbs-spine::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: var(--flow-blue);
+    border-radius: 50%;
+    margin-top: -4px;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+  }
+  .pbs-lots {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .pbs-lot {
+    background: white;
+    border: 1px solid var(--slate-200);
+    border-radius: 14px;
+    overflow: hidden;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .pbs-lot-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--slate-100);
+  }
+  .pbs-lot-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: white;
+    background: var(--accent, var(--flow-blue));
+    padding: 4px 8px;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+  .pbs-lot-title {
+    font-family: 'Fraunces', serif;
+    font-size: 11.5pt;
+    color: var(--deep-ocean);
+    font-weight: 500;
+    line-height: 1.25;
+  }
+  .pbs-lot-body {
+    padding: 10px 12px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .pbs-pair {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    background: var(--slate-50);
+    border-radius: 10px;
+    border: 1px solid var(--slate-100);
+  }
+  .pbs-livrable {
+    font-size: 9.5pt;
+    color: var(--slate-700);
+    font-weight: 500;
+    line-height: 1.35;
+  }
+  .pbs-livrable code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    color: var(--flow-blue);
+    font-weight: 600;
+    margin-right: 6px;
+  }
+  .pbs-arrow {
+    color: var(--slate-400);
+    font-size: 11pt;
+    line-height: 1;
+  }
+  .pbs-dod {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    font-weight: 600;
+    color: var(--deep-ocean);
+    background: #FEF3C7;
+    border: 1px solid #F59E0B;
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.15s;
+  }
+  .pbs-dod:hover {
+    background: #FDE68A;
+  }
+  .pbs-lot.blue  { --accent: var(--flow-blue); }
+  .pbs-lot.pink  { --accent: var(--brain-pink); }
+  .pbs-lot.lav   { --accent: var(--soft-lavender); }
+  .pbs-lot.blue .pbs-lot-head { background: linear-gradient(90deg, rgba(59,130,246,0.06), transparent); }
+  .pbs-lot.pink .pbs-lot-head { background: linear-gradient(90deg, rgba(236,72,153,0.06), transparent); }
+  .pbs-lot.lav  .pbs-lot-head { background: linear-gradient(90deg, rgba(139,92,246,0.06), transparent); }
+  .pbs-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .pbs-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 8.5pt;
+    color: var(--slate-600);
+    background: white;
+    border: 1px solid var(--slate-200);
+    border-radius: 999px;
+    padding: 5px 12px;
+  }
+  .pbs-legend-swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .pbs-legend-swatch.root { background: var(--deep-ocean); border: 2px solid var(--brain-pink); }
+  .pbs-legend-swatch.livrable { background: var(--slate-50); border: 1px solid var(--slate-200); }
+  .pbs-legend-swatch.dod { background: #FEF3C7; border: 1px solid #F59E0B; }
+</style>
 </head>
 <body>
 
@@ -58,6 +209,7 @@
     </div>
   </div>
 </section>
+
 <section class="page">
   <div class="running-header">
     <div class="brand">
@@ -66,71 +218,169 @@
       </div>
     <span class="doc-tag">À revoir · pbs-globale</span>
   </div>
-  <h2 class="section-title">Schéma global PBS + DOD — FlowLearn MVP</h2>
-  <p>Grand schéma : <strong>PBS</strong> en tête, puis une zone par section avec des <strong>petits carrés jaunes</strong> (livrables / DOD).</p>
 
-  <div class="mermaid-wrap no-break">
-    <pre class="mermaid">
-flowchart TB
-  PBS["FlowLearn MVP — PBS globale"]
+  <span class="section-num">§ 01 · Carte PBS + DOD</span>
+  <h2 class="section-title">Vue d'ensemble <span class="accent">du produit.</span></h2>
+  <p class="section-deck">Chaque lot PBS décompose le MVP en livrables WBS, chacun validé par une fiche DOD.</p>
 
-  PBS --- S1
-  PBS --- S2
-  PBS --- S3
-  PBS --- S4
-  PBS --- S5
+  <div class="pbs-map no-break">
+    <div class="pbs-root">
+      <div class="pbs-root-card">
+        Flow<em>Learn</em> MVP — PBS globale
+        <span class="pbs-root-sub">Product Breakdown Structure</span>
+      </div>
+    </div>
+    <div class="pbs-spine" aria-hidden="true"></div>
 
-  subgraph S1["1. Conteneur Multiplateforme"]
-    direction LR
-    s1_1[1.1 Encapsulateurs]
-    s1_dod[dod-1.1]
-  end
+    <div class="pbs-lots">
 
-  subgraph S2["2. Jeux et Expériences"]
-    direction LR
-    s2_1[2.1 API RAG jeux]
-    s2_d1[dod-2.1]
-    s2_2[2.2 API externe]
-    s2_d2[dod-2.2]
-    s2_3[2.3 Archero Vampire]
-    s2_d3[dod-2.3]
-  end
+      <article class="pbs-lot blue">
+        <header class="pbs-lot-head">
+          <span class="pbs-lot-num">01</span>
+          <h3 class="pbs-lot-title">Conteneur Multiplateforme</h3>
+        </header>
+        <div class="pbs-lot-body">
+          <div class="pbs-pair">
+            <span class="pbs-livrable"><code>1.1</code> Encapsulateurs</span>
+            <span class="pbs-arrow" aria-hidden="true">→</span>
+            <a class="pbs-dod" href="../dod/1-conteneur-multiplateforme/dod-1.1-encapsulateurs.html">dod-1.1</a>
+          </div>
+        </div>
+      </article>
 
-  subgraph S3["3. Intelligence Centrale et Module RAG"]
-    direction LR
-    s3_1[3.1 FastAPI]
-    s3_d1[dod-3.1]
-    s3_2[3.2 Base vectorielle]
-    s3_d2[dod-3.2]
-    s3_3[3.3 Ingestion RAG]
-    s3_d3[dod-3.3]
-    s3_4[3.4 Orchestrateur]
-    s3_d4[dod-3.4]
-    s3_5[3.5 Générateurs LLM]
-    s3_d5[dod-3.5]
-  end
+      <article class="pbs-lot pink">
+        <header class="pbs-lot-head">
+          <span class="pbs-lot-num">02</span>
+          <h3 class="pbs-lot-title">Jeux et Expériences</h3>
+        </header>
+        <div class="pbs-lot-body">
+          <div class="pbs-pair">
+            <span class="pbs-livrable"><code>2.1</code> API RAG jeux</span>
+            <span class="pbs-arrow" aria-hidden="true">→</span>
+            <a class="pbs-dod" href="../dod/2-jeux-et-experiences/dod-2.1-api-rag-ia-jeux.html">dod-2.1</a>
+          </div>
+          <div class="pbs-pair">
+            <span class="pbs-livrable"><code>2.2</code> API externe</span>
+            <span class="pbs-arrow" aria-hidden="true">→</span>
+            <a class="pbs-dod" href="../dod/2-jeux-et-experiences/dod-2.2-api-jeux-externe.html">dod-2.2</a>
+          </div>
+          <div class="pbs-pair">
+            <span class="pbs-livrable"><code>2.3</code> Archero / Vampire Survivors</span>
+            <span class="pbs-arrow" aria-hidden="true">→</span>
+            <a class="pbs-dod" href="../dod/2-jeux-et-experiences/dod-2.3-archero-vampire-survivors.html">dod-2.3</a>
+          </div>
+        </div>
+      </article>
 
-  subgraph S4["4. Algorithmes de Personnalisation"]
-    direction LR
-    s4_1[4.1 Sélection questions]
-    s4_d1[dod-4.1]
-    s4_2[4.2 Rétention]
-    s4_d2[dod-4.2]
-  end
+      <article class="pbs-lot lav">
+        <header class="pbs-lot-head">
+          <span class="pbs-lot-num">03</span>
+          <h3 class="pbs-lot-title">Intelligence Centrale et Module RAG</h3>
+        </header>
+        <div class="pbs-lot-body">
+          <div class="pbs-pair">
+            <span class="pbs-livrable"><code>3.1</code> FastAPI</span>
+            <span class="pbs-arrow" aria-hidden="true">→</span>
+            <a class="pbs-dod" href="../dod/3-intelligence-centrale-module-rag/dod-3.1-serveur-fastapi.html">dod-3.1</a>
+          </div>
+          <div class="pbs-pair">
+            <span class="pbs-livrable"><code>3.2</code> Base vectorielle</span>
+            <span class="pbs-arrow" aria-hidden="true">→</span>
+            <a class="pbs-dod" href="../dod/3-intelligence-centrale-module-rag/dod-3.2-base-vectorielle.html">dod-3.2</a>
+          </div>
+          <div class="pbs-pair">
+            <span class="pbs-livrable"><code>3.3</code> Ingestion RAG</span>
+            <span class="pbs-arrow" aria-hidden="true">→</span>
+            <a class="pbs-dod" href="../dod/3-intelligence-centrale-module-rag/dod-3.3-ingestion-rag.html">dod-3.3</a>
+          </div>
+          <div class="pbs-pair">
+            <span class="pbs-livrable"><code>3.4</code> Orchestrateur agents</span>
+            <span class="pbs-arrow" aria-hidden="true">→</span>
+            <a class="pbs-dod" href="../dod/3-intelligence-centrale-module-rag/dod-3.4-orchestrateur-agents.html">dod-3.4</a>
+          </div>
+          <div class="pbs-pair">
+            <span class="pbs-livrable"><code>3.5</code> Générateurs LLM</span>
+            <span class="pbs-arrow" aria-hidden="true">→</span>
+            <a class="pbs-dod" href="../dod/3-intelligence-centrale-module-rag/dod-3.5-generateurs-llm.html">dod-3.5</a>
+          </div>
+        </div>
+      </article>
 
-  subgraph S5["5. Sécurité et Gouvernance"]
-    direction LR
-    s5_1[5.1 Coffre-fort RGPD]
-    s5_d1[dod-5.1]
-  end
-
-  classDef yellow fill:#ffeb3b,stroke:#f57f17,color:#000
-  class s1_dod,s2_d1,s2_d2,s2_d3,s3_d1,s3_d2,s3_d3,s3_d4,s3_d5,s4_d1,s4_d2,s5_d1 yellow
-    </pre>
+    </div>
   </div>
 
-  <p><strong>Légende :</strong> les carrés jaunes correspondent aux fichiers DOD de chaque livrable (voir dossiers <span class="mono">dod/</span> par section).</p>
-  <div class="page-footer"><span>3</span><span class="pf-brand">FlowLearn — Schéma global PBS + DOD — FlowLearn MVP</span><span>02</span></div>
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Schéma global PBS + DOD</span>
+    <span>02</span>
+  </div>
 </section>
+
+<section class="page">
+  <div class="running-header">
+    <div class="brand">
+        <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" class="brand-mark" style="width: 22px; height: 22px; object-fit: contain;">
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+    <span class="doc-tag">§01 · Carte PBS + DOD</span>
+  </div>
+
+  <div class="pbs-map">
+    <div class="pbs-lots">
+
+      <article class="pbs-lot pink">
+        <header class="pbs-lot-head">
+          <span class="pbs-lot-num">04</span>
+          <h3 class="pbs-lot-title">Algorithmes de Personnalisation</h3>
+        </header>
+        <div class="pbs-lot-body">
+          <div class="pbs-pair">
+            <span class="pbs-livrable"><code>4.1</code> Sélection questions</span>
+            <span class="pbs-arrow" aria-hidden="true">→</span>
+            <a class="pbs-dod" href="../dod/4-algorithmes-personnalisation/dod-4.1-selection-questions.html">dod-4.1</a>
+          </div>
+          <div class="pbs-pair">
+            <span class="pbs-livrable"><code>4.2</code> Rétention</span>
+            <span class="pbs-arrow" aria-hidden="true">→</span>
+            <a class="pbs-dod" href="../dod/4-algorithmes-personnalisation/dod-4.2-algorithme-retention.html">dod-4.2</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pbs-lot lav">
+        <header class="pbs-lot-head">
+          <span class="pbs-lot-num">05</span>
+          <h3 class="pbs-lot-title">Sécurité et Gouvernance</h3>
+        </header>
+        <div class="pbs-lot-body">
+          <div class="pbs-pair">
+            <span class="pbs-livrable"><code>5.1</code> Coffre-fort RGPD</span>
+            <span class="pbs-arrow" aria-hidden="true">→</span>
+            <a class="pbs-dod" href="../dod/5-securite-gouvernance-donnees/Coffre-fort-%26-Protection-rgpd.html">dod-5.1</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <div class="pbs-legend no-break">
+    <div class="pbs-legend-item"><span class="pbs-legend-swatch root"></span> Racine PBS</div>
+    <div class="pbs-legend-item"><span class="pbs-legend-swatch livrable"></span> Livrable WBS</div>
+    <div class="pbs-legend-item"><span class="pbs-legend-swatch dod"></span> Fiche DOD (cliquable)</div>
+  </div>
+
+  <div class="callout" style="margin-top: 14px;">
+    <span class="callout-label">Lecture</span>
+    <p>Chaque ligne relie un <strong>livrable</strong> du WBS à sa <strong>Definition of Done</strong>. Les badges <span class="mono">dod-x.x</span> ouvrent la fiche charte correspondante dans le dossier <span class="mono">dod/</span>.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>Confidentiel · Usage interne</span>
+    <span class="pf-brand">FlowLearn — Schéma global PBS + DOD</span>
+    <span>03</span>
+  </div>
+</section>
+
 </body>
 </html>
