@@ -82,21 +82,21 @@ L'OBS est aligné avec :
 
 ```mermaid
 flowchart TB
-  JB["Jean-Baptiste Vigreux<br/>Porteur de projet / Dev<br/>IA / Big Data"]
+  LC["Luca Vanden-Brande<br/>Porteur de projet / Dev<br/>IA / Big Data"]
 
-  subgraph dev["Pôle Développement"]
+  subgraph dev["Pôle Développement — Chef : Quentin Dumas"]
+    QD["Quentin Dumas<br/>Dev Jeux / UI-UX"]
     NT["Nathan Plessis<br/>Dev IA / Big Data"]
-    LC["Luca Vanden-Brande<br/>Dev IA / Big Data"]
     DN["Daniel Okpe<br/>Dev IA / Big Data"]
   end
 
-  subgraph cyber["Pôle Cybersécurité"]
+  subgraph cyber["Pôle Cybersécurité — Chef : Maxime Ruault"]
     MX["Maxime Ruault<br/>Cybersécurité"]
     CS["César Lextraît<br/>Dev / Cyber"]
   end
 
-  JB --> dev
-  JB --> cyber
+  LC --> dev
+  LC --> cyber
   dev <-.->|collaboration| cyber
 ```
 ---
@@ -130,6 +130,7 @@ flowchart TB
 | Élément | Description |
 | --- | --- |
 | **Position** | Niveau Coordination |
+| **Chef de pôle** | Quentin Dumas (arbitre les désaccords techniques du pôle Dev). |
 | **Mission principale** | Concevoir et développer les fonctionnalités du produit. |
 | **Périmètre de décision** | Implémentation technique locale, hors changements structurants. |
 
@@ -169,6 +170,7 @@ flowchart TB
 | Élément | Description |
 | --- | --- |
 | **Position** | Niveau Coordination transverse |
+| **Chef de pôle** | Maxime Ruault (arbitre les désaccords sur les sujets de sécurité). |
 | **Mission principale** | Garantir la sécurité du système dès la conception. |
 | **Périmètre de décision** | Sécurité (droit de blocage, décision non encore bornée dans le temps). |
 
@@ -259,7 +261,7 @@ En cas de conflit de responsabilité :
 
 - Discussion
 - Vote
-- Arbitrage par chef d'équipe (à définir ultérieurement)
+- Arbitrage par le chef de pôle concerné (Quentin Dumas pour le Dev, Maxime Ruault pour le Cyber), puis escalade au porteur de projet si nécessaire
 
 ```mermaid
 flowchart TB
@@ -312,7 +314,7 @@ Aucune contradiction identifiée.
 
 | Élément | Description |
 | --- | --- |
-| **Responsable** | Jean-Baptiste Vigreux (Nathan en soutien) |
+| **Responsable** | Luca Vanden-Brande (Nathan en soutien) |
 | **Moment de validation** | Avant lancement du MVP |
 | **Mise à jour** | En cas d'évolution organisationnelle |
 | **Versionnement** | Sur Notion |

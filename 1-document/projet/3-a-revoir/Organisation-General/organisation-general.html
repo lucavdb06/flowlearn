@@ -542,6 +542,71 @@
     margin-right: 8px;
   }
 
+  /* Fiches de poste */
+  .fiche {
+    background: white;
+    border: 1px solid var(--slate-200);
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin: 10px 0;
+  }
+  .fiche-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+  .fiche-name {
+    font-family: 'Fraunces', serif;
+    font-size: 14pt;
+    color: var(--deep-ocean);
+    font-weight: 500;
+  }
+  .fiche-role {
+    display: inline-block;
+    font-size: 7.5pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: white;
+    background: var(--grad-signature);
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .fiche.blue .fiche-role { background: var(--flow-blue); }
+  .fiche.pink .fiche-role { background: var(--brain-pink); }
+  .fiche.lav .fiche-role  { background: var(--soft-lavender); }
+  .fiche dl { margin: 0; }
+  .fiche dt {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5pt;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--slate-500);
+    font-weight: 600;
+    margin-top: 8px;
+  }
+  .fiche dd {
+    margin: 2px 0 0 0;
+    font-size: 9.5pt;
+    color: var(--slate-700);
+    line-height: 1.5;
+  }
+  .fiche .just {
+    background: var(--slate-50);
+    border-left: 3px solid var(--flow-blue);
+    padding: 8px 12px;
+    border-radius: 0 8px 8px 0;
+    margin: 8px 0 0 0;
+    font-size: 9.5pt;
+    color: var(--slate-700);
+    line-height: 1.5;
+  }
+  .fiche.pink .just { border-left-color: var(--brain-pink); }
+  .fiche.lav .just  { border-left-color: var(--soft-lavender); }
+
   /* Timeline */
   .timeline {
     position: relative;
@@ -1181,7 +1246,7 @@
 
 
 <!-- ============================================================
-     PAGE 6  OUTILS + QUALITÉ
+     PAGE 6  FICHES DE POSTE (1/3)
      ============================================================ -->
 <section class="page">
   <div class="running-header">
@@ -1189,10 +1254,187 @@
       <div class="brand-mark"></div>
       <div class="brand-name">Flow<em>Learn</em></div>
     </div>
-    <div class="doc-tag">§04 . Outils &amp; Qualité</div>
+    <div class="doc-tag">§04 . Fiches de poste</div>
   </div>
 
-  <span class="section-num">§ 04 . Environnement de travail &amp; outils</span>
+  <span class="section-num">§ 04 . Fiches de poste</span>
+  <h1 class="section-title">Le bon profil <span class="accent">au bon poste.</span></h1>
+  <p class="section-deck">Affectations justifiées à partir de la Carte des compétences (niveaux&nbsp;: Notions · Opérationnel · Avancé · Expert), alignées avec l'OBS et la matrice RACI.</p>
+
+  <div class="callout">
+    <span class="callout-label">Logique d'affectation</span>
+    <p>Chaque rôle clé est confié au membre présentant le niveau le plus élevé sur les compétences critiques associées, tout en assurant une redondance entre membres.</p>
+  </div>
+
+  <div class="fiche blue no-break">
+    <div class="fiche-head">
+      <div class="fiche-name">Luca Vanden-Brande</div>
+      <span class="fiche-role">Porteur de projet / Dev IA</span>
+    </div>
+    <dl>
+      <dt>Missions principales</dt>
+      <dd>Porter la vision produit et technique, définir le cadrage (PBS, WBS, Backlog), piloter le planning et arbitrer les choix structurants ; contribue au développement IA et à l'architecture.</dd>
+      <dt>Responsabilités / périmètre</dt>
+      <dd>Décision stratégique et technique finale, validation des livrables, conception de l'architecture logicielle, responsabilité finale en cas de bug critique.</dd>
+      <dt>Compétences clés</dt>
+      <dd>Gestion de projet · architecture logicielle · IA / LLM / RAG · base de données.</dd>
+      <dt>Livrables attendus</dt>
+      <dd>Documents de cadrage, PBS / WBS / Backlog, architecture cible, contribution au code IA, MVP validé.</dd>
+    </dl>
+    <p class="just"><strong>Pourquoi lui&nbsp;:</strong> seul membre <strong>Opérationnel</strong> en gestion de projet et <strong>Avancé</strong> en architecture logicielle (niveaux les plus élevés de l'équipe) → le mieux placé pour le pilotage et les arbitrages d'architecture. Son niveau <strong>Avancé</strong> en IA et base de données le maintient contributeur technique crédible.</p>
+  </div>
+
+  <div class="fiche blue no-break">
+    <div class="fiche-head">
+      <div class="fiche-name">Nathan Plessis</div>
+      <span class="fiche-role">Dev IA / Big Data</span>
+    </div>
+    <dl>
+      <dt>Missions principales</dt>
+      <dd>Concevoir et implémenter les composants IA et data (modèles, pipelines, intégrations LLM/RAG). Remplaçant du porteur de projet en cas d'absence.</dd>
+      <dt>Responsabilités / périmètre</dt>
+      <dd>Implémentation technique IA locale, qualité et tests du code IA, documentation technique, soutien au pilotage.</dd>
+      <dt>Compétences clés</dt>
+      <dd>Python / FastAPI · IA / LLM / RAG · base de données · architecture logicielle.</dd>
+      <dt>Livrables attendus</dt>
+      <dd>Code IA, endpoints FastAPI, scripts data, tests associés, documentation GitHub.</dd>
+    </dl>
+    <p class="just"><strong>Pourquoi lui&nbsp;:</strong> profil <strong>Avancé</strong> sur le cœur technique (Python/FastAPI, IA/LLM/RAG, base de données) → pilier du pôle Développement. Sa proximité avec le périmètre du porteur justifie son rôle de <strong>remplaçant prioritaire</strong> (cf. OBS).</p>
+  </div>
+
+  <div class="page-footer">
+    <span>Confidentiel . Usage interne</span>
+    <span class="pf-brand">FlowLearn . Apprendre en jouant</span>
+    <span>06</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PAGE 7  FICHES DE POSTE (2/3)
+     ============================================================ -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      <div class="brand-name">Flow<em>Learn</em></div>
+    </div>
+    <div class="doc-tag">§04 . Fiches de poste</div>
+  </div>
+
+  <div class="fiche blue no-break">
+    <div class="fiche-head">
+      <div class="fiche-name">Daniel Okpe</div>
+      <span class="fiche-role">Dev IA / Big Data</span>
+    </div>
+    <dl>
+      <dt>Missions principales</dt>
+      <dd>Développer et optimiser les composants IA et data, en parallèle de Nathan et Luca, pour assurer la redondance des compétences critiques.</dd>
+      <dt>Responsabilités / périmètre</dt>
+      <dd>Implémentation des modèles et pipelines, optimisation des performances, tests locaux, documentation IA.</dd>
+      <dt>Compétences clés</dt>
+      <dd>Python / FastAPI · IA / LLM / RAG · base de données.</dd>
+      <dt>Livrables attendus</dt>
+      <dd>Code IA, scripts, tests unitaires, documentation associée.</dd>
+    </dl>
+    <p class="just"><strong>Pourquoi lui&nbsp;:</strong> niveau <strong>Avancé</strong> sur tout le socle IA/data, identique à Nathan. Cette redondance volontaire garantit la continuité du développement IA et permet de paralléliser les tâches critiques du WBS.</p>
+  </div>
+
+  <div class="fiche pink no-break">
+    <div class="fiche-head">
+      <div class="fiche-name">Maxime Ruault</div>
+      <span class="fiche-role">Chef du Pôle Cyber</span>
+    </div>
+    <dl>
+      <dt>Missions principales</dt>
+      <dd>Garantir la sécurité du système dès la conception (Security by Design), piloter l'analyse des risques et la stratégie de sécurité. Arbitre côté Cybersécurité.</dd>
+      <dt>Responsabilités / périmètre</dt>
+      <dd>Audit de code, validation cyber <strong>bloquante</strong> avant merge, analyse des risques, conformité RGPD, décision finale sécurité.</dd>
+      <dt>Compétences clés</dt>
+      <dd>Cybersécurité (audit, pentest, RGPD, Security by Design).</dd>
+      <dt>Livrables attendus</dt>
+      <dd>Avis et rapports d'audit sécurité, analyses de risques, validation cyber des Pull Requests.</dd>
+    </dl>
+    <p class="just"><strong>Pourquoi lui&nbsp;:</strong> unique profil <strong>Expert</strong> en cybersécurité de l'équipe. Cette expertise justifie son autorité de blocage sur les merges et son rôle de <strong>chef de pôle Cyber</strong> qui tranche sur les sujets de sécurité.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>Confidentiel . Usage interne</span>
+    <span class="pf-brand">FlowLearn . Apprendre en jouant</span>
+    <span>07</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PAGE 8  FICHES DE POSTE (3/3)
+     ============================================================ -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      <div class="brand-name">Flow<em>Learn</em></div>
+    </div>
+    <div class="doc-tag">§04 . Fiches de poste</div>
+  </div>
+
+  <div class="fiche pink no-break">
+    <div class="fiche-head">
+      <div class="fiche-name">César Lextraît</div>
+      <span class="fiche-role">Dev / Cyber &amp; DevOps</span>
+    </div>
+    <dl>
+      <dt>Missions principales</dt>
+      <dd>Faire le pont entre développement et sécurité&nbsp;: revue de code orientée sécurité, tests de vulnérabilité, mise en place et maintien de la chaîne CI-CD.</dd>
+      <dt>Responsabilités / périmètre</dt>
+      <dd>Revue de code sécurité, tests de vulnérabilité, recommandations correctives, automatisation du déploiement et du monitoring (DevOps).</dd>
+      <dt>Compétences clés</dt>
+      <dd>Cybersécurité · DevOps / CI-CD · Python / FastAPI · base de données.</dd>
+      <dt>Livrables attendus</dt>
+      <dd>Rapports d'analyse, correctifs proposés, validations cyber, pipelines GitHub Actions, configuration de déploiement.</dd>
+    </dl>
+    <p class="just"><strong>Pourquoi lui&nbsp;:</strong> niveau <strong>Avancé</strong> en cybersécurité (second du pôle Cyber) et seul membre <strong>Avancé</strong> en DevOps / CI-CD → désigné pour piloter la chaîne d'intégration et de déploiement, une position charnière entre Dev et Cyber.</p>
+  </div>
+
+  <div class="fiche lav no-break">
+    <div class="fiche-head">
+      <div class="fiche-name">Quentin Dumas</div>
+      <span class="fiche-role">Chef du Pôle Dev</span>
+    </div>
+    <dl>
+      <dt>Missions principales</dt>
+      <dd>Concevoir l'expérience de jeu (mécaniques type Archero / Vampire Survivors sous Godot) et le design d'interface (UI-UX). Arbitre côté Développement.</dd>
+      <dt>Responsabilités / périmètre</dt>
+      <dd>Développement des mécaniques de jeu, conception et réalisation des interfaces, cohérence ergonomique, décision finale technique du pôle Dev.</dd>
+      <dt>Compétences clés</dt>
+      <dd>Godot / jeux vidéo · React / Frontend &amp; UI-UX.</dd>
+      <dt>Livrables attendus</dt>
+      <dd>Prototypes et mécaniques de jeu (GDScript), maquettes et interfaces React, conteneur multiplateforme (WBS 1.1), gameplay Archero/VS (WBS 2.3).</dd>
+    </dl>
+    <p class="just"><strong>Pourquoi lui&nbsp;:</strong> seul profil <strong>Expert</strong> à la fois en Godot / jeux vidéo et en React / UI-UX. Il apporte des compétences que l'équipe initiale ne couvrait pas, directement liées au WBS, ce qui justifie son rôle de <strong>chef de pôle Dev</strong>.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>Confidentiel . Usage interne</span>
+    <span class="pf-brand">FlowLearn . Apprendre en jouant</span>
+    <span>08</span>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PAGE 9  OUTILS + QUALITÉ
+     ============================================================ -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      <div class="brand-name">Flow<em>Learn</em></div>
+    </div>
+    <div class="doc-tag">§05 . Outils &amp; Qualité</div>
+  </div>
+
+  <span class="section-num">§ 05 . Environnement de travail &amp; outils</span>
   <h1 class="section-title">Les outils <span class="accent">validés.</span></h1>
   <p class="section-deck">La liste des outils retenus pour le projet.</p>
 
@@ -1233,7 +1475,7 @@
     </tbody>
   </table>
 
-  <span class="section-num" style="margin-top:8px;">§ 05 . Qualité (DOD)</span>
+  <span class="section-num" style="margin-top:8px;">§ 06 . Qualité (DOD)</span>
   <h2>Gestion de la qualité</h2>
   <p>Chaque livrable doit répondre à la <strong>Definition of Done (DOD)</strong>, qui fixe les critères de validation globaux et par phase.</p>
 
@@ -1245,7 +1487,7 @@
   <div class="page-footer">
     <span>Confidentiel . Usage interne</span>
     <span class="pf-brand">FlowLearn . Apprendre en jouant</span>
-    <span>06</span>
+    <span>09</span>
   </div>
 </section>
 
