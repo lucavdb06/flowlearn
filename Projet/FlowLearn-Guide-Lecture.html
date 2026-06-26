@@ -7,21 +7,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="Document/3-a-revoir/charte-graphique/archives/flowlearn-document.css">
+<link rel="stylesheet" href="Document/charte-graphique/archives/flowlearn-document.css">
 </head>
 <body>
 
+<!-- ============================================================
+     PAGE 1 — COUVERTURE
+     ============================================================ -->
 <section class="page cover">
   <div class="cover-inner">
     <div class="cover-top">
       <div class="cover-logo" style="display: flex; align-items: center; gap: 12px;">
-          <img src="Document/3-a-revoir/charte-graphique/assets/flowlearn-logo.svg" alt="Logo" style="width: 42px; height: 42px; object-fit: contain;">
+          <img src="Document/charte-graphique/assets/flowlearn-logo.svg" alt="Logo" style="width: 42px; height: 42px; object-fit: contain;">
           <div class="wordmark">Flow<em>Learn</em></div>
         </div>
       <div class="cover-meta">
         <div>Document interne</div>
-        <div><strong>Version 1.0</strong></div>
-        <div>Mai 2026</div>
+        <div><strong>Version 2.0</strong></div>
+        <div>Juin 2026</div>
       </div>
     </div>
     <div class="cover-middle">
@@ -31,15 +34,18 @@
     </div>
     <div class="cover-bottom">
       <div class="cover-stat"><div class="label">Dépôt équipe</div><div class="value" style="font-size:14pt;">github.com/lucavdb06/flowlearn</div></div>
-      <div class="cover-stat"><div class="label">Formats</div><div class="value" style="font-size:14pt;">MD + HTML charte</div></div>
+      <div class="cover-stat"><div class="label">Formats</div><div class="value" style="font-size:14pt;">HTML charte + sources MD</div></div>
     </div>
   </div>
 </section>
 
+<!-- ============================================================
+     PAGE 2 — SOMMAIRE
+     ============================================================ -->
 <section class="page">
   <div class="running-header">
     <div class="brand">
-        <img src="Document/3-a-revoir/charte-graphique/assets/flowlearn-logo.svg" alt="Logo" class="brand-mark" style="width: 22px; height: 22px; object-fit: contain;">
+        <img src="Document/charte-graphique/assets/flowlearn-logo.svg" alt="Logo" class="brand-mark" style="width: 22px; height: 22px; object-fit: contain;">
         <span class="brand-name">Flow<em>Learn</em></span>
       </div>
     <span class="doc-tag">Guide de lecture · Sommaire</span>
@@ -49,20 +55,23 @@
   <ol class="toc-list">
     <li><span class="toc-num">01</span><span class="toc-title">Mots simples (MVP, PBS, WBS…)</span></li>
     <li><span class="toc-num">02</span><span class="toc-title">Correspondance T-ESP-800 ↔ FlowLearn</span></li>
-    <li><span class="toc-num">03</span><span class="toc-title">Flux 2-en-cours / 3-a-revoir / 4-termine</span></li>
+    <li><span class="toc-num">03</span><span class="toc-title">Organisation du dépôt (Projet / Document)</span></li>
     <li><span class="toc-num">04</span><span class="toc-title">Profils de lecture</span></li>
-    <li><span class="toc-num">05</span><span class="toc-title">Versions HTML charte</span></li>
+    <li><span class="toc-num">05</span><span class="toc-title">Index des versions HTML charte</span></li>
   </ol>
   <div class="callout" style="margin-top:24px;">
-    <p><strong>Ce document ne remplace pas les livrables.</strong> Il sert d’index. Le fond (PBS, WBS, DoD) est dans <span class="mono">3-a-revoir/mvp-pbs/</span> ; le pilotage (planning, budget) dans <span class="mono">2-en-cours/</span>.</p>
+    <p><strong>Ce document ne remplace pas les livrables.</strong> Il sert d'index. Tous les livrables sont rangés par sujet sous <span class="mono">Projet/Document/</span> : la <strong>version HTML</strong> est visible à la racine de chaque dossier, les <strong>sources <span class="mono">.md</span></strong> sont dans son sous-dossier <span class="mono">archives/</span>.</p>
   </div>
   <div class="page-footer"><span>00</span><span class="pf-brand">FlowLearn — Guide de lecture</span><span>02</span></div>
 </section>
 
+<!-- ============================================================
+     PAGE 3 — GLOSSAIRE
+     ============================================================ -->
 <section class="page">
   <div class="running-header">
     <div class="brand">
-        <img src="Document/3-a-revoir/charte-graphique/assets/flowlearn-logo.svg" alt="Logo" class="brand-mark" style="width: 22px; height: 22px; object-fit: contain;">
+        <img src="Document/charte-graphique/assets/flowlearn-logo.svg" alt="Logo" class="brand-mark" style="width: 22px; height: 22px; object-fit: contain;">
         <span class="brand-name">Flow<em>Learn</em></span>
       </div>
     <span class="doc-tag">§ 01 — Glossaire</span>
@@ -74,10 +83,10 @@
     <tbody>
       <tr><td><strong>MVP</strong></td><td>Première version utile et montrable.</td></tr>
       <tr><td><strong>PBS</strong></td><td>Découpage du produit : ce que le logiciel contient.</td></tr>
-      <tr><td><strong>WBS</strong></td><td>Découpage du travail : ce que l’équipe doit faire.</td></tr>
+      <tr><td><strong>WBS</strong></td><td>Découpage du travail : ce que l'équipe doit faire.</td></tr>
       <tr><td><strong>OBS</strong></td><td>Organisation : qui fait quoi.</td></tr>
       <tr><td><strong>RACI</strong></td><td>Réalise, Approuve, Consulté, Informé.</td></tr>
-      <tr><td><strong>DoD</strong></td><td>Critères pour dire qu’une tâche est terminée.</td></tr>
+      <tr><td><strong>DoD</strong></td><td>Critères pour dire qu'une tâche est terminée.</td></tr>
       <tr><td><strong>Staging</strong></td><td>Environnement de test proche de la prod.</td></tr>
       <tr><td><strong>CI/CD</strong></td><td>Automatisation tests et déploiement (GitHub Actions).</td></tr>
     </tbody>
@@ -85,81 +94,125 @@
   <div class="page-footer"><span>00</span><span class="pf-brand">FlowLearn — Guide de lecture</span><span>03</span></div>
 </section>
 
+<!-- ============================================================
+     PAGE 4 — CORRESPONDANCE T-ESP-800
+     ============================================================ -->
 <section class="page">
   <div class="running-header">
     <div class="brand">
-        <img src="Document/3-a-revoir/charte-graphique/assets/flowlearn-logo.svg" alt="Logo" class="brand-mark" style="width: 22px; height: 22px; object-fit: contain;">
+        <img src="Document/charte-graphique/assets/flowlearn-logo.svg" alt="Logo" class="brand-mark" style="width: 22px; height: 22px; object-fit: contain;">
         <span class="brand-name">Flow<em>Learn</em></span>
       </div>
     <span class="doc-tag">§ 02 — Correspondance</span>
   </div>
   <span class="section-num">§ 02 T-ESP-800 ↔ FLOWLEARN</span>
   <h1 class="section-title">Table de <span class="accent">correspondance</span></h1>
+  <p class="section-deck">Chemins relatifs à <span class="mono">Projet/</span>.</p>
   <table>
-    <thead><tr><th>N°</th><th>Livrable</th><th>Emplacement</th><th>Flux</th></tr></thead>
+    <thead><tr><th>N°</th><th>Livrable</th><th>Emplacement</th></tr></thead>
     <tbody>
-      <tr><td><strong>00</strong></td><td>Guide de lecture</td><td class="mono">00-guide-lecture.md / .html</td><td>—</td></tr>
-      <tr><td><strong>01</strong></td><td>Note de cadrage</td><td class="mono">cadrage-projet/geneses…</td><td><span class="tag tag-en-cours">en cours</span></td></tr>
-      <tr><td><strong>02</strong></td><td>Plan qualité</td><td class="mono">plan-qualite.md / .html</td><td><span class="tag tag-en-cours">en cours</span></td></tr>
-      <tr><td><strong>03</strong></td><td>Description fonctionnelle</td><td class="mono">description-fonctionnelle…</td><td><span class="tag tag-en-cours">en cours</span></td></tr>
-      <tr><td><strong>04</strong></td><td>PBS</td><td class="mono">3-a-revoir/mvp-pbs/</td><td><span class="tag tag-revoir">à revoir</span></td></tr>
-      <tr><td><strong>05</strong></td><td>WBS</td><td class="mono">3-a-revoir/mvp-pbs/wbs/</td><td><span class="tag tag-revoir">à revoir</span></td></tr>
-      <tr><td><strong>06</strong></td><td>OBS + RACI</td><td class="mono">structure-organisation/</td><td><span class="tag tag-en-cours">en cours</span></td></tr>
-      <tr><td><strong>07</strong></td><td>DoD</td><td class="mono">3-a-revoir/mvp-pbs/dod/</td><td><span class="tag tag-revoir">à revoir</span></td></tr>
-      <tr><td><strong>08</strong></td><td>Budget &amp; stack</td><td class="mono">budgetaire/ + stack-technique/</td><td><span class="tag tag-en-cours">en cours</span></td></tr>
-      <tr><td><strong>09</strong></td><td>Planning</td><td class="mono">planning/planning-detaille.md</td><td><span class="tag tag-en-cours">en cours</span></td></tr>
-      <tr><td><strong>10</strong></td><td>Risques</td><td class="mono">risques/gestion-des-risques.md</td><td><span class="tag tag-en-cours">en cours</span></td></tr>
-      <tr><td><strong>11</strong></td><td>Communication &amp; charte</td><td class="mono">3-a-revoir/plan-com + charte/</td><td><span class="tag tag-revoir">mixte</span></td></tr>
-      <tr><td><strong>12</strong></td><td>Livret d’accueil</td><td class="mono">livret-accueil/</td><td><span class="tag tag-en-cours">en cours</span></td></tr>
+      <tr><td><strong>00</strong></td><td>Guide de lecture</td><td class="mono">FlowLearn-Guide-Lecture.html</td></tr>
+      <tr><td><strong>01</strong></td><td>Note de cadrage</td><td class="mono">Document/Geneses-Projet-Objectifs/</td></tr>
+      <tr><td><strong>02</strong></td><td>Plan qualité</td><td class="mono">Document/structure-organisation/archives/plan-qualite.md</td></tr>
+      <tr><td><strong>03</strong></td><td>Description fonctionnelle</td><td class="mono">Document/structure-organisation/archives/</td></tr>
+      <tr><td><strong>04</strong></td><td>PBS</td><td class="mono">Document/mvp-pbs-dod/pbs/</td></tr>
+      <tr><td><strong>05</strong></td><td>WBS</td><td class="mono">Document/mvp-pbs-dod/wbs/</td></tr>
+      <tr><td><strong>06</strong></td><td>OBS + RACI</td><td class="mono">Document/structure-organisation/ (schema-obs/ + FlowLearn-Matrice-RACI/)</td></tr>
+      <tr><td><strong>07</strong></td><td>DoD</td><td class="mono">Document/mvp-pbs-dod/dod/</td></tr>
+      <tr><td><strong>08</strong></td><td>Budget &amp; stack</td><td class="mono">Document/budgetaire/ + Document/stack-technique/</td></tr>
+      <tr><td><strong>09</strong></td><td>Planning</td><td class="mono">Document/planning/</td></tr>
+      <tr><td><strong>10</strong></td><td>Risques</td><td class="mono">Document/risques/</td></tr>
+      <tr><td><strong>11</strong></td><td>Communication &amp; charte</td><td class="mono">Document/plan-de-communication/ + Document/charte-graphique/</td></tr>
+      <tr><td><strong>12</strong></td><td>Livret d'accueil</td><td class="mono">Document/livret-accueil/</td></tr>
     </tbody>
   </table>
   <div class="page-footer"><span>00</span><span class="pf-brand">FlowLearn — Guide de lecture</span><span>04</span></div>
 </section>
 
+<!-- ============================================================
+     PAGE 5 — ORGANISATION DU DÉPÔT
+     ============================================================ -->
 <section class="page">
   <div class="running-header">
     <div class="brand">
-        <img src="Document/3-a-revoir/charte-graphique/assets/flowlearn-logo.svg" alt="Logo" class="brand-mark" style="width: 22px; height: 22px; object-fit: contain;">
+        <img src="Document/charte-graphique/assets/flowlearn-logo.svg" alt="Logo" class="brand-mark" style="width: 22px; height: 22px; object-fit: contain;">
         <span class="brand-name">Flow<em>Learn</em></span>
       </div>
-    <span class="doc-tag">§ 03–05 — Flux &amp; HTML</span>
+    <span class="doc-tag">§ 03 — Organisation</span>
   </div>
-  <span class="section-num">§ 03 FLUX DOCUMENTAIRE</span>
-  <h2>Les trois dossiers</h2>
+  <span class="section-num">§ 03 ORGANISATION DU DÉPÔT</span>
+  <h1 class="section-title">Un dossier <span class="accent">par sujet</span></h1>
+  <p class="section-deck">la documentation est rangée à plat par sujet sous <span class="mono">Projet/Document/</span>.</p>
   <table class="no-break">
-    <thead><tr><th>Dossier</th><th>Rôle</th></tr></thead>
+    <thead><tr><th>Dossier</th><th>Contenu</th></tr></thead>
     <tbody>
-      <tr><td><strong>2-en-cours/</strong></td><td>Travail actif : cadrage, qualité, specs, budget, planning, risques, OBS, charte.</td></tr>
-      <tr><td><strong>3-a-revoir/</strong></td><td>PBS / WBS / DoD + plan com — relecture puis mise en forme charte.</td></tr>
-      <tr><td><strong>4-termine/</strong></td><td>Copies validées après charte (vide pour l’instant).</td></tr>
+      <tr><td><strong>Geneses-Projet-Objectifs/</strong></td><td>Cadrage : genèse &amp; objectifs SMART.</td></tr>
+      <tr><td><strong>structure-organisation/</strong></td><td>Organisation générale, OBS, matrice RACI, carte des compétences, manuel utilisateur.</td></tr>
+      <tr><td><strong>mvp-pbs-dod/</strong></td><td>MVP, PBS, WBS, DoD + index de relecture.</td></tr>
+      <tr><td><strong>budgetaire/</strong></td><td>Budget prévisionnel.</td></tr>
+      <tr><td><strong>stack-technique/</strong></td><td>Synthèse technique &amp; choix technos.</td></tr>
+      <tr><td><strong>planning/</strong></td><td>Gantt, jalons.</td></tr>
+      <tr><td><strong>risques/</strong></td><td>Registre des risques.</td></tr>
+      <tr><td><strong>plan-de-communication/</strong></td><td>Plan de communication (HTML + PDF).</td></tr>
+      <tr><td><strong>livret-accueil/</strong></td><td>Onboarding équipe / manuel utilisateur.</td></tr>
+      <tr><td><strong>charte-graphique/</strong></td><td>Identité visuelle, logo, CSS partagée.</td></tr>
+    </tbody>
+  </table>
+  <div class="callout">
+    <span class="callout-label">Convention</span>
+    <p>Dans chaque dossier : la <strong>version HTML (charte)</strong> est visible ; les <strong>sources <span class="mono">.md</span></strong> sont dans <span class="mono">archives/</span>. La CSS commune est <span class="mono">Document/charte-graphique/archives/flowlearn-document.css</span>.</p>
+  </div>
+  <div class="page-footer"><span>00</span><span class="pf-brand">FlowLearn — Guide de lecture</span><span>05</span></div>
+</section>
+
+<!-- ============================================================
+     PAGE 6 — PROFILS & VERSIONS HTML
+     ============================================================ -->
+<section class="page">
+  <div class="running-header">
+    <div class="brand">
+        <img src="Document/charte-graphique/assets/flowlearn-logo.svg" alt="Logo" class="brand-mark" style="width: 22px; height: 22px; object-fit: contain;">
+        <span class="brand-name">Flow<em>Learn</em></span>
+      </div>
+    <span class="doc-tag">§ 04–05 — Profils &amp; HTML</span>
+  </div>
+  <span class="section-num">§ 04 PROFILS</span>
+  <h1 class="section-title">Par où <span class="accent">attaquer</span></h1>
+  <table class="no-break">
+    <thead><tr><th>Profil</th><th>Lire en priorité</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Nouveau membre</strong></td><td>Livret d'accueil → organisation générale → OBS → DoD globale</td></tr>
+      <tr><td><strong>Jury / soutenance</strong></td><td>Cadrage → description fonctionnelle → DoD → budget → planning → risques</td></tr>
+      <tr><td><strong>Relecture PBS/WBS/DoD</strong></td><td><span class="mono">mvp-pbs-dod/pbs-wbs-dod-a-revoir.html</span></td></tr>
+      <tr><td><strong>Com &amp; charte</strong></td><td>Plan de communication puis charte graphique</td></tr>
     </tbody>
   </table>
   <div class="flourish"></div>
-  <span class="section-num">§ 04 PROFILS</span>
-  <table>
-    <thead><tr><th>Profil</th><th>Lire en priorité</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Nouveau membre</strong></td><td>Livret → organisation → OBS → plan qualité → DoD globale</td></tr>
-      <tr><td><strong>Jury / soutenance</strong></td><td>Cadrage → description fonctionnelle → DoD → budget → planning → risques</td></tr>
-      <tr><td><strong>Relecture PBS</strong></td><td><span class="mono">3-a-revoir/pbs-wbs-dod-a-revoir.html</span></td></tr>
-    </tbody>
-  </table>
-  <span class="section-num" style="margin-top:20px;">§ 05 VERSIONS HTML CHARTE</span>
+  <span class="section-num">§ 05 VERSIONS HTML CHARTE</span>
   <table>
     <thead><tr><th>Sujet</th><th>Fichier HTML</th></tr></thead>
     <tbody>
       <tr><td>Guide de lecture</td><td class="mono">FlowLearn-Guide-Lecture.html</td></tr>
-      <tr><td>Plan qualité</td><td class="mono">FlowLearn-Plan-Qualite.html</td></tr>
-      <tr><td>Description fonctionnelle</td><td class="mono">FlowLearn-Description-Fonctionnelle.html</td></tr>
-      <tr><td>Matrice RACI</td><td class="mono">FlowLearn-Matrice-RACI.html</td></tr>
-      <tr><td>Budget</td><td class="mono">Flowlearn budget-previsionnel.html</td></tr>
-      <tr><td>PBS / WBS / DoD</td><td class="mono">3-a-revoir/mvp-pbs/*.html (1 par .md)</td></tr>
-      <tr><td>Index à revoir</td><td class="mono">pbs-wbs-dod-a-revoir.html</td></tr>
-      <tr><td>Communication</td><td class="mono">FlowLearn-Plan-Communication.html</td></tr>
-      <tr><td>Charte graphique</td><td class="mono">charte-graphique.html</td></tr>
+      <tr><td>Cadrage (genèse &amp; objectifs)</td><td class="mono">Geneses-Projet-Objectifs/geneses-projet-objectifs.html</td></tr>
+      <tr><td>MVP</td><td class="mono">mvp-pbs-dod/mvp/mvp-definition.html · mvp-pbs.html</td></tr>
+      <tr><td>PBS</td><td class="mono">mvp-pbs-dod/pbs/pbs-globale.html</td></tr>
+      <tr><td>WBS</td><td class="mono">mvp-pbs-dod/wbs/schema-wbs-global.html (+ lots 1–5)</td></tr>
+      <tr><td>DoD</td><td class="mono">mvp-pbs-dod/dod/dod-globale.html (+ lots 1–5)</td></tr>
+      <tr><td>Index à revoir</td><td class="mono">mvp-pbs-dod/pbs-wbs-dod-a-revoir.html</td></tr>
+      <tr><td>Organisation générale</td><td class="mono">structure-organisation/Organisation-Generale/organisation-general.html</td></tr>
+      <tr><td>OBS</td><td class="mono">structure-organisation/schema-obs/schema-obs.html</td></tr>
+      <tr><td>Matrice RACI</td><td class="mono">structure-organisation/FlowLearn-Matrice-RACI/FlowLearn-Matrice-RACI.html</td></tr>
+      <tr><td>Carte des compétences</td><td class="mono">structure-organisation/FlowLearn-Carte-Competences/FlowLearn-Carte-Competences.html</td></tr>
+      <tr><td>Manuel utilisateur</td><td class="mono">structure-organisation/Manuel-utilisateur/FlowLearn-Manuel-Utilisateur.html</td></tr>
+      <tr><td>Budget</td><td class="mono">budgetaire/Flowlearn budget-previsionnel.html</td></tr>
+      <tr><td>Stack technique</td><td class="mono">stack-technique/synthese-technique.html</td></tr>
+      <tr><td>Planning</td><td class="mono">planning/flowlearn-gantt.html</td></tr>
+      <tr><td>Risques</td><td class="mono">risques/gestion-des-risques.html</td></tr>
+      <tr><td>Communication</td><td class="mono">plan-de-communication/FlowLearn-Plan-Communication.html</td></tr>
+      <tr><td>Charte graphique</td><td class="mono">charte-graphique/charte-graphique.html</td></tr>
     </tbody>
   </table>
-  <div class="page-footer"><span>00</span><span class="pf-brand">FlowLearn — Guide de lecture</span><span>05</span></div>
+  <div class="page-footer"><span>00</span><span class="pf-brand">FlowLearn — Guide de lecture</span><span>06</span></div>
 </section>
 
 </body>
