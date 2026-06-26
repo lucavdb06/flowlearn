@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -481,28 +481,8 @@ flowchart TB
     <span class="section-num">Section 05</span>
     <h1 class="section-title">Gouvernance &amp; <span class="accent">Décision</span></h1>
 
-    <div class="two-col">
-      <div>
-        <h2>Niveaux de décisions</h2>
-        <ul>
-          <li><strong>Stratégiques</strong> : Porteur de projet</li>
-          <li><strong>Techniques locales</strong> : Développeurs</li>
-          <li><strong>Sécurité</strong> : Pôle Cybersécurité (bloquant)</li>
-        </ul>
-
-        <h2>Changements majeurs</h2>
-        <p>Tout changement impactant fortement l'existant (techno, architecture) doit remonter au porteur de projet.</p>
-
-        <h2>Arbitrage</h2>
-        <ul>
-          <li>Priorité à la discussion</li>
-          <li>Décision révisable</li>
-          <li>Report possible si non urgent</li>
-        </ul>
-      </div>
-      <div>
-        <div style="background: white; border: 1px solid var(--slate-200); border-radius: 12px; padding: 15px; margin-top: 22px;">
-          <pre class="mermaid" style="background: transparent; border: none; margin: 0; padding: 0;">
+    <div style="background: white; border: 1px solid var(--slate-200); border-radius: 12px; padding: 20px; margin-bottom: 24px;">
+      <pre class="mermaid" style="background: transparent; border: none; margin: 0; padding: 0; text-align: center;">
 flowchart LR
   A[Décision à prendre] --&gt; B{Type ?}
   B --&gt;|Stratégique| C[Porteur de projet]
@@ -512,8 +492,32 @@ flowchart LR
   F --&gt;|Oui| C
   F --&gt;|Non| G[Décision locale]
   E --&gt;|Blocage ?| H[Validation obligatoire]
-          </pre>
-        </div>
+      </pre>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <h2>Niveaux de décisions</h2>
+        <ul>
+          <li><strong>Stratégiques</strong> : Porteur de projet</li>
+          <li><strong>Techniques locales</strong> : Développeurs</li>
+          <li><strong>Sécurité</strong> : Pôle Cybersécurité (bloquant)</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Changements majeurs</h2>
+        <p>Tout changement impactant fortement l'existant (techno, architecture) doit remonter au porteur de projet.</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 16px;">
+      <h2>Arbitrage</h2>
+      <div style="display: inline-block; text-align: left;">
+        <ul>
+          <li>Priorité à la discussion</li>
+          <li>Décision révisable</li>
+          <li>Report possible si non urgent</li>
+        </ul>
       </div>
     </div>
 
@@ -561,89 +565,30 @@ flowchart TB
       <div class="doc-tag">§07 . Traçabilité &amp; Évolution</div>
     </div>
 
-    <div class="two-col">
-      <div>
-        <span class="section-num">Section 07</span>
-        <h1 class="section-title">Traçabilité &amp; <span class="accent">Scalabilité</span></h1>
-        
-        <h2>8. Lisibilité et traçabilité</h2>
-        <ul>
-          <li>Toute responsabilité OBS est traçable via :
-            <ul>
-              <li>Pull Requests</li>
-              <li>Historique GitHub</li>
-            </ul>
-          </li>
-          <li>L'OBS sert de référence pédagogique (école / jury).</li>
-        </ul>
+    <div>
+      <span class="section-num">Section 07</span>
+      <h1 class="section-title">Traçabilité &amp; <span class="accent">Scalabilité</span></h1>
+      
+      <h2>8. Lisibilité et traçabilité</h2>
+      <ul>
+        <li>Toute responsabilité OBS est traçable via :
+          <ul>
+            <li>Pull Requests</li>
+            <li>Historique GitHub</li>
+          </ul>
+        </li>
+        <li>L'OBS sert de référence pédagogique (école / jury).</li>
+      </ul>
 
-        <h2>9. Scalabilité de l'OBS</h2>
-        <h3 class="subsec">Évolution prévue</h3>
-        <ul>
-          <li>Ajout futur de <strong>chefs d'équipe</strong> si augmentation significative de l'effectif</li>
-          <li>Rôles principalement <strong>transverses</strong></li>
-          <li>Hiérarchie minimale, structure linéaire privilégiée</li>
-        </ul>
-        <h3 class="subsec">Seuil de structuration</h3>
-        <p>À définir lors de l'augmentation de l'effectif (7 membres selon le livret d'accueil).</p>
-      </div>
-
-      <div>
-        <span class="section-num">Section 08</span>
-        <h1 class="section-title">Cohérence &amp; <span class="accent">Validation</span></h1>
-
-        <h2>10. Cohérence documentaire</h2>
-        <p>L'OBS est cohérent avec :</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Livrable</th>
-              <th>Statut</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Organisation Générale</td>
-              <td><span class="pill pill-ok">Aligné</span></td>
-            </tr>
-            <tr>
-              <td>DOD</td>
-              <td><span class="pill pill-ok">Aligné</span></td>
-            </tr>
-            <tr>
-              <td>WBS / Planning</td>
-              <td><span class="pill pill-ok">Aligné</span></td>
-            </tr>
-            <tr>
-              <td>Livret d'accueil</td>
-              <td><span class="pill pill-ok">Aligné</span></td>
-            </tr>
-          </tbody>
-        </table>
-        <p><em>Aucune contradiction identifiée.</em></p>
-
-        <h2>11. Validation du schéma</h2>
-        <table>
-          <tbody>
-            <tr>
-              <td><strong>Responsable</strong></td>
-              <td>Luca Vanden-Brande (Nathan en soutien)</td>
-            </tr>
-            <tr>
-              <td><strong>Moment de validation</strong></td>
-              <td>Avant lancement du MVP</td>
-            </tr>
-            <tr>
-              <td><strong>Mise à jour</strong></td>
-              <td>En cas d'évolution organisationnelle</td>
-            </tr>
-            <tr>
-              <td><strong>Versionnement</strong></td>
-              <td>Sur Notion / GitHub</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <h2>9. Scalabilité de l'OBS</h2>
+      <h3 class="subsec">Évolution prévue</h3>
+      <ul>
+        <li>Ajout futur de <strong>chefs d'équipe</strong> si augmentation significative de l'effectif</li>
+        <li>Rôles principalement <strong>transverses</strong></li>
+        <li>Hiérarchie minimale, structure linéaire privilégiée</li>
+      </ul>
+      <h3 class="subsec">Seuil de structuration</h3>
+      <p>À définir lors de l'augmentation de l'effectif (7 membres selon le livret d'accueil).</p>
     </div>
 
     <div class="page-footer">
