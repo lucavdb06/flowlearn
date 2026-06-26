@@ -1,7 +1,7 @@
 # FlowLearn — Budget prévisionnel
 
 **Période couverte** : Avril 2026 → Mars 2028 (24 mois)
-**Équipe** : 7 personnes rémunérées au SMIC sur l'ensemble de la période
+**Équipe** : 6 personnes aujourd'hui ; budget dimensionné pour 7 rémunérées au SMIC sur l'ensemble de la période
 **Cadre** : projet pédagogique Epitech, équipe stable, infrastructure majoritairement gratuite ou open-source
 
 ---
@@ -19,7 +19,7 @@ L'idée n'est pas de produire un budget ambitieux de levée de fonds, mais un ca
 
 | #   | Hypothèse                                                                                                              | Commentaire                                                                         |
 | --- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| 1   | Équipe stable à 7 personnes sur 24 mois                                                                                | Pas de recrutement, pas de turnover anticipé                                        |
+| 1   | Équipe actuelle de 6 personnes ; budget calibré pour 7 sur 24 mois                            | Marge RH : si l'équipe reste à 6, aucun dépassement salarial                        |
 | 2   | Rémunération au SMIC brut + charges (~1 750 €/mois employeur)                                                          | Choix assumé pour un projet étudiant                                                |
 | 3   | Pas de bureau privé (équipe en remote ou locaux Epitech)                                                               | Économie ~50 k€/an                                                                  |
 | 4   | Infrastructure : 1 VPS mutualisé + stack gratuite ailleurs                                                             | GitHub / Firebase en gratuit tant que le volume le permet                           |
@@ -50,7 +50,7 @@ L'idée n'est pas de produire un budget ambitieux de levée de fonds, mais un ca
 
 C'est de très loin le plus gros poste du budget (~90 %), ce qui est attendu sur un projet logiciel : la valeur produite, c'est avant tout du temps humain.
 
-**Hypothèse** : 7 personnes payées au SMIC pendant l'intégralité des 24 mois.
+**Hypothèse** : budget dimensionné pour 7 personnes payées au SMIC pendant l'intégralité des 24 mois (équipe actuelle de 6).
 
 
 | Poste                                      | Mensuel par personne (charge employeur) | Mensuel équipe | Annuel équipe | Total 24 mois |

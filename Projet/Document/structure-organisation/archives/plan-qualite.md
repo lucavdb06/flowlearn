@@ -1,9 +1,9 @@
 # FlowLearn — Plan qualité
 
-> Version charte : [`FlowLearn-Plan-Qualite.html`](FlowLearn-Plan-Qualite.html)
+> Source Markdown (archives). Les livrables de référence sont au format charte HTML dans leurs dossiers-sujets respectifs.
 
 Processus de développement, tickets, tests, revues et livraisons.  
-Complète la [DoD globale](../3-a-revoir/mvp-pbs/dod-globale.md) et l’[organisation générale](structure-organisation/organisation-general.md).
+Complète la [DoD globale](../../mvp-pbs-dod/dod/dod-globale.html) et l’[organisation générale](../Organisation-Generale/organisation-general.html).
 
 ---
 
@@ -24,7 +24,7 @@ Modèle **hybride** (détaillé dans `organisation-general.md`) :
 
 | Élément | Choix FlowLearn |
 | --- | --- |
-| Priorisation MVP | Périmètre PBS/WBS + gates Go/No-Go ([planning](planning/planning-detaille.md)) |
+| Priorisation MVP | Périmètre PBS/WBS + gates Go/No-Go ([planning](../../planning/flowlearn-gantt.html)) |
 | Pilotage tâches | **GitHub Projects** (WBS → backlog) |
 | Doc brouillon | **Notion** |
 | Doc validée | **GitHub** (dépôt [flowlearn](https://github.com/lucavdb06/flowlearn)) |
@@ -42,7 +42,7 @@ Modèle **hybride** (détaillé dans `organisation-general.md`) :
 | **Pôle cybersécurité** | Revue sécurité sur PR, Security by Design, validation check cyber **bloquant** avant merge |
 | **Équipe (pair)** | Code review technique (au moins 1 relecteur par PR) |
 
-Répartition nominative : [OBS](structure-organisation/schema-obs.md) et [matrice RACI](structure-organisation/matrice-raci.md).
+Répartition nominative : [OBS](../schema-obs/schema-obs.html) et [matrice RACI](../FlowLearn-Matrice-RACI/FlowLearn-Matrice-RACI.html).
 
 ---
 
@@ -79,13 +79,13 @@ Colonnes GitHub Projects suggérées : `Backlog` → `À faire` → `En cours` �
 | **Sécurité** | Revue manuelle + bonnes pratiques (OWASP) | PR + gate cybersécurité |
 | **Régression** | Pas de casse de l’existant | CI GitHub Actions |
 
-Détail par feature : fichiers dans [`../3-a-revoir/mvp-pbs/dod/`](../3-a-revoir/mvp-pbs/dod/).
+Détail par feature : fichiers dans [`mvp-pbs-dod/dod/`](../../mvp-pbs-dod/dod/).
 
 ---
 
 ## 7. Processus de livraison (résumé)
 
-Aligné sur la [DoD globale](../3-a-revoir/mvp-pbs/dod-globale.md) :
+Aligné sur la [DoD globale](../../mvp-pbs-dod/dod/dod-globale.html) :
 
 1. Développement sur branche `feature/…`
 2. Tests locaux + tests automatisés
@@ -102,16 +102,16 @@ Aligné sur la [DoD globale](../3-a-revoir/mvp-pbs/dod-globale.md) :
 | Étape | Lieu |
 | --- | --- |
 | Brouillon, retouches équipe | Notion |
-| Version de référence | GitHub `1-document/` |
-| Relecture fond (PBS, WBS, DoD, com) | `3-a-revoir/` |
-| Mise en forme charte | `2-en-cours/charte-graphique/` (HTML) |
-| Version figée | `4-termine/` |
+| Source Markdown (historique) | Sous-dossier `archives/` du dossier-sujet concerné |
+| Version de référence (charte) | Fichier `.html` à la racine du dossier-sujet (`Projet/Document/<sujet>/`) |
+| Mise en forme charte | CSS partagée `charte-graphique/archives/flowlearn-document.css` |
+| Dépôt officiel | GitHub (Single Source of Truth) |
 
 ---
 
 ## 9. Liens utiles
 
-- [Description fonctionnelle](description-fonctionnelle.md)
-- [Planning & gates](planning/planning-detaille.md)
-- [Gestion des risques](risques/gestion-des-risques.md)
-- [Livret d’accueil](livret-accueil/livret-accueil.md)
+- [Description fonctionnelle](FlowLearn-Description-Fonctionnelle.html)
+- [Planning & gates](../../planning/flowlearn-gantt.html)
+- [Gestion des risques](../../risques/gestion-des-risques.html)
+- [Livret d’accueil](../../livret-accueil/livret-accueil.html)

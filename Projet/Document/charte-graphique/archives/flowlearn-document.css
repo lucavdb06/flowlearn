@@ -353,6 +353,7 @@ table td strong { color: var(--deep-ocean); }
 .tag-en-cours { background: rgba(59,130,246,0.12); color: var(--flow-blue); }
 .tag-revoir { background: rgba(245,158,11,0.15); color: #B45309; }
 .tag-must { background: rgba(16,185,129,0.15); color: #047857; }
+.tag-valide { background: rgba(16,185,129,0.15); color: #047857; }
 
 .bullet-list { padding-left: 18px; margin-bottom: 10pt; }
 .bullet-list li { margin-bottom: 6px; font-size: 9.5pt; color: var(--slate-700); }
