@@ -9,7 +9,7 @@
 | Projet | FlowLearn |
 | Formation | T-ESP-800 |
 | Livrable | 04 — PBS |
-| Version | v0.1 — brouillon |
+| Version | v1.0 |
 | Statut | À revoir |
 
 ## Questions traitées
@@ -24,7 +24,7 @@
 
 ## 1. Arborescence hiérarchique du produit
 
-**Produit :** FlowLearn MVP (v0.1)
+**Produit :** FlowLearn MVP (v1.0)
 
 ### 1. Conteneur Multiplateforme (Frontend Web & Mobile)
 

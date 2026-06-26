@@ -1,4 +1,4 @@
-# Schéma WBS Global — FlowLearn MVP (v0.1)
+# Schéma WBS Global — FlowLearn MVP (v1.0)
 
 > Version charte : [`schema-wbs-global.html`](../schema-wbs-global.html)
 
@@ -9,7 +9,7 @@
 | Projet | FlowLearn |
 | Formation | T-ESP-800 |
 | Livrable | 05 — WBS |
-| Version | v0.1 — brouillon |
+| Version | v1.0 |
 | Statut | À revoir |
 
 ## Questions traitées

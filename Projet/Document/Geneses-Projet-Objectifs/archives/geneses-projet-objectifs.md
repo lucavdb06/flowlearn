@@ -43,7 +43,7 @@ FlowLearn a pour ambition de **détourner les mécaniques addictives** au profit
 - **M (Mesurable) :** Valider le modèle B2B par un premier prototype de "parcours de formation en entreprise".
 - **A (Atteignable) :** S'appuyer sur des modèles LLM open-source ou européen existants ou des APIs standards comme mistral pour valider la preuve de concept sans nécessiter de R&D lourde sur l'optimisation des modèles en phase 1.
 - **R (Pertinent) :** Valider l'attractivité d'une WebApp capable de rivaliser avec les réseaux sociaux sur le temps de cerveau disponible, tout en assurant une architecture compatible avec un futur portage en application mobile pour profiter des avancées technologiques sur les LLM qui peuvent tourner en local et leur performance (les architecture hardware A.R.M).
-- **T (Temporel) :** Lancer la première itération publique fonctionnelle (v0.1) incluant le noyau et le système de récompenses pour octobre 2026.
+- **T (Temporel) :** Lancer la première itération publique fonctionnelle (v1.0) incluant le noyau et le système de récompenses pour octobre 2026.
 
 ## 3. Cibles et Valeur Ajoutée
 

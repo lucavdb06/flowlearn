@@ -9,7 +9,7 @@
 | Projet | FlowLearn |
 | Formation | T-ESP-800 |
 | Livrable | 07 — Critères de fin |
-| Version | v0.1 — brouillon |
+| Version | v1.0 |
 | Statut | À revoir |
 
 ## Questions traitées

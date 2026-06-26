@@ -18,7 +18,7 @@ Décrire le **comportement attendu** du MVP FlowLearn et la **traçabilité** ve
 
 FlowLearn est une plateforme d’**apprentissage par micro-sessions ludiques** : l’utilisateur construit une base de connaissances (import, dialogue IA) et la révise via des **expériences** (quiz, jeux, scroll éducatif, etc.) branchées sur un **noyau commun** (API, RAG, MCP).
 
-**Périmètre MVP (v0.1)** : noyau RAG + au moins deux modes d’expérience + conteneur multiplateforme + algorithmes de rétention de base + socle sécurité/RGPD. Voir [cadrage](cadrage-projet/geneses-projet-objectifs.md) pour objectifs SMART.
+**Périmètre MVP (v1.0)** : noyau RAG + au moins deux modes d’expérience + conteneur multiplateforme + algorithmes de rétention de base + socle sécurité/RGPD. Voir [cadrage](cadrage-projet/geneses-projet-objectifs.md) pour objectifs SMART.
 
 ---
 
