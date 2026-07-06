@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowLearn — Fiche Quentin Dumas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../charte-graphique/archives/flowlearn-document.css">
+<style>
+  .sk-bar { display: flex; gap: 3px; align-items: center; margin: 4px 0; }
+  .sk { width: 28px; height: 8px; border-radius: 2px; }
+  .sk-4 { background: linear-gradient(135deg, #3B82F6 0%, #EC4899 100%); }
+  .quote-block {
+    border-left: 3px solid transparent;
+    border-image: linear-gradient(180deg, #3B82F6, #EC4899) 1;
+    padding: 14px 18px;
+    margin: 16px 0;
+    background: white;
+    border-radius: 0 12px 12px 0;
+    box-shadow: 0 1px 3px rgba(15,23,42,0.04);
+  }
+  .quote-block p { font-family: 'Fraunces', serif; font-size: 11pt; font-style: italic; color: var(--slate-700); margin: 0; line-height: 1.55; }
+  .quote-attr { font-size: 8.5pt; color: var(--slate-500); margin-top: 10px; font-style: normal; }
+  .trait-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+  .trait-card {
+    background: white;
+    border: 1px solid var(--slate-200);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .trait-card h3 { font-size: 9pt; margin: 0 0 6px 0; color: var(--deep-ocean); letter-spacing: 0.06em; text-transform: uppercase; }
+  .trait-card p { font-size: 9pt; margin: 0; color: var(--slate-700); }
+  .motiv-list { list-style: none; padding: 0; margin: 12px 0; }
+  .motiv-list li {
+    padding: 10px 14px 10px 36px;
+    margin-bottom: 8px;
+    background: white;
+    border: 1px solid var(--slate-200);
+    border-radius: 10px;
+    font-size: 9.5pt;
+    color: var(--slate-700);
+    position: relative;
+  }
+  .motiv-list li::before {
+    content: "→";
+    position: absolute;
+    left: 14px;
+    color: var(--brain-pink);
+    font-weight: 700;
+  }
+  .running-header .brand { display: flex; align-items: center; gap: 9px; }
+</style>
+</head>
+<body>
+
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="cover-top">
+      <div class="cover-logo" style="display:flex;align-items:center;gap:12px;">
+        <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" style="width:42px;height:42px;object-fit:contain;">
+        <div class="wordmark">Flow<em>Learn</em></div>
+      </div>
+      <div class="cover-meta">
+        <div>Document interne</div>
+        <div><strong>Intégration équipe</strong></div>
+        <div>Juillet 2026</div>
+      </div>
+    </div>
+    <div class="cover-middle">
+      <div class="cover-eyebrow">Ressources humaines · Nouveau membre</div>
+      <h1 class="cover-title">Quentin<br><span class="accent">Dumas</span></h1>
+      <p class="cover-deck">Fiche d'intégration — relation de confiance, motivations, investissement et périmètre Web · UI/UX · Jeux vidéo. Rédigée par Luca Vanden-Brande, porteur de projet.</p>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-stat"><div class="label">Rôle</div><div class="value" style="font-size:14pt;">Chef pôle Dev</div></div>
+      <div class="cover-stat"><div class="label">Statut</div><div class="value"><span class="tag tag-must">Validé</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="running-header">
+    <div class="brand">
+      <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" style="width:22px;height:22px;object-fit:contain;">
+      <span class="brand-name">Flow<em>Learn</em></span>
+    </div>
+    <span class="doc-tag">Fiche membre · Sommaire</span>
+  </div>
+  <span class="section-num">§ SOMMAIRE</span>
+  <h1 class="section-title">Contenu de la <span class="accent">fiche</span></h1>
+  <ol class="toc-list">
+    <li><span class="toc-num">01</span><span class="toc-title">Une relation de confiance (porteur de projet)</span></li>
+    <li><span class="toc-num">02</span><span class="toc-title">Pourquoi il rejoint FlowLearn</span></li>
+    <li><span class="toc-num">03</span><span class="toc-title">Investissement &amp; motivation</span></li>
+    <li><span class="toc-num">04</span><span class="toc-title">Rôle, compétences &amp; mode de travail</span></li>
+    <li><span class="toc-num">05</span><span class="toc-title">Intégration équipe &amp; attentes MVP</span></li>
+  </ol>
+  <div class="page-footer"><span>RH</span><span class="pf-brand">FlowLearn — Fiche Quentin Dumas</span><span>02</span></div>
+</section>
+
+<section class="page">
+  <div class="running-header">
+    <div class="brand">
+      <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" style="width:22px;height:22px;object-fit:contain;">
+      <span class="brand-name">Flow<em>Learn</em></span>
+    </div>
+    <span class="doc-tag">§ 01 Relation</span>
+  </div>
+  <span class="section-num">§ 01 UNE RELATION DE CONFIANCE</span>
+  <h1 class="section-title">Je le connais depuis <span class="accent">des années</span></h1>
+  <p style="font-size:9.5pt;color:var(--slate-600);margin-bottom:12px;">Luca Vanden-Brande — Porteur de projet</p>
+
+  <p>Je connais <strong>Quentin Dumas depuis plusieurs années</strong>. Nous avons déjà travaillé ensemble sur des projets personnels et des exercices autour du <strong>jeu vidéo</strong> et du <strong>développement web</strong> — assez pour connaître sa rigueur sur l'interface, sa patience sur le gameplay et sa façon de livrer des prototypes aboutis.</p>
+
+  <div class="quote-block">
+    <p>« Dès le début de FlowLearn, l'intégrer au groupe faisait partie de mes sujets. Ce n'était pas une idée de dernière minute : je savais qu'il nous manquerait un profil Web, UI/UX et JV pour que le produit soit crédible. »</p>
+    <div class="quote-attr">— Luca Vanden-Brande</div>
+  </div>
+
+  <p>L'équipe initiale excellait sur l'<strong>IA et le backend</strong> ; en revanche, les blocs WBS <span class="mono">1.1</span> (conteneur / front) et <span class="mono">2.3</span> (gameplay) n'avaient pas de référent. Intégrer Quentin était pour moi un <strong>choix de pilotage</strong> : attendre le bon moment, lui proposer un rôle à la hauteur de son expertise, et structurer le pôle Dev autour de lui en tant que <strong>chef de pôle</strong>.</p>
+
+  <p>Quand le PBS a confirmé le périmètre jeu + interface, je lui ai proposé de nous rejoindre. Il a accepté sans hésiter longtemps — ce qui, vu notre historique, ne m'a pas surpris.</p>
+
+  <div class="page-footer"><span>RH</span><span class="pf-brand">FlowLearn — Fiche Quentin Dumas</span><span>03</span></div>
+</section>
+
+<section class="page">
+  <div class="running-header">
+    <div class="brand">
+      <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" style="width:22px;height:22px;object-fit:contain;">
+      <span class="brand-name">Flow<em>Learn</em></span>
+    </div>
+    <span class="doc-tag">§ 02 Motivations</span>
+  </div>
+  <span class="section-num">§ 02 POURQUOI IL REJOINT FLOWLEARN</span>
+  <h1 class="section-title">Apporter son <span class="accent">expérience</span></h1>
+
+  <p>Quentin rejoint le projet pour mettre à profit des années de pratique sur trois domaines où l'équipe avait besoin de renfort :</p>
+
+  <table class="no-break">
+    <thead><tr><th>Domaine</th><th>Ce qu'il vient apporter</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Web</strong></td><td>Front React, intégration API, cohérence technique côté client</td></tr>
+      <tr><td><strong>UI / UX</strong></td><td>Parcours utilisateur, interfaces claires, respect de la charte FlowLearn</td></tr>
+      <tr><td><strong>Jeux vidéo (JV)</strong></td><td>Mécaniques Godot, boucles de gameplay, lien quiz ↔ expérience ludique</td></tr>
+    </tbody>
+  </table>
+
+  <div class="flourish"></div>
+  <h2>Sa motivation en une phrase</h2>
+  <div class="callout">
+    <p><strong>Appliquer concrètement son expertise</strong> Web, UI/UX et JV sur un projet qui lui tient à cœur — pas seulement « coder », mais construire un produit montrable dont il peut être fier.</p>
+  </div>
+
+  <p>Il explique vouloir sortir de l'exercice scolaire isolé : ici, ses compétences <strong>comblent un vrai trou</strong> dans l'équipe. L'IA génère des quiz ; lui veut que l'utilisateur <strong>ressente</strong> cette intelligence dans une expérience fluide, belle et engageante.</p>
+
+  <h2>Pourquoi FlowLearn, pour lui</h2>
+  <ul class="motiv-list">
+    <li><strong>Il aime le projet</strong> — la vision « apprendre en jouant », les micro-sessions, l'alternative au scroll passif lui parlent personnellement.</li>
+    <li><strong>Le croisement IA × gameplay</strong> — peu de projets étudiants lui offrent ce terrain ; il veut explorer comment le RAG alimente vraiment une mécanique de jeu.</li>
+    <li><strong>L'éthique du hook</strong> — il adhère à l'idée de reprendre les leviers d'engagement (jeux, apps) pour servir la révision, pas la distraction vide.</li>
+    <li><strong>Une équipe structurée</strong> — Discord, GitHub, revues : il préfère un cadre clair à un projet flou sans livrables.</li>
+    <li><strong>Transmettre</strong> — en tant que chef pôle Dev, il veut aussi faire monter le niveau UI/jeu des autres développeurs.</li>
+  </ul>
+
+  <div class="page-footer"><span>RH</span><span class="pf-brand">FlowLearn — Fiche Quentin Dumas</span><span>04</span></div>
+</section>
+
+<section class="page">
+  <div class="running-header">
+    <div class="brand">
+      <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" style="width:22px;height:22px;object-fit:contain;">
+      <span class="brand-name">Flow<em>Learn</em></span>
+    </div>
+    <span class="doc-tag">§ 03 Investissement</span>
+  </div>
+  <span class="section-num">§ 03 INVESTISSEMENT &amp; MOTIVATION</span>
+  <h1 class="section-title">Ce que j'observe <span class="accent">au quotidien</span></h1>
+  <p style="font-size:9.5pt;color:var(--slate-600);margin-bottom:12px;">Retour du porteur de projet — premières semaines d'intégration</p>
+
+  <div class="trait-grid">
+    <div class="trait-card">
+      <h3>Disponibilité</h3>
+      <p>Répond vite sur Discord, propose des créneaux pour débloquer le front ou Godot. Ne « disparaît » pas entre deux réunions.</p>
+    </div>
+    <div class="trait-card">
+      <h3>Proactivité</h3>
+      <p>Arrive souvent avec une maquette ou une scène déjà amorcée — pas seulement des questions. Il avance avant qu'on lui demande.</p>
+    </div>
+    <div class="trait-card">
+      <h3>Ownership</h3>
+      <p>Traite les écrans et les mécaniques comme sa responsabilité. Signale quand un flux est confus et propose une correction.</p>
+    </div>
+    <div class="trait-card">
+      <h3>Alignement produit</h3>
+      <p>Recadre le scope trop lourd pour le MVP, mais défend l'UX quand on risque de livrer quelque chose de trop technique et peu utilisable.</p>
+    </div>
+  </div>
+
+  <div class="quote-block">
+    <p>« Sa motivation ne ressemble pas à celle de quelqu'un qui remplit un rôle pour la note. Il parle du projet en dehors des cours, partage des références jeux et UI sur Discord, et a déjà proposé des idées pour la démo jury. C'est le profil sur lequel je compte pour tenir la promesse "apprendre en jouant". »</p>
+    <div class="quote-attr">— Luca Vanden-Brande</div>
+  </div>
+
+  <div class="page-footer"><span>RH</span><span class="pf-brand">FlowLearn — Fiche Quentin Dumas</span><span>05</span></div>
+</section>
+
+<section class="page">
+  <div class="running-header">
+    <div class="brand">
+      <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" style="width:22px;height:22px;object-fit:contain;">
+      <span class="brand-name">Flow<em>Learn</em></span>
+    </div>
+    <span class="doc-tag">§ 04–05</span>
+  </div>
+  <span class="section-num">§ 04 RÔLE &amp; MODE DE TRAVAIL</span>
+  <h2>Périmètre</h2>
+  <table class="no-break">
+    <thead><tr><th>Élément</th><th>Détail</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Fonction</strong></td><td>Dev Jeux vidéo &amp; UI-UX — Chef du pôle Dev</td></tr>
+      <tr><td><strong>GitHub</strong></td><td>LavaheartGaming</td></tr>
+      <tr><td><strong>Expertise</strong></td><td>Web · UI/UX · JV (niveau Expert sur la carte compétences)</td></tr>
+      <tr><td><strong>WBS</strong></td><td>1.1 Encapsulateurs · 2.3 Gameplay · interfaces MVP</td></tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top:12px;font-size:9.5pt;">Je le connais : il travaille <strong>prototype d'abord</strong> (maquette, scène Godot, écran React), communique en <strong>visuel</strong> plutôt qu'en longs textes, et <strong>arbitre vite</strong> côté Dev pour débloquer l'équipe.</p>
+
+  <div class="flourish"></div>
+  <span class="section-num">§ 05 INTÉGRATION &amp; MVP</span>
+  <table>
+    <thead><tr><th>Avec</th><th>Interaction</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Luca (porteur)</strong></td><td>Priorisation, validation, planning — relation de confiance établie depuis des années ; c'est lui qui m'a proposé d'intégrer le groupe</td></tr>
+      <tr><td><strong>Nathan / Daniel</strong></td><td>JSON quiz, API RAG → jeux</td></tr>
+      <tr><td><strong>Maxime / César</strong></td><td>Revue sécurité PR front</td></tr>
+    </tbody>
+  </table>
+
+  <h2 style="margin-top:16px;">Attentes à 3 mois</h2>
+  <ol class="steps">
+    <li>Shell React multiplateforme utilisable (WBS 1.1)</li>
+    <li>Gameplay Archero / VS branché sur le quiz JSON (WBS 2.3)</li>
+    <li>Écrans principaux conformes à la charte</li>
+    <li>Arbitrage fluide du pôle Dev pour les gates planning</li>
+  </ol>
+
+  <div class="page-footer"><span>RH</span><span class="pf-brand">FlowLearn — Fiche Quentin Dumas</span><span>06</span></div>
+</section>
+
+</body>
+</html>

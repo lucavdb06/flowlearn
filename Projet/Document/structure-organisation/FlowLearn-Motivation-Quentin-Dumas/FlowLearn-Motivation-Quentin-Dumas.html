@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowLearn — Ma motivation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../charte-graphique/archives/flowlearn-document.css">
+<style>
+  .pillar-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 16px 0; }
+  .pillar-card {
+    background: white;
+    border: 1px solid var(--slate-200);
+    border-radius: 12px;
+    padding: 16px 14px;
+    text-align: center;
+  }
+  .pillar-card .icon {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--brain-pink);
+    margin-bottom: 8px;
+  }
+  .pillar-card h3 { font-size: 11pt; margin: 0 0 8px 0; color: var(--deep-ocean); }
+  .pillar-card p { font-size: 8.5pt; margin: 0; color: var(--slate-600); line-height: 1.5; font-style: italic; }
+  .first-person {
+    font-family: 'Fraunces', serif;
+    font-size: 13pt;
+    font-weight: 300;
+    color: var(--slate-700);
+    line-height: 1.55;
+    margin: 14px 0;
+  }
+  .reason-list { list-style: none; padding: 0; margin: 12px 0; }
+  .reason-list li {
+    padding: 12px 14px 12px 40px;
+    margin-bottom: 8px;
+    background: white;
+    border: 1px solid var(--slate-200);
+    border-radius: 10px;
+    font-size: 9.5pt;
+    color: var(--slate-700);
+    position: relative;
+  }
+  .reason-list li::before {
+    content: "✦";
+    position: absolute;
+    left: 16px;
+    color: var(--flow-blue);
+    font-size: 10pt;
+  }
+  .commit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+  .commit-item {
+    background: linear-gradient(135deg, rgba(59,130,246,0.05) 0%, rgba(236,72,153,0.05) 100%);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 9pt;
+    color: var(--slate-700);
+  }
+  .commit-item strong { display: block; color: var(--deep-ocean); margin-bottom: 4px; font-size: 8.5pt; }
+  .running-header .brand { display: flex; align-items: center; gap: 9px; }
+</style>
+</head>
+<body>
+
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="cover-top">
+      <div class="cover-logo" style="display:flex;align-items:center;gap:12px;">
+        <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" style="width:42px;height:42px;object-fit:contain;">
+        <div class="wordmark">Flow<em>Learn</em></div>
+      </div>
+      <div class="cover-meta">
+        <div>Parole personnelle</div>
+        <div><strong>1<sup>re</sup> personne</strong></div>
+        <div>Juillet 2026</div>
+      </div>
+    </div>
+    <div class="cover-middle">
+      <div class="cover-eyebrow">Quentin Dumas · Web · UI/UX · JV</div>
+      <h1 class="cover-title">Pourquoi <span class="accent">je</span> souhaite<br>intégrer FlowLearn</h1>
+      <p class="cover-deck">Je rédige ce document pour expliquer pourquoi je veux rejoindre le groupe, ce que j'apporte en Web, UI/UX et jeux vidéo, et ce que j'engage sur le MVP.</p>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-stat"><div class="label">Auteur</div><div class="value" style="font-size:14pt;">Quentin Dumas</div></div>
+      <div class="cover-stat"><div class="label">Ton</div><div class="value" style="font-size:13pt;">Je · Moi · Mon</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="running-header">
+    <div class="brand">
+      <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" style="width:22px;height:22px;object-fit:contain;">
+      <span class="brand-name">Flow<em>Learn</em></span>
+    </div>
+    <span class="doc-tag">Ma motivation · Sommaire</span>
+  </div>
+  <span class="section-num">§ SOMMAIRE</span>
+  <h1 class="section-title">Mon <span class="accent">propos</span></h1>
+  <ol class="toc-list">
+    <li><span class="toc-num">01</span><span class="toc-title">En quelques mots</span></li>
+    <li><span class="toc-num">02</span><span class="toc-title">Ce que je viens apporter</span></li>
+    <li><span class="toc-num">03</span><span class="toc-title">Pourquoi FlowLearn me motive</span></li>
+    <li><span class="toc-num">04</span><span class="toc-title">Pourquoi maintenant</span></li>
+    <li><span class="toc-num">05</span><span class="toc-title">Ce que j'engage</span></li>
+  </ol>
+  <div class="page-footer"><span>QD</span><span class="pf-brand">FlowLearn — Ma motivation</span><span>02</span></div>
+</section>
+
+<section class="page">
+  <div class="running-header">
+    <div class="brand">
+      <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" style="width:22px;height:22px;object-fit:contain;">
+      <span class="brand-name">Flow<em>Learn</em></span>
+    </div>
+    <span class="doc-tag">§ 01–02</span>
+  </div>
+  <span class="section-num">§ 01 EN QUELQUES MOTS</span>
+  <h1 class="section-title">Pourquoi <span class="accent">je</span> veux rejoindre</h1>
+
+  <p class="first-person">Je souhaite intégrer FlowLearn parce que c'est l'un des rares projets où je peux appliquer concrètement ce que je sais faire en <strong>Web</strong>, en <strong>UI/UX</strong> et en <strong>jeux vidéo</strong> — pas en annexe, mais au cœur du produit.</p>
+
+  <p>J'aime la vision du projet. Je fais confiance à l'équipe. Et je veux contribuer à quelque chose d'<strong>utilisable</strong> et <strong>montrable</strong> — pas seulement un dossier technique que personne n'a envie d'ouvrir.</p>
+
+  <div class="flourish"></div>
+  <span class="section-num">§ 02 CE QUE JE VIENS APPORTER</span>
+  <h2>Mon expertise, mon objectif : l'expérience</h2>
+
+  <div class="pillar-grid">
+    <div class="pillar-card">
+      <div class="icon">WEB</div>
+      <h3>Frontend</h3>
+      <p>« Je veux construire un produit React solide, bien structuré, prêt à accueillir l'API. »</p>
+    </div>
+    <div class="pillar-card">
+      <div class="icon">UI/UX</div>
+      <h3>Interface</h3>
+      <p>« Je veux livrer des parcours clairs et une app agréable, fidèle à la charte FlowLearn. »</p>
+    </div>
+    <div class="pillar-card">
+      <div class="icon">JV</div>
+      <h3>Jeux vidéo</h3>
+      <p>« Je veux créer des mécaniques Godot qui donnent envie de revenir réviser. »</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>L'équipe maîtrise déjà l'IA et le RAG. <strong>Moi, je veux que l'utilisateur le ressente</strong> — dans le gameplay, dans mes écrans, dans le rythme d'une session. C'est là que mon expertise prend tout son sens.</p>
+  </div>
+
+  <div class="page-footer"><span>QD</span><span class="pf-brand">FlowLearn — Ma motivation</span><span>03</span></div>
+</section>
+
+<section class="page">
+  <div class="running-header">
+    <div class="brand">
+      <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" style="width:22px;height:22px;object-fit:contain;">
+      <span class="brand-name">Flow<em>Learn</em></span>
+    </div>
+    <span class="doc-tag">§ 03–04</span>
+  </div>
+  <span class="section-num">§ 03 POURQUOI FLOWLEARN, POUR MOI</span>
+  <h1 class="section-title">Ce qui me <span class="accent">motive</span></h1>
+
+  <ul class="reason-list">
+    <li><strong>J'aime le projet.</strong> Apprendre par le jeu, en micro-sessions, hors du scroll passif — c'est une vision que je trouve utile et que j'ai envie de défendre.</li>
+    <li><strong>IA × gameplay m'attire.</strong> Brancher un moteur RAG sur une vraie boucle de jeu : c'est le défi où je veux mettre Web, UI et JV au service du même objectif.</li>
+    <li><strong>Je adhère à l'éthique du hook.</strong> Je veux reprendre les leviers d'engagement des jeux pour servir la révision — pas la distraction vide.</li>
+    <li><strong>Je peux appliquer mon expertise.</strong> Mes compétences comblent un vrai manque. Je ne serai pas « un dev de plus » : je porterai le front, l'UX et le jeu.</li>
+    <li><strong>Je travaille mieux avec un cadre clair.</strong> GitHub, Discord, PBS/WBS — je préfère un projet piloté à un hackathon sans lendemain.</li>
+  </ul>
+
+  <div class="flourish"></div>
+  <span class="section-num">§ 04 POURQUOI MAINTENANT</span>
+  <p>Luca me connaît depuis longtemps — en tant que <strong>porteur de projet</strong>, c'est lui qui pilote FlowLearn. Il m'a parlé du projet dès que le besoin <strong>front + jeu</strong> est devenu évident. Quand il m'a proposé de rejoindre le groupe, ma réponse était presque déjà faite.</p>
+  <p>J'attendais un projet où mon profil avait du <strong>sens</strong>. Je ne cherche pas à compléter un effectif : je veux porter un pan entier du MVP et aider le pôle Dev à avancer.</p>
+
+  <div class="page-footer"><span>QD</span><span class="pf-brand">FlowLearn — Ma motivation</span><span>04</span></div>
+</section>
+
+<section class="page">
+  <div class="running-header">
+    <div class="brand">
+      <img src="../../charte-graphique/assets/flowlearn-logo.svg" alt="Logo" style="width:22px;height:22px;object-fit:contain;">
+      <span class="brand-name">Flow<em>Learn</em></span>
+    </div>
+    <span class="doc-tag">§ 05 Mon engagement</span>
+  </div>
+  <span class="section-num">§ 05 CE QUE J'ENGAGE</span>
+  <h1 class="section-title">Ma <span class="accent">contribution</span></h1>
+
+  <div class="commit-grid">
+    <div class="commit-item">
+      <strong>Je m'engage sur mon temps</strong>
+      Je serai disponible sur Discord, présent aux points hebdo, je livrerai par incréments visibles.
+    </div>
+    <div class="commit-item">
+      <strong>Je m'engage sur la qualité</strong>
+      Je privilégie les prototypes avant les longs débats, je respecte la charte, je livre du gameplay testable.
+    </div>
+    <div class="commit-item">
+      <strong>Je m'engage à transmettre</strong>
+      Je partagerai mes bonnes pratiques UI et jeu avec les autres développeurs.
+    </div>
+    <div class="commit-item">
+      <strong>Je m'engage sur le MVP</strong>
+      Je défendrai l'expérience utilisateur tout en respectant le scope validé.
+    </div>
+  </div>
+
+  <div class="flourish" style="margin-top:24px;"></div>
+
+  <div class="callout" style="margin-top:16px;">
+    <p style="font-family:'Fraunces',serif;font-size:12pt;font-style:italic;margin:0;line-height:1.5;">« Je souhaite intégrer FlowLearn pour mettre mon expertise Web, UI/UX et JV au service d'un produit qui me motive. Je crois que mon profil comble un manque réel — et qu'ensemble, nous pouvons livrer quelque chose dont nous serons fiers à la soutenance. »</p>
+    <p style="font-size:9pt;color:var(--slate-500);margin:12px 0 0 0;"><strong>— Moi, Quentin Dumas</strong></p>
+  </div>
+
+  <p style="margin-top:20px;font-size:9pt;color:var(--slate-500);">Document complémentaire · fiche du porteur de projet : <span class="mono">FlowLearn-Fiche-Quentin-Dumas.html</span></p>
+
+  <div class="page-footer"><span>QD</span><span class="pf-brand">FlowLearn — Ma motivation</span><span>05</span></div>
+</section>
+
+</body>
+</html>
